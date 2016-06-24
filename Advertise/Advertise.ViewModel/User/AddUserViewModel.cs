@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Advertise.Common
+namespace Advertise.ViewModel.User
 {
-    public class Class1
+    /// <summary>
+    /// 
+    /// </summary>
+    public class AddUserViewModel
     {
     }
 }
