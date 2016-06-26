@@ -8,7 +8,7 @@ namespace Advertise.DomainClasses.Entities
     public enum GenderType
     {
         /// <summary>
-        /// مدکر
+        /// مذکر
         /// </summary>
         [Display(Name ="مرد")]
         Male,
