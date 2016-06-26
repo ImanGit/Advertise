@@ -21,5 +21,16 @@ namespace Advertise.ServiceLayer.EFServices
 
         }
         #endregion
+
+        #region Count
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public long Count()
+        {
+            return 0;
+        }
+        #endregion
     }
 }
