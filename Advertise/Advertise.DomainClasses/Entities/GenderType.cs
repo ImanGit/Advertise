@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
