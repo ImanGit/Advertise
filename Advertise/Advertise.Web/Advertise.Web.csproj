@@ -136,6 +136,7 @@
     <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\UserController.cs" />
