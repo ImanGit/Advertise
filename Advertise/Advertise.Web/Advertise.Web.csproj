@@ -109,19 +109,48 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\iransans.css" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\Avatar001.jpg" />
     <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Error\Forbidden.html" />
+    <Content Include="Error\GatewayTimeout.html" />
+    <Content Include="Error\ServiceUnavailable.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\IRANSans-Bold-web.eot" />
+    <Content Include="Content\Fonts\IRANSans-Bold-web.ttf" />
+    <Content Include="Content\Fonts\IRANSans-Bold-web.woff" />
+    <Content Include="Content\Fonts\IRANSans-Bold-web.woff2" />
+    <Content Include="Content\Fonts\IRANSans-Light-web.eot" />
+    <Content Include="Content\Fonts\IRANSans-Light-web.ttf" />
+    <Content Include="Content\Fonts\IRANSans-Light-web.woff" />
+    <Content Include="Content\Fonts\IRANSans-Light-web.woff2" />
+    <Content Include="Content\Fonts\IRANSans-Medium-web.eot" />
+    <Content Include="Content\Fonts\IRANSans-Medium-web.ttf" />
+    <Content Include="Content\Fonts\IRANSans-Medium-web.woff" />
+    <Content Include="Content\Fonts\IRANSans-Medium-web.woff2" />
+    <Content Include="Content\Fonts\IRANSans-UltraLight-web.eot" />
+    <Content Include="Content\Fonts\IRANSans-UltraLight-web.ttf" />
+    <Content Include="Content\Fonts\IRANSans-UltraLight-web.woff" />
+    <Content Include="Content\Fonts\IRANSans-UltraLight-web.woff2" />
+    <Content Include="Content\Fonts\IRANSans-web.eot" />
+    <Content Include="Content\Fonts\IRANSans-web.ttf" />
+    <Content Include="Content\Fonts\IRANSans-web.woff" />
+    <Content Include="Content\Fonts\IRANSans-web.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -130,6 +159,8 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -159,6 +190,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="File\Avatar\" />
+    <Folder Include="File\Image\" />
+    <Folder Include="File\UserFile\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

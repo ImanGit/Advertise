@@ -14,7 +14,7 @@ namespace Advertise.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterByndle(BundleTable.Bundles);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
