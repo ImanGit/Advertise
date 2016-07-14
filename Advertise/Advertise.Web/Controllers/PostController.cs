@@ -11,6 +11,8 @@ namespace Advertise.Web.Controllers
         // GET: Post
         public ActionResult Index()
         {
+            ViewBag.Iman = "iman hastam";
+            ViewBag.AR = "ARRRR";
             return View();
         }
     }
