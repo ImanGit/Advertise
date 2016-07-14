@@ -5,3 +5,47 @@
 
 <h2>Index</h2>
 
+<button class="btn btn-danger" id="yy">ایمان</button>
+
+
+
+<div class="row">
+    <div class="col-md-7">
+        <h1>
+            Title Title
+        </h1>
+        Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+    </div>
+    <div class="col-md-5">
+
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Enter a valid email address
+        </div>
+
+        <span class="glyphicon glyphicon-exclamation-sign alert-success" ></span>
+    </div>
+
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $("#yy").click(function (e) {
+                e.preventDefault(); //می‌خواهیم لینک به صورت معمول عمل نکند
+                $.bootstrapModalConfirm({
+                                    caption: 'تائید عملیات',
+                                    body: 'آیا عملیات درخواستی اجرا شود؟',
+                                    onConfirm: function () {
+                                        alert('در حال انجام عملیات');
+                                    },
+                                    confirmText: 'تائید',
+                                    closeText: 'انصراف'
+                });
+            });
+        });
+    </script>
+}
