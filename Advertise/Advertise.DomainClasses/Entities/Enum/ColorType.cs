@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Advertise.DomainClasses.Entities
 {
-    class Company
+    public enum ColorType
     {
+        Red,
+        Blue,
+        Green,
+        Yellow
+
     }
 }

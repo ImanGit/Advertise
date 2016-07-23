@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Advertise.Web.Controllers
 {
-    public class PostController : Controller
+    public class DefaultController : Controller
     {
-        // GET: Post
+        // GET: Default
         public ActionResult Index()
         {
             return View();
