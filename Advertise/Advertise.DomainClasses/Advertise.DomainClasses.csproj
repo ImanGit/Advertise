@@ -54,8 +54,8 @@
     <Compile Include="Entities\Common\BaseEntity.cs" />
     <Compile Include="Entities\Common\Entity.cs" />
     <Compile Include="Entities\Enum\GenderType.cs" />
-    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Enum\SizeType.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

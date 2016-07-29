@@ -51,6 +51,14 @@
       <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EFCodeFirst.0.8\lib\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -168,7 +176,6 @@
     <Content Include="Error\GatewayTimeout.html" />
     <Content Include="Error\ServiceUnavailable.html" />
     <Content Include="Global.asax" />
-    <Content Include="InstallationDummyFile.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
@@ -309,10 +316,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Advertise.AutoMapperProfiles\Advertise.AutoMapperProfiles.csproj">
-      <Project>{2c345bda-c005-4462-9710-a9e22a8cc8d7}</Project>
-      <Name>Advertise.AutoMapperProfiles</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Advertise.Common\Advertise.Common.csproj">
       <Project>{477f0422-f887-4d64-af38-307fb82716ad}</Project>
       <Name>Advertise.Common</Name>
@@ -325,17 +328,9 @@
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Advertise.IocConfig\Advertise.IocConfig.csproj">
-      <Project>{e55a2d36-0ac5-4905-8abd-e30002e691c7}</Project>
-      <Name>Advertise.IocConfig</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Advertise.ServiceLayer\Advertise.ServiceLayer.csproj">
       <Project>{03d81571-7491-44c6-829d-5dd06a572ed9}</Project>
       <Name>Advertise.ServiceLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Advertise.Utility\Advertise.Utility.csproj">
-      <Project>{3e487ecb-d2bd-4176-9397-4d6a66d1572c}</Project>
-      <Name>Advertise.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\Advertise.ViewModel\Advertise.ViewModel.csproj">
       <Project>{306a3a29-1b7c-48c4-abf9-98ef5f7692fd}</Project>

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts;
+using Advertise.ServiceLayer.EFServices.Common;
 
 namespace Advertise.ServiceLayer.EFServices
 {
     /// <summary>
     /// 
     /// </summary>
-    public class UserService : IUserService
+    public class UserService : BaseService , IUserService 
     {
         #region Create
         /// <summary>

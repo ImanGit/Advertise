@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities.Common;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.ViewModel.Common
 {
-    public class Product : BaseEntity
+    public abstract class ViewModel
     {
     }
 }
