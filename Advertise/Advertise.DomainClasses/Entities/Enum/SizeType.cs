@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Advertise.DomainClasses.Entities
 {
-    class ColorType
+    class SizeType
     {
     }
 }

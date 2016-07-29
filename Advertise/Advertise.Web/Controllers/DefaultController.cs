@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace Advertise.Web.Controllers
 {
-    public partial class UserController : Controller
+    public class DefaultController : Controller
     {
-        // GET: User
-        public virtual ActionResult Index()
-        {
-            return View();
-        }
-
-        public virtual ActionResult List()
+        // GET: Default
+        public ActionResult Index()
         {
             return View();
         }

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
@@ -12,12 +11,12 @@ namespace Advertise.DomainClasses.Entities
         /// مذکر
         /// </summary>
         [Display(Name ="مرد")]
-        Male,
+        Male = 1,
 
         /// <summary>
         /// مونث
         /// </summary>
         [Display(Name ="زن")]
-        Female
+        Female = 2
     }
 }

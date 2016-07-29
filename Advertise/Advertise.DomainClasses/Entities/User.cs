@@ -40,7 +40,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// لیست پست های کاربر
         /// </summary>
-        public ICollection<Post> Posts { get; set; }
+        public ICollection<Product> Products { get; set; }
         #endregion
     }
 }

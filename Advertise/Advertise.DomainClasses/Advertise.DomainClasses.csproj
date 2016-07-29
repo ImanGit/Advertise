@@ -49,14 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\PostConfig.cs" />
     <Compile Include="Configurations\UserConfig.cs" />
-    <Compile Include="Entities\ColorType.cs" />
+    <Compile Include="Entities\Enum\ColorType.cs" />
     <Compile Include="Entities\Common\BaseEntity.cs" />
     <Compile Include="Entities\Common\Entity.cs" />
-    <Compile Include="Entities\Company.cs" />
-    <Compile Include="Entities\GenderType.cs" />
-    <Compile Include="Entities\Post.cs" />
+    <Compile Include="Entities\Enum\GenderType.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Enum\SizeType.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +63,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
