@@ -10,14 +10,14 @@ namespace Advertise.DomainClasses.Entities
     /// <summary>
     /// نشان دهنده پیام های عمومی
     /// </summary>
-    public class PublicMessage : BaseEntity
+    public class Notice : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public PublicMessage()
+        public Notice()
         {
             Id = Guid.NewGuid();
             IsVisible = true;
@@ -44,11 +44,6 @@ namespace Advertise.DomainClasses.Entities
         public DateTime RegisterDate { get; set; }
 
         /// <summary>
-        /// کاربری که پیام عمومی را ثبت کرده
-        /// </summary>
-        public Guid UserId { get; set; }
-
-        /// <summary>
         /// دیده شدن و نشدن پیام
         /// </summary>
         public bool  IsVisible { get; set; }
@@ -56,6 +51,10 @@ namespace Advertise.DomainClasses.Entities
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کاربری که پیام عمومی را ثبت کرده
+        /// </summary>
+        public virtual User User { get; set; }
 
         #endregion
     }

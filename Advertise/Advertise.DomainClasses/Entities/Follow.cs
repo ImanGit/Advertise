@@ -37,25 +37,25 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public Int32 FollowType { get; set; }
 
-        /// <summary>
-        /// کد اختصاصی شرکت
-        /// </summary>
-        public Guid? CompanyId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی کاربر
-        /// </summary>
-        public Guid UserId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی دسته محصول
-        /// </summary>
-        public Guid? CategoryId { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کد اختصاصی کاربر
+        /// </summary>
+        public virtual User User { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی دسته محصول
+        /// </summary>
+        public virtual Category Category { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی شرکت
+        /// </summary>
+        public virtual Company Company { get; set; }
 
         #endregion
     }

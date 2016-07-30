@@ -86,19 +86,20 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public string WebSite { get; set; }
 
-        /// <summary>
-        /// کد اختصاصی آدرس
-        /// </summary>
-        public Guid PlaceId { get; set; }
+        #endregion
+
+        #region NavigationProperties
 
         /// <summary>
         /// کد کاربری
         /// </summary>
-        public Guid UserId { get; set; }
+        public virtual User User { get; set; }
 
-        #endregion
 
-        #region NavigationProperties
+        /// <summary>
+        /// کد اختصاصی آدرس
+        /// </summary>
+        public virtual Place  Place { get; set; }
 
 
         #endregion

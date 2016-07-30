@@ -47,15 +47,15 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public string Aparat { get; set; }
 
-        /// <summary>
-        /// کد اختصاصی شرکت
-        /// </summary>
-        public Guid CompanyId { get; set; }
-
         #endregion
 
         #region NavigationProperties
 
+
+        /// <summary>
+        /// کد اختصاصی شرکت
+        /// </summary>
+        public virtual Company Company { get; set; }
 
         #endregion
     }

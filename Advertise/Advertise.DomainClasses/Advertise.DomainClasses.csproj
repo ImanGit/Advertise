@@ -65,15 +65,15 @@
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Payment.cs" />
     <Compile Include="Entities\Place.cs" />
-    <Compile Include="Entities\PrivateMessage.cs" />
+    <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Enum\SizeType.cs" />
     <Compile Include="Entities\Property.cs" />
     <Compile Include="Entities\PropertyTemplate.cs" />
-    <Compile Include="Entities\PublicMessage.cs" />
+    <Compile Include="Entities\Notice.cs" />
     <Compile Include="Entities\QuestionAnswer.cs" />
     <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\Security.cs" />
+    <Compile Include="Entities\Acount.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\Setting.cs" />
     <Compile Include="Entities\Social.cs" />
@@ -83,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

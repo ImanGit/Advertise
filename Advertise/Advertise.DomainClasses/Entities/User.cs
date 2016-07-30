@@ -79,11 +79,7 @@ namespace Advertise.DomainClasses.Entities
         /// آیا کاربر فعال است؟
         /// </summary>
         public bool IsActive { get; set; }
-
-        /// <summary>
-        /// موقعیت مکانی کاربر
-        /// </summary>
-        public Guid? PlaceId { get; set; }
+        
 
         /// <summary>
         /// جنسیت کاربر
@@ -99,9 +95,21 @@ namespace Advertise.DomainClasses.Entities
         /// لیست محصولات کاربر
         /// </summary>
         public ICollection<Product> Products { get; set; }
-
         public  ICollection<Comment> Comments { get; set; }
-        //public ICollection<Company> Companies { get; set; }
+        public ICollection<Company> Companies { get; set; }
+        public ICollection< Budget > Budgets { get; set; }
+        public ICollection<Follow > Follows  { get; set; }
+        public ICollection<Like > Likes  { get; set; }
+        public ICollection<Payment> Payments { get; set; }
+        public ICollection<Message> Messages { get; set; }
+        public ICollection<Notification> Notifications { get; set; }
+        public ICollection<QuestionAnswer> QuestionAnswers { get; set; }
+        public ICollection<Acount> Acounts { get; set; }
+        public ICollection<Notice> Notics { get; set; }
+        public ICollection<Log> Logs { get; set; }
+        public virtual Place Place { get; set; }
+        public ICollection<Setting> Settings { get; set; }
+
 
         #endregion
     }

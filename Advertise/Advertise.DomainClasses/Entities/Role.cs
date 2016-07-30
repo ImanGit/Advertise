@@ -33,16 +33,15 @@ namespace Advertise.DomainClasses.Entities
         /// عنوان دسته بندی
         /// </summary>
         public string Title { get; set; }
-
-        /// <summary>
-        /// توضیحات دسته بندی
-        /// </summary>
-        public Guid ActionId { get; set; }
-        
+       
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// توضیحات دسته بندی
+        /// </summary>
+        public virtual Action Action { get; set; }
 
         #endregion
     }

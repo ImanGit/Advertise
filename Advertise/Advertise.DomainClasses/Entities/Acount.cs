@@ -10,14 +10,14 @@ namespace Advertise.DomainClasses.Entities
     /// <summary>
     /// نشان دهنده امنیت کاربر
     /// </summary>
-    public class Security : BaseEntity
+    public class Acount : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Security()
+        public Acount()
         {
             Id = Guid.NewGuid();
 
@@ -75,28 +75,26 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آیا ایمیل کاربر تائید شده است؟
         /// </summary>
-        public Guid IsEmailConfirmed { get; set; }
+        public bool IsEmailConfirmed { get; set; }
 
         /// <summary>
         /// آیا موبایل کاربر تائید شده است؟
         /// </summary>
-        public Guid IsMobileConfirmed { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی نقش
-        /// </summary>
-        public Guid RoleId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی کاربر
-        /// </summary>
-        public Guid UserId { get; set; }
+        public bool IsMobileConfirmed { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کد اختصاصی نقش
+        /// </summary>
+        public virtual Role Role { get; set; }
 
+        /// <summary>
+        /// کد اختصاصی کاربر
+        /// </summary>
+        public virtual User User { get; set; }
         #endregion
     }
 }

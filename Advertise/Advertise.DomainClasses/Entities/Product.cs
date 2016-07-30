@@ -110,31 +110,28 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public string QRCode { get; set; }
 
-        /// <summary>
-        /// کاربر ثبت کننده ی محصول
-        /// </summary>
-        public Guid  UserId { get; set; }
+        #endregion
 
+        #region NavigationProperties
         /// <summary>
-        /// کمپانی ثبت کننده محصول
+        /// دسته بندی محصول
         /// </summary>
-        public Guid? CompanyId { get; set; }
+        public virtual Category  Category { get; set; }
 
         /// <summary>
         /// کد آدرس
         /// </summary>
-        public Guid PlaceId { get; set; }
+        public virtual Place  Place { get; set; }
 
         /// <summary>
-        /// دسته بندی محصول
+        /// کمپانی ثبت کننده محصول
         /// </summary>
-        public Guid CategoryId { get; set; }
+        public virtual Company Company { get; set; }
 
-
-
-        #endregion
-
-        #region NavigationProperties
+        /// <summary>
+        /// کاربر ثبت کننده ی محصول
+        /// </summary>
+        public virtual User User { get; set; }
 
 
         #endregion

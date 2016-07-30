@@ -37,21 +37,24 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public DateTime RegisterDate { get; set; }
 
-        /// <summary>
-        /// کد اختصاصی کاربر
-        /// </summary>
-        public Guid UserId { get; set; }
+       
+       
 
-        /// <summary>
-        /// کداختصاصی محصول
-        /// </summary>
-        public Guid ProductId { get; set; }
+     
 
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کد اختصاصی کاربر
+        /// </summary>
+        public virtual User User { get; set; }
 
+        /// <summary>
+        /// کداختصاصی محصول
+        /// </summary>
+        public virtual Product Product { get; set; }
         #endregion
     }
 }

@@ -48,15 +48,14 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public int  Order { get; set; }
 
-        /// <summary>
-        /// کداختصاصی محصول
-        /// </summary>
-        public Guid ProductId { get; set; }
-
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کداختصاصی محصول
+        /// </summary>
+        public virtual Product Product { get; set; }
 
         #endregion
     }

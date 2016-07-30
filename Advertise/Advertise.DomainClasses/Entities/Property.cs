@@ -31,22 +31,19 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public string  Value { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public Guid  ProductId { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Guid  PropertyTemplateId { get; set; }
-
-     
-
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual Product Product { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public virtual PropertyTemplate PropertyTemplate { get; set; }
 
         #endregion
     }

@@ -10,14 +10,14 @@ namespace Advertise.DomainClasses.Entities
     /// <summary>
     /// نشان دهنده پیام خصوصی
     /// </summary>
-    public class PrivateMessage : BaseEntity
+    public class Message : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public PrivateMessage()
+        public Message()
         {
             Id = Guid.NewGuid();
             IsViewed = false;
@@ -41,26 +41,25 @@ namespace Advertise.DomainClasses.Entities
         /// آیا پیام توسط کاربر خوانده شده؟
         /// </summary>
         public bool  IsViewed { get; set; }
-
-        /// <summary>
-        /// کد پیام پاسخ داده شده
-        /// </summary>
-        public Guid ReplyId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی کاربر فرستنده
-        /// </summary>
-        public Guid FromUserId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی کاربر گیرنده
-        /// </summary>
-        public Guid ToUserId { get; set; }
-
+      
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کد اختصاصی کاربر فرستنده
+        /// </summary>
+        public virtual User FromUser  { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی کاربر گیرنده
+        /// </summary>
+        public virtual User ToUser { get; set; }
+
+        /// <summary>
+        /// کد پیام پاسخ داده شده
+        /// </summary>
+        public virtual Message  Reply  { get; set; }
 
         #endregion
     }

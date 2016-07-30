@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,20 +53,18 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public Guid?  UserIdIsAccept { get; set; }
 
+        #endregion
+
+        #region NavigationProperties
         /// <summary>
-        /// کاربری که کامنت گذاشته
+        /// کاربری که کامنت گذاشته 
         /// </summary>
-        public Guid  UserId { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// کداختصاصی محصول
         /// </summary>
-        public Guid ProductId { get; set; }
-
-        #endregion
-
-        #region NavigationProperties
-
+        public virtual Product Product  { get; set; }
 
         #endregion
     }

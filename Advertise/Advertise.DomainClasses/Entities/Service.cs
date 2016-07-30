@@ -41,7 +41,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// مدت سرویس(یکماهه،دو ماهه و...)
         /// </summary>
-        public Guid Duration { get; set; }
+        public string Duration { get; set; }
 
         /// <summary>
         /// قیمت سرویس
@@ -51,17 +51,17 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آیا سرویس فعال است؟
         /// </summary>
-        public string IsEnabled { get; set; }
+        public bool  IsEnabled { get; set; }
 
         /// <summary>
         /// تاریخ شروع سرویس
         /// </summary>
-        public string FromDate { get; set; }
+        public DateTime FromDate { get; set; }
 
         /// <summary>
         /// تاریخ پایان سرویس
         /// </summary>
-        public Guid ToDate { get; set; }
+        public DateTime ToDate { get; set; }
 
         #endregion
 

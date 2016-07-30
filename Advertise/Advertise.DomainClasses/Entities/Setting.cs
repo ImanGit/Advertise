@@ -25,11 +25,6 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// کد اختصاصی کاربر
-        /// </summary>
-        public Guid  Userid { get; set; }
-
-        /// <summary>
         /// زبان انتخابی کاربر
         /// </summary>
         public int  Language { get; set; }
@@ -39,13 +34,15 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public int Theme { get; set; }
 
-      
+
 
         #endregion
 
         #region NavigationProperties
-
-
+        /// <summary>
+        /// کد اختصاصی کاربر
+        /// </summary>
+        public virtual User User { get; set; }
         #endregion
     }
 }

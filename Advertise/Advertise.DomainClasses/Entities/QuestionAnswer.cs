@@ -52,27 +52,24 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public bool  IsAllowed { get; set; }
 
+       #endregion
+
+        #region NavigationProperties
+
         /// <summary>
         /// کد اختصاصی پاسخ
         /// </summary>
-        public Guid ReplyId { get; set; }
+        public virtual QuestionAnswer Answer { get; set; }
 
         /// <summary>
         /// کد اختصاصی کمپانی
         /// </summary>
-        public Guid CompanyId { get; set; }
+        public virtual Company Company { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public Guid UserId { get; set; }
-
-
-        #endregion
-
-        #region NavigationProperties
-
-
+        public virtual User  User { get; set; }
         #endregion
     }
 }

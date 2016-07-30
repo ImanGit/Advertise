@@ -34,17 +34,14 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public int  PropertyType { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public Guid  CategoryId { get; set; }
-
-      
-
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual Category  Category { get; set; }
 
         #endregion
     }

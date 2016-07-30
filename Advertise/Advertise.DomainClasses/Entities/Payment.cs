@@ -41,26 +41,24 @@ namespace Advertise.DomainClasses.Entities
         /// پایان تاریخ اعتبار پرداخت
         /// </summary>
         public DateTime ToDate { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی سرویس خریداری شده
-        /// </summary>
-        public Guid ServiceId { get; set; }
-
-        /// <summary>
-        /// کاربری که کامنت گذاشته
-        /// </summary>
-        public Guid UserId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی بودجه
-        /// </summary>
-        public Guid BudgetId { get; set; }
-
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// کد اختصاصی سرویس خریداری شده
+        /// </summary>
+        public virtual Service Service { get; set; }
+
+        /// <summary>
+        /// کاربری که کامنت گذاشته
+        /// </summary>
+        public virtual User  User { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی بودجه
+        /// </summary>
+        public virtual Budget Budget { get; set; }
 
         #endregion
     }

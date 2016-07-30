@@ -39,14 +39,15 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid  ParentId { get; set; }
+        public string  ParentId { get; set; }
 
-       
+
 
         #endregion
 
         #region NavigationProperties
 
+       
 
         #endregion
     }

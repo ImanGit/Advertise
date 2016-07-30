@@ -47,19 +47,15 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public DateTime RegisterDate { get; set; }
 
-        /// <summary>
-        /// کد اختصاصی کاربر
-        /// </summary>
-        public Guid  UserId { get; set; }
-
+       
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        /// لیست محصولات کاربر
+        /// کد اختصاصی کاربر
         /// </summary>
-        public ICollection<Product> Products { get; set; }
+        public virtual User User { get; set; }
 
         #endregion
     }

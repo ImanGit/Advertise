@@ -33,14 +33,25 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public DateTime RegisterDate { get; set; }
 
-        /// <summary>
-        /// کد اختصاصی کاربری که لایک انجام داده
-        /// </summary>
-        public Guid  UserId { get; set; }
-
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        /// کد اختصاصی کاربری که لایک انجام داده
+        /// </summary>
+        public virtual User User { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی کامنت
+        /// </summary>
+        public virtual Comment Comment { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی محصول
+        /// </summary>
+        public virtual Product Product { get; set; }
+
 
 
         #endregion
