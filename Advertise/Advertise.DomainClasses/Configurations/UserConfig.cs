@@ -13,27 +13,20 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public UserConfig()
         {
-            ToTable(tableName: "AD_Users");
+            ToTable("AD_Users");
 
-            Property(d => d.FirstName).IsOptional().HasMaxLength(20);
+            Property(user => user.FirstName).IsOptional().HasMaxLength(50);
+            Property(user => user.LastName).IsOptional().HasMaxLength(50);
+            Property(user => user.Gender).IsRequired();
+            Property(user => user.AvatarPath).IsOptional();
+            Property(user => user.DisplayName).IsOptional().HasMaxLength(255);
+            Property(user => user.RowVersion).IsRowVersion();
 
-            Property(c => c.Gender).HasColumnName("User_Gender");
-
-            Property(c => c.Avatar).IsOptional().HasColumnName("User_AvatarPath");
-
-            Property(c => c.DisplayName).IsOptional().HasMaxLength(255).HasColumnName("User_DisplayName");
-
-
-
-            HasMany(c=>c.Notifications).WithRequired(d=>d.User).WillCascadeOnDelete();
-
-            //HasKey(f => f.Id);
-
-
-
-
-            //Hasop(c=>c.Notifications).WithMany().HasForeignKey(d=>d.)
-
+            HasMany(user => user.Notifications)
+                .WithRequired(notification => notification.User)
+                .WillCascadeOnDelete(true);
+            HasMany(user => user.Products).WithRequired(product => product.User).WillCascadeOnDelete(true);
+            HasMany(user => user.Accounts).WithRequired(account => account.User).WillCascadeOnDelete(true);
         }
     }
 }

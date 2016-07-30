@@ -10,14 +10,14 @@ namespace Advertise.DomainClasses.Entities
     /// <summary>
     /// نشان دهنده امنیت کاربر
     /// </summary>
-    public class Acount : BaseEntity
+    public class Account : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Acount()
+        public Account()
         {
             Id = Guid.NewGuid();
 

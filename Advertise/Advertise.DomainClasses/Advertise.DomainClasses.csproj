@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\StatisticConfig.cs" />
     <Compile Include="Configurations\UserConfig.cs" />
     <Compile Include="Entities\Budget.cs" />
     <Compile Include="Entities\Category.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Entities\Notice.cs" />
     <Compile Include="Entities\QuestionAnswer.cs" />
     <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\Acount.cs" />
+    <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\Setting.cs" />
     <Compile Include="Entities\Social.cs" />

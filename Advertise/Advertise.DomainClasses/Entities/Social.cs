@@ -30,22 +30,22 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// اکانت تویتر شرکت
         /// </summary>
-        public string Twitter { get; set; }
+        public string TwitterLink { get; set; }
 
         /// <summary>
         /// اکانت فیس بوک شرکت
         /// </summary>
-        public string Facebook { get; set; }
+        public string FacebookLink { get; set; }
 
         /// <summary>
         /// اکانت گوگل پلاس شرکت
         /// </summary>
-        public string GooglePlus { get; set; }
+        public string GooglePlusLink { get; set; }
 
         /// <summary>
         /// اکانت آپارات شرکت
         /// </summary>
-        public string Aparat { get; set; }
+        public string AparatLink { get; set; }
 
         #endregion
 

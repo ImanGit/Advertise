@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common ;
 
 namespace Advertise.DomainClasses.Entities
@@ -13,7 +9,6 @@ namespace Advertise.DomainClasses.Entities
     public class Statistic : BaseEntity
     {
         #region Ctor
-
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
@@ -22,13 +17,11 @@ namespace Advertise.DomainClasses.Entities
             Id = Guid.NewGuid();
 
         }
-
         #endregion
 
         #region Properties
-
         /// <summary>
-        /// ip که وارد سایت شده
+        /// آی پی کاربری که وارد سایت شده
         /// </summary>
         public string Ip { get; set; }
 
