@@ -8,19 +8,19 @@ using Advertise.DomainClasses.Entities.Common;
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده سیستم کامنت گذاری
+    /// نشان دهنده نحوه پرداخت
     /// </summary>
-    public  class Comment :BaseEntity 
+    public class Payment : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Comment()
+        public Payment()
         {
             Id = Guid.NewGuid();
-            IsAccepted = false;
+
         }
 
         #endregion
@@ -28,39 +28,34 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// متن کامنت
-        /// </summary>
-        public string  Content { get; set; }
-
-        /// <summary>
-        /// تاریخ ایجاد کامنت
+        /// تاریخ پرداخت
         /// </summary>
         public DateTime RegisterDate { get; set; }
 
         /// <summary>
-        /// تعداد لایکهای کامنت
+        ///شروع تاریخ اعتبار پرداخت
         /// </summary>
-        public Int32? LikeCount { get; set; }
+        public DateTime FromDate { get; set; }
 
         /// <summary>
-        /// آیا کامنت از سوی اپراتور پذیرفته شده است؟
+        /// پایان تاریخ اعتبار پرداخت
         /// </summary>
-        public bool  IsAccepted { get; set; }
+        public DateTime ToDate { get; set; }
 
         /// <summary>
-        /// کاربری (اپراتور)که کامنت را تائید کرده است
+        /// کد اختصاصی سرویس خریداری شده
         /// </summary>
-        public Guid?  UserIdIsAccept { get; set; }
+        public Guid ServiceId { get; set; }
 
         /// <summary>
         /// کاربری که کامنت گذاشته
         /// </summary>
-        public Guid  UserId { get; set; }
+        public Guid UserId { get; set; }
 
         /// <summary>
-        /// کداختصاصی محصول
+        /// کد اختصاصی بودجه
         /// </summary>
-        public Guid ProductId { get; set; }
+        public Guid BudgetId { get; set; }
 
         #endregion
 

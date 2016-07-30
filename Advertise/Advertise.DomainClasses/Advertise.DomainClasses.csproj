@@ -50,17 +50,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\UserConfig.cs" />
+    <Compile Include="Entities\Budget.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Enum\ColorType.cs" />
     <Compile Include="Entities\Common\BaseEntity.cs" />
     <Compile Include="Entities\Common\Entity.cs" />
     <Compile Include="Entities\Enum\GenderType.cs" />
+    <Compile Include="Entities\Follow.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\Like.cs" />
+    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Entities\Place.cs" />
+    <Compile Include="Entities\PrivateMessage.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Enum\SizeType.cs" />
+    <Compile Include="Entities\Property.cs" />
+    <Compile Include="Entities\PropertyTemplate.cs" />
+    <Compile Include="Entities\PublicMessage.cs" />
+    <Compile Include="Entities\QuestionAnswer.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\Security.cs" />
+    <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\Setting.cs" />
+    <Compile Include="Entities\Social.cs" />
+    <Compile Include="Entities\Statistic.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
