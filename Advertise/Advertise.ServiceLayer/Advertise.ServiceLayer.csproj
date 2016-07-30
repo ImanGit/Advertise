@@ -51,7 +51,8 @@
   <ItemGroup>
     <Compile Include="Contracts\IPostService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
-    <Compile Include="EFServices\PostService.cs" />
+    <Compile Include="EFServices\Common\BaseService.cs" />
+    <Compile Include="EFServices\Common\Service.cs" />
     <Compile Include="EFServices\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

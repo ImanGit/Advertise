@@ -13,7 +13,8 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public UserConfig()
         {
-            ToTable(tableName: "AD_User");
+            ToTable(tableName: "AD_Users");
+            Property(d => d.FirstName).IsOptional();
         }
     }
 }
