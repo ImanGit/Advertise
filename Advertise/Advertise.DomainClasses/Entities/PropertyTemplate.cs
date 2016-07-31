@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities.Common ;
+using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PropertyTemplate : BaseEntity
     {
         #region Ctor
@@ -17,7 +17,6 @@ namespace Advertise.DomainClasses.Entities
         public PropertyTemplate()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -27,12 +26,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public string  Title { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public int  PropertyType { get; set; }
+        public PropertyType Property { get; set; }
 
         #endregion
 
@@ -41,7 +40,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public virtual Category  Category { get; set; }
+        public virtual Category Category { get; set; }
 
         #endregion
     }

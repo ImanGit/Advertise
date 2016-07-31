@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities.Common ;
+using Advertise.DomainClasses.Entities.Common;
+
 namespace Advertise.DomainClasses.Entities
 {
-    public class Service : BaseEntity
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Plan : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Service()
+        public Plan()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -26,7 +25,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد سرویس
         /// </summary>
-        public Int32 Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// عنوان سریس
@@ -41,17 +40,17 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// مدت سرویس(یکماهه،دو ماهه و...)
         /// </summary>
-        public string Duration { get; set; }
+        public string DurationDay { get; set; }
 
         /// <summary>
         /// قیمت سرویس
         /// </summary>
-        public Int32 Cost { get; set; }
+        public Int32 CostValue { get; set; }
 
         /// <summary>
         /// آیا سرویس فعال است؟
         /// </summary>
-        public bool  IsEnabled { get; set; }
+        public bool IsEnabled { get; set; }
 
         /// <summary>
         /// تاریخ شروع سرویس

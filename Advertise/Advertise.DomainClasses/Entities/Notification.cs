@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
@@ -30,17 +26,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آیا کاربر هشدارها را مشاهده کرده؟
         /// </summary>
-        public bool  IsViewed { get; set; }
+        public bool IsViewed { get; set; }
 
         /// <summary>
         /// زمان ارسال هشدار
         /// </summary>
-        public DateTime RegisterDate { get; set; }
-
-       
-       
-
-     
+        public DateTime CreateDate { get; set; }
 
         #endregion
 
@@ -55,6 +46,7 @@ namespace Advertise.DomainClasses.Entities
         /// کداختصاصی محصول
         /// </summary>
         public virtual Product Product { get; set; }
+
         #endregion
     }
 }

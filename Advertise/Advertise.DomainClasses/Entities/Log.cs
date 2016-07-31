@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities
 {
@@ -39,19 +36,17 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public int  LogLevelType { get; set; }
+        public LogLevelType LogLevel { get; set; }
 
         /// <summary>
         /// تاریخ ایجاد لاگ
         /// </summary>
-        public DateTime  Date { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public Guid? UserId { get; set; }
-
-      
+        public User User { get; set; }
 
         #endregion
 
@@ -60,5 +55,4 @@ namespace Advertise.DomainClasses.Entities
 
         #endregion
     }
-
 }

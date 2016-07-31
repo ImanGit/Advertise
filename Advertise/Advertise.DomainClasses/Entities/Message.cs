@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
@@ -40,8 +37,8 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آیا پیام توسط کاربر خوانده شده؟
         /// </summary>
-        public bool  IsViewed { get; set; }
-      
+        public bool IsViewed { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -49,7 +46,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد اختصاصی کاربر فرستنده
         /// </summary>
-        public virtual User FromUser  { get; set; }
+        public virtual User FromUser { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر گیرنده
@@ -59,7 +56,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد پیام پاسخ داده شده
         /// </summary>
-        public virtual Message  Reply  { get; set; }
+        public virtual Message Reply { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ICollection<Message> Messages { get; set; }
 
         #endregion
     }

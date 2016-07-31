@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities.Common ;
+using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Like : BaseEntity
     {
         #region Ctor
@@ -26,7 +26,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// نوع لایک
         /// </summary>
-        public int  LikeType { get; set; }
+        public LikeType Type { get; set; }
 
         /// <summary>
         /// تاریخ ثبت لایک
@@ -52,9 +52,6 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public virtual Product Product { get; set; }
 
-
-
         #endregion
     }
-
 }

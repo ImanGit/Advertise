@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Image : BaseEntity
     {
         #region Ctor
@@ -24,29 +23,29 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// نام عکس
+        /// عنوان عکس
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
         /// نام فایل
         /// </summary>
-        public string  FileName { get; set; }
+        public string FileName { get; set; }
 
         /// <summary>
         /// سایز عکس
         /// </summary>
-        public string  Size { get; set; }
+        public string FileSize { get; set; }
 
         /// <summary>
         /// حجم عکس
         /// </summary>
-        public string  Dimension { get; set; }
+        public string FileDimension { get; set; }
 
         /// <summary>
         /// ترتیب عکس
         /// </summary>
-        public int  Order { get; set; }
+        public int Order { get; set; }
 
         #endregion
 
@@ -59,6 +58,4 @@ namespace Advertise.DomainClasses.Entities
 
         #endregion
     }
-
-
 }

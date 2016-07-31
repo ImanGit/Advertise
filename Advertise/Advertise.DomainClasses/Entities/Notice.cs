@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common ;
 
 namespace Advertise.DomainClasses.Entities
@@ -21,7 +17,6 @@ namespace Advertise.DomainClasses.Entities
         {
             Id = Guid.NewGuid();
             IsVisible = true;
-
         }
 
         #endregion
@@ -41,12 +36,13 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// تاریخ ایجاد پیام عمومی
         /// </summary>
-        public DateTime RegisterDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         /// <summary>
         /// دیده شدن و نشدن پیام
         /// </summary>
-        public bool  IsVisible { get; set; }
+        public bool IsVisible { get; set; }
+
         #endregion
 
         #region NavigationProperties

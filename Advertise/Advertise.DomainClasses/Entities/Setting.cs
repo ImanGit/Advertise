@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities.Common ;
+using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Setting : BaseEntity
     {
         #region Ctor
@@ -17,7 +17,6 @@ namespace Advertise.DomainClasses.Entities
         public Setting()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -27,22 +26,22 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// زبان انتخابی کاربر
         /// </summary>
-        public int  Language { get; set; }
+        public LanguageType Language { get; set; }
 
         /// <summary>
         /// تم انتخابی کاربر
         /// </summary>
-        public int Theme { get; set; }
-
-
+        public ThemeType Theme { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
         /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
         public virtual User User { get; set; }
+
         #endregion
     }
 }
