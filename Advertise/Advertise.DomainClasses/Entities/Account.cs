@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
@@ -20,7 +16,6 @@ namespace Advertise.DomainClasses.Entities
         public Account()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -35,7 +30,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// موبایل کاربر
         /// </summary>
-        public string Mobile { get; set; }
+        public string MobileNumber { get; set; }
 
         /// <summary>
         /// پسورد کاربر
@@ -45,7 +40,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// تاریخ ثبت نام کاربر
         /// </summary>
-        public DateTime  RegisterDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         /// <summary>
         /// نام کاربری ورود به برنامه
@@ -55,7 +50,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آخرین زمان ورود به سایت
         /// </summary>
-        public DateTime LastLogin { get; set; }
+        public DateTime LastLoginDate { get; set; }
 
         /// <summary>
         /// آیا کاربر بلاک شده؟
@@ -100,6 +95,7 @@ namespace Advertise.DomainClasses.Entities
         /// کد اختصاصی کاربر
         /// </summary>
         public virtual User User { get; set; }
+
         #endregion
     }
 }

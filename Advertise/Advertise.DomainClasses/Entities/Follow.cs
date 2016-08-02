@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
-using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// شان دهنده علاقه مندی ها
+    /// نشان دهنده علاقه مندی ها
     /// </summary>
-    public class Follow : BaseEntity 
+    public class Follow : BaseEntity
     {
         #region Ctor
 
@@ -35,7 +31,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// نوع علاقه مندی(شرکت یا دسته محصول)
         /// </summary>
-        public Int32 FollowType { get; set; }
+        public FollowType Type { get; set; }
 
 
         #endregion
@@ -59,5 +55,4 @@ namespace Advertise.DomainClasses.Entities
 
         #endregion
     }
-   
 }

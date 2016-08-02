@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
@@ -20,7 +16,6 @@ namespace Advertise.DomainClasses.Entities
         public Payment()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -30,7 +25,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// تاریخ پرداخت
         /// </summary>
-        public DateTime RegisterDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         /// <summary>
         ///شروع تاریخ اعتبار پرداخت
@@ -48,12 +43,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد اختصاصی سرویس خریداری شده
         /// </summary>
-        public virtual Service Service { get; set; }
+        public virtual Plan Plan { get; set; }
 
         /// <summary>
         /// کاربری که کامنت گذاشته
         /// </summary>
-        public virtual User  User { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// کد اختصاصی بودجه

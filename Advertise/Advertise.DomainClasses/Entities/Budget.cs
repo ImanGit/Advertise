@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
@@ -20,7 +16,7 @@ namespace Advertise.DomainClasses.Entities
         public Budget()
         {
             Id = Guid.NewGuid();
-            Remain = 0;
+            RemainValue = 0;
         }
 
         #endregion
@@ -30,24 +26,23 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// بودجه باقی مانده حساب مالی کاربر
         /// </summary>
-        public Int32 Remain { get; set; }
+        public Int32 RemainValue { get; set; }
 
         /// <summary>
         /// افزایش و کاهش حساب مالی کاربر
         /// </summary>
-        public Int32 IncDec { get; set; }
+        public Int32 IncDecValue { get; set; }
 
         /// <summary>
         /// کدرهگیری که بانک میدهد
         /// </summary>
-        public string RefCode { get; set; }
+        public string ReffrenceCode { get; set; }
 
         /// <summary>
         /// زمان انجام تغییر حساب مالی کاربری
         /// </summary>
-        public DateTime RegisterDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
-       
         #endregion
 
         #region NavigationProperties

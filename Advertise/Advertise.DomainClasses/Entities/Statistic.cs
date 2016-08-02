@@ -9,17 +9,19 @@ namespace Advertise.DomainClasses.Entities
     public class Statistic : BaseEntity
     {
         #region Ctor
+
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
         public Statistic()
         {
             Id = Guid.NewGuid();
-
         }
+
         #endregion
 
         #region Properties
+
         /// <summary>
         /// آی پی کاربری که وارد سایت شده
         /// </summary>
@@ -28,7 +30,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// زمانی که وارد سایت شدند
         /// </summary>
-        public DateTime  Date { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// با چه Browser  ی وارد سایت شدند

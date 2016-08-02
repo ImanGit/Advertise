@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Role : BaseEntity
     {
         #region Ctor
@@ -17,7 +16,6 @@ namespace Advertise.DomainClasses.Entities
         public Role()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -27,13 +25,13 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد دسته بندی
         /// </summary>
-        public Int32 Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// عنوان دسته بندی
         /// </summary>
         public string Title { get; set; }
-       
+
         #endregion
 
         #region NavigationProperties

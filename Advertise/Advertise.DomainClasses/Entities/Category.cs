@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common ;
 
 namespace Advertise.DomainClasses.Entities
@@ -20,7 +17,6 @@ namespace Advertise.DomainClasses.Entities
         public Category()
         {
             Id = Guid.NewGuid();
-           
         }
 
         #endregion
@@ -30,27 +26,31 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد دسته بندی
         /// </summary>
-        public Int32 Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// عنوان دسته بندی
         /// </summary>
-        public string  Title { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// توضیحات دسته بندی
         /// </summary>
         public string Description { get; set; }
 
-        /// <summary>
-        /// پدر دسته بندی
-        /// </summary>
-        public Guid  ParentId { get; set; }
-
         #endregion
 
         #region NavigationProperties
 
+        /// <summary>
+        /// والد دسته بندی
+        /// </summary>
+        public virtual Category Parent { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ICollection<Category> Categories { get; set; }
 
         #endregion
     }

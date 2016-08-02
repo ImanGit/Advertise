@@ -28,7 +28,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد کاربر
         /// </summary>
-        public Int32 Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// نام کاربر
@@ -63,12 +63,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// موقعیت مکانی کاربر
         /// </summary>
-        public string Location { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
         /// عکس یا لوگو کاربر
         /// </summary>
-        public string AvatarPath { get; set; }
+        public string AvatarFileName { get; set; }
 
         /// <summary>
         /// آیا کاربر حذف شده است؟
@@ -92,7 +92,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// شهر محل زندگی کاربر
         /// </summary>
-        public virtual Place Places { get; set; }
+        public virtual City City { get; set; }
 
         /// <summary>
         /// لیست محصولات کاربر
@@ -142,7 +142,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// لیست سوال های کاربر
         /// </summary>
-        public ICollection<QuestionAnswer> QuestionAnswers { get; set; }
+        public ICollection<Question> QuestionAnswers { get; set; }
 
         /// <summary>
         /// لیست اکانت کاربر

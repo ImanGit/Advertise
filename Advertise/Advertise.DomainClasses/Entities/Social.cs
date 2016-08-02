@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common ;
 
 namespace Advertise.DomainClasses.Entities
@@ -20,7 +16,6 @@ namespace Advertise.DomainClasses.Entities
         public Social()
         {
             Id = Guid.NewGuid();
-
         }
 
         #endregion
@@ -50,7 +45,6 @@ namespace Advertise.DomainClasses.Entities
         #endregion
 
         #region NavigationProperties
-
 
         /// <summary>
         /// کد اختصاصی شرکت

@@ -28,7 +28,7 @@ namespace Advertise.DomainClasses.Entities
         ///// <summary>
         ///// کد محصول
         ///// </summary>
-        //public string Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// عنوان محصول
@@ -38,12 +38,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// تاریخ ثبت محصول
         /// </summary>
-        public DateTime  RegisterDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         /// <summary>
         /// آدرس محصول
         /// </summary>
-        public string Location { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
         /// شماره همراه
@@ -68,12 +68,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// تعداد دفعات مشاهده
         /// </summary>
-        public Int32 VisitCount { get; set; }
+        public Int32? VisitedCount { get; set; }
 
         /// <summary>
         /// تعداد لایک
         /// </summary>
-        public Int32? LikeCount { get; set; }
+        public Int32? LikedCount { get; set; }
 
         /// <summary>
         /// آیا اپراتور محصول را تائید کرده است؟
@@ -81,47 +81,38 @@ namespace Advertise.DomainClasses.Entities
         public bool IsAccepted { get; set; }
 
         /// <summary>
-        /// کاربری که محصول را تائید کرده است
-        /// </summary>
-        public Guid? UserIdIsAccepted { get; set; }
-
-        /// <summary>
         /// آیا محصول ویرایش شده است؟
         /// </summary>
-        public bool  IsEdited { get; set; }
+        public bool IsEdited { get; set; }
 
         /// <summary>
         /// آیا محصول پاک شده است؟
         /// </summary>
-        public bool  IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
         /// <summary>
         /// تاریخ حذف محصول
         /// </summary>
-        public DateTime  DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
 
         /// <summary>
         /// تاریخ ویرایش محصول
         /// </summary>
-        public DateTime EditDate { get; set; }
-
-        /// <summary>
-        /// کد رهگیری ثبت شده
-        /// </summary>
-        public string QRCode { get; set; }
+        public DateTime? EditDate { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
         /// <summary>
         /// دسته بندی محصول
         /// </summary>
-        public virtual Category  Category { get; set; }
+        public virtual Category Category { get; set; }
 
         /// <summary>
         /// کد آدرس
         /// </summary>
-        public virtual Place  Place { get; set; }
+        public virtual City City { get; set; }
 
         /// <summary>
         /// کمپانی ثبت کننده محصول
@@ -131,8 +122,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کاربر ثبت کننده ی محصول
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual User CreateUser { get; set; }
 
+        /// <summary>
+        /// کاربری که محصول را تائید کرده است
+        /// </summary>
+        public virtual User AcceptUser { get; set; }
 
         #endregion
     }

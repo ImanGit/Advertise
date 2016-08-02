@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common ;
 
 namespace Advertise.DomainClasses.Entities
@@ -29,7 +25,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کد کمپانی
         /// </summary>
-        public Int32 Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// نام شرکت
@@ -39,22 +35,22 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// توضیحات مربوط به شرکت
         /// </summary>
-        public string  Description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// برند؟
         /// </summary>
-        public string  Brand { get; set; }
+        public string BrandFileName { get; set; }
 
         /// <summary>
         /// تاریخچه شرکت
         /// </summary>
-        public string  Background { get; set; }
+        public string BackgroundFileName { get; set; }
 
         /// <summary>
         /// تعداد دیده شده شرکت
         /// </summary>
-        public Int32? VisitCount { get; set; }
+        public Int32? VisitedCount { get; set; }
 
         /// <summary>
         /// کد پستی شرکت
@@ -64,7 +60,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آدرس شرکت
         /// </summary>
-        public string Location { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
         /// شماره تلفن(های) شرکت
@@ -95,14 +91,11 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public virtual User User { get; set; }
 
-
         /// <summary>
         /// کد اختصاصی آدرس
         /// </summary>
-        public virtual Place  Place { get; set; }
-
+        public virtual City City { get; set; }
 
         #endregion
     }
-
 }
