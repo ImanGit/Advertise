@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AccountConfig.cs" />
     <Compile Include="Configurations\StatisticConfig.cs" />
     <Compile Include="Configurations\UserConfig.cs" />
     <Compile Include="Entities\Budget.cs" />

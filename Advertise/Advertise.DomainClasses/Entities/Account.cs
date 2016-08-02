@@ -82,6 +82,11 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public bool IsMobileConfirmed { get; set; }
 
+        /// <summary>
+        /// آیا کاربر مهمان است؟
+        /// </summary>
+        public bool IsGuested { get; set; }
+
         #endregion
 
         #region NavigationProperties
