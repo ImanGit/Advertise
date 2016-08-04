@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public ProductConfig()
         {
-            ToTable("AD_Product");
+            //ToTable("AD_Product");
 
             Property(product => product.Address).IsOptional().HasMaxLength(255);
             Property(product => product.Code).IsRequired().HasMaxLength(50);

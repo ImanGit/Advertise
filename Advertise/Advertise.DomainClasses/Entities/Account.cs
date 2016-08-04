@@ -82,14 +82,24 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid RoleId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی نقش
         /// </summary>
-        public virtual Role Role { get; set; }
+        public Role Role { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid UserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
 
         #endregion
     }

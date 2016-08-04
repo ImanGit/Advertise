@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Advertise.DataLayer.Context
 {
-    class IUnitOfWork
+    /// <summary>
+    /// الگوی کار واحد
+    /// </summary>
+    public interface IUnitOfWork
     {
     }
 }

@@ -90,9 +90,14 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// کلید خارجی شهر
+        /// </summary>
+        public Guid CityId { get; set; }
+
+        /// <summary>
         /// شهر محل زندگی کاربر
         /// </summary>
-        public virtual City City { get; set; }
+        public City City { get; set; }
 
         /// <summary>
         /// لیست محصولات کاربر
@@ -142,7 +147,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// لیست سوال های کاربر
         /// </summary>
-        public ICollection<Question> QuestionAnswers { get; set; }
+        public ICollection<Question> Questions { get; set; }
 
         /// <summary>
         /// لیست اکانت کاربر

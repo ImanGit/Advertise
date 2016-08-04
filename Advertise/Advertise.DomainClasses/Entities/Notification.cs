@@ -38,14 +38,24 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid UserId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid ProductId { get; set; }
 
         /// <summary>
         /// کداختصاصی محصول
         /// </summary>
-        public virtual Product Product { get; set; }
+        public Product Product { get; set; }
 
         #endregion
     }

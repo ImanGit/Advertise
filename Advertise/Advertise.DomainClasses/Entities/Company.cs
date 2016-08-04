@@ -87,14 +87,24 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid UserId { get; set; }
+
+        /// <summary>
         /// کد کاربری
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid CityId { get; set; }
 
         /// <summary>
         /// کد اختصاصی آدرس
         /// </summary>
-        public virtual City City { get; set; }
+        public City City { get; set; }
 
         #endregion
     }

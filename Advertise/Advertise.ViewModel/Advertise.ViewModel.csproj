@@ -63,9 +63,7 @@
     <Compile Include="Models\User\UserSearchRequest.cs" />
     <Compile Include="Models\User\UserViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Post\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

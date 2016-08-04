@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public StatisticConfig()
         {
-            ToTable("AD_Statistics");
+            //ToTable("AD_Statistics");
 
             Property(statistic => statistic.Browser).IsRequired();
             Property(statistic => statistic.Date).IsRequired();

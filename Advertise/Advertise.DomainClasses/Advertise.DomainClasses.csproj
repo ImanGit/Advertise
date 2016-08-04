@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\CityConfig.cs" />
+    <Compile Include="Configurations\Common\BaseConfig.cs" />
+    <Compile Include="Configurations\Common\Config.cs" />
     <Compile Include="Configurations\PaymentConfig.cs" />
     <Compile Include="Configurations\PlanConfig.cs" />
     <Compile Include="Configurations\ProductConfig.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Configurations\SocialConfig.cs" />
     <Compile Include="Configurations\StatisticConfig.cs" />
     <Compile Include="Configurations\UserConfig.cs" />
+    <Compile Include="Entities\Action.cs" />
     <Compile Include="Entities\Budget.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Comment.cs" />

@@ -105,29 +105,54 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid CategoryId { get; set; }
+
+        /// <summary>
         /// دسته بندی محصول
         /// </summary>
-        public virtual Category Category { get; set; }
+        public Category Category { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid CityId { get; set; }
 
         /// <summary>
         /// کد آدرس
         /// </summary>
-        public virtual City City { get; set; }
+        public City City { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid CompanyId { get; set; }
 
         /// <summary>
         /// کمپانی ثبت کننده محصول
         /// </summary>
-        public virtual Company Company { get; set; }
+        public Company Company { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid CreateUserId { get; set; }
 
         /// <summary>
         /// کاربر ثبت کننده ی محصول
         /// </summary>
-        public virtual User CreateUser { get; set; }
+        public User CreateUser { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid AcceptUserId { get; set; }
 
         /// <summary>
         /// کاربری که محصول را تائید کرده است
         /// </summary>
-        public virtual User AcceptUser { get; set; }
+        public User AcceptUser { get; set; }
 
         #endregion
     }

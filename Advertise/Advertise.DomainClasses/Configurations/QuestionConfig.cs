@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public QuestionConfig()
         {
-            ToTable("AD_Qustion");
+            //ToTable("AD_Qustion");
 
             Property(question => question.Content).IsRequired().HasMaxLength(700);
             Property(question => question.CreateDate).IsRequired();
@@ -22,7 +22,8 @@ namespace Advertise.DomainClasses.Configurations
             Property(question => question.Title).IsRequired().HasMaxLength(255);
             Property(question => question.RowVersion).IsRowVersion();
 
-            HasMany(question => question.Questions).WithOptional(question => question.Reply).WillCascadeOnDelete(true);
+            // Self Referencing Entity
+            //HasOptional(question => question.Reply).WithMany().WillCascadeOnDelete(true);
         }
     }
 }

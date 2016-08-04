@@ -1,6 +1,8 @@
-﻿
-namespace Advertise.Common.Constants
+﻿namespace Advertise.Common.Constants
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ApplicationConst
     {
         public const string Name = "Advertising";

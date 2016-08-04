@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public PlanConfig()
         {
-            ToTable("AD_Plan");
+            //ToTable("AD_Plan");
 
             Property(plan => plan.Code).IsRequired().HasMaxLength(50);
             Property(plan => plan.CostValue).IsRequired();

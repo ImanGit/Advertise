@@ -39,19 +39,34 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid UserId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid CategoryId { get; set; }
 
         /// <summary>
         /// کد اختصاصی دسته محصول
         /// </summary>
-        public virtual Category Category { get; set; }
+        public Category Category { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid CompanyId { get; set; }
 
         /// <summary>
         /// کد اختصاصی شرکت
         /// </summary>
-        public virtual Company Company { get; set; }
+        public Company Company { get; set; }
 
         #endregion
     }
