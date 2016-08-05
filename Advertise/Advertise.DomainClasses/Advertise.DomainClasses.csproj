@@ -38,6 +38,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,7 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AccountConfig.cs" />
     <Compile Include="Configurations\CityConfig.cs" />
+    <Compile Include="Configurations\CommentConfig.cs" />
     <Compile Include="Configurations\Common\BaseConfig.cs" />
     <Compile Include="Configurations\Common\Config.cs" />
     <Compile Include="Configurations\PaymentConfig.cs" />
@@ -66,29 +76,35 @@
     <Compile Include="Entities\Action.cs" />
     <Compile Include="Entities\Budget.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Enum\ColorType.cs" />
     <Compile Include="Entities\Common\BaseEntity.cs" />
     <Compile Include="Entities\Common\Entity.cs" />
+    <Compile Include="Entities\Enum\FollowType.cs" />
     <Compile Include="Entities\Enum\GenderType.cs" />
+    <Compile Include="Entities\Enum\LanguageType.cs" />
+    <Compile Include="Entities\Enum\LikeType.cs" />
+    <Compile Include="Entities\Enum\LogLevelType.cs" />
+    <Compile Include="Entities\Enum\PropertyType.cs" />
+    <Compile Include="Entities\Enum\ThemeType.cs" />
     <Compile Include="Entities\Follow.cs" />
     <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\Like.cs" />
     <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Payment.cs" />
-    <Compile Include="Entities\Place.cs" />
     <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Plan.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Enum\SizeType.cs" />
     <Compile Include="Entities\Property.cs" />
     <Compile Include="Entities\PropertyTemplate.cs" />
     <Compile Include="Entities\Notice.cs" />
-    <Compile Include="Entities\QuestionAnswer.cs" />
+    <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\Setting.cs" />
     <Compile Include="Entities\Social.cs" />
     <Compile Include="Entities\Statistic.cs" />

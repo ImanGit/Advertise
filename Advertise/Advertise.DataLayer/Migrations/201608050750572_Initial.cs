@@ -47,6 +47,7 @@ namespace Advertise.DataLayer.Migrations
                         Account_IsActive = c.Boolean(nullable: false),
                         Account_IsEmailConfirmed = c.Boolean(nullable: false),
                         Account_IsMobileConfirmed = c.Boolean(nullable: false),
+                        Account_IsGuested = c.Boolean(nullable: false),
                         Account_RoleId = c.Guid(nullable: false),
                         Account_UserId = c.Guid(nullable: false),
                         Account_RowVersion = c.Binary(),
@@ -115,31 +116,6 @@ namespace Advertise.DataLayer.Migrations
                 .Index(t => t.City_ParentId);
             
             CreateTable(
-                "dbo.AD_Comments",
-                c => new
-                    {
-                        Comment_Id = c.Guid(nullable: false),
-                        Comment_Content = c.String(),
-                        Comment_CreateDate = c.DateTime(nullable: false),
-                        Comment_LikedCount = c.Int(),
-                        Comment_IsAccepted = c.Boolean(nullable: false),
-                        Comment_UserId = c.Guid(nullable: false),
-                        Comment_ProductId = c.Guid(nullable: false),
-                        Comment_AcceptUserId = c.Guid(nullable: false),
-                        Comment_RowVersion = c.Binary(),
-                        User_Id = c.Guid(),
-                    })
-                .PrimaryKey(t => t.Comment_Id)
-                .ForeignKey("dbo.AD_Users", t => t.Comment_AcceptUserId, cascadeDelete: true)
-                .ForeignKey("dbo.AD_Products", t => t.Comment_ProductId, cascadeDelete: true)
-                .ForeignKey("dbo.AD_Users", t => t.Comment_UserId, cascadeDelete: true)
-                .ForeignKey("dbo.AD_Users", t => t.User_Id)
-                .Index(t => t.Comment_UserId)
-                .Index(t => t.Comment_ProductId)
-                .Index(t => t.Comment_AcceptUserId)
-                .Index(t => t.User_Id);
-            
-            CreateTable(
                 "dbo.AD_Products",
                 c => new
                     {
@@ -169,9 +145,9 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.Product_Id)
                 .ForeignKey("dbo.AD_Users", t => t.Product_AcceptUserId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Categories", t => t.Product_CategoryId, cascadeDelete: true)
-                .ForeignKey("dbo.AD_Cities", t => t.Product_CityId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Companies", t => t.Product_CompanyId, cascadeDelete: true)
-                .ForeignKey("dbo.AD_Users", t => t.Product_CreateUserId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Cities", t => t.Product_CityId)
+                .ForeignKey("dbo.AD_Users", t => t.Product_CreateUserId)
                 .Index(t => t.Product_CategoryId)
                 .Index(t => t.Product_CityId)
                 .Index(t => t.Product_CompanyId)
@@ -219,6 +195,28 @@ namespace Advertise.DataLayer.Migrations
                 .ForeignKey("dbo.AD_Users", t => t.Company_UserId, cascadeDelete: true)
                 .Index(t => t.Company_UserId)
                 .Index(t => t.Company_CityId);
+            
+            CreateTable(
+                "dbo.AD_Comments",
+                c => new
+                    {
+                        Comment_Id = c.Guid(nullable: false),
+                        Comment_Content = c.String(nullable: false, maxLength: 500),
+                        Comment_CreateDate = c.DateTime(nullable: false),
+                        Comment_LikedCount = c.Int(),
+                        Comment_IsAccepted = c.Boolean(nullable: false),
+                        Comment_CreateUserId = c.Guid(nullable: false),
+                        Comment_ProductId = c.Guid(nullable: false),
+                        Comment_AcceptUserId = c.Guid(nullable: false),
+                        Comment_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
+                    })
+                .PrimaryKey(t => t.Comment_Id)
+                .ForeignKey("dbo.AD_Users", t => t.Comment_AcceptUserId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Products", t => t.Comment_ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.Comment_CreateUserId)
+                .Index(t => t.Comment_CreateUserId)
+                .Index(t => t.Comment_ProductId)
+                .Index(t => t.Comment_AcceptUserId);
             
             CreateTable(
                 "dbo.AD_Follows",
@@ -495,17 +493,16 @@ namespace Advertise.DataLayer.Migrations
             DropForeignKey("dbo.AD_Follows", "Follow_CompanyId", "dbo.AD_Companies");
             DropForeignKey("dbo.AD_Follows", "Follow_CategoryId", "dbo.AD_Categories");
             DropForeignKey("dbo.AD_Companies", "Company_UserId", "dbo.AD_Users");
-            DropForeignKey("dbo.AD_Comments", "User_Id", "dbo.AD_Users");
-            DropForeignKey("dbo.AD_Comments", "Comment_UserId", "dbo.AD_Users");
+            DropForeignKey("dbo.AD_Comments", "Comment_CreateUserId", "dbo.AD_Users");
             DropForeignKey("dbo.AD_Comments", "Comment_ProductId", "dbo.AD_Products");
+            DropForeignKey("dbo.AD_Comments", "Comment_AcceptUserId", "dbo.AD_Users");
+            DropForeignKey("dbo.AD_Users", "User_CityId", "dbo.AD_Cities");
+            DropForeignKey("dbo.AD_Products", "Product_CityId", "dbo.AD_Cities");
             DropForeignKey("dbo.AD_Products", "Product_CompanyId", "dbo.AD_Companies");
             DropForeignKey("dbo.AD_Companies", "Company_CityId", "dbo.AD_Cities");
-            DropForeignKey("dbo.AD_Products", "Product_CityId", "dbo.AD_Cities");
             DropForeignKey("dbo.AD_Products", "Product_CategoryId", "dbo.AD_Categories");
             DropForeignKey("dbo.AD_Categories", "Category_ParentId", "dbo.AD_Categories");
             DropForeignKey("dbo.AD_Products", "Product_AcceptUserId", "dbo.AD_Users");
-            DropForeignKey("dbo.AD_Comments", "Comment_AcceptUserId", "dbo.AD_Users");
-            DropForeignKey("dbo.AD_Users", "User_CityId", "dbo.AD_Cities");
             DropForeignKey("dbo.AD_Cities", "City_ParentId", "dbo.AD_Cities");
             DropForeignKey("dbo.AD_Budgets", "Budget_UserId", "dbo.AD_Users");
             DropForeignKey("dbo.AD_Accounts", "Account_UserId", "dbo.AD_Users");
@@ -535,6 +532,9 @@ namespace Advertise.DataLayer.Migrations
             DropIndex("dbo.AD_Follows", new[] { "Follow_CompanyId" });
             DropIndex("dbo.AD_Follows", new[] { "Follow_CategoryId" });
             DropIndex("dbo.AD_Follows", new[] { "Follow_UserId" });
+            DropIndex("dbo.AD_Comments", new[] { "Comment_AcceptUserId" });
+            DropIndex("dbo.AD_Comments", new[] { "Comment_ProductId" });
+            DropIndex("dbo.AD_Comments", new[] { "Comment_CreateUserId" });
             DropIndex("dbo.AD_Companies", new[] { "Company_CityId" });
             DropIndex("dbo.AD_Companies", new[] { "Company_UserId" });
             DropIndex("dbo.AD_Categories", new[] { "Category_ParentId" });
@@ -543,10 +543,6 @@ namespace Advertise.DataLayer.Migrations
             DropIndex("dbo.AD_Products", new[] { "Product_CompanyId" });
             DropIndex("dbo.AD_Products", new[] { "Product_CityId" });
             DropIndex("dbo.AD_Products", new[] { "Product_CategoryId" });
-            DropIndex("dbo.AD_Comments", new[] { "User_Id" });
-            DropIndex("dbo.AD_Comments", new[] { "Comment_AcceptUserId" });
-            DropIndex("dbo.AD_Comments", new[] { "Comment_ProductId" });
-            DropIndex("dbo.AD_Comments", new[] { "Comment_UserId" });
             DropIndex("dbo.AD_Cities", new[] { "City_ParentId" });
             DropIndex("dbo.AD_Budgets", new[] { "Budget_UserId" });
             DropIndex("dbo.AD_Actions", new[] { "Action_RoleId" });
@@ -567,10 +563,10 @@ namespace Advertise.DataLayer.Migrations
             DropTable("dbo.AD_Logs");
             DropTable("dbo.AD_Likes");
             DropTable("dbo.AD_Follows");
+            DropTable("dbo.AD_Comments");
             DropTable("dbo.AD_Companies");
             DropTable("dbo.AD_Categories");
             DropTable("dbo.AD_Products");
-            DropTable("dbo.AD_Comments");
             DropTable("dbo.AD_Cities");
             DropTable("dbo.AD_Budgets");
             DropTable("dbo.AD_Actions");

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Advertise.ViewModel.Common
+namespace Advertise.ViewModel.Models.Common
 {
     public abstract class BaseViewModel : ViewModel
     {

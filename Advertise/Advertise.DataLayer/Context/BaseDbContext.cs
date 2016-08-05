@@ -14,9 +14,13 @@ namespace Advertise.DataLayer.Context
     /// </summary>
     public class BaseDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        #region Properties
 
-        
+        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; } 
+
+        #endregion
+
         #region Ctor
 
         /// <summary>

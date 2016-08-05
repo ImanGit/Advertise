@@ -50,12 +50,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid UserId { get; set; }
+        public Guid CreateUserId { get; set; }
 
         /// <summary>
         /// کاربری که کامنت گذاشته 
         /// </summary>
-        public User User { get; set; }
+        public User CreateUser { get; set; }
 
         /// <summary>
         /// 

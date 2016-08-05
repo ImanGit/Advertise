@@ -19,7 +19,9 @@ namespace Advertise.DomainClasses.Configurations
             Property(city => city.IsState).IsRequired();
             Property(city => city.RowVersion).IsRowVersion();
 
-            //HasMany(city=>city.Cities).WithOptional(city=>city.Parent).WillCascadeOnDelete(false);
+            //HasMany(city=>city.Cities).WithRequired(city=>city.Parent).WillCascadeOnDelete(false);
+
+            HasMany(city=>city.Products).WithRequired(product=>product.City).WillCascadeOnDelete(false);
         }
     }
 }

@@ -31,6 +31,10 @@ namespace Advertise.DomainClasses.Configurations
             Property(product => product.Title).IsRequired().HasMaxLength(250);
             Property(product => product.VisitedCount).IsOptional();
             Property(product => product.RowVersion).IsRowVersion();
+
+
+            //HasRequired(product=>product.AcceptUser).WithMany(user=>user.Products).WillCascadeOnDelete(false);
+            //HasRequired(product => product.CreateUser).WithMany(user => user.Products).WillCascadeOnDelete(false);
         }
     }
 }

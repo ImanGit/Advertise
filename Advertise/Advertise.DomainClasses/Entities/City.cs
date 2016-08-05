@@ -52,6 +52,11 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public ICollection<City> Cities { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public ICollection<Product> Products { get; set; } 
+
         #endregion
     }
 }
