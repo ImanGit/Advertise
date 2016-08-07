@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Common\IBaseService.cs" />
+    <Compile Include="Contracts\Common\IService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="EFServices\Common\BaseService.cs" />
     <Compile Include="EFServices\Common\Service.cs" />
@@ -56,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Advertise.DataLayer\Advertise.DataLayer.csproj">
+      <Project>{0a141d5e-ea21-4564-ac7a-a203a807cb9d}</Project>
+      <Name>Advertise.DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Advertise.DomainClasses\Advertise.DomainClasses.csproj">
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>

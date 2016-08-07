@@ -15,7 +15,7 @@ namespace Advertise.DataLayer.Context
     /// </summary>
     public class BaseDbContext : DbContext
     {
-        #region Properties
+        #region Repository
 
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; } 
@@ -34,7 +34,7 @@ namespace Advertise.DataLayer.Context
 
         #endregion
 
-        #region override OnModelCreating
+        #region Override OnModelCreating
 
         /// <summary>
         /// 

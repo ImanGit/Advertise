@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Advertise.ServiceLayer.Contracts.Common;
 
 namespace Advertise.ServiceLayer.EFServices.Common
 {
-    public abstract class BaseService : Service
+    public abstract class BaseService : Service, IBaseService
     {
     }
 }

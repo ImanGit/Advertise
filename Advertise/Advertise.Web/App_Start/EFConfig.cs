@@ -6,7 +6,7 @@ namespace Advertise.Web
     /// <summary>
     /// 
     /// </summary>
-    public static class EfConfig
+    public class EfConfig
     {
         /// <summary>
         /// 

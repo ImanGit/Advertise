@@ -70,14 +70,6 @@
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Advertise.ServiceLayer\Advertise.ServiceLayer.csproj">
-      <Project>{03d81571-7491-44c6-829d-5dd06a572ed9}</Project>
-      <Name>Advertise.ServiceLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Advertise.ViewModel\Advertise.ViewModel.csproj">
-      <Project>{306a3a29-1b7c-48c4-abf9-98ef5f7692fd}</Project>
-      <Name>Advertise.ViewModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608050750572_Initial.resx">

@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\ApplicationConst.cs" />
+    <Compile Include="DependencyResolution\ApplicationObjectFactory.cs" />
+    <Compile Include="DependencyResolution\StructureMapControllerFactory.cs" />
     <Compile Include="Filters\AjaxOnlyAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,7 +91,6 @@
   <ItemGroup>
     <Folder Include="Caching\" />
     <Folder Include="Helpers\" />
-    <Folder Include="IocConfig\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
