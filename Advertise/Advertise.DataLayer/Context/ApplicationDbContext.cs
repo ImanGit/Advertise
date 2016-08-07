@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Advertise.ServiceLayer.Contracts
+namespace Advertise.DataLayer.Context
 {
     /// <summary>
-    /// نشان دهنده الزامات ارائه دهنده سرویس پست
+    /// 
     /// </summary>
-    public interface IPostService
+    public class ApplicationDbContext : BaseDbContext, IUnitOfWork
     {
         /// <summary>
-        /// درج پست جدید
+        /// 
         /// </summary>
-        void Create();
+        public ApplicationDbContext() : base("ApplicationConnection")
+        {
+
+        }
     }
 }

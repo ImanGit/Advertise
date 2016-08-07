@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Advertise.DomainClasses.Entities;
 using Advertise.ServiceLayer.Contracts;
 using Advertise.ServiceLayer.EFServices.Common;
 
@@ -11,9 +13,25 @@ namespace Advertise.ServiceLayer.EFServices
     /// <summary>
     /// 
     /// </summary>
-    public class UserService : BaseService , IUserService 
+    public class UserService : BaseService, IUserService
     {
+        #region Fields
+
+        private readonly IDbSet<User> _users;
+
+        #endregion
+
+        #region Ctor
+
+        public UserService()
+        {
+
+        }
+
+        #endregion
+
         #region Create
+
         /// <summary>
         /// 
         /// </summary>
@@ -21,9 +39,11 @@ namespace Advertise.ServiceLayer.EFServices
         {
 
         }
+
         #endregion
 
         #region Count
+
         /// <summary>
         /// 
         /// </summary>
@@ -32,6 +52,7 @@ namespace Advertise.ServiceLayer.EFServices
         {
             return 0;
         }
+
         #endregion
     }
 }

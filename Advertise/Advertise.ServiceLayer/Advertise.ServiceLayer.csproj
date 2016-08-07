@@ -49,14 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IPostService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="EFServices\Common\BaseService.cs" />
     <Compile Include="EFServices\Common\Service.cs" />
     <Compile Include="EFServices\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Advertise.DomainClasses\Advertise.DomainClasses.csproj">
+      <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
+      <Name>Advertise.DomainClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

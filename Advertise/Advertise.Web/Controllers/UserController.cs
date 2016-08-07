@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Advertise.Common.Filters;
+using Advertise.DataLayer.Context;
 
 namespace Advertise.Web.Controllers
 {
@@ -14,8 +16,13 @@ namespace Advertise.Web.Controllers
             return View();
         }
 
+        //[AjaxOnly]
         public virtual ActionResult List()
         {
+            using (var s=new ApplicationDbContext())
+            {
+                var y =s.Users.Find(1);
+            }
             return View();
         }
     }

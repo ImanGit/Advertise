@@ -47,9 +47,14 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid CompanyId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی شرکت
         /// </summary>
-        public virtual Company Company { get; set; }
+        public Company Company { get; set; }
 
         #endregion
     }

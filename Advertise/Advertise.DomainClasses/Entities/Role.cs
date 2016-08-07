@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
@@ -39,7 +40,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// توضیحات دسته بندی
         /// </summary>
-        public virtual Action Action { get; set; }
+        public ICollection<Action> Actions { get; set; }
 
         #endregion
     }

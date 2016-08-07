@@ -1,12 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.Migrations;
+using Advertise.DataLayer.Context;
+using Advertise.DomainClasses.Entities;
 
 namespace Advertise.DataLayer.Migrations
 {
-    class Configuration
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
+        #region Ctor
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = false;
+        }
+
+        #endregion Ctor
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        protected override void Seed(ApplicationDbContext context)
+        {
+            //context.Users.Add(new User());
+            
+        }
     }
 }

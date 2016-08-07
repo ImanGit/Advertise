@@ -43,9 +43,14 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid ParentId { get; set; }
+
+        /// <summary>
         /// والد دسته بندی
         /// </summary>
-        public virtual Category Parent { get; set; }
+        public Category Parent { get; set; }
 
         /// <summary>
         /// 

@@ -8,10 +8,12 @@ namespace Advertise.DomainClasses.Entities.Common
     public abstract class BaseEntity : Entity
     {
         #region Properties
+
         /// <summary>
         /// شناسه یکتای موجودیت
         /// </summary>
         public virtual Guid Id { get; set; }
+
         #endregion
     }
 }

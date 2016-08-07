@@ -5,10 +5,20 @@ using RazorGenerator.Mvc;
 
 [assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Advertise.Web.RazorGeneratorMvcStart), "Start")]
 
-namespace Advertise.Web {
-    public static class RazorGeneratorMvcStart {
-        public static void Start() {
-            var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {
+namespace Advertise.Web
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class RazorGeneratorMvcStart
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void Start()
+        {
+            var engine = new PrecompiledMvcEngine(typeof (RazorGeneratorMvcStart).Assembly)
+            {
                 UsePhysicalViewsIfNewer = HttpContext.Current.Request.IsLocal
             };
 

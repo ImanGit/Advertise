@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public ProductConfig()
         {
-            ToTable("AD_Product");
+            //ToTable("AD_Product");
 
             Property(product => product.Address).IsOptional().HasMaxLength(255);
             Property(product => product.Code).IsRequired().HasMaxLength(50);
@@ -31,6 +31,10 @@ namespace Advertise.DomainClasses.Configurations
             Property(product => product.Title).IsRequired().HasMaxLength(250);
             Property(product => product.VisitedCount).IsOptional();
             Property(product => product.RowVersion).IsRowVersion();
+
+
+            //HasRequired(product=>product.AcceptUser).WithMany(user=>user.Products).WillCascadeOnDelete(false);
+            //HasRequired(product => product.CreateUser).WithMany(user => user.Products).WillCascadeOnDelete(false);
         }
     }
 }

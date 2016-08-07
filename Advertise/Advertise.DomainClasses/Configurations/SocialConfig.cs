@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public SocialConfig()
         {
-            ToTable("AD_Social");
+            //ToTable("AD_Social");
 
             Property(social => social.AparatLink).IsOptional().HasMaxLength(100);
             Property(social => social.FacebookLink).IsOptional().HasMaxLength(100);

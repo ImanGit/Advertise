@@ -16,6 +16,15 @@ namespace Advertise.DomainClasses.Entities
         public Account()
         {
             Id = Guid.NewGuid();
+            IsActive = false;
+            IsAnonymous = true;
+            IsBanned = false;
+            IsEmailConfirmed = false;
+            IsLockedOut = false;
+            IsVerified = false;
+            IsMobileConfirmed = false;
+            FailedPasswordAttemptCount = 0;
+            CreateDate = DateTime.Now;
         }
 
         #endregion
@@ -35,7 +44,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// پسورد کاربر
         /// </summary>
-        public string Password { get; set; }
+        public string PasswordHash { get; set; }
 
         /// <summary>
         /// تاریخ ثبت نام کاربر
@@ -80,21 +89,66 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// آیا کاربر مهمان است؟
         /// </summary>
-        public bool IsGuested { get; set; }
+        public bool IsAnonymous { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string EmailConfirmationToken { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string MobileConfirmationToken { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime LastPasswordChangedDate { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int FailedPasswordAttemptCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsLockedOut { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime LastLockoutDate { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime LastActivityDate { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid RoleId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی نقش
         /// </summary>
-        public virtual Role Role { get; set; }
+        public Role Role { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid UserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
 
         #endregion
     }

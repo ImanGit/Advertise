@@ -44,19 +44,34 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid FromUserId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی کاربر فرستنده
         /// </summary>
-        public virtual User FromUser { get; set; }
+        public User FromUser { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid ToUserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر گیرنده
         /// </summary>
-        public virtual User ToUser { get; set; }
+        public User ToUser { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid ReplyId { get; set; }
 
         /// <summary>
         /// کد پیام پاسخ داده شده
         /// </summary>
-        public virtual Message Reply { get; set; }
+        public Message Reply { get; set; }
 
         /// <summary>
         /// 

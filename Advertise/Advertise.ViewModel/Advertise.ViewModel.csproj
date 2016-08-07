@@ -64,7 +64,9 @@
     <Compile Include="Models\User\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Post\" />
+    <Folder Include="Models\Account\" />
+    <Folder Include="Models\Company\" />
+    <Folder Include="Models\Product\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

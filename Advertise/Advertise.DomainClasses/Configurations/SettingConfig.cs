@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public SettingConfig()
         {
-            ToTable("AD_Setting");
+            //ToTable("AD_Setting");
 
             Property(setting => setting.Language).IsOptional();
             Property(setting => setting.Theme).IsOptional();

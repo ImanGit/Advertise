@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public PaymentConfig()
         {
-            ToTable("AD_Payment");
+            //ToTable("AD_Payment");
 
             Property(payment => payment.CreateDate).IsRequired();
             Property(payment => payment.FromDate).IsRequired();

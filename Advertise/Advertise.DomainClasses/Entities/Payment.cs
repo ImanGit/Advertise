@@ -41,19 +41,34 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid PlanId { get; set; }
+
+        /// <summary>
         /// کد اختصاصی سرویس خریداری شده
         /// </summary>
-        public virtual Plan Plan { get; set; }
+        public Plan Plan { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid UserId { get; set; }
 
         /// <summary>
         /// کاربری که کامنت گذاشته
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid BudgetId { get; set; }
 
         /// <summary>
         /// کد اختصاصی بودجه
         /// </summary>
-        public virtual Budget Budget { get; set; }
+        public Budget Budget { get; set; }
 
         #endregion
     }

@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public RoleConfig()
         {
-            ToTable("AD_Role");
+            //ToTable("AD_Role");
 
             Property(role => role.Code).IsRequired().HasMaxLength(50);
             Property(role => role.Title).IsRequired();

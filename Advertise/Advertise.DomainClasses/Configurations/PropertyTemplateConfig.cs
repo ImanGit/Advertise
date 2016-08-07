@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public PropertyTemplateConfig()
         {
-            ToTable("AD_PropertyTemplate");
+            //ToTable("AD_PropertyTemplate");
 
             Property(propertTemplate => propertTemplate.Property).IsRequired();
             Property(propertyTemplate => propertyTemplate.Title).IsRequired().HasMaxLength(50);

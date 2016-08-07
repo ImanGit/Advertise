@@ -48,19 +48,34 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid CreateUserId { get; set; }
+
+        /// <summary>
         /// کاربری که کامنت گذاشته 
         /// </summary>
-        public virtual User User { get; set; }
+        public User CreateUser { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid ProductId { get; set; }
 
         /// <summary>
         /// کداختصاصی محصول
         /// </summary>
-        public virtual Product Product { get; set; }
+        public Product Product { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid AcceptUserId { get; set; }
 
         /// <summary>
         /// کاربری (اپراتور)که کامنت را تائید کرده است
         /// </summary>
-        public virtual User AcceptUser { get; set; }
+        public User AcceptUser { get; set; }
 
         #endregion
     }
