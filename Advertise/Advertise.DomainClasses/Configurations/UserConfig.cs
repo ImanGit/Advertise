@@ -43,11 +43,10 @@ namespace Advertise.DomainClasses.Configurations
                 .WithRequired(notification => notification.User)
                 .WillCascadeOnDelete(true);
             HasMany(user => user.Payments).WithRequired(payment => payment.User).WillCascadeOnDelete(true);
-            HasMany(user => user.Products).WithRequired(product => product.User).WillCascadeOnDelete(true);
-            HasMany(user => user.QuestionAnswers)
-                .WithRequired(questionAnswer => questionAnswer.User)
+            HasMany(user => user.Products).WithRequired(product => product.CreateUser).WillCascadeOnDelete(true);
+            HasMany(user => user.QuestionAnswers).WithRequired(questionAnswer => questionAnswer.User)
                 .WillCascadeOnDelete(true);
-            HasMany(user=>user.Settings).WithRequired(setting=>setting.User).WillCascadeOnDelete(true);
+            HasMany(user => user.Settings).WithRequired(setting => setting.User).WillCascadeOnDelete(true);
         }
     }
 }

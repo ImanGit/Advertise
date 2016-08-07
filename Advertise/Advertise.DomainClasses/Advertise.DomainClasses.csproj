@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\AccountConfig.cs" />
+    <Compile Include="Configurations\BudgetConfig.cs" />
     <Compile Include="Configurations\StatisticConfig.cs" />
     <Compile Include="Configurations\UserConfig.cs" />
     <Compile Include="Entities\Budget.cs" />
