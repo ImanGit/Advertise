@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public UserConfig()
         {
-            ToTable("AD_Users");
+            //ToTable("AD_Users");
 
             Property(user => user.Address).IsOptional().HasMaxLength(255);
             Property(user => user.AvatarFileName).IsOptional();
@@ -29,9 +29,10 @@ namespace Advertise.DomainClasses.Configurations
             Property(user => user.NationalCode).IsOptional().HasMaxLength(10);
             Property(user => user.RowVersion).IsRowVersion();
 
-            HasMany(user => user.Accounts).WithRequired(account => account.User).WillCascadeOnDelete(true);
+            HasMany(user => user.Accounts).WithRequired(account => account.User).HasForeignKey(account=>account.UserId).WillCascadeOnDelete(true);
             HasMany(user => user.Budgets).WithRequired(budget => budget.User).WillCascadeOnDelete(true);
-            HasMany(user => user.Comments).WithRequired(comment => comment.User).WillCascadeOnDelete(true);
+            HasMany(user => user.Comments).WithRequired(comment => comment.CreateUser).WillCascadeOnDelete(false);
+            //HasMany(user => user.Comments).WithOptional(comment => comment.AcceptUser).WillCascadeOnDelete(false);
             HasMany(user => user.Companies).WithRequired(company => company.User).WillCascadeOnDelete(true);
             HasMany(user => user.Follows).WithRequired(follow => follow.User).WillCascadeOnDelete(true);
             HasMany(user => user.Likes).WithRequired(like => like.User).WillCascadeOnDelete(true);
@@ -43,10 +44,12 @@ namespace Advertise.DomainClasses.Configurations
                 .WithRequired(notification => notification.User)
                 .WillCascadeOnDelete(true);
             HasMany(user => user.Payments).WithRequired(payment => payment.User).WillCascadeOnDelete(true);
-            HasMany(user => user.Products).WithRequired(product => product.CreateUser).WillCascadeOnDelete(true);
-            HasMany(user => user.QuestionAnswers).WithRequired(questionAnswer => questionAnswer.User)
+            HasMany(user => user.Products).WithRequired(product => product.CreateUser).WillCascadeOnDelete(false);
+            //HasMany(user => user.Products).WithOptional(product => product.AcceptUser).WillCascadeOnDelete(false);
+            HasMany(user => user.Questions)
+                .WithRequired(question => question.User)
                 .WillCascadeOnDelete(true);
-            HasMany(user => user.Settings).WithRequired(setting => setting.User).WillCascadeOnDelete(true);
+            HasMany(user=>user.Settings).WithRequired(setting=>setting.User).WillCascadeOnDelete(true);
         }
     }
 }

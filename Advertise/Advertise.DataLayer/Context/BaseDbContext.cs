@@ -3,6 +3,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Reflection;
 using Advertise.DataLayer.Conventions;
+using Advertise.DomainClasses.Configurations;
 using Advertise.DomainClasses.Configurations.Common;
 using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Common;

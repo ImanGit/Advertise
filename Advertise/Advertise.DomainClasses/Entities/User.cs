@@ -5,14 +5,14 @@ using Advertise.DomainClasses.Entities.Common;
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده کاربر
+    ///     نشان دهنده کاربر
     /// </summary>
     public class User : BaseEntity
     {
         #region Ctor
 
         /// <summary>
-        /// سازنده پیش فرض
+        ///     سازنده پیش فرض
         /// </summary>
         public User()
         {
@@ -26,62 +26,62 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// کد کاربر
+        ///     کد کاربر
         /// </summary>
         public string Code { get; set; }
 
         /// <summary>
-        /// نام کاربر
+        ///     نام کاربر
         /// </summary>
         public string FirstName { get; set; }
 
         /// <summary>
-        /// نام خانوادگی کاربر
+        ///     نام خانوادگی کاربر
         /// </summary>
         public string LastName { get; set; }
 
         /// <summary>
-        /// نام نمایشی کاربر
+        ///     نام نمایشی کاربر
         /// </summary>
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// کد ملی کاربر
+        ///     کد ملی کاربر
         /// </summary>
         public string NationalCode { get; set; }
 
         /// <summary>
-        /// تاریخ تولد کاربر
+        ///     تاریخ تولد کاربر
         /// </summary>
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// تاریخ ازدواج کاربر
+        ///     تاریخ ازدواج کاربر
         /// </summary>
         public DateTime? MarriedDate { get; set; }
 
         /// <summary>
-        /// موقعیت مکانی کاربر
+        ///     موقعیت مکانی کاربر
         /// </summary>
         public string Address { get; set; }
 
         /// <summary>
-        /// عکس یا لوگو کاربر
+        ///     عکس یا لوگو کاربر
         /// </summary>
         public string AvatarFileName { get; set; }
 
         /// <summary>
-        /// آیا کاربر حذف شده است؟
+        ///     آیا کاربر حذف شده است؟
         /// </summary>
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// آیا کاربر فعال است؟
+        ///     آیا کاربر فعال است؟
         /// </summary>
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// جنسیت کاربر
+        ///     جنسیت کاربر
         /// </summary>
         public GenderType? Gender { get; set; }
 
@@ -90,82 +90,82 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
-        /// کلید خارجی شهر
+        ///     کلید خارجی شهر
         /// </summary>
         public Guid CityId { get; set; }
 
         /// <summary>
-        /// شهر محل زندگی کاربر
+        ///     شهر محل زندگی کاربر
         /// </summary>
         public City City { get; set; }
 
         /// <summary>
-        /// لیست محصولات کاربر
+        ///     لیست محصولات کاربر
         /// </summary>
         public ICollection<Product> Products { get; set; }
 
         /// <summary>
-        /// لیست نظرات کاربر
+        ///     لیست نظرات کاربر
         /// </summary>
         public ICollection<Comment> Comments { get; set; }
 
         /// <summary>
-        /// لیست شرکت های کاربر
+        ///     لیست شرکت های کاربر
         /// </summary>
         public ICollection<Company> Companies { get; set; }
 
         /// <summary>
-        /// لیست حساب مالی کاربر
+        ///     لیست حساب مالی کاربر
         /// </summary>
         public ICollection<Budget> Budgets { get; set; }
 
         /// <summary>
-        /// لیست علاقه مندی های کاربر
+        ///     لیست علاقه مندی های کاربر
         /// </summary>
         public ICollection<Follow> Follows { get; set; }
 
         /// <summary>
-        /// لیست پسند های کاربر
+        ///     لیست پسند های کاربر
         /// </summary>
         public ICollection<Like> Likes { get; set; }
 
         /// <summary>
-        /// لیست پرداختی های کاربر
+        ///     لیست پرداختی های کاربر
         /// </summary>
         public ICollection<Payment> Payments { get; set; }
 
         /// <summary>
-        /// لیست پیام های کاربر
+        ///     لیست پیام های کاربر
         /// </summary>
         public ICollection<Message> Messages { get; set; }
 
         /// <summary>
-        /// لیست نوتیفیکیشن های کاربر
+        ///     لیست نوتیفیکیشن های کاربر
         /// </summary>
         public ICollection<Notification> Notifications { get; set; }
 
         /// <summary>
-        /// لیست سوال های کاربر
+        ///     لیست سوال های کاربر
         /// </summary>
         public ICollection<Question> Questions { get; set; }
 
         /// <summary>
-        /// لیست اکانت کاربر
+        ///     لیست اکانت کاربر
         /// </summary>
         public ICollection<Account> Accounts { get; set; }
 
         /// <summary>
-        /// لیست پیام های عمومی کاربر
+        ///     لیست پیام های عمومی کاربر
         /// </summary>
         public ICollection<Notice> Notices { get; set; }
 
         /// <summary>
-        /// لیست لاگ های کاربر
+        ///     لیست لاگ های کاربر
         /// </summary>
         public ICollection<Log> Logs { get; set; }
 
         /// <summary>
-        /// لیست تنظیمات کاربر
+        ///     لیست تنظیمات کاربر
         /// </summary>
         public ICollection<Setting> Settings { get; set; }
 

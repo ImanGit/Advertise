@@ -14,7 +14,7 @@ namespace Advertise.DomainClasses.Configurations
          {
              ToTable("AD_Accounts");
              Property(accunt => accunt.Email).IsOptional().HasMaxLength(75);
-            Property(accunt => accunt.Password).IsOptional();
+            Property(accunt => accunt.PasswordHash ).IsOptional();
              Property(accunt => accunt.UserName).IsRequired();
          }
     }
