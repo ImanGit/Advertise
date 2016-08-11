@@ -92,82 +92,82 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     کلید خارجی شهر
         /// </summary>
-        public Guid CityId { get; set; }
+        public virtual Guid CityId { get; set; }
 
         /// <summary>
         ///     شهر محل زندگی کاربر
         /// </summary>
-        public City City { get; set; }
+        public virtual City City { get; set; }
 
         /// <summary>
         ///     لیست محصولات کاربر
         /// </summary>
-        public ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
         /// <summary>
         ///     لیست نظرات کاربر
         /// </summary>
-        public ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
         /// <summary>
         ///     لیست شرکت های کاربر
         /// </summary>
-        public ICollection<Company> Companies { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
 
         /// <summary>
         ///     لیست حساب مالی کاربر
         /// </summary>
-        public ICollection<Budget> Budgets { get; set; }
+        public virtual ICollection<Budget> Budgets { get; set; }
 
         /// <summary>
         ///     لیست علاقه مندی های کاربر
         /// </summary>
-        public ICollection<Follow> Follows { get; set; }
+        public virtual ICollection<Follow> Follows { get; set; }
 
         /// <summary>
         ///     لیست پسند های کاربر
         /// </summary>
-        public ICollection<Like> Likes { get; set; }
+        public virtual ICollection<Like> Likes { get; set; }
 
         /// <summary>
         ///     لیست پرداختی های کاربر
         /// </summary>
-        public ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
 
         /// <summary>
         ///     لیست پیام های کاربر
         /// </summary>
-        public ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
 
         /// <summary>
         ///     لیست نوتیفیکیشن های کاربر
         /// </summary>
-        public ICollection<Notification> Notifications { get; set; }
+        public virtual ICollection<Notification> Notifications { get; set; }
 
         /// <summary>
         ///     لیست سوال های کاربر
         /// </summary>
-        public ICollection<Question> Questions { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
 
         /// <summary>
         ///     لیست اکانت کاربر
         /// </summary>
-        public ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
 
         /// <summary>
         ///     لیست پیام های عمومی کاربر
         /// </summary>
-        public ICollection<Notice> Notices { get; set; }
+        public virtual ICollection<Notice> Notices { get; set; }
 
         /// <summary>
         ///     لیست لاگ های کاربر
         /// </summary>
-        public ICollection<Log> Logs { get; set; }
+        public virtual ICollection<Log> Logs { get; set; }
 
         /// <summary>
         ///     لیست تنظیمات کاربر
         /// </summary>
-        public ICollection<Setting> Settings { get; set; }
+        public virtual ICollection<Setting> Settings { get; set; }
 
         #endregion
     }

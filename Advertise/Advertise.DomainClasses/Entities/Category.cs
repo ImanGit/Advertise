@@ -45,17 +45,17 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid ParentId { get; set; }
+        public virtual Guid ParentId { get; set; }
 
         /// <summary>
         /// والد دسته بندی
         /// </summary>
-        public Category Parent { get; set; }
+        public virtual Category Parent { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
 
         #endregion
     }

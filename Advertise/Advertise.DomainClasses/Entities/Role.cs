@@ -40,7 +40,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// توضیحات دسته بندی
         /// </summary>
-        public ICollection<Action> Actions { get; set; }
+        public virtual ICollection<Action> Actions { get; set; }
 
         #endregion
     }

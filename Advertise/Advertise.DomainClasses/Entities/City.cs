@@ -40,22 +40,22 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid ParentId { get; set; }
+        public virtual Guid ParentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public City Parent { get; set; }
+        public virtual City Parent { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<City> Cities { get; set; }
+        public virtual ICollection<City> Cities { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<Product> Products { get; set; } 
+        public virtual ICollection<Product> Products { get; set; } 
 
         #endregion
     }

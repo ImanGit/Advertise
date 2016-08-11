@@ -50,32 +50,32 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid CreateUserId { get; set; }
+        public virtual Guid CreateUserId { get; set; }
 
         /// <summary>
         /// کاربری که کامنت گذاشته 
         /// </summary>
-        public User CreateUser { get; set; }
+        public virtual User CreateUser { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid ProductId { get; set; }
+        public virtual Guid ProductId { get; set; }
 
         /// <summary>
         /// کداختصاصی محصول
         /// </summary>
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid AcceptUserId { get; set; }
+        public virtual Guid AcceptUserId { get; set; }
 
         /// <summary>
         /// کاربری (اپراتور)که کامنت را تائید کرده است
         /// </summary>
-        public User AcceptUser { get; set; }
+        public virtual User AcceptUser { get; set; }
 
         #endregion
     }

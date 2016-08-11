@@ -43,32 +43,32 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid PlanId { get; set; }
+        public virtual Guid PlanId { get; set; }
 
         /// <summary>
         /// کد اختصاصی سرویس خریداری شده
         /// </summary>
-        public Plan Plan { get; set; }
+        public virtual Plan Plan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid UserId { get; set; }
+        public virtual Guid UserId { get; set; }
 
         /// <summary>
         /// کاربری که کامنت گذاشته
         /// </summary>
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid BudgetId { get; set; }
+        public virtual Guid BudgetId { get; set; }
 
         /// <summary>
         /// کد اختصاصی بودجه
         /// </summary>
-        public Budget Budget { get; set; }
+        public virtual Budget Budget { get; set; }
 
         #endregion
     }

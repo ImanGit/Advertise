@@ -49,12 +49,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid CompanyId { get; set; }
+        public virtual Guid CompanyId { get; set; }
 
         /// <summary>
         /// کد اختصاصی شرکت
         /// </summary>
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         #endregion
     }

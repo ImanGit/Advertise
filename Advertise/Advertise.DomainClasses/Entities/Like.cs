@@ -40,32 +40,32 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid UserId { get; set; }
+        public virtual Guid UserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربری که لایک انجام داده
         /// </summary>
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid CommentId { get; set; }
+        public virtual Guid CommentId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کامنت
         /// </summary>
-        public Comment Comment { get; set; }
+        public virtual Comment Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid ProductId { get; set; }
+        public virtual Guid ProductId { get; set; }
 
         /// <summary>
         /// کد اختصاصی محصول
         /// </summary>
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         #endregion
     }

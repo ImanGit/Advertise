@@ -46,37 +46,37 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid FromUserId { get; set; }
+        public virtual Guid FromUserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر فرستنده
         /// </summary>
-        public User FromUser { get; set; }
+        public virtual User FromUser { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid ToUserId { get; set; }
+        public virtual Guid ToUserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر گیرنده
         /// </summary>
-        public User ToUser { get; set; }
+        public virtual User ToUser { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid ReplyId { get; set; }
+        public virtual Guid ReplyId { get; set; }
 
         /// <summary>
         /// کد پیام پاسخ داده شده
         /// </summary>
-        public Message Reply { get; set; }
+        public virtual Message Reply { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
 
         #endregion
     }

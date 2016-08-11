@@ -89,22 +89,22 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid UserId { get; set; }
+        public virtual Guid UserId { get; set; }
 
         /// <summary>
         /// کد کاربری
         /// </summary>
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid CityId { get; set; }
+        public virtual Guid CityId { get; set; }
 
         /// <summary>
         /// کد اختصاصی آدرس
         /// </summary>
-        public City City { get; set; }
+        public virtual City City { get; set; }
 
         #endregion
     }

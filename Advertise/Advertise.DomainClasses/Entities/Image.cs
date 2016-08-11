@@ -54,12 +54,12 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid ProductId { get; set; }
+        public virtual Guid ProductId { get; set; }
 
         /// <summary>
         /// کداختصاصی محصول
         /// </summary>
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         #endregion
     }

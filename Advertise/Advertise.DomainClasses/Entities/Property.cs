@@ -34,22 +34,22 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid ProductId { get; set; }
+        public virtual Guid ProductId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid PropertyTemplateId { get; set; }
+        public virtual Guid PropertyTemplateId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
-        public PropertyTemplate PropertyTemplate { get; set; }
+        public virtual PropertyTemplate PropertyTemplate { get; set; }
 
         #endregion
     }

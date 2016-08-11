@@ -107,52 +107,52 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid CategoryId { get; set; }
+        public virtual Guid CategoryId { get; set; }
 
         /// <summary>
         /// دسته بندی محصول
         /// </summary>
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid CityId { get; set; }
+        public virtual Guid CityId { get; set; }
 
         /// <summary>
         /// کد آدرس
         /// </summary>
-        public City City { get; set; }
+        public virtual City City { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid CompanyId { get; set; }
+        public virtual Guid CompanyId { get; set; }
 
         /// <summary>
         /// کمپانی ثبت کننده محصول
         /// </summary>
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid CreateUserId { get; set; }
+        public virtual Guid CreateUserId { get; set; }
 
         /// <summary>
         /// کاربر ثبت کننده ی محصول
         /// </summary>
-        public User CreateUser { get; set; }
+        public virtual User CreateUser { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid AcceptUserId { get; set; }
+        public virtual Guid AcceptUserId { get; set; }
 
         /// <summary>
         /// کاربری که محصول را تائید کرده است
         /// </summary>
-        public User AcceptUser { get; set; }
+        public virtual User AcceptUser { get; set; }
 
         #endregion
     }

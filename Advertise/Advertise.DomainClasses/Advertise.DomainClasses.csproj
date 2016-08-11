@@ -58,10 +58,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\AccountConfig.cs" />
+    <Compile Include="Configurations\ActionConfig.cs" />
+    <Compile Include="Configurations\BudgetConfig.cs" />
+    <Compile Include="Configurations\CategoryConfig.cs" />
     <Compile Include="Configurations\CityConfig.cs" />
     <Compile Include="Configurations\CommentConfig.cs" />
     <Compile Include="Configurations\Common\BaseConfig.cs" />
     <Compile Include="Configurations\Common\Config.cs" />
+    <Compile Include="Configurations\CompanyConfig.cs" />
+    <Compile Include="Configurations\FollowConfig.cs" />
+    <Compile Include="Configurations\ImageConfig.cs" />
+    <Compile Include="Configurations\LikeConfig.cs" />
+    <Compile Include="Configurations\LogConfig.cs" />
+    <Compile Include="Configurations\MessageConfig.cs" />
+    <Compile Include="Configurations\NoticeConfig.cs" />
+    <Compile Include="Configurations\NotificationConfig.cs" />
     <Compile Include="Configurations\PaymentConfig.cs" />
     <Compile Include="Configurations\PlanConfig.cs" />
     <Compile Include="Configurations\ProductConfig.cs" />

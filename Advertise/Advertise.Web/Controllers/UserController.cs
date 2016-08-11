@@ -21,7 +21,7 @@ namespace Advertise.Web.Controllers
         {
             using (var s=new ApplicationDbContext())
             {
-                var y =s.Users.Find(1);
+               // var y =s.Users.Find(1);
             }
             return View();
         }

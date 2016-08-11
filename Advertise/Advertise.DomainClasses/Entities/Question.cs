@@ -56,37 +56,37 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid ReplyId { get; set; }
+        public virtual Guid ReplyId { get; set; }
 
         /// <summary>
         /// کد اختصاصی پاسخ
         /// </summary>
-        public Question Reply { get; set; }
+        public virtual Question Reply { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid CompanyId { get; set; }
+        public virtual Guid CompanyId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کمپانی
         /// </summary>
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid UserId { get; set; }
+        public virtual Guid UserId { get; set; }
 
         /// <summary>
         /// کد اختصاصی کاربر
         /// </summary>
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<Question> Questions { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
 
         #endregion
     }
