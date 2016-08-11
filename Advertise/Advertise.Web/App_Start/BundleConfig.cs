@@ -17,6 +17,8 @@ namespace Advertise.Web
                 .Include("~/Content/iransans.css", "~/Content/bootstrap.css", "~/Content/font-awesome.css",
                     "~/Content/Site.css"));
 
+
+
             BundleTable.EnableOptimizations = true;
         }
     }

@@ -25,5 +25,10 @@ namespace Advertise.Web.Controllers
             }
             return View();
         }
+
+        public virtual ActionResult Myview()
+        {
+            return View();
+        }
     }
 }

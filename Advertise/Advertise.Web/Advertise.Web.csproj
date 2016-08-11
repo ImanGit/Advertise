@@ -345,6 +345,7 @@
     </Content>
     <Content Include="T4MVC.tt.hooks.t4" />
     <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\User\Myview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
