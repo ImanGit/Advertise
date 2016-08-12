@@ -43,6 +43,8 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public bool IsAccepted { get; set; }
 
+
+        
         #endregion
 
         #region NavigationProperties

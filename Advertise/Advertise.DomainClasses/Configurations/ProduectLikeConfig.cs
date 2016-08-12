@@ -8,9 +8,9 @@ using Advertise.DomainClasses .Entities;
 
 namespace Advertise.DomainClasses.Configurations
 {
-    public  class LikeConfig:EntityTypeConfiguration< Like >
+    public  class ProduectLikeConfig:EntityTypeConfiguration< ProduectLike >
     {
-        public LikeConfig()
+        public ProduectLikeConfig()
         {
             Property(like => like.RowVersion).IsRowVersion();
         }

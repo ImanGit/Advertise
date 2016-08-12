@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده بودجه حساب مالی کاربر
+    /// نشان دهنده شبکه های اجتماعی
     /// </summary>
-    public class Budget : BaseEntity
+    public class UserSocial : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Budget()
+        public UserSocial()
         {
             Id = Guid.NewGuid();
-            RemainValue = 0;
         }
 
         #endregion
@@ -24,24 +27,24 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// بودجه باقی مانده حساب مالی کاربر
+        /// اکانت تویتر شرکت
         /// </summary>
-        public Int32 RemainValue { get; set; }
+        public string TwitterLink { get; set; }
 
         /// <summary>
-        /// افزایش و کاهش حساب مالی کاربر
+        /// اکانت فیس بوک شرکت
         /// </summary>
-        public Int32 IncDecValue { get; set; }
+        public string FacebookLink { get; set; }
 
         /// <summary>
-        /// کدرهگیری که بانک میدهد
+        /// اکانت گوگل پلاس شرکت
         /// </summary>
-        public string RefrenceCode { get; set; }
+        public string GooglePlusLink { get; set; }
 
         /// <summary>
-        /// زمان انجام تغییر حساب مالی کاربری
+        /// اکانت آپارات شرکت
         /// </summary>
-        public DateTime CreateDate { get; set; }
+        public string AparatLink { get; set; }
 
         #endregion
 
@@ -53,10 +56,11 @@ namespace Advertise.DomainClasses.Entities
         public virtual Guid UserId { get; set; }
 
         /// <summary>
-        /// کد اختصاصی کاربر
+        /// کد اختصاصی شرکت
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual User  User { get; set; }
 
         #endregion
     }
 }
+

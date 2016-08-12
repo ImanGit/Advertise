@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities;
 namespace Advertise.DomainClasses.Configurations
 {
-    public  class ImageConfig :EntityTypeConfiguration< Image >
+    public  class CompanyImageConfig :EntityTypeConfiguration< CompanyImage >
     {
-        public ImageConfig()
+        public CompanyImageConfig()
         {
             Property(image => image.Title ).IsOptional().HasMaxLength(100);
             Property(image => image.FileDimension ).IsRequired() .HasMaxLength(10);

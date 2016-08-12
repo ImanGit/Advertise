@@ -6,12 +6,12 @@ namespace Advertise.DomainClasses.Configurations
     /// <summary>
     /// نشان دهنده مپینگ مربوط به کلاس کاربر
     /// </summary>
-    public class UserConfig : EntityTypeConfiguration<User>
+    public class ProfileConfig : EntityTypeConfiguration<User>
     {
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public UserConfig()
+        public ProfileConfig()
         {
             //ToTable("AD_Users");
 

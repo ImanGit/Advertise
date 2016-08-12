@@ -4,16 +4,16 @@ using Advertise.DomainClasses.Entities.Common;
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// 
+    /// مشخصات عکس ها
     /// </summary>
-    public class Action : BaseEntity
+    public class CompanyImage : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Action()
+        public CompanyImage()
         {
             Id = Guid.NewGuid();
         }
@@ -23,38 +23,43 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// عنوان اکشن
+        /// عنوان عکس
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// نام اکشن
+        /// نام فایل
         /// </summary>
-        public string ActionName { get; set; }
+        public string FileName { get; set; }
 
         /// <summary>
-        /// نام کنترلر
+        /// سایز عکس
         /// </summary>
-        public string ControllerName { get; set; }
+        public string FileSize { get; set; }
 
         /// <summary>
-        /// فعال یا غیر فعال بودن اکشن
+        /// حجم عکس
         /// </summary>
-        public bool IsEnable { get; set; }
+        public string FileDimension { get; set; }
+
+        /// <summary>
+        /// ترتیب عکس
+        /// </summary>
+        public int Order { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        /// کد اختصاصی نقش
+        /// 
         /// </summary>
-        public virtual Guid RoleId { get; set; }
+        public virtual Guid CompanyId { get; set; }
 
         /// <summary>
-        /// کلید خارجی
+        /// کداختصاصی محصول
         /// </summary>
-        public virtual Role Role { get; set; }
+        public virtual Company  Company { get; set; }
 
         #endregion
     }
