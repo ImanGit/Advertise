@@ -1,25 +1,25 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Advertise.Web.App_Start;
 
 namespace Advertise.Web
 {
     /// <summary>
-    /// 
     /// </summary>
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         /// <summary>
-        /// 
         /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            EfConfig.RegisterEf();
+            EntityFrameworkConfig.RegisterEntityFramework();
             StructureMapConfig.RegisterStructureMap();
+            IdentityConfig.RegisterIdentity();
+            AutoMapperConfig.RegisterAutoMapper();
         }
     }
 }

@@ -88,6 +88,7 @@
     <Compile Include="Entities\Budget.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\UserClaim.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Enum\ColorType.cs" />
@@ -120,6 +121,8 @@
     <Compile Include="Entities\Social.cs" />
     <Compile Include="Entities\Statistic.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserLogin.cs" />
+    <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

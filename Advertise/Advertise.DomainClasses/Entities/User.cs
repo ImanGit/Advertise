@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
     ///     نشان دهنده کاربر
     /// </summary>
-    public class User : BaseEntity
+    public class User : IdentityUser<Guid,UserLogin,UserRole,UserClaim>
     {
         #region Ctor
 

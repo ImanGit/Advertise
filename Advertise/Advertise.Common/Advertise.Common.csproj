@@ -89,8 +89,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Authentication\" />
+    <Folder Include="Authorization\" />
+    <Folder Include="AutoMapper\" />
     <Folder Include="Caching\" />
+    <Folder Include="Globalization\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Localization\" />
+    <Folder Include="ORM\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

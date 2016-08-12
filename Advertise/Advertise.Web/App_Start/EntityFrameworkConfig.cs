@@ -6,12 +6,12 @@ namespace Advertise.Web
     /// <summary>
     /// 
     /// </summary>
-    public class EfConfig
+    public class EntityFrameworkConfig
     {
         /// <summary>
         /// 
         /// </summary>
-        public static void RegisterEf()
+        public static void RegisterEntityFramework()
         {
             Database.SetInitializer<ApplicationDbContext>(null);
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, DataLayer.Migrations.Configuration>());

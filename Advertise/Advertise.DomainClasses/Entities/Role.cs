@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
     /// 
     /// </summary>
-    public class Role : BaseEntity
+    public class Role : IdentityRole<Guid,UserRole>
     {
         #region Ctor
 

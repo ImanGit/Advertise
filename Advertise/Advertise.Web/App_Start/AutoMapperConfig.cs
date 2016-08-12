@@ -3,12 +3,12 @@
     /// <summary>
     /// 
     /// </summary>
-    public class StructureMapConfig
+    public class AutoMapperConfig
     {
         /// <summary>
         /// 
         /// </summary>
-        public static void RegisterStructureMap()
+        public static void RegisterAutoMapper()
         {
             
         }
