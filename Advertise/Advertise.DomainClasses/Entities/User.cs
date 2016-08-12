@@ -1,24 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    ///     نشان دهنده کاربر
+    /// نشان دهنده امنیت کاربر
     /// </summary>
-    public class User : BaseEntity
+    public class Account : BaseEntity
     {
         #region Ctor
 
         /// <summary>
-        ///     سازنده پیش فرض
+        /// سازنده پیش فرض
         /// </summary>
-        public User()
+        public Account()
         {
             Id = Guid.NewGuid();
             IsActive = false;
-            IsDeleted = false;
+            IsAnonymous = true;
+            IsBanned = false;
+            IsEmailConfirmed = false;
+            IsLockedOut = false;
+            IsVerified = false;
+            IsMobileConfirmed = false;
+            FailedPasswordAttemptCount = 0;
+            CreateDate = DateTime.Now;
         }
 
         #endregion
@@ -26,148 +32,128 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        ///     کد کاربر
+        /// ایمیل کاربر
         /// </summary>
-        public string Code { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
-        ///     نام کاربر
+        /// موبایل کاربر
         /// </summary>
-        public string FirstName { get; set; }
+        public string MobileNumber { get; set; }
 
         /// <summary>
-        ///     نام خانوادگی کاربر
+        /// پسورد کاربر
         /// </summary>
-        public string LastName { get; set; }
+        public string PasswordHash { get; set; }
 
         /// <summary>
-        ///     نام نمایشی کاربر
+        /// تاریخ ثبت نام کاربر
         /// </summary>
-        public string DisplayName { get; set; }
+        public DateTime CreateDate { get; set; }
 
         /// <summary>
-        ///     کد ملی کاربر
+        /// نام کاربری ورود به برنامه
         /// </summary>
-        public string NationalCode { get; set; }
+        public string UserName { get; set; }
 
         /// <summary>
-        ///     تاریخ تولد کاربر
+        /// آخرین زمان ورود به سایت
         /// </summary>
-        public DateTime? BirthDate { get; set; }
+        public DateTime LastLoginDate { get; set; }
 
         /// <summary>
-        ///     تاریخ ازدواج کاربر
+        /// آیا کاربر بلاک شده؟
         /// </summary>
-        public DateTime? MarriedDate { get; set; }
+        public bool IsBanned { get; set; }
 
         /// <summary>
-        ///     موقعیت مکانی کاربر
+        /// آیا کاربر تائید شده است؟
         /// </summary>
-        public string Address { get; set; }
+        public bool IsVerified { get; set; }
 
         /// <summary>
-        ///     عکس یا لوگو کاربر
-        /// </summary>
-        public string AvatarFileName { get; set; }
-
-        /// <summary>
-        ///     آیا کاربر حذف شده است؟
-        /// </summary>
-        public bool IsDeleted { get; set; }
-
-        /// <summary>
-        ///     آیا کاربر فعال است؟
+        /// آیا کاربر فعال است؟
         /// </summary>
         public bool IsActive { get; set; }
 
         /// <summary>
-        ///     جنسیت کاربر
+        /// آیا ایمیل کاربر تائید شده است؟
         /// </summary>
-        public GenderType? Gender { get; set; }
+        public bool IsEmailConfirmed { get; set; }
+
+        /// <summary>
+        /// آیا موبایل کاربر تائید شده است؟
+        /// </summary>
+        public bool IsMobileConfirmed { get; set; }
+
+        /// <summary>
+        /// آیا کاربر مهمان است؟
+        /// </summary>
+        public bool IsAnonymous { get; set; }
+
+        /// <summary>
+        /// توکن تائید فعال سازی ایمیل
+        /// </summary>
+        public string EmailConfirmationToken { get; set; }
+
+        /// <summary>
+        /// توکن تائید فغال سازی موبایل
+        /// </summary>
+        public string MobileConfirmationToken { get; set; }
+
+        /// <summary>
+        /// آخرین زمان تغییر پسورد
+        /// </summary>
+        public DateTime LastPasswordChangedDate { get; set; }
+
+        /// <summary>
+        /// تعداد دفعاتی که پسورد اشتباه زده است 
+        /// </summary>
+        public int FailedPasswordAttemptCount { get; set; }
+
+        /// <summary>
+        ///بیش از تعداد تعیین شده بود،مقدار ترو میگیرد و کاربر نمیتواند تا زمانی تعیین شده وارد سایت شود FailedPasswordAttemptCount اگر تعداد 
+        /// </summary>
+        public bool IsLockedOut { get; set; }
+
+        /// <summary>
+        /// آخرین باری که کاربر Lockout شده
+        /// </summary>
+        public DateTime LastLockoutDate { get; set; }
+
+        /// <summary>
+        /// آخرین فعالیتی که کاربر انجام داده
+        /// </summary>
+        public DateTime LastActivityDate { get; set; }
+
+        /// <summary>
+        /// آخرین زمانی که کاربر وارد سایت شده
+        /// </summary>
+        public DateTime LastloginDate { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        ///     کلید خارجی شهر
+        /// 
         /// </summary>
-        public virtual Guid CityId { get; set; }
+        public virtual  Guid RoleId { get; set; }
 
         /// <summary>
-        ///     شهر محل زندگی کاربر
+        /// کد اختصاصی نقش
         /// </summary>
-        public virtual City City { get; set; }
+        public virtual Role Role { get; set; }
 
         /// <summary>
-        ///     لیست محصولات کاربر
+        /// 
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual Guid UserId { get; set; }
 
         /// <summary>
-        ///     لیست نظرات کاربر
+        /// کد اختصاصی کاربر
         /// </summary>
-        public virtual ICollection<Comment> Comments { get; set; }
-
-        /// <summary>
-        ///     لیست شرکت های کاربر
-        /// </summary>
-        public virtual ICollection<Company> Companies { get; set; }
-
-        /// <summary>
-        ///     لیست حساب مالی کاربر
-        /// </summary>
-        public virtual ICollection<Budget> Budgets { get; set; }
-
-        /// <summary>
-        ///     لیست علاقه مندی های کاربر
-        /// </summary>
-        public virtual ICollection<Follow> Follows { get; set; }
-
-        /// <summary>
-        ///     لیست پسند های کاربر
-        /// </summary>
-        public virtual ICollection<Like> Likes { get; set; }
-
-        /// <summary>
-        ///     لیست پرداختی های کاربر
-        /// </summary>
-        public virtual ICollection<Payment> Payments { get; set; }
-
-        /// <summary>
-        ///     لیست پیام های کاربر
-        /// </summary>
-        public virtual ICollection<Message> Messages { get; set; }
-
-        /// <summary>
-        ///     لیست نوتیفیکیشن های کاربر
-        /// </summary>
-        public virtual ICollection<Notification> Notifications { get; set; }
-
-        /// <summary>
-        ///     لیست سوال های کاربر
-        /// </summary>
-        public virtual ICollection<Question> Questions { get; set; }
-
-        /// <summary>
-        ///     لیست اکانت کاربر
-        /// </summary>
-        public virtual ICollection<Account> Accounts { get; set; }
-
-        /// <summary>
-        ///     لیست پیام های عمومی کاربر
-        /// </summary>
-        public virtual ICollection<Notice> Notices { get; set; }
-
-        /// <summary>
-        ///     لیست لاگ های کاربر
-        /// </summary>
-        public virtual ICollection<Log> Logs { get; set; }
-
-        /// <summary>
-        ///     لیست تنظیمات کاربر
-        /// </summary>
-        public virtual ICollection<Setting> Settings { get; set; }
+        public virtual User User { get; set; }
 
         #endregion
     }

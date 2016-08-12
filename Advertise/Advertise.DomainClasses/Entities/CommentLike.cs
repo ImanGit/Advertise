@@ -1,22 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
-using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// 
+    /// لایک کردن کامنت ها
     /// </summary>
-    public class Like : BaseEntity
+  public   class CommentLike :BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Like()
+        public CommentLike()
         {
             Id = Guid.NewGuid();
+           
         }
 
         #endregion
@@ -24,14 +28,9 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// نوع لایک
+        /// تاریخ ایجاد کامنت
         /// </summary>
-        public LikeType Type { get; set; }
-
-        /// <summary>
-        /// تاریخ ثبت لایک
-        /// </summary>
-        public DateTime RegisterDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         #endregion
 
@@ -43,7 +42,7 @@ namespace Advertise.DomainClasses.Entities
         public virtual Guid UserId { get; set; }
 
         /// <summary>
-        /// کد اختصاصی کاربری که لایک انجام داده
+        /// کد اختصاصی کاربر فرستنده
         /// </summary>
         public virtual User User { get; set; }
 
@@ -53,19 +52,9 @@ namespace Advertise.DomainClasses.Entities
         public virtual Guid CommentId { get; set; }
 
         /// <summary>
-        /// کد اختصاصی کامنت
+        /// کد اختصاصی کاربر گیرنده
         /// </summary>
-        public virtual Comment Comment { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public virtual Guid ProductId { get; set; }
-
-        /// <summary>
-        /// کد اختصاصی محصول
-        /// </summary>
-        public virtual Product Product { get; set; }
+        public virtual Comment  Comment { get; set; }
 
         #endregion
     }

@@ -1,19 +1,24 @@
 ﻿using System;
-using Advertise.DomainClasses.Entities.Common ;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Advertise.DomainClasses.Entities.Common;
+
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده شبکه های اجتماعی
+    /// نشان دهنده دیده شدن کمپانی
     /// </summary>
-    public class Social : BaseEntity
+    public class CompanyVisit : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Social()
+        public CompanyVisit()
         {
             Id = Guid.NewGuid();
         }
@@ -23,28 +28,25 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// اکانت تویتر شرکت
+        /// تاریخ ثبت دسته علاقه مندی
         /// </summary>
-        public string TwitterLink { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        /// <summary>
-        /// اکانت فیس بوک شرکت
-        /// </summary>
-        public string FacebookLink { get; set; }
 
-        /// <summary>
-        /// اکانت گوگل پلاس شرکت
-        /// </summary>
-        public string GooglePlusLink { get; set; }
-
-        /// <summary>
-        /// اکانت آپارات شرکت
-        /// </summary>
-        public string AparatLink { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual Guid UserId { get; set; }
+
+        /// <summary>
+        /// کد اختصاصی کاربر
+        /// </summary>
+        public virtual User User { get; set; }
 
         /// <summary>
         /// 

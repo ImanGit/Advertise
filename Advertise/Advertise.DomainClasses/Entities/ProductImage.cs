@@ -1,19 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// 
+    /// مشخصات عکس ها
     /// </summary>
-    public class Image : BaseEntity
+    public class ProductImage : BaseEntity
     {
         #region Ctor
 
         /// <summary>
         /// سازنده پیش فرض
         /// </summary>
-        public Image()
+        public ProductImage()
         {
             Id = Guid.NewGuid();
         }
@@ -59,8 +63,9 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         /// کداختصاصی محصول
         /// </summary>
-        public virtual Product Product { get; set; }
+        public virtual Product  Product { get; set; }
 
         #endregion
     }
 }
+
