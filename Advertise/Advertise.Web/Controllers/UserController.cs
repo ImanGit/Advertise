@@ -16,6 +16,7 @@ namespace Advertise.Web.Controllers
             return View();
         }
 
+        
         //[AjaxOnly]
         public virtual ActionResult List()
         {

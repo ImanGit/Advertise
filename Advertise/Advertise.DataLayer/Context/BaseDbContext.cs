@@ -25,7 +25,7 @@ namespace Advertise.DataLayer.Context
 
         #endregion
 
-        #region Override OnModelCreating
+        #region OnModelCreating
 
         /// <summary>
         /// </summary>
@@ -43,7 +43,7 @@ namespace Advertise.DataLayer.Context
 
         #endregion
 
-        #region Private Methods
+        #region PrivateMethods
 
         /// <summary>
         /// </summary>

@@ -1,19 +1,19 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using Advertise.Web;
 using RazorGenerator.Mvc;
+using WebActivatorEx;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Advertise.Web.RazorGeneratorMvcStart), "Start")]
+[assembly: PostApplicationStartMethod(typeof (RazorGeneratorMvcStart), "Start")]
 
 namespace Advertise.Web
 {
     /// <summary>
-    /// 
     /// </summary>
     public static class RazorGeneratorMvcStart
     {
         /// <summary>
-        /// 
         /// </summary>
         public static void Start()
         {

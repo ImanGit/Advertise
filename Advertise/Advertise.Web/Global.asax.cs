@@ -13,13 +13,24 @@ namespace Advertise.Web
         /// </summary>
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-            EntityFrameworkConfig.RegisterEntityFramework();
-            StructureMapConfig.RegisterStructureMap();
-            IdentityConfig.RegisterIdentity();
-            AutoMapperConfig.RegisterAutoMapper();
+            try
+            {
+                Startup.Configuration();
+                AreaRegistration.RegisterAllAreas();
+                RouteConfig.RegisterRoutes(RouteTable.Routes);
+                BundleConfig.RegisterBundles(BundleTable.Bundles);
+                FilterConfig.RegisterGlobalFilters();
+                EntityFrameworkConfig.RegisterEntityFramework();
+                StructureMapConfig.RegisterStructureMap();
+                IdentityConfig.RegisterIdentity();
+                AutoMapperConfig.RegisterAutoMapper();
+            }
+            catch
+            {
+                // سبب ری استارت برنامه و آغاز مجدد آن با درخواست بعدی می‌شود
+                HttpRuntime.UnloadAppDomain();
+                throw;
+            }
         }
     }
 }

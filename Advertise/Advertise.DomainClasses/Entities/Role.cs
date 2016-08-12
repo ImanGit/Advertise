@@ -34,6 +34,11 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual byte[] RowVersion { get; set; }
+
         #endregion
 
         #region NavigationProperties

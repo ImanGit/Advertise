@@ -3,18 +3,17 @@ using System.Data.Entity;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities;
 using Advertise.ServiceLayer.Contracts;
-using Advertise.ServiceLayer.EFServices.Common;
 using Microsoft.AspNet.Identity;
 
 namespace Advertise.ServiceLayer.EFServices
 {
     /// <summary>
     /// </summary>
-    public class UserService : UserManager<User,Guid>, IUserService
+    public class UserService : UserManager<User, Guid>, IUserService
     {
         #region Ctor
 
-        public UserService(IUnitOfWork unitOfWork)
+        public UserService(IUnitOfWork unitOfWork, IUserStore<User, Guid> userStore) : base(userStore)
         {
             _unitOfWork = unitOfWork;
         }
