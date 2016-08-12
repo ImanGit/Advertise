@@ -1,31 +1,22 @@
 ﻿using System;
-using System.Linq;
 using System.Data.Entity;
+using System.Linq;
 using System.Reflection;
 using Advertise.DataLayer.Conventions;
-using Advertise.DomainClasses.Configurations;
 using Advertise.DomainClasses.Configurations.Common;
 using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Common;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Advertise.DataLayer.Context
 {
     /// <summary>
-    /// 
     /// </summary>
-    public class BaseDbContext : DbContext
+    public class BaseDbContext : IdentityDbContext<User, Role, Guid, UserLogin, UserRole, UserClaim>
     {
-        #region Repository
-
-        public DbSet<User> Users { get; set; }
-        public DbSet<Product> Products { get; set; } 
-
-        #endregion
-
         #region Ctor
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="connectionString"></param>
         public BaseDbContext(string connectionString) : base(connectionString)
@@ -37,7 +28,6 @@ namespace Advertise.DataLayer.Context
         #region Override OnModelCreating
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -53,10 +43,9 @@ namespace Advertise.DataLayer.Context
 
         #endregion
 
-        #region PrivateMethods
+        #region Private Methods
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="asm"></param>
         /// <param name="modelBuilder"></param>
@@ -71,6 +60,13 @@ namespace Advertise.DataLayer.Context
 
             entityTypes.ForEach(modelBuilder.RegisterEntityType);
         }
+
+        #endregion
+
+        #region Repository
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         #endregion
     }

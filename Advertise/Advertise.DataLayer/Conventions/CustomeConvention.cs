@@ -1,16 +1,14 @@
-﻿using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Data.Entity.Design.PluralizationServices;
+﻿using System.Data.Entity.Design.PluralizationServices;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Globalization;
 
 namespace Advertise.DataLayer.Conventions
 {
     /// <summary>
-    /// 
     /// </summary>
     public class CustomeConvention : Convention
     {
         /// <summary>
-        /// 
         /// </summary>
         public CustomeConvention()
         {
