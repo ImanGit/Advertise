@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advertise.DomainClasses .Entities ;
+using Advertise.DomainClasses.Entities.Plans;
+
 namespace Advertise.DomainClasses.Configurations
 {
     public  class BudgetConfig:EntityTypeConfiguration<Budget>

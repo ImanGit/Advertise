@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Advertise.DomainClasses.Entities;
+using Advertise.DomainClasses.Entities.Products;
 
 namespace Advertise.DomainClasses.Configurations
 {

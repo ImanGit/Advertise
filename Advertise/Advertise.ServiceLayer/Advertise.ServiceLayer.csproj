@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Contracts\Common\IBaseService.cs" />
     <Compile Include="Contracts\Common\IService.cs" />
+    <Compile Include="Contracts\IProductLike.cs" />
     <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="EFServices\Common\BaseService.cs" />
     <Compile Include="EFServices\Common\Service.cs" />

@@ -34,6 +34,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework.Filters, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Filters.0.3.0.0\lib\net40\EntityFramework.Filters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
@@ -89,54 +93,68 @@
     <Compile Include="Configurations\StatisticConfig.cs" />
     <Compile Include="Configurations\ProfileConfig.cs" />
     <Compile Include="Configurations\UserSocialConfig.cs" />
-    <Compile Include="Entities\Action.cs" />
-    <Compile Include="Entities\Budget.cs" />
-    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\BannedWord.cs" />
+    <Compile Include="Entities\Categories\CategoryFollow.cs" />
+    <Compile Include="Entities\Categories\CategoryReview.cs" />
+    <Compile Include="Entities\Companies\CompanyQuestionLike.cs" />
+    <Compile Include="Entities\Companies\CompanyReview.cs" />
+    <Compile Include="Entities\Products\ProductCommentStatus.cs" />
+    <Compile Include="Entities\Common\ActivityLog.cs" />
+    <Compile Include="Entities\Common\ActivityLogType.cs" />
+    <Compile Include="Entities\Common\AuditBaseEntity.cs" />
+    <Compile Include="Entities\Products\ProductReview.cs" />
+    <Compile Include="Entities\Products\ProductStatus.cs" />
+    <Compile Include="Entities\Properties\PropertyOption.cs" />
+    <Compile Include="Entities\Users\UserReport.cs" />
+    <Compile Include="Entities\Users\RoleAction.cs" />
+    <Compile Include="Entities\Plans\Budget.cs" />
+    <Compile Include="Entities\Categories\Category.cs" />
     <Compile Include="Entities\City.cs" />
-    <Compile Include="Entities\Comment.cs" />
-    <Compile Include="Entities\CommentLike.cs" />
-    <Compile Include="Entities\Company.cs" />
-    <Compile Include="Entities\CompanyVisit.cs" />
-    <Compile Include="Entities\Enum\ColorType.cs" />
+    <Compile Include="Entities\Products\ProductComment.cs" />
+    <Compile Include="Entities\Products\ProductCommentLike.cs" />
+    <Compile Include="Entities\Common\AuditActionType.cs" />
+    <Compile Include="Entities\Companies\Company.cs" />
+    <Compile Include="Entities\Companies\CompanyVisit.cs" />
     <Compile Include="Entities\Common\BaseEntity.cs" />
     <Compile Include="Entities\Common\Entity.cs" />
-    <Compile Include="Entities\Enum\FollowType.cs" />
-    <Compile Include="Entities\Enum\GenderType.cs" />
-    <Compile Include="Entities\Enum\LanguageType.cs" />
-    <Compile Include="Entities\Enum\LikeType.cs" />
-    <Compile Include="Entities\Enum\LogLevelType.cs" />
-    <Compile Include="Entities\Enum\PropertyType.cs" />
-    <Compile Include="Entities\Enum\ThemeType.cs" />
-    <Compile Include="Entities\CompanyFollow.cs" />
-    <Compile Include="Entities\CompanyImage.cs" />
-    <Compile Include="Entities\ProductImage.cs" />
-    <Compile Include="Entities\ProductVisit.cs" />
-    <Compile Include="Entities\ProduectLike.cs" />
-    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\Users\GenderType.cs" />
+    <Compile Include="Entities\Users\LanguageType.cs" />
+    <Compile Include="Entities\Common\AuditLogType.cs" />
+    <Compile Include="Entities\Properties\PropertyType.cs" />
+    <Compile Include="Entities\Users\ThemeType.cs" />
+    <Compile Include="Entities\Companies\CompanyFollow.cs" />
+    <Compile Include="Entities\Companies\CompanyImage.cs" />
+    <Compile Include="Entities\Products\ProductImage.cs" />
+    <Compile Include="Entities\Products\ProductVisit.cs" />
+    <Compile Include="Entities\Products\ProductLike.cs" />
+    <Compile Include="Entities\Common\AuditLog.cs" />
     <Compile Include="Entities\Notification.cs" />
-    <Compile Include="Entities\Payment.cs" />
-    <Compile Include="Entities\Message.cs" />
-    <Compile Include="Entities\Plan.cs" />
-    <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\Enum\SizeType.cs" />
-    <Compile Include="Entities\Property.cs" />
-    <Compile Include="Entities\PropertyTemplate.cs" />
+    <Compile Include="Entities\Plans\Payment.cs" />
+    <Compile Include="Entities\Conversation.cs" />
+    <Compile Include="Entities\Plans\Plan.cs" />
+    <Compile Include="Entities\Products\Product.cs" />
+    <Compile Include="Entities\Products\ProductProperty.cs" />
+    <Compile Include="Entities\Properties\Property.cs" />
     <Compile Include="Entities\Notice.cs" />
-    <Compile Include="Entities\Question.cs" />
-    <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\Setting.cs" />
-    <Compile Include="Entities\CompanySocial.cs" />
-    <Compile Include="Entities\Statistic.cs" />
-    <Compile Include="Entities\Profile.cs" />
-    <Compile Include="Entities\UserSocial.cs" />
+    <Compile Include="Entities\Companies\CompanyQuestion.cs" />
+    <Compile Include="Entities\Users\Role.cs" />
+    <Compile Include="Entities\Users\RoleType.cs" />
+    <Compile Include="Entities\Users\User.cs" />
+    <Compile Include="Entities\Users\ReportType.cs" />
+    <Compile Include="Entities\Users\UserSetting.cs" />
+    <Compile Include="Entities\Companies\CompanySocial.cs" />
+    <Compile Include="Entities\Common\Statistic.cs" />
+    <Compile Include="Entities\Users\UserProfile.cs" />
+    <Compile Include="Entities\Users\UserClaim.cs" />
+    <Compile Include="Entities\Users\UserLogin.cs" />
+    <Compile Include="Entities\Users\UserRole.cs" />
+    <Compile Include="Entities\Users\UserSocial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

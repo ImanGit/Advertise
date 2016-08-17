@@ -17,14 +17,17 @@ namespace Advertise.DataLayer.Migrations
             AutomaticMigrationDataLossAllowed = false;
         }
 
-        #endregion Ctor
+        #endregion
+
+        #region Seed
 
         /// <summary>
         /// </summary>
         /// <param name="context"></param>
         protected override void Seed(ApplicationDbContext context)
         {
-            //context.Users.Add(new User());
         }
+
+        #endregion
     }
 }

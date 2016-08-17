@@ -1,45 +1,28 @@
 ﻿using System;
-using Advertise.DomainClasses.Entities.Common ;
+using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده پیام های عمومی
+    ///     نشان دهنده پیام های عمومی
     /// </summary>
     public class Notice : BaseEntity
     {
-        #region Ctor
-
-        /// <summary>
-        /// سازنده پیش فرض
-        /// </summary>
-        public Notice()
-        {
-            Id = Guid.NewGuid();
-            IsVisible = true;
-        }
-
-        #endregion
-
         #region Properties
 
         /// <summary>
-        /// عنوان پیام عمومی
+        ///     عنوان پیام عمومی
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// متن پیام عمومی
+        ///     متن پیام عمومی
         /// </summary>
-        public string Content { get; set; }
+        public string Body { get; set; }
 
         /// <summary>
-        /// تاریخ ایجاد پیام عمومی
-        /// </summary>
-        public DateTime CreateDate { get; set; }
-
-        /// <summary>
-        /// دیده شدن و نشدن پیام
+        ///     دیده شدن و نشدن پیام
         /// </summary>
         public bool IsVisible { get; set; }
 
@@ -48,14 +31,13 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
-        /// 
+        ///     کاربری که پیام عمومی را ثبت کرده
         /// </summary>
-        public virtual Guid UserId { get; set; }
+        public virtual User Owner { get; set; }
 
         /// <summary>
-        /// کاربری که پیام عمومی را ثبت کرده
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual Guid OwnerId { get; set; }
 
         #endregion
     }

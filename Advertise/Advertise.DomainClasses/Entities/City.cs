@@ -5,57 +5,46 @@ using Advertise.DomainClasses.Entities.Common;
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده آدرس
+    ///     نشان دهنده آدرس
     /// </summary>
     public class City : BaseEntity
     {
-        #region Ctor
-
-        /// <summary>
-        /// سازنده پیش فرض
-        /// </summary>
-        public City()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        #endregion
-
         #region Properties
 
         /// <summary>
-        /// استان
+        ///     استان
         /// </summary>
-        public bool IsState { get; set; }
+        public virtual bool IsState { get; set; }
 
         /// <summary>
-        /// شهرستان
+        ///     شهرستان
         /// </summary>
-        public string CityName { get; set; }
+        public virtual string Name { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual bool IsActive { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual string Path { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        /// 
-        /// </summary>
-        public virtual Guid ParentId { get; set; }
-
-        /// <summary>
-        /// 
         /// </summary>
         public virtual City Parent { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
-        public virtual ICollection<City> Cities { get; set; }
+        public virtual Guid ParentId { get; set; }
+
 
         /// <summary>
-        /// 
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; } 
+        public virtual ICollection<City> Cities { get; set; }
 
         #endregion
     }

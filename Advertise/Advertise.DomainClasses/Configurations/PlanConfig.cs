@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities;
+using Advertise.DomainClasses.Entities.Plans;
 
 namespace Advertise.DomainClasses.Configurations
 {

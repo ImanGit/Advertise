@@ -82,8 +82,11 @@
     <Compile Include="DependencyResolution\ApplicationObjectFactory.cs" />
     <Compile Include="DependencyResolution\StructureMapControllerFactory.cs" />
     <Compile Include="Filters\AjaxOnlyAttribute.cs" />
-    <Compile Include="Filters\AuditLogAttribute.cs" />
+    <Compile Include="Filters\ActivityAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\HttpExtentions.cs" />
+    <Compile Include="Utility\SequentialGuidType.cs" />
+    <Compile Include="Utility\SequentialGuidGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -98,7 +101,6 @@
     <Folder Include="Helpers\" />
     <Folder Include="Localization\" />
     <Folder Include="ORM\" />
-    <Folder Include="Utility\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

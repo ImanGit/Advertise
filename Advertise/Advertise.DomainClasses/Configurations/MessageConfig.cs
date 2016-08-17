@@ -8,7 +8,7 @@ using Advertise.DomainClasses.Entities ;
 
 namespace Advertise.DomainClasses.Configurations
 {
-    public  class MessageConfig:EntityTypeConfiguration< Message >
+    public  class MessageConfig:EntityTypeConfiguration< Conversation >
     {
         public MessageConfig()
         {

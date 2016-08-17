@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using EntityFramework.BulkInsert.Extensions;
+using EntityFramework.Filters;
+using RefactorThis.GraphDiff;
 
 namespace Advertise.DataLayer.Context
 {

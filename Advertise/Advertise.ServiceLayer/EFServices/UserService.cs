@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities;
+using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts;
 using Microsoft.AspNet.Identity;
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advertise.DomainClasses .Entities ;
+using Advertise.DomainClasses.Entities.Companies;
 
 namespace Advertise.DomainClasses.Configurations
 {

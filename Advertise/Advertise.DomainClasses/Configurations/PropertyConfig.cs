@@ -1,12 +1,13 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities;
+using Advertise.DomainClasses.Entities.Products;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
     /// 
     /// </summary>
-    public class PropertyConfig : EntityTypeConfiguration<Property>
+    public class PropertyConfig : EntityTypeConfiguration<ProductProperty>
     {
         /// <summary>
         /// 

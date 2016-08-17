@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities ;
+using Advertise.DomainClasses.Entities.Categories;
+
 namespace Advertise.DomainClasses.Configurations
 {
     public  class CategoryConfig:EntityTypeConfiguration< Category >
