@@ -11,7 +11,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Edit
+        #region Update
         /// <summary>
         /// 
         /// </summary>
@@ -31,7 +31,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        void Retrieve();
+        void Get();
 
         #endregion
     }

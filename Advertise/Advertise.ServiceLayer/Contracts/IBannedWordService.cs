@@ -17,7 +17,7 @@ public    interface IBannedWordService:IBaseService
 
         #endregion
 
-        #region Edit
+        #region Update
         /// <summary>
         /// 
         /// </summary>
@@ -37,7 +37,7 @@ public    interface IBannedWordService:IBaseService
         /// <summary>
         /// 
         /// </summary>
-        void Retrieve();
+        void Get();
 
         #endregion
     }

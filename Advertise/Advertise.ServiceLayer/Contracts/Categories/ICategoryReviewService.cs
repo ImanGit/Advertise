@@ -12,7 +12,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         #endregion
 
-        #region Edit
+        #region Update
         /// <summary>
         /// 
         /// </summary>
@@ -32,7 +32,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         /// 
         /// </summary>
-        void Retrieve();
+        void Get();
 
         #endregion
     }
