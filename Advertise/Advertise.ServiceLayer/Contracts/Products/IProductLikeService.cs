@@ -1,8 +1,9 @@
-﻿namespace Advertise.ServiceLayer.Contracts
+﻿using Advertise.ServiceLayer.Contracts.Common;
+namespace Advertise.ServiceLayer.Contracts.Products
 {
     /// <summary>
     /// </summary>
-    public interface IProductLike
+    public interface IProductLikeService:IBaseService
     {
         #region Create
 

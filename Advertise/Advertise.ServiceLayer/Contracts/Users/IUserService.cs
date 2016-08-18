@@ -1,6 +1,8 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
 
-namespace Advertise.ServiceLayer.Contracts
+namespace Advertise.ServiceLayer.Contracts.Users
+
+
 {
     /// <summary>
     ///     نشان دهنده الزامات ارائه دهنده سرویس کاربر

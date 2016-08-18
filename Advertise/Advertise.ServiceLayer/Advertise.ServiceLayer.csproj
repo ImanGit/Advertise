@@ -57,13 +57,97 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Categories\ICategoryServicer.cs" />
+    <Compile Include="Contracts\Categories\ICategoryFollowService.cs" />
+    <Compile Include="Contracts\Categories\ICategoryReviewService.cs" />
     <Compile Include="Contracts\Common\IBaseService.cs" />
     <Compile Include="Contracts\Common\IService.cs" />
-    <Compile Include="Contracts\IProductLike.cs" />
-    <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyrService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyFollowService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyImageService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyQuestionService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyQuestionLikeService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyReviewService.cs" />
+    <Compile Include="Contracts\Companies\ICompanySocialService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyVisitService.cs" />
+    <Compile Include="Contracts\IBannedWordService.cs" />
+    <Compile Include="Contracts\ICityService.cs" />
+    <Compile Include="Contracts\IConversationService.cs" />
+    <Compile Include="Contracts\INoticeService.cs" />
+    <Compile Include="Contracts\INotificationService.cs" />
+    <Compile Include="Contracts\Plans\IBudgetService.cs" />
+    <Compile Include="Contracts\Plans\IPaymentService.cs" />
+    <Compile Include="Contracts\Plans\IPlanService.cs" />
+    <Compile Include="Contracts\Products\IProductServicer.cs" />
+    <Compile Include="Contracts\Products\IProductCommentService.cs" />
+    <Compile Include="Contracts\Products\IProductCommentLikeService.cs" />
+    <Compile Include="Contracts\Products\IProductImageService.cs" />
+    <Compile Include="Contracts\Products\IProductLikeService.cs" />
+    <Compile Include="Contracts\Products\IProductPropertyService.cs" />
+    <Compile Include="Contracts\Products\IProductReviewService.cs" />
+    <Compile Include="Contracts\Products\IProductStatusService.cs" />
+    <Compile Include="Contracts\Products\IProductVisitService.cs" />
+    <Compile Include="Contracts\Properties\IPropertyService.cs" />
+    <Compile Include="Contracts\Properties\IPropertyOptionService.cs" />
+    <Compile Include="Contracts\Users\IRoleService.cs" />
+    <Compile Include="Contracts\Users\IRoleActionService.cs" />
+    <Compile Include="Contracts\Users\IUserClaimService.cs" />
+    <Compile Include="Contracts\Users\IUserLoginService.cs" />
+    <Compile Include="Contracts\Users\IUserProfileService.cs" />
+    <Compile Include="Contracts\Users\IUserReportService.cs" />
+    <Compile Include="Contracts\Users\IUserRoleService.cs" />
+    <Compile Include="Contracts\Users\IUserService.cs" />
+    <Compile Include="Contracts\Users\IUserSettingService.cs" />
+    <Compile Include="Contracts\Users\IUserSocialService.cs" />
+    <Compile Include="EFServices\BannedWordService.cs" />
+    <Compile Include="EFServices\Categories\CategoryFollowrService.cs" />
+    <Compile Include="EFServices\Categories\CategoryReviewrService.cs" />
+    <Compile Include="EFServices\Categories\CategoryrServicer.cs" />
+    <Compile Include="EFServices\CityService.cs" />
     <Compile Include="EFServices\Common\BaseService.cs" />
     <Compile Include="EFServices\Common\Service.cs" />
-    <Compile Include="EFServices\UserService.cs" />
+    <Compile Include="EFServices\Companies\CompanyFollowrService.cs" />
+    <Compile Include="EFServices\Companies\CompanyImagerService.cs" />
+    <Compile Include="EFServices\Companies\CompanyQuestionLikerService.cs" />
+    <Compile Include="EFServices\Companies\CompanyQuestionrService.cs" />
+    <Compile Include="EFServices\Companies\CompanyReviewrService.cs" />
+    <Compile Include="EFServices\Companies\CompanyrServicer.cs" />
+    <Compile Include="EFServices\Companies\CompanySocialrService.cs" />
+    <Compile Include="EFServices\Companies\CompanyVisitrService.cs" />
+    <Compile Include="EFServices\ConversationService.cs" />
+    <Compile Include="EFServices\NoticeService.cs" />
+    <Compile Include="EFServices\NotificationService.cs" />
+    <Compile Include="EFServices\Plans\BudgetrService.cs" />
+    <Compile Include="EFServices\Plans\PaymentrService.cs" />
+    <Compile Include="EFServices\Plans\PlanrService.cs" />
+    <Compile Include="EFServices\Products\ProductCommentLikerService.cs" />
+    <Compile Include="EFServices\Products\ProductCommentService.cs" />
+    <Compile Include="EFServices\Products\ProductCommentStatusrService.cs" />
+    <Compile Include="EFServices\Products\ProductImagerService.cs" />
+    <Compile Include="EFServices\Products\ProductLikerService.cs" />
+    <Compile Include="EFServices\Products\ProductPropertyrService.cs" />
+    <Compile Include="EFServices\Products\ProductReviewrService.cs" />
+    <Compile Include="EFServices\Products\ProductrServicer.cs" />
+    <Compile Include="EFServices\Products\ProductStatusrService.cs" />
+    <Compile Include="EFServices\Products\ProductVisitrService.cs" />
+    <Compile Include="EFServices\Properties\PropertyOptionService.cs" />
+    <Compile Include="EFServices\Properties\PropertyService.cs" />
+    <Compile Include="EFServices\Properties\PropertyTypeService.cs" />
+    <Compile Include="EFServices\Users\GenderTypeService.cs" />
+    <Compile Include="EFServices\Users\LanguageTyperService.cs" />
+    <Compile Include="EFServices\Users\ReportTyperService.cs" />
+    <Compile Include="EFServices\Users\RoleActionrService.cs" />
+    <Compile Include="EFServices\Users\RolerService.cs" />
+    <Compile Include="EFServices\Users\RoleTyperService.cs" />
+    <Compile Include="EFServices\Users\ThemeTyperService.cs" />
+    <Compile Include="EFServices\Users\UserClaimService.cs" />
+    <Compile Include="EFServices\Users\UserLoginrService.cs" />
+    <Compile Include="EFServices\Users\UserProfilerService.cs" />
+    <Compile Include="EFServices\Users\UserReportrService.cs" />
+    <Compile Include="EFServices\Users\UserRolerService.cs" />
+    <Compile Include="EFServices\Users\UserService.cs" />
+    <Compile Include="EFServices\Users\UserSettingrService.cs" />
+    <Compile Include="EFServices\Users\UserSocialrService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +163,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\Roles\" />
+    <Folder Include="EFServices\Roles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

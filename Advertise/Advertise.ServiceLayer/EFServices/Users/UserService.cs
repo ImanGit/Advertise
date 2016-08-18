@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Data.Entity;
 using Advertise.DataLayer.Context;
-using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Users;
-using Advertise.ServiceLayer.Contracts;
+using Advertise.ServiceLayer.Contracts.Users;
 using Microsoft.AspNet.Identity;
 
-namespace Advertise.ServiceLayer.EFServices
+namespace Advertise.ServiceLayer.EFServices.Users
 {
     /// <summary>
     /// </summary>
