@@ -1,7 +1,7 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
 
-namespace Advertise.DomainClasses.Entities.Users
+namespace Advertise.DomainClasses.Entities.Roles
 {
     /// <summary>
     /// </summary>

@@ -1,16 +1,13 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Plans;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// 
     /// </summary>
-    public class PaymentConfig: EntityTypeConfiguration<Payment>
+    public class PaymentConfig : EntityTypeConfiguration<Payment>
     {
         /// <summary>
-        /// 
         /// </summary>
         public PaymentConfig()
         {

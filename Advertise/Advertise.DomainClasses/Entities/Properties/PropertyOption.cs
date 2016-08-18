@@ -10,8 +10,14 @@ namespace Advertise.DomainClasses.Entities.Properties
         #region Properties
 
         /// <summary>
+        /// عنوان گزینه‌ی مورد نظر
         /// </summary>
-        public virtual string Value { get; set; }
+        public virtual string Title { get; set; }
+
+        /// <summary>
+        /// توضیح بیشتر برای گزینه‌ی مورد نظر
+        /// </summary>
+        public virtual string Description { get; set; }
 
         #endregion
 

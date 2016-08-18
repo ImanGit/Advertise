@@ -53,6 +53,21 @@ namespace Advertise.DomainClasses.Entities.Products
         /// </summary>
         public virtual bool IsApproved { get; set; }
 
+        /// <summary>
+        /// امکان نظر دهی به پست
+        /// </summary>
+        public virtual bool IsAllowComment { get; set; }
+
+        /// <summary>
+        /// امکان نظر دهی به پست برای افراد ناشناس
+        /// </summary>
+        public virtual bool IsAllowCommentForAnonymous { get; set; }
+
+        /// <summary>
+        /// امکان به اشتراک گذاری آن در شبکه‌های اجتماعی
+        /// </summary>
+        public virtual bool IsEnableForShare { get; set; }
+
         #endregion
 
         #region NavigationProperties

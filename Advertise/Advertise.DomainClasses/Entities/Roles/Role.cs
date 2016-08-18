@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Advertise.DomainClasses.Entities.Users;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Advertise.DomainClasses.Entities.Users
+namespace Advertise.DomainClasses.Entities.Roles
 {
     /// <summary>
     /// </summary>
@@ -30,7 +31,7 @@ namespace Advertise.DomainClasses.Entities.Users
 
         /// <summary>
         /// </summary>
-        public virtual RoleType RoleType { get; set; }
+        public virtual RoleType Type { get; set; }
 
         #endregion
     }

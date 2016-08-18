@@ -1,16 +1,13 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities;
-using Advertise.DomainClasses.Entities.Users;
+using Advertise.DomainClasses.Entities.Roles;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// 
     /// </summary>
     public class RoleConfig : EntityTypeConfiguration<Role>
     {
         /// <summary>
-        /// 
         /// </summary>
         public RoleConfig()
         {

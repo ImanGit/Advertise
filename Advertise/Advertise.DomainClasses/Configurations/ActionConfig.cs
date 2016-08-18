@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities ;
+﻿using System.Data.Entity.ModelConfiguration;
 
 namespace Advertise.DomainClasses.Configurations
 {
@@ -16,8 +10,6 @@ namespace Advertise.DomainClasses.Configurations
             Property(action => action.ControllerName).IsRequired().HasMaxLength(100);
             Property(action => action.Title).IsRequired().HasMaxLength(100);
             Property(action => action.RowVersion).IsRowVersion();
-
-
         }
     }
 }

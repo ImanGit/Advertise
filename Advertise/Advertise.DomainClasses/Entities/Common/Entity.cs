@@ -65,22 +65,22 @@ namespace Advertise.DomainClasses.Entities.Common
         #region NavigationProperties
 
         /// <summary>
-        ///     gets ro sets User that Modify this entity
+        ///     به عنوان آخرین تغییر دهنده
         /// </summary>
         public virtual User ModifiedBy { get; set; }
 
         /// <summary>
-        ///     gets ro sets Id of  User that modify this entity
+        ///     به عنوان آخرین تغییر دهنده
         /// </summary>
         public virtual Guid ModifiedById { get; set; }
 
         /// <summary>
-        ///     gets ro sets User that Create this entity
+        ///     به عنوان ایجاد کننده
         /// </summary>
         public virtual User CreatedBy { get; set; }
 
         /// <summary>
-        ///     gets ro sets User that Create this entity
+        ///     به عنوان ایجاد کننده
         /// </summary>
         public virtual Guid CreatedById { get; set; }
 

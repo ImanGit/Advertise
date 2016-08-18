@@ -1,16 +1,13 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Companies;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// 
     /// </summary>
     public class QuestionConfig : EntityTypeConfiguration<CompanyQuestion>
     {
         /// <summary>
-        /// 
         /// </summary>
         public QuestionConfig()
         {

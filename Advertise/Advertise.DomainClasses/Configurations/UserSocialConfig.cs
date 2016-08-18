@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.DomainClasses.Entities;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Companies;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// 
     /// </summary>
     public class UserSocialConfig : EntityTypeConfiguration<CompanySocial>
     {
         /// <summary>
-        /// 
         /// </summary>
         public UserSocialConfig()
         {
@@ -29,4 +21,3 @@ namespace Advertise.DomainClasses.Configurations
         }
     }
 }
-

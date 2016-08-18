@@ -7,7 +7,7 @@ namespace Advertise.DomainClasses.Entities
     /// <summary>
     ///     نشان دهنده پیام های عمومی
     /// </summary>
-    public class Notice : BaseEntity
+    public class News : BaseEntity
     {
         #region Properties
 
@@ -19,12 +19,16 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     متن پیام عمومی
         /// </summary>
-        public string Body { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
         ///     دیده شدن و نشدن پیام
         /// </summary>
         public bool IsVisible { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public DateTime? ExpireOn { get; set; }
 
         #endregion
 

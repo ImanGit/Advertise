@@ -1,16 +1,15 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// نشان دهنده مپینگ مربوط به کلاس کاربر
+    ///     نشان دهنده مپینگ مربوط به کلاس کاربر
     /// </summary>
     public class ProfileConfig : EntityTypeConfiguration<User>
     {
         /// <summary>
-        /// سازنده پیش فرض
+        ///     سازنده پیش فرض
         /// </summary>
         public ProfileConfig()
         {
@@ -30,7 +29,10 @@ namespace Advertise.DomainClasses.Configurations
             Property(user => user.NationalCode).IsOptional().HasMaxLength(10);
             Property(user => user.RowVersion).IsRowVersion();
 
-            HasMany(user => user.Accounts).WithRequired(account => account.User).HasForeignKey(account=>account.UserId).WillCascadeOnDelete(true);
+            HasMany(user => user.Accounts)
+                .WithRequired(account => account.User)
+                .HasForeignKey(account => account.UserId)
+                .WillCascadeOnDelete(true);
             HasMany(user => user.Budgets).WithRequired(budget => budget.User).WillCascadeOnDelete(true);
             HasMany(user => user.Comments).WithRequired(comment => comment.CreateUser).WillCascadeOnDelete(false);
             //HasMany(user => user.Comments).WithOptional(comment => comment.AcceptUser).WillCascadeOnDelete(false);
@@ -50,7 +52,7 @@ namespace Advertise.DomainClasses.Configurations
             HasMany(user => user.Questions)
                 .WithRequired(question => question.User)
                 .WillCascadeOnDelete(true);
-            HasMany(user=>user.Settings).WithRequired(setting=>setting.User).WillCascadeOnDelete(true);
+            HasMany(user => user.Settings).WithRequired(setting => setting.User).WillCascadeOnDelete(true);
         }
     }
 }

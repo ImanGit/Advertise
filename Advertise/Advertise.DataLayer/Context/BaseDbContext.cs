@@ -11,6 +11,7 @@ using Advertise.DomainClasses.Configurations.Common;
 using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Products;
+using Advertise.DomainClasses.Entities.Roles;
 using Advertise.DomainClasses.Entities.Users;
 using EFSecondLevelCache;
 using Microsoft.AspNet.Identity.EntityFramework;

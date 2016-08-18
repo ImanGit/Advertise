@@ -4,7 +4,6 @@ using Advertise.DomainClasses.Entities.Common;
 namespace Advertise.DomainClasses.Entities.Companies
 {
     /// <summary>
-    /// 
     /// </summary>
     public class CompanyReview : BaseEntity
     {

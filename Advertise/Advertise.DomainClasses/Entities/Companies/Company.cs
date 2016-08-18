@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Users;
 
@@ -78,6 +79,10 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// <summary>
         /// </summary>
         public virtual Guid OwnerId { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyModerator> Moderators { get; set; }
 
         /// <summary>
         ///     کد اختصاصی آدرس

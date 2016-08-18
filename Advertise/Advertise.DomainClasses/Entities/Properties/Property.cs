@@ -16,7 +16,12 @@ namespace Advertise.DomainClasses.Entities.Properties
 
         /// <summary>
         /// </summary>
-        public PropertyType PropertyType { get; set; }
+        public virtual PropertyType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual string Description { get; set; }
 
         #endregion
 

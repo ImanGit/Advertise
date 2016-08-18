@@ -6,14 +6,14 @@ using Advertise.DomainClasses.Entities.Users;
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// نشان دهنده لاگ سیستم
+    ///     نشان دهنده لاگ سیستم
     /// </summary>
     public class Log : BaseEntity
     {
         #region Ctor
 
         /// <summary>
-        /// سازنده پیش فرض
+        ///     سازنده پیش فرض
         /// </summary>
         public Log()
         {
@@ -25,22 +25,21 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        /// متن لاگ
+        ///     متن لاگ
         /// </summary>
         public string Message { get; set; }
 
         /// <summary>
-        /// عمل لاگ(خطا یا Info)
+        ///     عمل لاگ(خطا یا Info)
         /// </summary>
         public string Action { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         public LogLevelType LogLevel { get; set; }
 
         /// <summary>
-        /// تاریخ ایجاد لاگ
+        ///     تاریخ ایجاد لاگ
         /// </summary>
         public DateTime Date { get; set; }
 
@@ -49,12 +48,11 @@ namespace Advertise.DomainClasses.Entities
         #region NavigationProperties
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual Guid UserId { get; set; }
 
         /// <summary>
-        /// کد اختصاصی کاربر
+        ///     کد اختصاصی کاربر
         /// </summary>
         public virtual User User { get; set; }
 

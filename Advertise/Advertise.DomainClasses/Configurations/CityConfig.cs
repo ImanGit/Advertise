@@ -4,12 +4,10 @@ using Advertise.DomainClasses.Entities;
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// 
     /// </summary>
-    public class CityConfig: EntityTypeConfiguration<City >
+    public class CityConfig : EntityTypeConfiguration<City>
     {
         /// <summary>
-        /// 
         /// </summary>
         public CityConfig()
         {
@@ -17,7 +15,6 @@ namespace Advertise.DomainClasses.Configurations
 
             Property(city => city.CityName).IsRequired().HasMaxLength(100);
             Property(city => city.RowVersion).IsRowVersion();
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Advertise.DomainClasses.Entities.Users
+﻿namespace Advertise.DomainClasses.Entities.Roles
 {
     /// <summary>
     /// </summary>

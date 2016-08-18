@@ -4,12 +4,10 @@ using Advertise.DomainClasses.Entities;
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
-    /// 
     /// </summary>
     public class StatisticConfig : EntityTypeConfiguration<Statistic>
     {
         /// <summary>
-        /// 
         /// </summary>
         public StatisticConfig()
         {

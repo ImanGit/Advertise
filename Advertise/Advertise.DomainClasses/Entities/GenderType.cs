@@ -3,20 +3,18 @@
 namespace Advertise.DomainClasses.Entities.Users
 {
     /// <summary>
-    /// انواع جنسیت
+    ///     انواع جنسیت
     /// </summary>
     public enum GenderType
     {
         /// <summary>
-        /// مذکر
+        ///     مذکر
         /// </summary>
-        [Display(Name ="مرد")]
-        Male = 1,
+        [Display(Name = "مرد")] Male = 1,
 
         /// <summary>
-        /// مونث
+        ///     مونث
         /// </summary>
-        [Display(Name ="زن")]
-        Female = 2
+        [Display(Name = "زن")] Female = 2
     }
 }

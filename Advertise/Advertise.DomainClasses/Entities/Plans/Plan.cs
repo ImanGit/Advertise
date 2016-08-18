@@ -4,56 +4,56 @@ using Advertise.DomainClasses.Entities.Common;
 namespace Advertise.DomainClasses.Entities.Plans
 {
     /// <summary>
-    /// 
     /// </summary>
     public class Plan : BaseEntity
     {
         #region Properties
 
         /// <summary>
-        /// کد سرویس
+        ///     کد سرویس
         /// </summary>
         public string Code { get; set; }
 
+        public string Access { get; set; }
+
         /// <summary>
-        /// عنوان سریس
+        ///     عنوان سریس
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// توضیح سرویس
+        ///     توضیح سرویس
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// مدت سرویس(یکماهه،دو ماهه و...)
+        ///     مدت سرویس(یکماهه،دو ماهه و...)
         /// </summary>
         public string DurationDay { get; set; }
 
         /// <summary>
-        /// قیمت سرویس
+        ///     قیمت سرویس
         /// </summary>
-        public Int32 CostValueRial { get; set; }
+        public int CostValueRial { get; set; }
 
         /// <summary>
-        /// آیا سرویس فعال است؟
+        ///     آیا سرویس فعال است؟
         /// </summary>
         public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// تاریخ شروع سرویس
+        ///     تاریخ شروع سرویس
         /// </summary>
         public DateTime StartOn { get; set; }
 
         /// <summary>
-        /// تاریخ پایان سرویس
+        ///     تاریخ پایان سرویس
         /// </summary>
         public DateTime ExpireOn { get; set; }
 
         #endregion
 
         #region NavigationProperties
-
 
         #endregion
     }

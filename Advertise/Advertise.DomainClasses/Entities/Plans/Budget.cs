@@ -5,24 +5,24 @@ using Advertise.DomainClasses.Entities.Users;
 namespace Advertise.DomainClasses.Entities.Plans
 {
     /// <summary>
-    /// نشان دهنده بودجه حساب مالی کاربر
+    ///     نشان دهنده بودجه حساب مالی کاربر
     /// </summary>
     public class Budget : BaseEntity
     {
         #region Properties
 
         /// <summary>
-        /// بودجه باقی مانده حساب مالی کاربر
+        ///     بودجه باقی مانده حساب مالی کاربر
         /// </summary>
-        public Int32 RemainValue { get; set; }
+        public int RemainValue { get; set; }
 
         /// <summary>
-        /// افزایش و کاهش حساب مالی کاربر
+        ///     افزایش و کاهش حساب مالی کاربر
         /// </summary>
-        public Int32 IncDecValue { get; set; }
+        public int IncDecValue { get; set; }
 
         /// <summary>
-        /// کدرهگیری که بانک میدهد
+        ///     کدرهگیری که بانک میدهد
         /// </summary>
         public string RefrenceCode { get; set; }
 
@@ -31,12 +31,11 @@ namespace Advertise.DomainClasses.Entities.Plans
         #region NavigationProperties
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual Guid UserId { get; set; }
 
         /// <summary>
-        /// کد اختصاصی کاربر
+        ///     کد اختصاصی کاربر
         /// </summary>
         public virtual User User { get; set; }
 
