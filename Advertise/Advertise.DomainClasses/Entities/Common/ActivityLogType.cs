@@ -1,6 +1,6 @@
 ﻿namespace Advertise.DomainClasses.Entities.Common
 {
-    internal class ActivityLogType
+    public class ActivityLogType
     {
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
-using Advertise.DomainClasses.Entities.Products;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities
@@ -13,13 +12,27 @@ namespace Advertise.DomainClasses.Entities
         #region Properties
 
         /// <summary>
-        ///     آیا کاربر هشدارها را مشاهده کرده؟
+        ///     یک اطلاع رسانی خوانده شده است یا خیر
         /// </summary>
         public bool IsRead { get; set; }
 
         /// <summary>
+        ///     کاربر با کلیک بر روی آن به صفحه‌ی خاصی هدایت شود
         /// </summary>
         public virtual string Url { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual string Message { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual DateTime? ReadOn { get; set; }
+
+        /// <summary>
+        ///     مشخص کننده‌ی نوع اطلاع رسانی
+        /// </summary>
+        public virtual NotificationType Type { get; set; }
 
         #endregion
 
@@ -28,21 +41,11 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual User Owner { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid UserId { get; set; }
-
-
-        /// <summary>
-        ///     کداختصاصی محصول
-        /// </summary>
-        public virtual Product Product { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid ProductId { get; set; }
+        public virtual Guid OwnerId { get; set; }
 
         #endregion
     }

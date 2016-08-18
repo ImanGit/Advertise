@@ -35,6 +35,10 @@ namespace Advertise.DomainClasses.Entities.Products
         /// </summary>
         public virtual int Order { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual bool IsWatermarked { get; set; }
+
         #endregion
 
         #region NavigationProperties

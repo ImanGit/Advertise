@@ -49,6 +49,14 @@ namespace Advertise.DomainClasses.Entities.Common
         ///     gets or sets information of user agent of Creator
         /// </summary>
         public virtual string CreatorAgent { get; set; }
+        /// <summary>
+        /// gets or sets date that this entity repoted last time
+        /// </summary>
+        public virtual DateTime? ReportedOn { get; set; }
+        /// <summary>
+        /// gets or sets counter for Content's report
+        /// </summary>
+        public virtual int ReportCount { get; set; }
 
         /// <summary>
         ///     gets or sets count of Modification Default is 1
@@ -58,7 +66,7 @@ namespace Advertise.DomainClasses.Entities.Common
         /// <summary>
         ///     gets or sets action (create,update,softDelete)
         /// </summary>
-        public virtual AuditActionType Action { get; set; }
+        public virtual AuditLogType Action { get; set; }
 
         #endregion
 

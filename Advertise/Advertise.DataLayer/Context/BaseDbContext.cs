@@ -109,7 +109,7 @@ namespace Advertise.DataLayer.Context
                         entry.Entity.CreatedOn = auditDate;
                         entry.Entity.CreatedById = auditUserId;
                         entry.Entity.ModifiedOn = auditDate;
-                        entry.Entity.Action = AuditActionType.Create;
+                        entry.Entity.Action = AuditLogType.Create;
                         entry.Entity.ModifiedById = auditUserId;
                         entry.Entity.CreatorIp = auditUserIp;
                         entry.Entity.ModifierIp = auditUserIp;
@@ -124,8 +124,8 @@ namespace Advertise.DataLayer.Context
                         entry.Entity.ModifierAgent = auditUserAgent;
                         entry.Entity.Version = ++entry.Entity.Version;
                         entry.Entity.Action = entry.Entity.IsDeleted
-                            ? AuditActionType.SoftDelete
-                            : AuditActionType.Update;
+                            ? AuditLogType.SoftDelete
+                            : AuditLogType.Update;
                         break;
                     case EntityState.Detached:
                         break;
