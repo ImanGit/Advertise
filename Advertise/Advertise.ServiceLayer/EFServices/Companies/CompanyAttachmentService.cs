@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Advertise.ServiceLayer.Contracts;
+using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ServiceLayer.Contracts.Companies;
 
-namespace Advertise.ServiceLayer.EFServices
+namespace Advertise.ServiceLayer.EFServices.Companies
 {
-    public class NotificationService:INotificationService 
+    public class CompanyAttachmentService :ICompanyAttachmentService 
     {
         public void Create()
         {

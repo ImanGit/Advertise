@@ -48,7 +48,7 @@ namespace Advertise.DomainClasses.Entities.Companies
         public virtual string Address { get; set; }
 
         /// <summary>
-        ///     شماره تلفن(های) شرکت
+        ///  شماره تلفن(های) شرکت
         /// </summary>
         public virtual string PhoneNumber { get; set; }
 

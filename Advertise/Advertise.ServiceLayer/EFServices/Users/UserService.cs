@@ -30,12 +30,40 @@ namespace Advertise.ServiceLayer.EFServices.Users
 
         #endregion
 
+        #region Update
+
+        public void Edit()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Delete
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Retrive
+
+        public void Get()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        #endregion
+
         #region Count
 
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public long Count()
+        public long GetCount()
         {
             return 0;
         }

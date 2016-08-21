@@ -60,6 +60,8 @@
     <Compile Include="Contracts\Categories\ICategoryServicer.cs" />
     <Compile Include="Contracts\Categories\ICategoryFollowService.cs" />
     <Compile Include="Contracts\Categories\ICategoryReviewService.cs" />
+    <Compile Include="Contracts\Common\IActivityLogService.cs" />
+    <Compile Include="Contracts\Common\IAuditLogService.cs" />
     <Compile Include="Contracts\Common\IBaseService.cs" />
     <Compile Include="Contracts\Common\IService.cs" />
     <Compile Include="Contracts\Companies\ICompanyrService.cs" />
@@ -70,11 +72,18 @@
     <Compile Include="Contracts\Companies\ICompanyReviewService.cs" />
     <Compile Include="Contracts\Companies\ICompanySocialService.cs" />
     <Compile Include="Contracts\Companies\ICompanyVisitService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyAttachmentService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyModeratorService.cs" />
     <Compile Include="Contracts\IBannedWordService.cs" />
     <Compile Include="Contracts\ICityService.cs" />
     <Compile Include="Contracts\IConversationService.cs" />
+    <Compile Include="Contracts\IEmailService.cs" />
+    <Compile Include="Contracts\INewsService.cs" />
     <Compile Include="Contracts\INoticeService.cs" />
     <Compile Include="Contracts\INotificationService.cs" />
+    <Compile Include="Contracts\IShareService.cs" />
+    <Compile Include="Contracts\ISmsService.cs" />
+    <Compile Include="Contracts\IStatisticService.cs" />
     <Compile Include="Contracts\Plans\IBudgetService.cs" />
     <Compile Include="Contracts\Plans\IPaymentService.cs" />
     <Compile Include="Contracts\Plans\IPlanService.cs" />
@@ -88,8 +97,8 @@
     <Compile Include="Contracts\Products\IProductVisitService.cs" />
     <Compile Include="Contracts\Properties\IPropertyService.cs" />
     <Compile Include="Contracts\Properties\IPropertyOptionService.cs" />
-    <Compile Include="Contracts\Users\IRoleService.cs" />
-    <Compile Include="Contracts\Users\IRoleActionService.cs" />
+    <Compile Include="Contracts\Roles\IRoleService.cs" />
+    <Compile Include="Contracts\Roles\IRoleActionService.cs" />
     <Compile Include="Contracts\Users\IUserClaimService.cs" />
     <Compile Include="Contracts\Users\IUserLoginService.cs" />
     <Compile Include="Contracts\Users\IUserProfileService.cs" />
@@ -103,10 +112,14 @@
     <Compile Include="EFServices\Categories\CategoryReviewService.cs" />
     <Compile Include="EFServices\Categories\CategoryServicer.cs" />
     <Compile Include="EFServices\CityService.cs" />
+    <Compile Include="EFServices\Common\ActivityLogService.cs" />
+    <Compile Include="EFServices\Common\AuditLogService.cs" />
     <Compile Include="EFServices\Common\BaseService.cs" />
     <Compile Include="EFServices\Common\Service.cs" />
+    <Compile Include="EFServices\Companies\CompanyAttachmentService.cs" />
     <Compile Include="EFServices\Companies\CompanyFollowService.cs" />
     <Compile Include="EFServices\Companies\CompanyImageService.cs" />
+    <Compile Include="EFServices\Companies\CompanyModeratorService.cs" />
     <Compile Include="EFServices\Companies\CompanyQuestionLikeService.cs" />
     <Compile Include="EFServices\Companies\CompanyQuestionService.cs" />
     <Compile Include="EFServices\Companies\CompanyReviewService.cs" />
@@ -114,6 +127,8 @@
     <Compile Include="EFServices\Companies\CompanySocialService.cs" />
     <Compile Include="EFServices\Companies\CompanyVisitService.cs" />
     <Compile Include="EFServices\ConversationService.cs" />
+    <Compile Include="EFServices\EmailService.cs" />
+    <Compile Include="EFServices\NewsService.cs" />
     <Compile Include="EFServices\NoticeService.cs" />
     <Compile Include="EFServices\NotificationService.cs" />
     <Compile Include="EFServices\Plans\BudgetService.cs" />
@@ -121,7 +136,6 @@
     <Compile Include="EFServices\Plans\PlanService.cs" />
     <Compile Include="EFServices\Products\ProductCommentLikeService.cs" />
     <Compile Include="EFServices\Products\ProductCommentService.cs" />
-    <Compile Include="EFServices\Products\ProductCommentStatusService.cs" />
     <Compile Include="EFServices\Products\ProductImageService.cs" />
     <Compile Include="EFServices\Products\ProductLikeService.cs" />
     <Compile Include="EFServices\Products\ProductPropertyService.cs" />
@@ -130,8 +144,11 @@
     <Compile Include="EFServices\Products\ProductVisitService.cs" />
     <Compile Include="EFServices\Properties\PropertyOptionService.cs" />
     <Compile Include="EFServices\Properties\PropertyService.cs" />
-    <Compile Include="EFServices\Users\RoleActionService.cs" />
-    <Compile Include="EFServices\Users\RoleService.cs" />
+    <Compile Include="EFServices\Roles\RoleActionService.cs" />
+    <Compile Include="EFServices\Roles\RoleService.cs" />
+    <Compile Include="EFServices\ShareService.cs" />
+    <Compile Include="EFServices\SmsService.cs" />
+    <Compile Include="EFServices\StatisticService.cs" />
     <Compile Include="EFServices\Users\UserClaimService.cs" />
     <Compile Include="EFServices\Users\UserLoginService.cs" />
     <Compile Include="EFServices\Users\UserProfileService.cs" />
@@ -156,10 +173,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\Roles\" />
-    <Folder Include="EFServices\Roles\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

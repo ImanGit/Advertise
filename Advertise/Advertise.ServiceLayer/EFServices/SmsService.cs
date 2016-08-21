@@ -7,7 +7,7 @@ using Advertise.ServiceLayer.Contracts;
 
 namespace Advertise.ServiceLayer.EFServices
 {
-    public class NotificationService:INotificationService 
+    public class SmsService:ISmsService 
     {
         public void Create()
         {

@@ -1,6 +1,27 @@
-﻿namespace Advertise.ServiceLayer.EFServices.Products
+﻿using Advertise.ServiceLayer.Contracts.Products;
+
+namespace Advertise.ServiceLayer.EFServices.Products
 {
-    public class ProductServicer
+    public class ProductServicer :IProductServicer 
     {
+        public void Create()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Edit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Get()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

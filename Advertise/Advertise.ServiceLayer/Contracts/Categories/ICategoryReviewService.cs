@@ -6,17 +6,27 @@ namespace Advertise.ServiceLayer.Contracts.Categories
     {
         #region Create
         /// <summary>
-        /// 
+        /// ایجاد نقد و بررسی
         /// </summary>
-        void Create();
+        /// <param name="viewModel"></param>
+        bool Create( int Id);
 
         #endregion
 
         #region Update
         /// <summary>
-        /// 
+        /// اصلاح نقد و بررسی
         /// </summary>
-        void Edit();
+        bool Edit(int IdCat);
+
+        /// <summary>
+        /// نمایش یا عدم نمایش نقد و بررسی
+        /// </summary>
+        /// <returns></returns>
+        bool EditForIsShowOrNotShow();
+
+        
+
 
         #endregion
 
@@ -33,6 +43,12 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// 
         /// </summary>
         void Get();
+
+        /// <summary>
+        /// تعداد کل نقد و بررسی ها
+        /// </summary>
+        /// <returns></returns>
+        bool GetCount();
 
         #endregion
     }

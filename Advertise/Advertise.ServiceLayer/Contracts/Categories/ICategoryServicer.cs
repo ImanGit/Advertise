@@ -1,4 +1,5 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
+﻿using System;
+using Advertise.ServiceLayer.Contracts.Common;
 
 namespace Advertise.ServiceLayer.Contracts.Categories
 {
@@ -16,23 +17,37 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         /// 
         /// </summary>
-        void Edit();
+        void EditCategory( );
 
         #endregion
 
         #region Delete
         /// <summary>
-        /// 
+        /// پاک کردن به صورت منطقی
         /// </summary>
-        void Delete();
+        bool DeleteCategory();
+
+        /// <summary>
+        /// پاک کردن به صورت فیزیکی
+        /// </summary>
+        /// <returns></returns>
+        bool DeleteHard();
 
         #endregion
 
         #region Retrieve
         /// <summary>
-        /// 
+        /// گرفتن تعداد کل دسته بندی ها
         /// </summary>
-        void Get();
+        int GetAllCountCategory();
+
+        /// <summary>
+        /// گرفتن آخرین دسته بندی ها بر اساس روز
+        /// </summary>
+        /// <returns></returns>
+        int GetLastToDay();
+
+
 
         #endregion
     }

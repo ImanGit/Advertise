@@ -1,7 +1,7 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
-namespace Advertise.ServiceLayer.Contracts.Properties
+namespace Advertise.ServiceLayer.Contracts.Roles
 {
-    public interface IPropertyService:IBaseService 
+    public interface IRoleService:IBaseService 
     {
         #region Create
         /// <summary>

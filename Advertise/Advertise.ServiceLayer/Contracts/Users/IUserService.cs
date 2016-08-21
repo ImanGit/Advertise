@@ -9,15 +9,44 @@ namespace Advertise.ServiceLayer.Contracts.Users
     /// </summary>
     public interface IUserService : IBaseService
     {
+        #region Create
         /// <summary>
-        ///     درج کاربر جدید
+        /// 
         /// </summary>
         void Create();
+
+        #endregion
+
+        #region Update
+        /// <summary>
+        /// 
+        /// </summary>
+        void Edit();
+
+        #endregion
+
+        #region Delete
+        /// <summary>
+        /// 
+        /// </summary>
+        void Delete();
+
+        #endregion
+
+        #region Retrieve
+        /// <summary>
+        /// 
+        /// </summary>
+        void Get();
 
         /// <summary>
         ///     برگرداندن تعداد کاربران
         /// </summary>
         /// <returns></returns>
-        long Count();
+        long GetCount();
+
+        #endregion
+
+
     }
 }
