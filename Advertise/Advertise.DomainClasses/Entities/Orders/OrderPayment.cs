@@ -1,5 +1,6 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Orders;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Plans
@@ -32,7 +33,7 @@ namespace Advertise.DomainClasses.Entities.Plans
         /// <summary>
         ///     کد اختصاصی سرویس خریداری شده
         /// </summary>
-        public virtual Plan Plan { get; set; }
+        public virtual Feature Plan { get; set; }
 
         /// <summary>
         /// </summary>
@@ -50,7 +51,7 @@ namespace Advertise.DomainClasses.Entities.Plans
         /// <summary>
         ///     کد اختصاصی بودجه
         /// </summary>
-        public virtual Budget Budget { get; set; }
+        public virtual UserBudget Budget { get; set; }
 
         #endregion
     }

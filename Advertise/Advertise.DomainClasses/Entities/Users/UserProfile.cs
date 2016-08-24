@@ -46,11 +46,6 @@ namespace Advertise.DomainClasses.Entities.Users
         public virtual DateTime? MarriedDate { get; set; }
 
         /// <summary>
-        ///     موقعیت مکانی کاربر
-        /// </summary>
-        public virtual string Address { get; set; }
-
-        /// <summary>
         ///     عکس یا لوگو کاربر
         /// </summary>
         public virtual string AvatarFileName { get; set; }
@@ -65,19 +60,32 @@ namespace Advertise.DomainClasses.Entities.Users
         /// </summary>
         public virtual GenderType? Gender { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual string AboutMe { get; set; }
+
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
+        ///     کد اختصاصی کاربر
+        /// </summary>
+        public virtual User OwnedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid OwnedById { get; set; }
+
+        /// <summary>
         ///     شهر محل زندگی کاربر
         /// </summary>
-        public virtual City City { get; set; }
+        public virtual Address Address { get; set; }
 
         /// <summary>
         ///     کلید خارجی شهر
         /// </summary>
-        public virtual Guid CityId { get; set; }
+        public virtual Guid AddressId { get; set; }
 
         #endregion
     }

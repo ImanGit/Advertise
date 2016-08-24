@@ -11,12 +11,9 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public QuestionConfig()
         {
-            //ToTable("AD_Qustion");
-
-            Property(question => question.Content).IsRequired().HasMaxLength(700);
-            Property(question => question.CreateDate).IsRequired();
-            Property(question => question.IsAccepted).IsRequired();
-            Property(question => question.LikedCount).IsOptional();
+            Property(question => question.Body).IsRequired().HasMaxLength(700);
+            Property(question => question.CreatedOn).IsRequired();
+            Property(question => question.IsApproved).IsRequired();
             Property(question => question.Title).IsRequired().HasMaxLength(255);
             Property(question => question.RowVersion).IsRowVersion();
 

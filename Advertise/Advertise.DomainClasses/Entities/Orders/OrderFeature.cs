@@ -1,11 +1,11 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
 
-namespace Advertise.DomainClasses.Entities.Plans
+namespace Advertise.DomainClasses.Entities.Orders
 {
     /// <summary>
     /// </summary>
-    public class Plan : BaseEntity
+    public class Feature : BaseEntity
     {
         #region Properties
 
@@ -14,6 +14,8 @@ namespace Advertise.DomainClasses.Entities.Plans
         /// </summary>
         public string Code { get; set; }
 
+        /// <summary>
+        /// </summary>
         public string Access { get; set; }
 
         /// <summary>
@@ -34,12 +36,12 @@ namespace Advertise.DomainClasses.Entities.Plans
         /// <summary>
         ///     قیمت سرویس
         /// </summary>
-        public int CostValueRial { get; set; }
+        public int CostRialValue { get; set; }
 
         /// <summary>
         ///     آیا سرویس فعال است؟
         /// </summary>
-        public bool IsEnabled { get; set; }
+        public bool IsActive { get; set; }
 
         /// <summary>
         ///     تاریخ شروع سرویس

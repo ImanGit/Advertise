@@ -1,11 +1,12 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Advertise.DomainClasses.Entities.Orders;
 using Advertise.DomainClasses.Entities.Plans;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
     /// </summary>
-    public class PlanConfig : EntityTypeConfiguration<Plan>
+    public class PlanConfig : EntityTypeConfiguration<Feature>
     {
         /// <summary>
         /// </summary>

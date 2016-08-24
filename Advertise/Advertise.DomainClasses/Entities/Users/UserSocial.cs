@@ -37,11 +37,11 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     کد اختصاصی شرکت
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual User OwnedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid UserId { get; set; }
+        public virtual Guid OwnedById { get; set; }
 
         #endregion
     }

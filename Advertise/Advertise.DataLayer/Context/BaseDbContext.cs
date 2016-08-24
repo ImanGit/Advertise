@@ -8,7 +8,6 @@ using System.Web;
 using Advertise.Common.Utility;
 using Advertise.DataLayer.Conventions;
 using Advertise.DomainClasses.Configurations.Common;
-using Advertise.DomainClasses.Entities;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Products;
 using Advertise.DomainClasses.Entities.Roles;

@@ -24,7 +24,7 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     دیده شدن و نشدن پیام
         /// </summary>
-        public bool IsVisible { get; set; }
+        public bool IsActive { get; set; }
 
         /// <summary>
         /// </summary>
@@ -37,11 +37,11 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     کاربری که پیام عمومی را ثبت کرده
         /// </summary>
-        public virtual User Owner { get; set; }
+        public virtual User OwnedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid OwnerId { get; set; }
+        public virtual Guid OwnedById { get; set; }
 
         #endregion
     }

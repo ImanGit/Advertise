@@ -33,6 +33,10 @@ namespace Advertise.DomainClasses.Entities.Roles
         /// </summary>
         public virtual RoleType Type { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual bool IsSystemRole { get; set; }
+
         #endregion
     }
 }

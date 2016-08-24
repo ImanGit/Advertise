@@ -23,6 +23,10 @@ namespace Advertise.DomainClasses.Entities.Users
         public virtual string BannedReason { get; set; }
 
         /// <summary>
+        /// </summary>
+        public virtual DateTime? BannedOn { get; set; }
+
+        /// <summary>
         ///     آیا کاربر تائید شده است؟
         /// </summary>
         public virtual bool IsVerified { get; set; }
@@ -59,11 +63,40 @@ namespace Advertise.DomainClasses.Entities.Users
 
         /// <summary>
         /// </summary>
+        public virtual bool IsSystemAccount { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual string LastIp { get; set; }
+
+        /// <summary>
+        /// </summary>
         public virtual byte[] RowVersion { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<UserBudget> Budgets { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual UserProfile Profile { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<UserReport> Reports { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual UserSetting Setting { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual UserSocial Social { get; set; }
+
 
         /// <summary>
         ///     لیست محصولات کاربر

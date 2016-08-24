@@ -1,20 +1,19 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
-using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Entities.Plans
+namespace Advertise.DomainClasses.Entities.Users
 {
     /// <summary>
     ///     نشان دهنده بودجه حساب مالی کاربر
     /// </summary>
-    public class Budget : BaseEntity
+    public class UserBudget : BaseEntity
     {
         #region Properties
 
         /// <summary>
         ///     بودجه باقی مانده حساب مالی کاربر
         /// </summary>
-        public int RemainValue { get; set; }
+        public int RemainRialValue { get; set; }
 
         /// <summary>
         ///     افزایش و کاهش حساب مالی کاربر
@@ -22,22 +21,21 @@ namespace Advertise.DomainClasses.Entities.Plans
         public int IncDecValue { get; set; }
 
         /// <summary>
-        ///     کدرهگیری که بانک میدهد
         /// </summary>
-        public string RefrenceCode { get; set; }
+        public string Description { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        /// </summary>
-        public virtual Guid UserId { get; set; }
-
-        /// <summary>
         ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual User OwnedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid OwnedById { get; set; }
 
         #endregion
     }

@@ -76,12 +76,12 @@ namespace Advertise.DomainClasses.Entities.Common
         /// <summary>
         ///     sets or gets log's creator
         /// </summary>
-        public virtual User Operant { get; set; }
+        public virtual User OperantedBy { get; set; }
 
         /// <summary>
         ///     sets or gets identifier of log's creator
         /// </summary>
-        public virtual long OperantId { get; set; }
+        public virtual long OperantedById { get; set; }
 
         #endregion
     }

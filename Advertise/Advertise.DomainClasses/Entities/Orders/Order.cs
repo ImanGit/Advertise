@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.DomainClasses.Entities.Orders
 {
-    class Share
+    public class Order
     {
+        public virtual OrderStatus Status { get; set; }
     }
 }

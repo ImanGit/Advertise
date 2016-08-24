@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Advertise.DomainClasses.Entities.Products
+namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
     /// </summary>
-    public enum ProductCommentStatus
+    public enum CommentStatus
     {
         /// <summary>
         /// </summary>

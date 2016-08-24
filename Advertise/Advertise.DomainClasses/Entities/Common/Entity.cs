@@ -49,12 +49,14 @@ namespace Advertise.DomainClasses.Entities.Common
         ///     gets or sets information of user agent of Creator
         /// </summary>
         public virtual string CreatorAgent { get; set; }
+
         /// <summary>
-        /// gets or sets date that this entity repoted last time
+        ///     gets or sets date that this entity repoted last time
         /// </summary>
         public virtual DateTime? ReportedOn { get; set; }
+
         /// <summary>
-        /// gets or sets counter for Content's report
+        ///     gets or sets counter for Content's report
         /// </summary>
         public virtual int ReportCount { get; set; }
 

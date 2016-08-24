@@ -27,7 +27,7 @@ namespace Advertise.DomainClasses.Entities
 
         /// <summary>
         /// </summary>
-        public virtual string Path { get; set; }
+        public virtual string ParentPath { get; set; }
 
         #endregion
 

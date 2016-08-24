@@ -13,11 +13,24 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual bool IsLiked { get; set; }
+        public virtual bool IsLike { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual bool IsDisLike { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        ///     کد اختصاصی کاربر فرستنده
+        /// </summary>
+        public virtual User LikedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid LikedById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی کاربر گیرنده
@@ -27,15 +40,6 @@ namespace Advertise.DomainClasses.Entities.Products
         /// <summary>
         /// </summary>
         public virtual Guid CommentId { get; set; }
-
-        /// <summary>
-        ///     کد اختصاصی کاربر فرستنده
-        /// </summary>
-        public virtual User Liker { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid LikerId { get; set; }
 
         #endregion
     }

@@ -1,11 +1,12 @@
 ﻿using System;
+using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Products
 {
     /// <summary>
     /// </summary>
-    public class ProductReport
+    public class ProductReport : BaseEntity
     {
         #region Properties
 
@@ -27,11 +28,11 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual User Reporter { get; set; }
+        public virtual User ReportedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid ReporterId { get; set; }
+        public virtual Guid ReportedById { get; set; }
 
         /// <summary>
         /// </summary>

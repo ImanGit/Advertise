@@ -34,17 +34,25 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// </summary>
         public virtual string Description { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual AttachmentType Type { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual bool IsApproved { get; set; }
+
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
         /// </summary>
-        public virtual User Owner { get; set; }
+        public virtual User OwnedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid OwnerId { get; set; }
+        public virtual Guid OwnedById { get; set; }
 
         /// <summary>
         /// </summary>

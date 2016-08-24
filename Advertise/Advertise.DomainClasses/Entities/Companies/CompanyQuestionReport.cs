@@ -5,37 +5,42 @@ using Advertise.DomainClasses.Entities.Users;
 namespace Advertise.DomainClasses.Entities.Companies
 {
     /// <summary>
-    ///     نشان دهنده دیده شدن کمپانی
     /// </summary>
-    public class CompanyVisit : BaseEntity
+    public class CompanyQuestionReport : BaseEntity
     {
         #region Properties
 
         /// <summary>
         /// </summary>
-        public virtual bool IsVisit { get; set; }
+        public virtual ReportType Type { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual string Reason { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual bool IsRead { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User VisitedBy { get; set; }
+        public virtual User ReportedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid VisitedById { get; set; }
-
-        /// <summary>
-        ///     کد اختصاصی شرکت
-        /// </summary>
-        public virtual Company Company { get; set; }
+        public virtual Guid ReportedById { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid CompanyId { get; set; }
+        public virtual CompanyQuestion ReportedFor { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid ReportedForId { get; set; }
 
         #endregion
     }

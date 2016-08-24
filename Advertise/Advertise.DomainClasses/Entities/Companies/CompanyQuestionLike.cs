@@ -14,9 +14,22 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// </summary>
         public virtual bool IsLiked { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual bool IsDisLiked { get; set; }
+
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        ///     کد اختصاصی کاربر
+        /// </summary>
+        public virtual User LikedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid LikedById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی کمپانی
@@ -26,15 +39,6 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// <summary>
         /// </summary>
         public virtual Guid QuestionId { get; set; }
-
-        /// <summary>
-        ///     کد اختصاصی کاربر
-        /// </summary>
-        public virtual User Liker { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid LikerId { get; set; }
 
         #endregion
     }

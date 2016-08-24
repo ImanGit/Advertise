@@ -13,6 +13,10 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// </summary>
         public virtual string Body { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual bool IsActive { get; set; }
+
         #endregion
 
         #region NavigationProperties

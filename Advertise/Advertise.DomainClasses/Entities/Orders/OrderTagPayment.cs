@@ -1,39 +1,46 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Products;
 using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Entities.Products
+namespace Advertise.DomainClasses.Entities.Plans
 {
     /// <summary>
-    ///     نشان دهنده دیده شدن محصول
     /// </summary>
-    public class ProductVisit : BaseEntity
+    public class TagPayment : BaseEntity
     {
         #region Properties
 
-        /// <summary>
-        /// </summary>
-        public virtual bool IsVisit { get; set; }
+        public virtual DateTime ExpireOn { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
-        ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User VisitedBy { get; set; }
+        public virtual Tag Tag { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid VisitedById { get; set; }
+        public virtual Guid TagId { get; set; }
 
         /// <summary>
-        ///     کد اختصاصی شرکت
+        ///     خریدار
+        /// </summary>
+        public virtual User Buyer { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid BuyerId { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         public virtual Product Product { get; set; }
 
         /// <summary>
+        /// 
         /// </summary>
         public virtual Guid ProductId { get; set; }
 

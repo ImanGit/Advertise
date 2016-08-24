@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Advertise.DomainClasses.Entities.Categories;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Users;
 
@@ -38,16 +39,6 @@ namespace Advertise.DomainClasses.Entities.Companies
         public virtual string BackgroundFileName { get; set; }
 
         /// <summary>
-        ///     کد پستی شرکت
-        /// </summary>
-        public virtual string PostalCode { get; set; }
-
-        /// <summary>
-        ///     آدرس شرکت
-        /// </summary>
-        public virtual string Address { get; set; }
-
-        /// <summary>
         ///     شماره تلفن(های) شرکت
         /// </summary>
         public virtual string PhoneNumber { get; set; }
@@ -67,6 +58,15 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// </summary>
         public virtual string WebSite { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public virtual long EmployeeCount { get; set; }
+
+        /// <summary>
+        ///     سال تاسیس
+        /// </summary>
+        public virtual DateTime EstablishedOn { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -74,24 +74,60 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// <summary>
         ///     کد کاربری
         /// </summary>
-        public virtual User Owner { get; set; }
+        public virtual User OwnedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid OwnerId { get; set; }
+        public virtual Guid OwnedById { get; set; }
+
+        /// <summary>
+        ///     آدرس شرکت
+        /// </summary>
+        public virtual Address Address { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid AddressId { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<Category> Categories { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyAttachment> Attachments { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyFollow> Follows { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyImage> Images { get; set; }
 
         /// <summary>
         /// </summary>
         public virtual ICollection<CompanyModerator> Moderators { get; set; }
 
         /// <summary>
-        ///     کد اختصاصی آدرس
         /// </summary>
-        public virtual City City { get; set; }
+        public virtual ICollection<CompanyQuestion> Questions { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid CityId { get; set; }
+        public virtual ICollection<CompanyReport> Reports { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual CompanyReview Review { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual CompanySocial Social { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyVisit> Visits { get; set; }
 
         #endregion
     }

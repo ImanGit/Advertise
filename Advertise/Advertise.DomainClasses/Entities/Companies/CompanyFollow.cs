@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Entities.Companies
 
         /// <summary>
         /// </summary>
-        public virtual bool IsFollowed { get; set; }
+        public virtual bool IsFollow { get; set; }
 
         #endregion
 
@@ -22,11 +22,11 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// <summary>
         ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User Follower { get; set; }
+        public virtual User FollowedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid FollowerId { get; set; }
+        public virtual Guid FollowedById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی شرکت

@@ -52,15 +52,23 @@ namespace Advertise.DomainClasses.Entities.Companies
         /// <summary>
         ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User Questioner { get; set; }
+        public virtual User QuestionedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid QuestionerId { get; set; }
+        public virtual Guid QuestionedById { get; set; }
 
         /// <summary>
         /// </summary>
         public virtual ICollection<CompanyQuestion> Questions { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyQuestionLike> Likes { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CompanyQuestionReport> Reports { get; set; }
 
         #endregion
     }

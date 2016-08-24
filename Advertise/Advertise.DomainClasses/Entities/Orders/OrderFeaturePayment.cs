@@ -1,16 +1,17 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Orders;
 using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Entities.Companies
+namespace Advertise.DomainClasses.Entities.Plans
 {
     /// <summary>
     /// </summary>
-    public class CompanyModerator : BaseEntity
+    public class FeaturePayment : BaseEntity
     {
         #region Properties
 
-        public virtual bool IsActive { get; set; }
+        public virtual DateTime ExpireOn { get; set; }
 
         #endregion
 
@@ -18,20 +19,20 @@ namespace Advertise.DomainClasses.Entities.Companies
 
         /// <summary>
         /// </summary>
-        public virtual User ModeratedBy { get; set; }
+        public virtual Feature Service { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid ModeratedById { get; set; }
+        public virtual Guid ServiceId { get; set; }
 
         /// <summary>
-        ///     کداختصاصی محصول
+        ///     خریدار
         /// </summary>
-        public virtual Company Company { get; set; }
+        public virtual User Buyer { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid CompanyId { get; set; }
+        public virtual Guid BuyerId { get; set; }
 
         #endregion
     }

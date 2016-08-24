@@ -1,10 +1,14 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Categories;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Categories
 {
+    /// <summary>
+    /// </summary>
     public class CategoryConfig : EntityTypeConfiguration<Category>
     {
+        /// <summary>
+        /// </summary>
         public CategoryConfig()
         {
             Property(category => category.Title).IsRequired().HasMaxLength(100);
