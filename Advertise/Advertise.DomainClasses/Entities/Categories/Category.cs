@@ -64,9 +64,11 @@ namespace Advertise.DomainClasses.Entities.Categories
         /// </summary>
         public virtual ICollection<CategoryFollow> Follows { get; set; }
 
+
         /// <summary>
         /// </summary>
         public virtual CategoryReview Reviews { get; set; }
+
 
         #endregion
     }

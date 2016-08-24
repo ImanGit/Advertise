@@ -1,7 +1,12 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
-namespace Advertise.ServiceLayer.Contracts.Users
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Advertise.ServiceLayer.Contracts.Common
 {
-    public interface IRoleService:IBaseService 
+    interface IAuditLogService : IBaseService
     {
         #region Create
         /// <summary>

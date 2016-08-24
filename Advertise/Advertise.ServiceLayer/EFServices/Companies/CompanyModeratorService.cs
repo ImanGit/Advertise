@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Advertise.ServiceLayer.Contracts;
+using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ServiceLayer.Contracts.Companies;
 
-namespace Advertise.ServiceLayer.EFServices
+namespace Advertise.ServiceLayer.EFServices.Companies
 {
-    public class NotificationService:INotificationService 
+    public class CompanyModeratorService : ICompanyModeratorService
     {
         public void Create()
         {
             throw new NotImplementedException();
         }
 
-        public void Edit()
+        public void Delete()
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public void Edit()
         {
             throw new NotImplementedException();
         }

@@ -1,9 +1,8 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
-using Advertise.ServiceLayer.Contracts.Companies;
+﻿using Advertise.ServiceLayer.Contracts.Roles;
 
-namespace Advertise.ServiceLayer.EFServices.Companies
+namespace Advertise.ServiceLayer.EFServices.Roles
 {
-    public class CompanyReviewService:ICompanyReviewService 
+    public class RoleActionService:IRoleActionService 
     {
         public void Create()
         {
