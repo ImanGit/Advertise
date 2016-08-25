@@ -3,19 +3,38 @@ using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Products;
 using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Entities.Plans
+namespace Advertise.DomainClasses.Entities.Tags
 {
     /// <summary>
     /// </summary>
-    public class TagPayment : BaseEntity
+    public class TagOrder : BaseEntity
     {
         #region Properties
 
-        public virtual DateTime ExpireOn { get; set; }
+        /// <summary>
+        /// </summary>
+        public virtual DateTime ExpiredOn { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        ///     خریدار
+        /// </summary>
+        public virtual User OrderedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid OrderedById { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual UserBudget UserBudget { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid UserBudgetId { get; set; }
 
         /// <summary>
         /// </summary>
@@ -26,21 +45,10 @@ namespace Advertise.DomainClasses.Entities.Plans
         public virtual Guid TagId { get; set; }
 
         /// <summary>
-        ///     خریدار
-        /// </summary>
-        public virtual User Buyer { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid BuyerId { get; set; }
-
-        /// <summary>
-        /// 
         /// </summary>
         public virtual Product Product { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual Guid ProductId { get; set; }
 

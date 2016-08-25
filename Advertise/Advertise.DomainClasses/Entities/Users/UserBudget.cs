@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Features;
+using Advertise.DomainClasses.Entities.Tags;
 
 namespace Advertise.DomainClasses.Entities.Users
 {
@@ -36,6 +39,16 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         /// </summary>
         public virtual Guid OwnedById { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual ICollection<FeatureOrder> FeatureOrders { get; set; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual ICollection<TagOrder> TagOrders { get; set; } 
 
         #endregion
     }

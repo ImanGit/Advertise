@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Advertise.DomainClasses.Entities.Common;
 
 namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
-    /// 
     /// </summary>
-    public class Address
+    public class Address:BaseEntity
     {
         /// <summary>
-        /// 
         /// </summary>
         public virtual string Gps { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual string Street { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
-        public virtual string Street { get; set; }
+        public virtual string Extra { get; set; }
+
         /// <summary>
         ///     کد پستی شرکت
         /// </summary>

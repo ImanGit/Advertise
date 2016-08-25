@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities.Orders;
+using Advertise.DomainClasses.Entities.Features;
 using Advertise.DomainClasses.Entities.Plans;
 
 namespace Advertise.DomainClasses.Configurations

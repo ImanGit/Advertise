@@ -50,20 +50,20 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     کد اختصاصی کاربر فرستنده
         /// </summary>
-        public virtual User Sender { get; set; }
+        public virtual User SendedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid SenderId { get; set; }
+        public virtual Guid SendedById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی کاربر گیرنده
         /// </summary>
-        public virtual User Receiver { get; set; }
+        public virtual User ReceivedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid ReceiverId { get; set; }
+        public virtual Guid ReceivedById { get; set; }
 
         /// <summary>
         ///     کد پیام پاسخ داده شده

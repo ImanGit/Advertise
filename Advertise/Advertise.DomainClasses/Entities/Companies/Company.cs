@@ -39,9 +39,7 @@ namespace Advertise.DomainClasses.Entities.Companies
         public virtual string BackgroundFileName { get; set; }
 
         /// <summary>
-
         ///     شماره تلفن(های) شرکت
-
         /// </summary>
         public virtual string PhoneNumber { get; set; }
 
