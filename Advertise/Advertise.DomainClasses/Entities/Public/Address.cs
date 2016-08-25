@@ -5,7 +5,7 @@ namespace Advertise.DomainClasses.Entities
 {
     /// <summary>
     /// </summary>
-    public class Address:BaseEntity
+    public class Address : BaseEntity
     {
         /// <summary>
         /// </summary>
@@ -16,7 +16,6 @@ namespace Advertise.DomainClasses.Entities
         public virtual string Street { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual string Extra { get; set; }
 

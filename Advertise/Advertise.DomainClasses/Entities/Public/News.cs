@@ -28,7 +28,7 @@ namespace Advertise.DomainClasses.Entities
 
         /// <summary>
         /// </summary>
-        public DateTime? ExpireOn { get; set; }
+        public DateTime? ExpiredOn { get; set; }
 
         #endregion
 

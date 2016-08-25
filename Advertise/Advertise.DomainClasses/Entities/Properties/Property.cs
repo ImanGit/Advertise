@@ -23,7 +23,6 @@ namespace Advertise.DomainClasses.Entities.Properties
         public virtual string Description { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual int Order { get; set; }
 

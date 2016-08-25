@@ -67,7 +67,7 @@
     <Compile Include="Configurations\Roles\ActionConfig.cs" />
     <Compile Include="Configurations\Users\BudgetConfig.cs" />
     <Compile Include="Configurations\Categories\CategoryConfig.cs" />
-    <Compile Include="Configurations\CityConfig.cs" />
+    <Compile Include="Configurations\Public\CityConfig.cs" />
     <Compile Include="Configurations\Products\CommentConfig.cs" />
     <Compile Include="Configurations\Products\CommentLikeConfig.cs" />
     <Compile Include="Configurations\Common\BaseConfig.cs" />
@@ -80,11 +80,11 @@
     <Compile Include="Configurations\Products\ProductVisitConfig.cs" />
     <Compile Include="Configurations\Products\ProduectLikeConfig.cs" />
     <Compile Include="Configurations\Common\LogConfig.cs" />
-    <Compile Include="Configurations\MessageConfig.cs" />
-    <Compile Include="Configurations\NoticeConfig.cs" />
-    <Compile Include="Configurations\NotificationConfig.cs" />
-    <Compile Include="Configurations\Plans\PaymentConfig.cs" />
-    <Compile Include="Configurations\Plans\PlanConfig.cs" />
+    <Compile Include="Configurations\Public\MessageConfig.cs" />
+    <Compile Include="Configurations\Public\NoticeConfig.cs" />
+    <Compile Include="Configurations\Public\NotificationConfig.cs" />
+    <Compile Include="Configurations\Payments\PaymentConfig.cs" />
+    <Compile Include="Configurations\Payments\PlanConfig.cs" />
     <Compile Include="Configurations\Products\ProductConfig.cs" />
     <Compile Include="Configurations\Properties\PropertyConfig.cs" />
     <Compile Include="Configurations\Properties\PropertyTemplateConfig.cs" />
@@ -92,12 +92,12 @@
     <Compile Include="Configurations\Roles\RoleConfig.cs" />
     <Compile Include="Configurations\Users\SettingConfig.cs" />
     <Compile Include="Configurations\Companies\CompanySocialConfig.cs" />
-    <Compile Include="Configurations\StatisticConfig.cs" />
+    <Compile Include="Configurations\Public\StatisticConfig.cs" />
     <Compile Include="Configurations\Users\ProfileConfig.cs" />
     <Compile Include="Configurations\Users\UserSocialConfig.cs" />
-    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Public\Address.cs" />
     <Compile Include="Entities\Enum\AttachmentType.cs" />
-    <Compile Include="Entities\BannedWord.cs" />
+    <Compile Include="Entities\Public\BannedWord.cs" />
     <Compile Include="Entities\Categories\CategoryFollow.cs" />
     <Compile Include="Entities\Categories\CategoryReview.cs" />
     <Compile Include="Entities\Companies\CompanyAttachment.cs" />
@@ -106,7 +106,7 @@
     <Compile Include="Entities\Companies\CompanyQuestionReport.cs" />
     <Compile Include="Entities\Companies\CompanyReport.cs" />
     <Compile Include="Entities\Companies\CompanyReview.cs" />
-    <Compile Include="Entities\Email.cs" />
+    <Compile Include="Entities\Public\Email.cs" />
     <Compile Include="Entities\Notifications\NotificationType.cs" />
     <Compile Include="Entities\Paymenys\Payment.cs" />
     <Compile Include="Entities\Features\FeatureOrder.cs" />
@@ -125,13 +125,13 @@
     <Compile Include="Entities\Products\ProductStatus.cs" />
     <Compile Include="Entities\Properties\PropertyOption.cs" />
     <Compile Include="Entities\Products\ProductShare.cs" />
-    <Compile Include="Entities\Rating.cs" />
-    <Compile Include="Entities\Sms.cs" />
+    <Compile Include="Entities\Public\Rating.cs" />
+    <Compile Include="Entities\Public\Sms.cs" />
     <Compile Include="Entities\Users\UserReport.cs" />
     <Compile Include="Entities\Roles\RoleAction.cs" />
     <Compile Include="Entities\Users\UserBudget.cs" />
     <Compile Include="Entities\Categories\Category.cs" />
-    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Public\City.cs" />
     <Compile Include="Entities\Products\ProductComment.cs" />
     <Compile Include="Entities\Products\ProductCommentLike.cs" />
     <Compile Include="Entities\Common\AuditLogType.cs" />
@@ -150,12 +150,12 @@
     <Compile Include="Entities\Products\ProductLike.cs" />
     <Compile Include="Entities\Common\AuditLog.cs" />
     <Compile Include="Entities\Notifications\Notification.cs" />
-    <Compile Include="Entities\Conversation.cs" />
+    <Compile Include="Entities\Public\Conversation.cs" />
     <Compile Include="Entities\Features\Feature.cs" />
     <Compile Include="Entities\Products\Product.cs" />
     <Compile Include="Entities\Products\ProductProperty.cs" />
     <Compile Include="Entities\Properties\Property.cs" />
-    <Compile Include="Entities\News.cs" />
+    <Compile Include="Entities\Public\News.cs" />
     <Compile Include="Entities\Companies\CompanyQuestion.cs" />
     <Compile Include="Entities\Roles\Role.cs" />
     <Compile Include="Entities\Roles\RoleType.cs" />
@@ -163,7 +163,7 @@
     <Compile Include="Entities\Enum\ReportType.cs" />
     <Compile Include="Entities\Users\UserSetting.cs" />
     <Compile Include="Entities\Companies\CompanySocial.cs" />
-    <Compile Include="Entities\Statistic.cs" />
+    <Compile Include="Entities\Public\Statistic.cs" />
     <Compile Include="Entities\Users\UserProfile.cs" />
     <Compile Include="Entities\Users\UserClaim.cs" />
     <Compile Include="Entities\Users\UserLogin.cs" />
@@ -174,6 +174,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurations\Features\" />
+    <Folder Include="Configurations\Notifications\" />
+    <Folder Include="Configurations\Tags\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

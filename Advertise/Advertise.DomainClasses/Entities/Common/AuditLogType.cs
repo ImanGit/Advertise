@@ -10,25 +10,21 @@ namespace Advertise.DomainClasses.Entities.Common
         /// <summary>
         ///     درج رکود
         /// </summary>
-        [Display(Name = "درج")]
-        Create,
+        [Display(Name = "درج")] Create,
 
         /// <summary>
         ///     ویرایش
         /// </summary>
-        [Display(Name = "ویرایش")]
-        Update,
+        [Display(Name = "ویرایش")] Update,
 
         /// <summary>
         ///     حذف فیزیکی
         /// </summary>
-        [Display(Name = "حذف فیزیکی")]
-        Delete,
+        [Display(Name = "حذف فیزیکی")] Delete,
 
         /// <summary>
         ///     حذف نرم
         /// </summary>
-        [Display(Name = "حذف نرم")]
-        SoftDelete
+        [Display(Name = "حذف نرم")] SoftDelete
     }
 }

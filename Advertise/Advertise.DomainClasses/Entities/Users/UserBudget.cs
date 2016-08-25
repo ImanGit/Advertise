@@ -41,14 +41,12 @@ namespace Advertise.DomainClasses.Entities.Users
         public virtual Guid OwnedById { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual ICollection<FeatureOrder> FeatureOrders { get; set; }
-        
+
         /// <summary>
-        /// 
         /// </summary>
-        public virtual ICollection<TagOrder> TagOrders { get; set; } 
+        public virtual ICollection<TagOrder> TagOrders { get; set; }
 
         #endregion
     }
