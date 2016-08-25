@@ -70,6 +70,9 @@
     <Compile Include="Configurations\Companies\CompanyQuestionReportConfig.cs" />
     <Compile Include="Configurations\Companies\CompanyReportConfig.cs" />
     <Compile Include="Configurations\Companies\CompanyReviewConfig.cs" />
+    <Compile Include="Configurations\Features\FeatureConfig.cs" />
+    <Compile Include="Configurations\Features\FeatureOrderConfig.cs" />
+    <Compile Include="Configurations\Notifications\NotificationConfig.cs" />
     <Compile Include="Configurations\Users\AccountConfig.cs" />
     <Compile Include="Configurations\Roles\ActionConfig.cs" />
     <Compile Include="Configurations\Users\BudgetConfig.cs" />
@@ -91,7 +94,7 @@
     <Compile Include="Configurations\Public\NoticeConfig.cs" />
     <Compile Include="Configurations\Public\NotificationConfig.cs" />
     <Compile Include="Configurations\Payments\PaymentConfig.cs" />
-    <Compile Include="Configurations\Payments\PlanConfig.cs" />
+    <Compile Include="Configurations\Payments\PaymentTransactionConfig.cs" />
     <Compile Include="Configurations\Products\ProductConfig.cs" />
     <Compile Include="Configurations\Properties\PropertyConfig.cs" />
     <Compile Include="Configurations\Properties\PropertyTemplateConfig.cs" />
@@ -185,8 +188,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configurations\Features\" />
-    <Folder Include="Configurations\Notifications\" />
     <Folder Include="Configurations\Tags\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

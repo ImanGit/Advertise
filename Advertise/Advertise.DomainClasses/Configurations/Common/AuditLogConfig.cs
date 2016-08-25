@@ -11,7 +11,6 @@ namespace Advertise.DomainClasses.Configurations.Common
         /// </summary>
         public AuditLogConfig()
         {
-            HasKey(log => log.Id);
             Property(log => log.RowVersion).IsRowVersion();
         }
     }

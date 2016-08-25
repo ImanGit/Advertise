@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Categories\ICategoryServicer.cs" />
+    <Compile Include="Contracts\Categories\ICategoryService.cs" />
     <Compile Include="Contracts\Categories\ICategoryFollowService.cs" />
     <Compile Include="Contracts\Categories\ICategoryReviewService.cs" />
     <Compile Include="Contracts\Common\IActivityLogService.cs" />
@@ -110,7 +110,7 @@
     <Compile Include="EFServices\BannedWordService.cs" />
     <Compile Include="EFServices\Categories\CategoryFollowService.cs" />
     <Compile Include="EFServices\Categories\CategoryReviewService.cs" />
-    <Compile Include="EFServices\Categories\CategoryServicer.cs" />
+    <Compile Include="EFServices\Categories\CategoryService.cs" />
     <Compile Include="EFServices\CityService.cs" />
     <Compile Include="EFServices\Common\ActivityLogService.cs" />
     <Compile Include="EFServices\Common\AuditLogService.cs" />

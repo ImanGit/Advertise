@@ -7,5 +7,11 @@ namespace Advertise.DomainClasses.Configurations.Common
     /// </summary>
     public class ActivityLogConfig : EntityTypeConfiguration<ActivityLog>
     {
+        /// <summary>
+        /// </summary>
+        public ActivityLogConfig()
+        {
+            Property(log => log.RowVersion).IsRowVersion();
+        }
     }
 }

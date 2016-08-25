@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Categories;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Companies;
+using Advertise.DomainClasses.Entities.Public;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Products

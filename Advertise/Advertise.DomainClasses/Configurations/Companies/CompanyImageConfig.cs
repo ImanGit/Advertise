@@ -1,10 +1,14 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Companies;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Companies
 {
+    /// <summary>
+    /// </summary>
     public class CompanyImageConfig : EntityTypeConfiguration<CompanyImage>
     {
+        /// <summary>
+        /// </summary>
         public CompanyImageConfig()
         {
             Property(image => image.Title).IsOptional().HasMaxLength(100);

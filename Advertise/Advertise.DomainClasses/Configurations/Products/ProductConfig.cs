@@ -13,19 +13,19 @@ namespace Advertise.DomainClasses.Configurations
         {
             //ToTable("AD_Product");
 
-        
+
             Property(product => product.Code).IsRequired().HasMaxLength(50);
-        
+
             Property(product => product.Body).IsOptional().HasMaxLength(500);
-     
+
             Property(product => product.Email).IsOptional().HasMaxLength(100);
-          
+
             Property(product => product.IsDeleted).IsRequired();
-        
+
             Property(product => product.MobileNumber).IsRequired().HasMaxLength(10);
             Property(product => product.PhoneNumber).IsOptional().HasMaxLength(10);
             Property(product => product.Title).IsRequired().HasMaxLength(250);
-         
+
             Property(product => product.RowVersion).IsRowVersion();
 
 

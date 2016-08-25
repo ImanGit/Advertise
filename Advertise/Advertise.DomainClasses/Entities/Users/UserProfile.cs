@@ -1,5 +1,6 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Public;
 
 namespace Advertise.DomainClasses.Entities.Users
 {

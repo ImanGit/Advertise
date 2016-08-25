@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advertise.ServiceLayer.Contracts.Common;
 using Advertise.ServiceLayer.Contracts.Companies;
 
 namespace Advertise.ServiceLayer.EFServices.Companies
 {
-    public class CompanyAttachmentService :ICompanyAttachmentService 
+    public class CompanyAttachmentService : ICompanyAttachmentService
     {
         public void Create()
         {

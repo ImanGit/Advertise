@@ -55,7 +55,6 @@ namespace Advertise.ServiceLayer.EFServices.Users
             throw new NotImplementedException();
         }
 
-
         #endregion
 
         #region Count

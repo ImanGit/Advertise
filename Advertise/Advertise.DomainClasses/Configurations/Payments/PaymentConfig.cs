@@ -7,11 +7,5 @@ namespace Advertise.DomainClasses.Configurations
     /// </summary>
     public class PaymentConfig : EntityTypeConfiguration<Payment>
     {
-        /// <summary>
-        /// </summary>
-        public PaymentConfig()
-        {
-
-        }
     }
 }

@@ -66,7 +66,7 @@ namespace Advertise.DomainClasses.Entities.Categories
 
         /// <summary>
         /// </summary>
-        public virtual ICollection< CategoryReview> Reviews { get; set; }
+        public virtual ICollection<CategoryReview> Reviews { get; set; }
 
         #endregion
     }

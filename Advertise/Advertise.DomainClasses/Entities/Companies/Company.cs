@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Categories;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Public;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Companies
@@ -119,15 +120,11 @@ namespace Advertise.DomainClasses.Entities.Companies
 
         /// <summary>
         /// </summary>
-        public virtual ICollection< CompanyReview> Reviews { get; set; }
-
-       // public virtual Guid ReviewId { get; set; }
+        public virtual ICollection<CompanyReview> Reviews { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual ICollection< CompanySocial > Socials { get; set; }
-
-     //   public virtual Guid SocialId { get; set; }
+        public virtual ICollection<CompanySocial> Socials { get; set; }
 
         /// <summary>
         /// </summary>

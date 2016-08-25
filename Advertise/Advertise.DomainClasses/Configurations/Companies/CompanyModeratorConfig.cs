@@ -1,6 +1,17 @@
-﻿namespace Advertise.DomainClasses.Configurations.Companies
+﻿using System.Data.Entity.ModelConfiguration;
+using Advertise.DomainClasses.Entities.Companies;
+
+namespace Advertise.DomainClasses.Configurations.Companies
 {
-    internal class CompanyModeratorConfig
+    /// <summary>
+    /// </summary>
+    public class CompanyModeratorConfig : EntityTypeConfiguration<CompanyModerator>
     {
+        /// <summary>
+        /// </summary>
+        public CompanyModeratorConfig()
+        {
+            Property(moderator => moderator.RowVersion).IsRowVersion();
+        }
     }
 }

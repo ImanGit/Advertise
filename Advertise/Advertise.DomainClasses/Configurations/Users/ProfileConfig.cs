@@ -15,9 +15,9 @@ namespace Advertise.DomainClasses.Configurations
         {
             //ToTable("AD_Users");
 
-       
+
             Property(user => user.IsActive).IsRequired();
-     
+
             Property(user => user.RowVersion).IsRowVersion();
 
             //HasMany(user => user.Accounts)

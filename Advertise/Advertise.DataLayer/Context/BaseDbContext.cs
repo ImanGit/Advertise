@@ -9,7 +9,6 @@ using Advertise.Common.Utility;
 using Advertise.DataLayer.Conventions;
 using Advertise.DomainClasses.Configurations.Common;
 using Advertise.DomainClasses.Entities.Common;
-using Advertise.DomainClasses.Entities.Products;
 using Advertise.DomainClasses.Entities.Roles;
 using Advertise.DomainClasses.Entities.Users;
 using EFSecondLevelCache;
@@ -208,8 +207,7 @@ namespace Advertise.DataLayer.Context
 
         #region Repository
 
-        
-       // public DbSet<Product> Products { get; set; }
+        // public DbSet<Product> Products { get; set; }
 
         #endregion
     }

@@ -1,15 +1,15 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Features;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Payments
 {
     /// <summary>
     /// </summary>
-    public class PlanConfig : EntityTypeConfiguration<Feature>
+    public class PaymentTransactionConfig : EntityTypeConfiguration<Feature>
     {
         /// <summary>
         /// </summary>
-        public PlanConfig()
+        public PaymentTransactionConfig()
         {
             //ToTable("AD_Plan");
 
@@ -19,7 +19,7 @@ namespace Advertise.DomainClasses.Configurations
             Property(plan => plan.DurationDay).IsRequired();
 
             Property(plan => plan.Title).IsRequired().HasMaxLength(100);
-   
+
             Property(plan => plan.RowVersion).IsRowVersion();
         }
     }

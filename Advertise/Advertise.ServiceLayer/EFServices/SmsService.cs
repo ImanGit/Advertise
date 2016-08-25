@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts;
 
 namespace Advertise.ServiceLayer.EFServices
 {
-    public class SmsService:ISmsService 
+    public class SmsService : ISmsService
     {
         public void Create()
         {

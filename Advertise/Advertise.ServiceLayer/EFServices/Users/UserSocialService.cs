@@ -1,27 +1,28 @@
-﻿using Advertise.ServiceLayer.Contracts.Users;
+﻿using System;
+using Advertise.ServiceLayer.Contracts.Users;
 
 namespace Advertise.ServiceLayer.EFServices.Users
 {
-    public class UserSocialService:IUserSocialService
+    public class UserSocialService : IUserSocialService
     {
         public void Create()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Edit()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Delete()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Get()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

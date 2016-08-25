@@ -1,4 +1,5 @@
-﻿using Advertise.ServiceLayer.Contracts.Properties;
+﻿using System;
+using Advertise.ServiceLayer.Contracts.Properties;
 
 namespace Advertise.ServiceLayer.EFServices.Properties
 {
@@ -6,22 +7,22 @@ namespace Advertise.ServiceLayer.EFServices.Properties
     {
         public void Create()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Edit()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Delete()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Get()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

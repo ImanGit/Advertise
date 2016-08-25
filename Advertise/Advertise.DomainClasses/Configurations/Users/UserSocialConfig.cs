@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities.Companies;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Configurations

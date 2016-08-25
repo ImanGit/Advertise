@@ -1,116 +1,120 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
-    public interface ICompanyrService:IBaseService 
+    public interface ICompanyrService : IBaseService
     {
         #region Create
+
         /// <summary>
-        /// 
         /// </summary>
         void Create();
 
         #endregion
 
         #region Update
+
         /// <summary>
-        /// ویرایش کمپانی
+        ///     ویرایش کمپانی
         /// </summary>
         void Edit();
 
         /// <summary>
-        /// فعال یا غیر فعال کردن کمپانی
+        ///     فعال یا غیر فعال کردن کمپانی
         /// </summary>
         /// <returns></returns>
         bool EditForActiveOrDeActive();
 
         /// <summary>
-        /// برگرداندن کمپانی حذف شده
+        ///     برگرداندن کمپانی حذف شده
         /// </summary>
         void RecoveryDeleted();
+
         /// <summary>
-        /// ویرایش عنوان محصولات
+        ///     ویرایش عنوان محصولات
         /// </summary>
         void EditCopamanyCategory();
+
         #endregion
 
-
         #region Delete
+
         /// <summary>
-        /// حذف منطقی 
+        ///     حذف منطقی
         /// </summary>
         void Delete();
 
         /// <summary>
-        /// حذف فیزیکی
+        ///     حذف فیزیکی
         /// </summary>
-        void DeleteHard(); 
+        void DeleteHard();
 
         #endregion
 
         #region Retrieve
+
         /// <summary>
-        ///گرفتن کل کمپانی ها 
+        ///     گرفتن کل کمپانی ها
         /// </summary>
         void GetAll();
 
         /// <summary>
-        /// گرفتن یک کمپانی
+        ///     گرفتن یک کمپانی
         /// </summary>
         void GetOneComp();
 
         /// <summary>
-        /// گرفتن تعدادی کمپانی جهت مقایسه
+        ///     گرفتن تعدادی کمپانی جهت مقایسه
         /// </summary>
         void GetManyComp();
-        
+
         /// <summary>
-        /// گرفتن کمپانی ها برا اساس تاریخ
+        ///     گرفتن کمپانی ها برا اساس تاریخ
         /// </summary>
         void GetByDate();
 
         /// <summary>
-        /// گرفتن تعداد کمپانی ها بر اساس تاریخ
+        ///     گرفتن تعداد کمپانی ها بر اساس تاریخ
         /// </summary>
         void GetCountByDate();
 
         /// <summary>
-        /// گرفتن کمپانی های یک محصول
+        ///     گرفتن کمپانی های یک محصول
         /// </summary>
         void GetCompanyInCategory();
 
         /// <summary>
-        /// گرفتن تعداد کمپانی های یک محصول
+        ///     گرفتن تعداد کمپانی های یک محصول
         /// </summary>
         void GetCountCompanyInCategory();
-        
+
         /// <summary>
-        /// صفحه بندی 
+        ///     صفحه بندی
         /// </summary>
         void GetPageList();
 
         /// <summary>
-        /// موجود بودن کمپانی در دیتابیس
+        ///     موجود بودن کمپانی در دیتابیس
         /// </summary>
-        void   GetInDB();
+        void GetInDB();
 
         /// <summary>
-        /// نمایش کمپانی های فعال
+        ///     نمایش کمپانی های فعال
         /// </summary>
         /// <returns></returns>
         int GetActive();
 
         /// <summary>
-        /// جهت سرچ
+        ///     جهت سرچ
         /// </summary>
         /// <returns></returns>
         int GetForSearch();
 
         /// <summary>
-        /// نمایش کمپانی هایی که به صورت منطقی پاک شده اند
+        ///     نمایش کمپانی هایی که به صورت منطقی پاک شده اند
         /// </summary>
         /// <returns></returns>
         int GetDeleted();
-
 
         #endregion
     }

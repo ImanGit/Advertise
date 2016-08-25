@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Companies;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Companies
 {
     /// <summary>
     /// </summary>
@@ -11,14 +11,9 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public QuestionConfig()
         {
-            Property(question => question.Body).IsRequired().HasMaxLength(700);
-            Property(question => question.CreatedOn).IsRequired();
-            Property(question => question.IsApproved).IsRequired();
-            Property(question => question.Title).IsRequired().HasMaxLength(255);
+            Property(question => question.Body).IsRequired().HasMaxLength(1000);
+            Property(question => question.Title).IsRequired().HasMaxLength(100);
             Property(question => question.RowVersion).IsRowVersion();
-
-            // Self Referencing Entity
-            //HasOptional(question => question.Reply).WithMany().WillCascadeOnDelete(true);
         }
     }
 }

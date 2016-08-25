@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts;
 
 namespace Advertise.ServiceLayer.EFServices
 {
-    public class EmailService:IEmailService 
+    public class EmailService : IEmailService
     {
         public void Create()
         {

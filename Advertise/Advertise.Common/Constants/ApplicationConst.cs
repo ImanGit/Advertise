@@ -1,7 +1,6 @@
 ﻿namespace Advertise.Common.Constants
 {
     /// <summary>
-    /// 
     /// </summary>
     public class ApplicationConst
     {

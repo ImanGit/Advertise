@@ -1,6 +1,17 @@
-﻿namespace Advertise.DomainClasses.Configurations.Companies
+﻿using System.Data.Entity.ModelConfiguration;
+using Advertise.DomainClasses.Entities.Companies;
+
+namespace Advertise.DomainClasses.Configurations.Companies
 {
-    internal class CompanyReportConfig
+    /// <summary>
+    /// </summary>
+    public class CompanyReportConfig : EntityTypeConfiguration<CompanyReport>
     {
+        /// <summary>
+        /// </summary>
+        public CompanyReportConfig()
+        {
+            Property(report => report.RowVersion).IsRowVersion();
+        }
     }
 }

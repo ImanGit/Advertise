@@ -11,7 +11,7 @@ namespace Advertise.DomainClasses.Configurations.Categories
         /// </summary>
         public CategoryReviewConfig()
         {
-            Property(review => review.Body).HasMaxLength(1000).IsRequired();
+            Property(review => review.Body).IsRequired().HasMaxLength(1000);
             Property(review => review.RowVersion).IsRowVersion();
         }
     }

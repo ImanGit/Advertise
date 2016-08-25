@@ -1,6 +1,17 @@
-﻿namespace Advertise.DomainClasses.Configurations.Companies
+﻿using System.Data.Entity.ModelConfiguration;
+using Advertise.DomainClasses.Entities.Companies;
+
+namespace Advertise.DomainClasses.Configurations.Companies
 {
-    internal class CompanyQuestionLikeConfig
+    /// <summary>
+    /// </summary>
+    public class CompanyQuestionLikeConfig : EntityTypeConfiguration<CompanyQuestionLike>
     {
+        /// <summary>
+        /// </summary>
+        public CompanyQuestionLikeConfig()
+        {
+            Property(like => like.RowVersion).IsRowVersion();
+        }
     }
 }
