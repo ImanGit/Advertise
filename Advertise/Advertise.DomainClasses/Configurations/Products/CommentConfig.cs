@@ -11,7 +11,7 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public CommentConfig()
         {
-            Property(comment => comment.Content).IsRequired().HasMaxLength(500);
+            Property(comment => comment.Body).IsRequired().HasMaxLength(500);
             Property(comment => comment.RowVersion).IsRowVersion();
         }
     }

@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         {
             //ToTable("AD_City");
 
-            Property(city => city.CityName).IsRequired().HasMaxLength(100);
+            Property(city => city.Name).IsRequired().HasMaxLength(100);
             Property(city => city.RowVersion).IsRowVersion();
         }
     }

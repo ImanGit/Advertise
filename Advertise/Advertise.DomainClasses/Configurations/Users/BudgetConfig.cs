@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities.Plans;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Configurations
@@ -8,7 +7,7 @@ namespace Advertise.DomainClasses.Configurations
     {
         public BudgetConfig()
         {
-            ToTable("AD_Budgets");
+            //ToTable("AD_Budgets");
         }
     }
 }

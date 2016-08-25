@@ -1,10 +1,11 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Advertise.DomainClasses.Entities.Properties;
 
 namespace Advertise.DomainClasses.Configurations
 {
     /// <summary>
     /// </summary>
-    public class PropertyTemplateConfig : EntityTypeConfiguration<PropertyTemplate>
+    public class PropertyTemplateConfig : EntityTypeConfiguration<Property>
     {
         /// <summary>
         /// </summary>
@@ -12,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations
         {
             //ToTable("AD_PropertyTemplate");
 
-            Property(propertTemplate => propertTemplate.Property).IsRequired();
+         
             Property(propertyTemplate => propertyTemplate.Title).IsRequired().HasMaxLength(50);
             Property(propertyTemplate => propertyTemplate.RowVersion).IsRowVersion();
         }

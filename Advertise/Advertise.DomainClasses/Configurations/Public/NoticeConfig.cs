@@ -7,7 +7,7 @@ namespace Advertise.DomainClasses.Configurations
     {
         public NoticeConfig()
         {
-            Property(notice => notice.Content).IsRequired().HasMaxLength(2000);
+            Property(notice => notice.Message).IsRequired().HasMaxLength(2000);
             Property(notice => notice.Title).IsOptional().HasMaxLength(200);
             Property(notice => notice.RowVersion).IsRowVersion();
         }

@@ -14,7 +14,7 @@ namespace Advertise.DomainClasses.Configurations
             //ToTable("AD_Role");
 
             Property(role => role.Code).IsRequired().HasMaxLength(50);
-            Property(role => role.Title).IsRequired();
+            Property(role => role.Name).IsRequired();
             Property(role => role.RowVersion).IsRowVersion();
         }
     }

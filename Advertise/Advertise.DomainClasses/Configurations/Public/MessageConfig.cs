@@ -7,7 +7,7 @@ namespace Advertise.DomainClasses.Configurations
     {
         public MessageConfig()
         {
-            Property(message => message.Content).IsRequired().HasMaxLength(2000);
+            Property(message => message.Body).IsRequired().HasMaxLength(2000);
             Property(message => message.Title).IsOptional().HasMaxLength(200);
             Property(message => message.RowVersion).IsRowVersion();
         }

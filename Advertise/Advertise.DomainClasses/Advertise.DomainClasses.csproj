@@ -63,6 +63,13 @@
   <ItemGroup>
     <Compile Include="Configurations\Categories\CategoryFollowConfig.cs" />
     <Compile Include="Configurations\Categories\CategoryReviewConfig.cs" />
+    <Compile Include="Configurations\Common\ActivityLogConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyAttachmentConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyModeratorConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyQuestionLikeConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyQuestionReportConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyReportConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyReviewConfig.cs" />
     <Compile Include="Configurations\Users\AccountConfig.cs" />
     <Compile Include="Configurations\Roles\ActionConfig.cs" />
     <Compile Include="Configurations\Users\BudgetConfig.cs" />
@@ -79,7 +86,7 @@
     <Compile Include="Configurations\Products\ProductImageConfig.cs" />
     <Compile Include="Configurations\Products\ProductVisitConfig.cs" />
     <Compile Include="Configurations\Products\ProduectLikeConfig.cs" />
-    <Compile Include="Configurations\Common\LogConfig.cs" />
+    <Compile Include="Configurations\Common\AuditLogConfig.cs" />
     <Compile Include="Configurations\Public\MessageConfig.cs" />
     <Compile Include="Configurations\Public\NoticeConfig.cs" />
     <Compile Include="Configurations\Public\NotificationConfig.cs" />
@@ -88,12 +95,14 @@
     <Compile Include="Configurations\Products\ProductConfig.cs" />
     <Compile Include="Configurations\Properties\PropertyConfig.cs" />
     <Compile Include="Configurations\Properties\PropertyTemplateConfig.cs" />
-    <Compile Include="Configurations\Companies\QuestionConfig.cs" />
+    <Compile Include="Configurations\Companies\CompanyQuestionConfig.cs" />
     <Compile Include="Configurations\Roles\RoleConfig.cs" />
     <Compile Include="Configurations\Users\SettingConfig.cs" />
     <Compile Include="Configurations\Companies\CompanySocialConfig.cs" />
     <Compile Include="Configurations\Public\StatisticConfig.cs" />
     <Compile Include="Configurations\Users\ProfileConfig.cs" />
+    <Compile Include="Configurations\Users\UserLoginConfig.cs" />
+    <Compile Include="Configurations\Users\UserRoleConfig.cs" />
     <Compile Include="Configurations\Users\UserSocialConfig.cs" />
     <Compile Include="Entities\Public\Address.cs" />
     <Compile Include="Entities\Enum\AttachmentType.cs" />

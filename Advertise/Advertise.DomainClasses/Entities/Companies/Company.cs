@@ -119,11 +119,15 @@ namespace Advertise.DomainClasses.Entities.Companies
 
         /// <summary>
         /// </summary>
-        public virtual CompanyReview Review { get; set; }
+        public virtual ICollection< CompanyReview> Reviews { get; set; }
+
+       // public virtual Guid ReviewId { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual CompanySocial Social { get; set; }
+        public virtual ICollection< CompanySocial > Socials { get; set; }
+
+     //   public virtual Guid SocialId { get; set; }
 
         /// <summary>
         /// </summary>

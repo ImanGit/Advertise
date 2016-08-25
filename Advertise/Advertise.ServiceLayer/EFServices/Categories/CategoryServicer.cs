@@ -9,6 +9,31 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             throw new System.NotImplementedException();
         }
 
+        public void EditCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool DeleteCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool DeleteHard()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetAllCountCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetLastToDay()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Edit()
         {
             throw new System.NotImplementedException();

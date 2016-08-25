@@ -10,8 +10,8 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         public void Create()
         {
             DomainClasses.Entities.Companies.Company cd=new Company();
-            cd.Images.Add();
-            _c.
+            //cd.Images.Add();
+            
             throw new System.NotImplementedException();
         }
 
@@ -20,7 +20,87 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new System.NotImplementedException();
         }
 
+        public bool EditForActiveOrDeActive()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void RecoveryDeleted()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void EditCopamanyCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Delete()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteHard()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetAll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetOneComp()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetManyComp()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetByDate()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetCountByDate()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetCompanyInCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetCountCompanyInCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetPageList()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetInDB()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetActive()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetForSearch()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetDeleted()
         {
             throw new System.NotImplementedException();
         }

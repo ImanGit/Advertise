@@ -16,12 +16,32 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             throw new System.NotImplementedException();
         }
 
+        public bool Create(int Id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Edit(int IdCat)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool EditForIsShowOrNotShow()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Delete()
         {
             throw new System.NotImplementedException();
         }
 
         public void Get()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool GetCount()
         {
             throw new System.NotImplementedException();
         }

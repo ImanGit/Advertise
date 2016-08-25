@@ -208,8 +208,8 @@ namespace Advertise.DataLayer.Context
 
         #region Repository
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Product> Products { get; set; }
+        
+       // public DbSet<Product> Products { get; set; }
 
         #endregion
     }

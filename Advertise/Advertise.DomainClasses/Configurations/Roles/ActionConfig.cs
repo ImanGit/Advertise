@@ -1,8 +1,9 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Advertise.DomainClasses.Entities.Roles;
 
 namespace Advertise.DomainClasses.Configurations
 {
-    public class ActionConfig : EntityTypeConfiguration<Entities.Action>
+    public class ActionConfig : EntityTypeConfiguration<RoleAction>
     {
         public ActionConfig()
         {
