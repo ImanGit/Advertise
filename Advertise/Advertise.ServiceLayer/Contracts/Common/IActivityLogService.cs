@@ -1,6 +1,6 @@
 ﻿namespace Advertise.ServiceLayer.Contracts.Common
 {
-    internal interface IActivityLogService : IBaseService
+    public interface IActivityLogService : IBaseService
     {
         #region Create
 

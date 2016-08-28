@@ -14,7 +14,6 @@ namespace Advertise.Web
         public static void RegisterEntityFramework()
         {
             Database.SetInitializer<ApplicationDbContext>(null);
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, DataLayer.Migrations.Configuration>());
         }
     }
 }

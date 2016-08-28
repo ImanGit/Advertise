@@ -10,7 +10,7 @@
 
         /// <summary>
         /// </summary>
-        HaveFollower,
+        HaveFollow,
 
         /// <summary>
         /// </summary>

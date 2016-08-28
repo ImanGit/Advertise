@@ -22,8 +22,8 @@ namespace Advertise.Web
                 FilterConfig.RegisterGlobalFilters();
                 EntityFrameworkConfig.RegisterEntityFramework();
                 StructureMapConfig.RegisterStructureMap();
-                IdentityConfig.RegisterIdentity();
                 AutoMapperConfig.RegisterAutoMapper();
+                AspNetIdentityConfig.RegisterAspNetIdentity();
             }
             catch
             {

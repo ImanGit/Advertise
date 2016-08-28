@@ -7,6 +7,8 @@ namespace Advertise.DomainClasses.Entities.Public
     /// </summary>
     public class Address : BaseEntity
     {
+        #region Properties
+
         /// <summary>
         /// </summary>
         public virtual string Gps { get; set; }
@@ -24,6 +26,10 @@ namespace Advertise.DomainClasses.Entities.Public
         /// </summary>
         public virtual string PostalCode { get; set; }
 
+        #endregion
+
+        #region NavigationProperties
+
         /// <summary>
         ///     کد اختصاصی آدرس
         /// </summary>
@@ -32,5 +38,7 @@ namespace Advertise.DomainClasses.Entities.Public
         /// <summary>
         /// </summary>
         public virtual Guid CityId { get; set; }
+
+        #endregion
     }
 }

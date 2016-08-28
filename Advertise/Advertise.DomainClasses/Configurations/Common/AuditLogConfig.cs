@@ -11,6 +11,8 @@ namespace Advertise.DomainClasses.Configurations.Common
         /// </summary>
         public AuditLogConfig()
         {
+            Ignore(log => log.XmlOldValueWrapper);
+            Ignore(log => log.XmlNewValueWrapper);
             Property(log => log.RowVersion).IsRowVersion();
         }
     }

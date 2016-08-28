@@ -1,8 +1,11 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities.Users
 {
+    /// <summary>
+    /// </summary>
     public class UserReport : BaseEntity
     {
         #region Properties

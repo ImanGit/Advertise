@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -46,6 +50,34 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -60,10 +92,18 @@
     <Compile Include="Contracts\Categories\ICategoryService.cs" />
     <Compile Include="Contracts\Categories\ICategoryFollowService.cs" />
     <Compile Include="Contracts\Categories\ICategoryReviewService.cs" />
+    <Compile Include="Contracts\Common\IRunOnEachRequest.cs" />
+    <Compile Include="Contracts\Common\IRunOnError.cs" />
+    <Compile Include="Contracts\Common\IRunAtStartUp.cs" />
+    <Compile Include="Contracts\Common\IRunAtInit.cs" />
+    <Compile Include="Contracts\Common\IRunAfterEachRequest.cs" />
     <Compile Include="Contracts\Common\IActivityLogService.cs" />
     <Compile Include="Contracts\Common\IAuditLogService.cs" />
     <Compile Include="Contracts\Common\IBaseService.cs" />
     <Compile Include="Contracts\Common\IService.cs" />
+    <Compile Include="Contracts\Users\IApplicationRoleStoreService.cs" />
+    <Compile Include="Contracts\Users\IApplicationUserStoreService.cs" />
+    <Compile Include="Contracts\Users\IApplicationSignInManagerService.cs" />
     <Compile Include="Contracts\Companies\ICompanyrService.cs" />
     <Compile Include="Contracts\Companies\ICompanyFollowService.cs" />
     <Compile Include="Contracts\Companies\ICompanyImageService.cs" />
@@ -115,6 +155,7 @@
     <Compile Include="EFServices\Common\ActivityLogService.cs" />
     <Compile Include="EFServices\Common\AuditLogService.cs" />
     <Compile Include="EFServices\Common\BaseService.cs" />
+    <Compile Include="EFServices\Users\ApplicationSignInManagerService.cs" />
     <Compile Include="EFServices\Common\Service.cs" />
     <Compile Include="EFServices\Companies\CompanyAttachmentService.cs" />
     <Compile Include="EFServices\Companies\CompanyFollowService.cs" />
@@ -149,6 +190,8 @@
     <Compile Include="EFServices\ShareService.cs" />
     <Compile Include="EFServices\SmsService.cs" />
     <Compile Include="EFServices\StatisticService.cs" />
+    <Compile Include="EFServices\Users\ApplicationUserStoreService.cs" />
+    <Compile Include="EFServices\Users\ApplicationRoleStoreService.cs" />
     <Compile Include="EFServices\Users\UserClaimService.cs" />
     <Compile Include="EFServices\Users\UserLoginService.cs" />
     <Compile Include="EFServices\Users\UserProfileService.cs" />
@@ -167,6 +210,14 @@
     <ProjectReference Include="..\Advertise.DomainClasses\Advertise.DomainClasses.csproj">
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Advertise.Utility\Advertise.Utility.csproj">
+      <Project>{e18dc95b-9a3c-4212-85c3-12faa25088bb}</Project>
+      <Name>Advertise.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Advertise.ViewModel\Advertise.ViewModel.csproj">
+      <Project>{306a3a29-1b7c-48c4-abf9-98ef5f7692fd}</Project>
+      <Name>Advertise.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

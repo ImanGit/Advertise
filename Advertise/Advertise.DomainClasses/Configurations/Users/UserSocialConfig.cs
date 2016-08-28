@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Users
 {
     /// <summary>
     /// </summary>
@@ -11,13 +11,11 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public UserSocialConfig()
         {
-            //ToTable("AD_Social");
-
-            Property(usersocial => usersocial.YoutubeLink).IsOptional().HasMaxLength(100);
-            Property(usersocial => usersocial.FacebookLink).IsOptional().HasMaxLength(100);
-            Property(usersocial => usersocial.GooglePlusLink).IsOptional().HasMaxLength(100);
-            Property(usersocial => usersocial.TwitterLink).IsOptional().HasMaxLength(100);
-            Property(usersocial => usersocial.RowVersion).IsRowVersion();
+            Property(social => social.YoutubeLink).IsOptional().HasMaxLength(100);
+            Property(social => social.FacebookLink).IsOptional().HasMaxLength(100);
+            Property(social => social.GooglePlusLink).IsOptional().HasMaxLength(100);
+            Property(social => social.TwitterLink).IsOptional().HasMaxLength(100);
+            Property(social => social.RowVersion).IsRowVersion();
         }
     }
 }

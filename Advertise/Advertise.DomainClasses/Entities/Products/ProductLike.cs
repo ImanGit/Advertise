@@ -7,7 +7,7 @@ namespace Advertise.DomainClasses.Entities.Products
     /// <summary>
     ///     نشان دهنده انواع لایک
     /// </summary>
-    public class ProduectLike : BaseEntity
+    public class ProductLike : BaseEntity
     {
         #region Properties
 

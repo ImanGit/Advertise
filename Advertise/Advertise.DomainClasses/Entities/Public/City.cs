@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.DomainClasses.Entities.Public
 {
     /// <summary>
     ///     نشان دهنده آدرس
@@ -41,10 +41,13 @@ namespace Advertise.DomainClasses.Entities
         /// </summary>
         public virtual Guid ParentId { get; set; }
 
-
         /// <summary>
         /// </summary>
         public virtual ICollection<City> Cities { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<Address> Addresses { get; set; }
 
         #endregion
     }

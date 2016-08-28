@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Roles;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Roles
 {
     /// <summary>
     /// </summary>
@@ -11,10 +11,8 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public RoleConfig()
         {
-            //ToTable("AD_Role");
-
-            Property(role => role.Code).IsRequired().HasMaxLength(50);
-            Property(role => role.Name).IsRequired();
+            Property(role => role.Code).IsRequired().HasMaxLength(100);
+            Property(role => role.Name).IsRequired().HasMaxLength(100);
             Property(role => role.RowVersion).IsRowVersion();
         }
     }

@@ -129,11 +129,11 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual ICollection<ProduectLike> Likes { get; set; }
+        public virtual ICollection<ProductLike> Likes { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual ICollection<ProductProperty> Properties { get; set; }
+        public virtual ICollection<ProductSpecification> Properties { get; set; }
 
         /// <summary>
         /// </summary>
@@ -141,7 +141,7 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual CompanyReview Review { get; set; }
+        public virtual ICollection<CompanyReview> Reviews { get; set; }
 
         /// <summary>
         /// </summary>

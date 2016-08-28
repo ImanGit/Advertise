@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Advertise.DomainClasses.Entities.Users
+namespace Advertise.DomainClasses.Entities.Enum
 {
     /// <summary>
     ///     انواع جنسیت

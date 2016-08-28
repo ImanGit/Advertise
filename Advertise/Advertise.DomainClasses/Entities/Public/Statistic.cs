@@ -1,17 +1,12 @@
-﻿using System;
-using Advertise.DomainClasses.Entities.Common;
+﻿using Advertise.DomainClasses.Entities.Common;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.DomainClasses.Entities.Public
 {
     /// <summary>
     ///     نشان دهنده آمار بازدید سایت
     /// </summary>
     public class Statistic : BaseEntity
     {
-        #region Ctor
-
-        #endregion
-
         #region Properties
 
         /// <summary>
@@ -20,14 +15,13 @@ namespace Advertise.DomainClasses.Entities
         public string Ip { get; set; }
 
         /// <summary>
-        ///     زمانی که وارد سایت شدند
-        /// </summary>
-        public DateTime Date { get; set; }
-
-        /// <summary>
         ///     با چه Browser  ی وارد سایت شدند
         /// </summary>
         public string Browser { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public string Agent { get; set; }
 
         /// <summary>
         ///     از طریق کدام موتور جستجو وارد شده اند

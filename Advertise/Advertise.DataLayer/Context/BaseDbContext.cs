@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Web;
-using Advertise.Common.Utility;
+using Advertise.Utility.Generators;
+using Advertise.Utility.Extensions;
 using Advertise.DataLayer.Conventions;
 using Advertise.DomainClasses.Configurations.Common;
 using Advertise.DomainClasses.Entities.Common;
@@ -49,6 +51,8 @@ namespace Advertise.DataLayer.Context
                 throw new ArgumentNullException(nameof(modelBuilder));
 
             modelBuilder.Conventions.Add(new CustomeConvention());
+
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder.Configurations.AddFromAssembly(typeof (BaseConfig).Assembly);
             LoadEntities(typeof (BaseEntity).Assembly, modelBuilder, "Advertise.DomainClasses.Entities");

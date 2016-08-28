@@ -10,6 +10,8 @@ namespace Advertise.DomainClasses.Entities.Features
     {
         #region Properties
 
+        /// <summary>
+        /// </summary>
         public virtual DateTime ExpiredOn { get; set; }
 
         #endregion

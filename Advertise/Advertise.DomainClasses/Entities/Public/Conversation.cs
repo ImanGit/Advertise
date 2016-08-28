@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.DomainClasses.Entities.Public
 {
     /// <summary>
     ///     نشان دهنده پیام خصوصی
     /// </summary>
     public class Conversation : BaseEntity
     {
-        #region Ctor
-
-        #endregion
-
         #region Properties
 
         /// <summary>
@@ -50,11 +46,11 @@ namespace Advertise.DomainClasses.Entities
         /// <summary>
         ///     کد اختصاصی کاربر فرستنده
         /// </summary>
-        public virtual User SendedBy { get; set; }
+        public virtual User SentBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid SendedById { get; set; }
+        public virtual Guid SentById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی کاربر گیرنده

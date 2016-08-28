@@ -1,9 +1,12 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Products
 {
+    /// <summary>
+    /// </summary>
     public class ProductCommentReport : BaseEntity
     {
         #region Properties

@@ -16,7 +16,7 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     آیا کاربر بلاک شده؟
         /// </summary>
-        public virtual bool IsBanned { get; set; }
+        public virtual bool IsBan { get; set; }
 
         /// <summary>
         /// </summary>
@@ -29,7 +29,7 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     آیا کاربر تائید شده است؟
         /// </summary>
-        public virtual bool IsVerified { get; set; }
+        public virtual bool IsVerify { get; set; }
 
         /// <summary>
         ///     آیا کاربر فعال است؟
@@ -59,7 +59,7 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     آخرین زمانی که کاربر وارد سایت شده
         /// </summary>
-        public virtual DateTime? LastLoginOn { get; set; }
+        public virtual DateTime? LastLoginedOn { get; set; }
 
         /// <summary>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Advertise.DomainClasses.Entities.Users
 
         /// <summary>
         /// </summary>
-        public virtual UserProfile Profile { get; set; }
+        public virtual ICollection< UserProfile> Profiles { get; set; }
 
         /// <summary>
         /// </summary>
@@ -91,11 +91,11 @@ namespace Advertise.DomainClasses.Entities.Users
 
         /// <summary>
         /// </summary>
-        public virtual UserSetting Setting { get; set; }
+        public virtual ICollection< UserSetting> Settings { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual UserSocial Social { get; set; }
+        public virtual ICollection< UserSocial> Socials { get; set; }
 
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     لیست پسند های کاربر
         /// </summary>
-        public virtual ICollection<ProduectLike> ProductLikes { get; set; }
+        public virtual ICollection<ProductLike> ProductLikes { get; set; }
 
         /// <summary>
         /// </summary>

@@ -16,16 +16,16 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     بودجه باقی مانده حساب مالی کاربر
         /// </summary>
-        public int RemainRialValue { get; set; }
+        public virtual int RemainRialValue { get; set; }
 
         /// <summary>
         ///     افزایش و کاهش حساب مالی کاربر
         /// </summary>
-        public int IncDecValue { get; set; }
+        public virtual int IncDecValue { get; set; }
 
         /// <summary>
         /// </summary>
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
 
         #endregion
 

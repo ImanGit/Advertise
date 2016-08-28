@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities;
+using Advertise.DomainClasses.Entities.Public;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Public
 {
     /// <summary>
     /// </summary>
@@ -11,13 +11,12 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public StatisticConfig()
         {
-            //ToTable("AD_Statistics");
-
-            Property(statistic => statistic.Browser).IsRequired();
-            Property(statistic => statistic.Date).IsRequired();
-            Property(statistic => statistic.Ip).IsRequired();
-            Property(statistic => statistic.Keyword).IsOptional();
-            Property(statistic => statistic.SearchEngine).IsOptional();
+            Property(statistic => statistic.Browser).IsRequired().HasMaxLength(100);
+            Property(statistic => statistic.Agent).IsRequired().HasMaxLength(100);
+            Property(statistic => statistic.Ip).IsRequired().HasMaxLength(100);
+            Property(statistic => statistic.Keyword).IsOptional().HasMaxLength(100);
+            Property(statistic => statistic.SearchEngine).IsOptional().HasMaxLength(100);
+            Property(statistic => statistic.RowVersion).IsRowVersion();
         }
     }
 }

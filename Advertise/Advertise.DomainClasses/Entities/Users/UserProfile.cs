@@ -1,5 +1,6 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 using Advertise.DomainClasses.Entities.Public;
 
 namespace Advertise.DomainClasses.Entities.Users
@@ -39,12 +40,12 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     تاریخ تولد کاربر
         /// </summary>
-        public virtual DateTime? BirthDate { get; set; }
+        public virtual DateTime? BirthOn { get; set; }
 
         /// <summary>
         ///     تاریخ ازدواج کاربر
         /// </summary>
-        public virtual DateTime? MarriedDate { get; set; }
+        public virtual DateTime? MarriedOn { get; set; }
 
         /// <summary>
         ///     عکس یا لوگو کاربر

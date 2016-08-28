@@ -1,10 +1,14 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Products;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Products
 {
+    /// <summary>
+    /// </summary>
     public class ProductImageConfig : EntityTypeConfiguration<ProductImage>
     {
+        /// <summary>
+        /// </summary>
         public ProductImageConfig()
         {
             Property(productimage => productimage.Title).IsOptional().HasMaxLength(100);

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Advertise.DomainClasses.Entities;
+using Advertise.DomainClasses.Entities.Public;
 
-namespace Advertise.DomainClasses.Configurations
+namespace Advertise.DomainClasses.Configurations.Public
 {
     /// <summary>
     /// </summary>
@@ -11,8 +11,6 @@ namespace Advertise.DomainClasses.Configurations
         /// </summary>
         public CityConfig()
         {
-            //ToTable("AD_City");
-
             Property(city => city.Name).IsRequired().HasMaxLength(100);
             Property(city => city.RowVersion).IsRowVersion();
         }

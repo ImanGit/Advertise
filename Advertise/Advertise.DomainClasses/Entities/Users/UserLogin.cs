@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Advertise.DomainClasses.Entities.Users
 {
+    /// <summary>
+    /// </summary>
     public class UserLogin : IdentityUserLogin<Guid>
     {
         #region Properties

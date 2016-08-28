@@ -1,14 +1,20 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
+﻿using System;
+using System.Threading.Tasks;
+using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Categories.Category;
 
 namespace Advertise.ServiceLayer.Contracts.Categories
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface ICategoryService : IBaseService
     {
         #region Create
 
         /// <summary>
         /// </summary>
-        void Add();
+        void Add(AddCategoryViewModel viewModel);
 
         #endregion
 
@@ -16,7 +22,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         /// <summary>
         /// </summary>
-        void Edit();
+        Task EditAsync(EditCategoryViewModel viewModel);
 
         #endregion
 
@@ -25,17 +31,17 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         ///     گرفتن تعداد کل دسته بندی ها
         /// </summary>
-        int GetAllCount();
+        Task<int> GetCount();
 
         /// <summary>
         ///     گرفتن آخرین دسته بندی ها بر اساس روز
         /// </summary>
         /// <returns></returns>
-        int GetLastToDay();
+        Task<int> GetLastToDay();
 
         /// <summary>
         /// </summary>
-        void FindById();
+        Task<CategoryListViewModel> FindById(Guid id);
 
         #endregion
 
@@ -44,13 +50,13 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         ///     پاک کردن به صورت منطقی
         /// </summary>
-        bool Remove();
+        Task RemoveAsync(Guid id);
 
         /// <summary>
         ///     پاک کردن به صورت فیزیکی
         /// </summary>
         /// <returns></returns>
-        bool RemoveHard();
+        Task RemoveHard(Guid id);
 
         #endregion
     }

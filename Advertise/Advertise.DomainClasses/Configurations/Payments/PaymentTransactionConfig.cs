@@ -1,26 +1,18 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Advertise.DomainClasses.Entities.Features;
+using Advertise.DomainClasses.Entities.Paymenys;
 
 namespace Advertise.DomainClasses.Configurations.Payments
 {
     /// <summary>
     /// </summary>
-    public class PaymentTransactionConfig : EntityTypeConfiguration<Feature>
+    public class PaymentTransactionConfig : EntityTypeConfiguration<PaymentTransaction>
     {
         /// <summary>
         /// </summary>
         public PaymentTransactionConfig()
         {
-            //ToTable("AD_Plan");
-
-            Property(plan => plan.Code).IsRequired().HasMaxLength(50);
-
-            Property(plan => plan.Description).IsOptional().HasMaxLength(250);
-            Property(plan => plan.DurationDay).IsRequired();
-
-            Property(plan => plan.Title).IsRequired().HasMaxLength(100);
-
-            Property(plan => plan.RowVersion).IsRowVersion();
+            Property(transaction => transaction.RowVersion).IsRowVersion();
         }
     }
 }

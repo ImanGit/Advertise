@@ -2,7 +2,7 @@
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Users;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.DomainClasses.Entities.Public
 {
     /// <summary>
     ///     نشان دهنده پیام های عمومی

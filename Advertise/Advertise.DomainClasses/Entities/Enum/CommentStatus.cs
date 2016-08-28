@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Advertise.DomainClasses.Entities
+namespace Advertise.DomainClasses.Entities.Enum
 {
     /// <summary>
     /// </summary>
