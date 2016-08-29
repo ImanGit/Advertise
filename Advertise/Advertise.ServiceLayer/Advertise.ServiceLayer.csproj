@@ -211,6 +211,10 @@
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Advertise.Mapping\Advertise.Mapping.csproj">
+      <Project>{6266da2e-5213-4485-9db2-07ccb882e61e}</Project>
+      <Name>Advertise.Mapping</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Advertise.Utility\Advertise.Utility.csproj">
       <Project>{e18dc95b-9a3c-4212-85c3-12faa25088bb}</Project>
       <Name>Advertise.Utility</Name>

@@ -2,7 +2,7 @@
 using Advertise.ViewModel.Models.Categories.Category;
 using AutoMapper;
 
-namespace Advertise.ViewModel.Profiles.Categories
+namespace Advertise.Mapping.Profiles.Categories
 {
     /// <summary>
     /// </summary>

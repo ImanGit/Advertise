@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Advertise.Common.AutoMapper.Extensions
+namespace Advertise.Mapping.Extensions
 {
     public static class PersianExtension
     {

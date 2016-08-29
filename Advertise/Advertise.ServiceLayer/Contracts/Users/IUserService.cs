@@ -1,4 +1,7 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
+﻿using System;
+using System.Threading.Tasks;
+using Advertise.ServiceLayer.Contracts.Common;
+using Microsoft.Owin.Security.Cookies;
 
 namespace Advertise.ServiceLayer.Contracts.Users
 
@@ -32,6 +35,10 @@ namespace Advertise.ServiceLayer.Contracts.Users
         void Delete();
 
         #endregion
+
+        Func<CookieValidateIdentityContext, Task> OnValidateIdentity();
+
+        void SeedDatabase();
 
         #region Retrieve
 

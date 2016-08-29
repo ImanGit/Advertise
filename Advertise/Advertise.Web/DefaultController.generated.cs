@@ -25,13 +25,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Advertise.Web.Controllers
 {
-    public partial class UserController
+    public partial class DefaultController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UserController() { }
+        public DefaultController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected UserController(Dummy d) { }
+        protected DefaultController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -61,13 +61,13 @@ namespace Advertise.Web.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UserController Actions { get { return MVC.User; } }
+        public DefaultController Actions { get { return MVC.Default; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "User";
+        public readonly string Name = "Default";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "User";
+        public const string NameConst = "Default";
         [GeneratedCode("T4MVC", "2.0")]
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -76,16 +76,12 @@ namespace Advertise.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string List = "List";
-            public readonly string Myview = "Myview";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string List = "List";
-            public const string Myview = "Myview";
         }
 
 
@@ -99,20 +95,14 @@ namespace Advertise.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string List = "List";
-                public readonly string Myview = "Myview";
-                public readonly string View = "View";
             }
-            public readonly string List = "~/Views/User/List.cshtml";
-            public readonly string Myview = "~/Views/User/Myview.cshtml";
-            public readonly string View = "~/Views/User/View.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_UserController : Advertise.Web.Controllers.UserController
+    public partial class T4MVC_DefaultController : Advertise.Web.Controllers.DefaultController
     {
-        public T4MVC_UserController() : base(Dummy.Instance) { }
+        public T4MVC_DefaultController() : base(Dummy.Instance) { }
 
         [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
@@ -122,28 +112,6 @@ namespace Advertise.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult List()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.List);
-            ListOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void MyviewOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Myview()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Myview);
-            MyviewOverride(callInfo);
             return callInfo;
         }
 

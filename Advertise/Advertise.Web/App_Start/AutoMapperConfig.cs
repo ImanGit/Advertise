@@ -1,4 +1,4 @@
-﻿using Advertise.ViewModel.Profiles.Categories;
+﻿using Advertise.Mapping.Profiles.Categories;
 using AutoMapper;
 
 namespace Advertise.Web

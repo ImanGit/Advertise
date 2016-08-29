@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Users;
 using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security.Cookies;
 
 namespace Advertise.ServiceLayer.EFServices.Users
 {
@@ -42,6 +44,16 @@ namespace Advertise.ServiceLayer.EFServices.Users
         #region Delete
 
         public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Func<CookieValidateIdentityContext, Task> OnValidateIdentity()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SeedDatabase()
         {
             throw new NotImplementedException();
         }

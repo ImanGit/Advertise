@@ -34,6 +34,10 @@
       <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -131,9 +135,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMapper\Extensions\PersianExtension.cs" />
     <Compile Include="Constants\ApplicationConst.cs" />
     <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\PersianDateModelBinder.cs" />
+    <Compile Include="Controller\DecimalModelBinder.cs" />
     <Compile Include="Controller\SessionProvider.cs" />
     <Compile Include="Controller\ISessionProvider.cs" />
     <Compile Include="Controller\CookieTempDataProvider.cs" />
@@ -149,6 +154,10 @@
     <Compile Include="Extensions\TypeExtention.cs" />
     <Compile Include="Filters\AjaxOnlyAttribute.cs" />
     <Compile Include="Filters\ActivityAttribute.cs" />
+    <Compile Include="Filters\ForceWwwAttribute.cs" />
+    <Compile Include="Filters\RemoveServerHeaderFilterAttribute.cs" />
+    <Compile Include="Filters\ElmahRequestValidationErrorFilter.cs" />
+    <Compile Include="Filters\ElmahHandledErrorLoggerFilter.cs" />
     <Compile Include="HiddenFields\ActionKeyService.cs" />
     <Compile Include="HiddenFields\ActionKey.cs" />
     <Compile Include="HiddenFields\InputExtension.cs" />
@@ -158,6 +167,7 @@
     <Compile Include="HiddenFields\IRijndaelStringEncrypter.cs" />
     <Compile Include="HiddenFields\IEncryptSettingsProvider.cs" />
     <Compile Include="HiddenFields\EncryptSettingsProvider.cs" />
+    <Compile Include="Json\JsonNetValueProviderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,9 +192,21 @@
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Advertise.Mapping\Advertise.Mapping.csproj">
+      <Project>{6266da2e-5213-4485-9db2-07ccb882e61e}</Project>
+      <Name>Advertise.Mapping</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Advertise.ServiceLayer\Advertise.ServiceLayer.csproj">
       <Project>{03d81571-7491-44c6-829d-5dd06a572ed9}</Project>
       <Name>Advertise.ServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Advertise.Utility\Advertise.Utility.csproj">
+      <Project>{e18dc95b-9a3c-4212-85c3-12faa25088bb}</Project>
+      <Name>Advertise.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Advertise.ViewModel\Advertise.ViewModel.csproj">
+      <Project>{306a3a29-1b7c-48c4-abf9-98ef5f7692fd}</Project>
+      <Name>Advertise.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

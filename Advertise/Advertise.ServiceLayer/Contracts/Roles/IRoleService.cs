@@ -35,5 +35,7 @@ namespace Advertise.ServiceLayer.Contracts.Roles
         void Get();
 
         #endregion
+
+        void SeedDatabase();
     }
 }
