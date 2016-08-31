@@ -28,7 +28,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         public void Add(AddCategoryViewModel viewModel)
         {
-            _mapper.Map(source: _category, destination: viewModel);
+            _mapper.Map(_category, viewModel);
         }
 
         #endregion
@@ -44,13 +44,13 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         #region Fields
 
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IDbSet<Category> _category;
 
         #endregion
 
-        #region Retrieve
+        #region Read
 
         public Task<int> GetCount()
         {

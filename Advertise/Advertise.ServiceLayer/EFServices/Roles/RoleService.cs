@@ -27,7 +27,7 @@ namespace Advertise.ServiceLayer.EFServices.Roles
 
         public void SeedDatabase()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

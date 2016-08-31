@@ -13,13 +13,13 @@ namespace Advertise.Mapping.Profiles.Categories
         public CategoryProfile()
         {
             CreateMap<Category, CategoryViewModel>()
-                .ForMember(d => d.CreatorUserName, opt => opt.MapFrom(src => src.CreatedBy.UserName));
+                .ForMember(d => d.CreatorUserName, opt => opt.MapFrom(src => src.CreatedBy.UserName))
+                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<CategoryViewModel, Category>();
+            CreateMap<CategoryViewModel, Category>().ForAllOtherMembers(opt => opt.Ignore());
         }
 
         /// <summary>
-        /// 
         /// </summary>
         public override string ProfileName => GetType().Name;
     }

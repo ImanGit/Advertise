@@ -200,6 +200,7 @@
     <Compile Include="EFServices\Users\UserService.cs" />
     <Compile Include="EFServices\Users\UserSettingService.cs" />
     <Compile Include="EFServices\Users\UserSocialService.cs" />
+    <Compile Include="CustomAspNetIdentity\CustomSecurityStampValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

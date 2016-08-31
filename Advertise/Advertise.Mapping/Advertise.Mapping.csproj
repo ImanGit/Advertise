@@ -50,6 +50,10 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PersianDateTime, Version=1.1.5082.36395, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PersianDateTime.1.1.5082.36395\lib\net40\PersianDateTime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -63,12 +67,12 @@
   <ItemGroup>
     <Compile Include="Extensions\PersianExtension.cs" />
     <Compile Include="Profiles\Categories\CategoryProfile.cs" />
-    <Compile Include="Profiles\Users\UserProfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Profiles\Companies\" />
     <Folder Include="Profiles\Products\" />
+    <Folder Include="Profiles\Users\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Advertise.DomainClasses\Advertise.DomainClasses.csproj">

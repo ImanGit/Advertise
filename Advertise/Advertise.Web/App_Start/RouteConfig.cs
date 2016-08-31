@@ -23,6 +23,7 @@ namespace Advertise.Web
             routes.IgnoreRoute("{resource}.jpg");
             routes.IgnoreRoute("{resource}.gif");
             routes.IgnoreRoute("{resource}.txt");
+            routes.IgnoreRoute("elmah.axd");
 
             #endregion
 

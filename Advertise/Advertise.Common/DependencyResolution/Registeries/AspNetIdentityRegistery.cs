@@ -7,6 +7,7 @@ using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Roles;
 using Advertise.ServiceLayer.Contracts.Users;
 using Advertise.ServiceLayer.EFServices;
+using Advertise.ServiceLayer.EFServices.Roles;
 using Advertise.ServiceLayer.EFServices.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -44,7 +45,7 @@ namespace Advertise.Common.DependencyResolution.Registeries
                 .HybridHttpOrThreadLocalScoped()
                 .Use<ApplicationSignInManagerService>();
 
-            For<IRoleService>().HybridHttpOrThreadLocalScoped().Use<IRoleService>();
+            For<IRoleService>().HybridHttpOrThreadLocalScoped().Use<RoleService>();
 
             For<IIdentityMessageService>().Use<SmsService>();
 

@@ -32,7 +32,7 @@ namespace Advertise.Web
                 EntityFrameworkConfig.RegisterEntityFramework();
                 StructureMapConfig.RegisterStructureMap();
                 AutoMapperConfig.RegisterAutoMapper();
-                //AspNetIdentityConfig.RegisterAspNetIdentity();
+                AspNetIdentityConfig.RegisterAspNetIdentity();
             }
             catch
             {

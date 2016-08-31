@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Common;
 using Microsoft.Owin.Security.Cookies;
 
@@ -37,6 +39,8 @@ namespace Advertise.ServiceLayer.Contracts.Users
         #endregion
 
         Func<CookieValidateIdentityContext, Task> OnValidateIdentity();
+
+        Task<ClaimsIdentity> GenerateUserIdentityAsync(User applicationUser);
 
         void SeedDatabase();
 

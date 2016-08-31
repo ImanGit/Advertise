@@ -18,7 +18,14 @@ namespace Advertise.Web
     {
         /// <summary>
         /// </summary>
-        public static void RegisterAspNetIdentity(IAppBuilder appBuilder)
+        public static void RegisterAspNetIdentity()
+        {
+        }
+
+        /// <summary>
+        ///     For OWIN Config
+        /// </summary>
+        public static void Configuration(IAppBuilder appBuilder)
         {
             const int twoWeeks = 14;
 
