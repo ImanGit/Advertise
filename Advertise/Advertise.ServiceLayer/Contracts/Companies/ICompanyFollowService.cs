@@ -5,7 +5,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
     {
         #region Create
         /// <summary>
-        /// 
+        /// ایجاد فالو یک کمپانی
         /// </summary>
         void Create();
 
@@ -13,9 +13,9 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #region Update
         /// <summary>
-        /// 
+        /// فالو کردن مجدد یک کمپانی یا آن فالو کردن
         /// </summary>
-        void Edit();
+        void EditForFollowOrUnFollow();
 
         #endregion
 
@@ -29,9 +29,45 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #region Retrieve
         /// <summary>
-        /// 
+        /// تعداد همه فالورها
         /// </summary>
-        void Get();
+        int GetCountAll();
+
+        /// <summary>
+        /// نمایش همه فالورها
+        /// </summary>
+        /// <returns></returns>
+        int GetAll();
+
+        /// <summary>
+        /// تعداد فالورهای یک کمپانی
+        /// </summary>
+        /// <returns></returns>
+        int GetConutFollowerForOneCompany();
+
+        /// <summary>
+        /// نمایش فالورهای یک کمپانی
+        /// </summary>
+        /// <returns></returns>
+        int GetFollowerForOneCompany();
+
+        /// <summary>
+        /// کاربری که یک کمپانی را فالو کرده
+        /// </summary>
+        /// <returns></returns>
+        int GetUserforFollowCompany();
+
+        /// <summary>
+        /// تعداد فالورهایی که کاربر انجام داده
+        /// </summary>
+        /// <returns></returns>
+        int GetCountAllFollowerUser();
+
+        /// <summary>
+        ///نمایش همه فالورهای یک شخص
+        /// </summary>
+        /// <returns></returns>
+        int GetAllFollowerUser();
 
         #endregion
     }

@@ -17,6 +17,12 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         void Edit();
 
+        /// <summary>
+        /// فعال یا غیر فعال کردن نقد و بررسی
+        /// </summary>
+        /// <returns></returns>
+        bool EditForActiveOrUnActive();
+
         #endregion
 
         #region Delete

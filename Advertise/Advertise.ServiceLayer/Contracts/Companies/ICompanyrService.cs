@@ -1,9 +1,11 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
-    public interface ICompanyrService:IBaseService 
+    public interface ICompanyrService : IBaseService
     {
         #region Create
+
         /// <summary>
         /// 
         /// </summary>
@@ -12,6 +14,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         #endregion
 
         #region Update
+
         /// <summary>
         /// ویرایش کمپانی
         /// </summary>
@@ -27,14 +30,17 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// برگرداندن کمپانی حذف شده
         /// </summary>
         void RecoveryDeleted();
+
         /// <summary>
         /// ویرایش عنوان محصولات
         /// </summary>
         void EditCopamanyCategory();
+
         #endregion
 
 
         #region Delete
+
         /// <summary>
         /// حذف منطقی 
         /// </summary>
@@ -43,11 +49,12 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// حذف فیزیکی
         /// </summary>
-        void DeleteHard(); 
+        void DeleteHard();
 
         #endregion
 
         #region Retrieve
+
         /// <summary>
         ///گرفتن کل کمپانی ها 
         /// </summary>
@@ -62,7 +69,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// گرفتن تعدادی کمپانی جهت مقایسه
         /// </summary>
         void GetManyComp();
-        
+
         /// <summary>
         /// گرفتن کمپانی ها برا اساس تاریخ
         /// </summary>
@@ -82,7 +89,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// گرفتن تعداد کمپانی های یک محصول
         /// </summary>
         void GetCountCompanyInCategory();
-        
+
         /// <summary>
         /// صفحه بندی 
         /// </summary>
@@ -91,7 +98,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// موجود بودن کمپانی در دیتابیس
         /// </summary>
-        void   GetInDB();
+        void GetInDB();
 
         /// <summary>
         /// نمایش کمپانی های فعال
@@ -99,17 +106,27 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <returns></returns>
         int GetActive();
 
-        /// <summary>
-        /// جهت سرچ
-        /// </summary>
-        /// <returns></returns>
-        int GetForSearch();
+        
 
         /// <summary>
         /// نمایش کمپانی هایی که به صورت منطقی پاک شده اند
         /// </summary>
         /// <returns></returns>
         int GetDeleted();
+
+        #endregion
+
+        #region Find
+
+        /// <summary>
+        /// برای 
+        /// </summary>
+        /// <returns></returns>
+        /// <summary>
+        /// جهت سرچ
+        /// </summary>
+        /// <returns></returns>
+        int Find();
 
 
         #endregion

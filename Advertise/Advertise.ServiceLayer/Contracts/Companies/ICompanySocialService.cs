@@ -1,4 +1,5 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
+﻿using System;
+using Advertise.ServiceLayer.Contracts.Common;
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanySocialService :IBaseService 
@@ -31,7 +32,20 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        void Get();
+        long GetCountAll();
+
+        int GetCountTwitter();
+
+        int GetCountFaceBook();
+
+        int GetCountGooglePlus();
+
+        int GetCountYoutube();
+
+        int GetCountAllSocialComany();
+
+
+
 
         #endregion
     }

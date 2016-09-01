@@ -1,4 +1,5 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
+﻿using System;
+using Advertise.ServiceLayer.Contracts.Common;
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyVisitService:IBaseService 
@@ -23,15 +24,29 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
+       // void Delete();
 
         #endregion
 
         #region Retrieve
         /// <summary>
-        /// 
+        /// بازدید کل کمپانی
         /// </summary>
-        void Get();
+        int GetCountAllVisitComany();
+
+        /// <summary>
+        /// تعداد بازدیدهای امروز
+        /// </summary>
+        /// <returns></returns>
+        int GetCountForToday();
+
+        /// <summary>
+        /// تعداد بازدیدهای یک ماه گذشته
+        /// </summary>
+        /// <returns></returns>
+        int GetCountForMonth();
+
+
 
         #endregion
     }

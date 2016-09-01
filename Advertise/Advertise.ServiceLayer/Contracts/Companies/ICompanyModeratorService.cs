@@ -35,10 +35,18 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #region Retrieve
         /// <summary>
-        /// 
+        /// تعداد کل مدریتورهای یک کمپانی
         /// </summary>
-        void Get();
+        void GetCountModeratorForComany();
 
-        #endregion
+        /// <summary>
+        /// نمایش مدریتورهای یک کمپانی 
+        /// </summary>
+        void GetModeratorForComany();
+
+       int GetCountAll();
+       int GetShowAll();
+
+       #endregion
     }
 }
