@@ -7,18 +7,32 @@ namespace Advertise.DomainClasses.Entities.Products
     /// <summary>
     ///     نشان دهنده انواع لایک
     /// </summary>
-    public class ProduectLike : BaseEntity
+    public class ProductLike : BaseEntity
     {
         #region Properties
 
         /// <summary>
         ///     Like and Disliked
         /// </summary>
-        public virtual bool IsLiked { get; set; }
+        public virtual bool IsLike { get; set; }
+
+        /// <summary>
+        ///     Like and Disliked
+        /// </summary>
+        public virtual bool IsDisLike { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        ///     کد اختصاصی کاربری که لایک انجام داده
+        /// </summary>
+        public virtual User LikedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid LikedById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی محصول
@@ -28,15 +42,6 @@ namespace Advertise.DomainClasses.Entities.Products
         /// <summary>
         /// </summary>
         public virtual Guid ProductId { get; set; }
-
-        /// <summary>
-        ///     کد اختصاصی کاربری که لایک انجام داده
-        /// </summary>
-        public virtual User Liker { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid LikerId { get; set; }
 
         #endregion
     }

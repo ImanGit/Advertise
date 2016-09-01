@@ -1,5 +1,6 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Products
@@ -23,7 +24,7 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual ProductCommentStatus CommentStatus { get; set; }
+        public virtual CommentStatus Status { get; set; }
 
         #endregion
 
@@ -32,11 +33,20 @@ namespace Advertise.DomainClasses.Entities.Products
         /// <summary>
         ///     کاربری که کامنت گذاشته
         /// </summary>
-        public virtual User Commenter { get; set; }
+        public virtual User CommentedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid CommenterId { get; set; }
+        public virtual Guid CommentedById { get; set; }
+
+        /// <summary>
+        ///     کاربری (اپراتور)که کامنت را تائید کرده است
+        /// </summary>
+        public virtual User ApprovedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid ApprovedById { get; set; }
 
         /// <summary>
         ///     کداختصاصی محصول
@@ -46,15 +56,6 @@ namespace Advertise.DomainClasses.Entities.Products
         /// <summary>
         /// </summary>
         public virtual Guid ProductId { get; set; }
-
-        /// <summary>
-        ///     کاربری (اپراتور)که کامنت را تائید کرده است
-        /// </summary>
-        public virtual User Approver { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid ApproverId { get; set; }
 
         #endregion
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Enum;
 
 namespace Advertise.DomainClasses.Entities.Users
 {
@@ -26,11 +27,11 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         ///     کد اختصاصی کاربر
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual User OwnedBy { get; set; }
 
         /// <summary>
         /// </summary>
-        public virtual Guid UserId { get; set; }
+        public virtual Guid OwnedById { get; set; }
 
         #endregion
     }

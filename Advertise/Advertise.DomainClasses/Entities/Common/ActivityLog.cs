@@ -3,6 +3,8 @@ using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Common
 {
+    /// <summary>
+    /// </summary>
     public class ActivityLog : BaseEntity
     {
         #region Properties
@@ -37,29 +39,24 @@ namespace Advertise.DomainClasses.Entities.Common
         /// </summary>
         public virtual string OperantIp { get; set; }
 
-        #endregion
-
-        #region NavigationProperties
-
         /// <summary>
         ///     gets or sets the type of this activity
         /// </summary>
         public virtual ActivityLogType Type { get; set; }
 
-        /// <summary>
-        ///     gets or sets the  type's id of this activity
-        /// </summary>
-        public virtual Guid TypeId { get; set; }
+        #endregion
+
+        #region NavigationProperties
 
         /// <summary>
         ///     gets or sets User that done this activity
         /// </summary>
-        public virtual User Operant { get; set; }
+        public virtual User OperantedBy { get; set; }
 
         /// <summary>
         ///     gets or sets Id of User that done this activity
         /// </summary>
-        public virtual Guid OperantId { get; set; }
+        public virtual Guid OperantedById { get; set; }
 
         #endregion
     }

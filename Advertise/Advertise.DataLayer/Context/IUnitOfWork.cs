@@ -12,10 +12,24 @@ namespace Advertise.DataLayer.Context
     /// </summary>
     public interface IUnitOfWork
     {
+        /// <summary>
+        /// </summary>
         bool ValidateOnSaveEnabled { get; set; }
+
+        /// <summary>
+        /// </summary>
         bool ProxyCreationEnabled { get; set; }
+
+        /// <summary>
+        /// </summary>
         bool AutoDetectChangesEnabled { get; set; }
+
+        /// <summary>
+        /// </summary>
         bool ForceNoTracking { get; set; }
+
+        /// <summary>
+        /// </summary>
         Database Database { get; }
 
         /// <summary>
@@ -102,13 +116,11 @@ namespace Advertise.DataLayer.Context
         void ForceDatabaseInitialize();
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="name"></param>
         void EnableFiltering(string name);
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="name"></param>
         /// <param name="parameter"></param>
@@ -116,13 +128,11 @@ namespace Advertise.DataLayer.Context
         void EnableFiltering(string name, string parameter, object value);
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="name"></param>
         void DisableFiltering(string name);
 
         /// <summary>
-        /// 
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>

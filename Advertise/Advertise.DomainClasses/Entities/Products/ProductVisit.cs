@@ -13,11 +13,20 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual bool IsVisited { get; set; }
+        public virtual bool IsVisit { get; set; }
 
         #endregion
 
         #region NavigationProperties
+
+        /// <summary>
+        ///     کد اختصاصی کاربر
+        /// </summary>
+        public virtual User VisitedBy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid VisitedById { get; set; }
 
         /// <summary>
         ///     کد اختصاصی شرکت
@@ -27,15 +36,6 @@ namespace Advertise.DomainClasses.Entities.Products
         /// <summary>
         /// </summary>
         public virtual Guid ProductId { get; set; }
-
-        /// <summary>
-        ///     کد اختصاصی کاربر
-        /// </summary>
-        public virtual User Visitor { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public virtual Guid VisitorId { get; set; }
 
         #endregion
     }

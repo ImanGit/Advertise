@@ -1,6 +1,8 @@
 ﻿namespace Advertise.DomainClasses.Entities.Common
 {
-    public class ActivityLogType
+    /// <summary>
+    /// </summary>
+    public enum ActivityLogType
     {
     }
 }

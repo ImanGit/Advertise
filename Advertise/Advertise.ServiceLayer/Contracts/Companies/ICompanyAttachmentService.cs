@@ -1,9 +1,4 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
@@ -12,7 +7,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         #region Create
 
         /// <summary>
-        /// 
         /// </summary>
         void Create();
 
@@ -21,7 +15,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         #region Update
 
         /// <summary>
-        /// 
         /// </summary>
         void Edit();
 
@@ -30,7 +23,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         #region Delete
 
         /// <summary>
-        /// 
         /// </summary>
         void Delete();
 
@@ -39,7 +31,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         #region Retrieve
 
         /// <summary>
-        /// 
         /// </summary>
         void Get();
 

@@ -91,6 +91,10 @@
     <Compile Include="Context\BaseDbContext.cs" />
     <Compile Include="Conventions\CustomeConvention.cs" />
     <Compile Include="Context\IUnitOfWork.cs" />
+    <Compile Include="Migrations\201608261108291_init.cs" />
+    <Compile Include="Migrations\201608261108291_init.Designer.cs">
+      <DependentUpon>201608261108291_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,14 +103,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Advertise.Common\Advertise.Common.csproj">
-      <Project>{477f0422-f887-4d64-af38-307fb82716ad}</Project>
-      <Name>Advertise.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Advertise.DomainClasses\Advertise.DomainClasses.csproj">
       <Project>{c6afea5e-205e-4ae6-874f-8df6f965c8bd}</Project>
       <Name>Advertise.DomainClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Advertise.Utility\Advertise.Utility.csproj">
+      <Project>{e18dc95b-9a3c-4212-85c3-12faa25088bb}</Project>
+      <Name>Advertise.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608261108291_init.resx">
+      <DependentUpon>201608261108291_init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Seed.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

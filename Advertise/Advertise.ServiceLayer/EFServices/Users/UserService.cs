@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Users;
+using Advertise.ServiceLayer.CustomAspNetIdentity;
 using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security.Cookies;
 
 namespace Advertise.ServiceLayer.EFServices.Users
 {
@@ -39,11 +43,11 @@ namespace Advertise.ServiceLayer.EFServices.Users
 
         #endregion
 
-        #region Delete
+        #region SeedDatabase
 
-        public void Delete()
+        public void SeedDatabase()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         #endregion
@@ -55,7 +59,6 @@ namespace Advertise.ServiceLayer.EFServices.Users
             throw new NotImplementedException();
         }
 
-
         #endregion
 
         #region Count
@@ -66,6 +69,52 @@ namespace Advertise.ServiceLayer.EFServices.Users
         public long GetCount()
         {
             return 0;
+        }
+
+        #endregion
+
+        #region Delete
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Func<CookieValidateIdentityContext, Task> OnValidateIdentity()
+        {
+            return CustomSecurityStampValidator.OnValidateIdentity(TimeSpan.FromMinutes(0), GenerateUserIdentityAsync,
+                identity => Guid.Parse(identity.GetUserId()));
+        }
+
+        #region GenerateUserIdentityAsync
+
+        /// <summary>
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(User user)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+
+            return userIdentity;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        private static async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserService manager, User user)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+
+            return userIdentity;
         }
 
         #endregion

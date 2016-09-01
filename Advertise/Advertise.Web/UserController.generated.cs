@@ -76,12 +76,16 @@ namespace Advertise.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string List = "List";
+            public readonly string Myview = "Myview";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string List = "List";
+            public const string Myview = "Myview";
         }
 
 
@@ -95,10 +99,12 @@ namespace Advertise.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Index = "Index";
+                public readonly string List = "List";
+                public readonly string Myview = "Myview";
                 public readonly string View = "View";
             }
-            public readonly string Index = "~/Views/User/Index.cshtml";
+            public readonly string List = "~/Views/User/List.cshtml";
+            public readonly string Myview = "~/Views/User/Myview.cshtml";
             public readonly string View = "~/Views/User/View.cshtml";
         }
     }
@@ -116,6 +122,28 @@ namespace Advertise.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult List()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.List);
+            ListOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void MyviewOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Myview()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Myview);
+            MyviewOverride(callInfo);
             return callInfo;
         }
 

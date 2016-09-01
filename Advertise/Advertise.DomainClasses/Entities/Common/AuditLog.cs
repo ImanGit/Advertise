@@ -1,6 +1,5 @@
 ﻿using System;
-using Advertise.DomainClasses.Entities.Common;
-using Advertise.DomainClasses.Entities.Enum;
+using System.Xml.Linq;
 using Advertise.DomainClasses.Entities.Users;
 
 namespace Advertise.DomainClasses.Entities.Common
@@ -8,53 +7,81 @@ namespace Advertise.DomainClasses.Entities.Common
     /// <summary>
     ///     نشان دهنده لاگ سیستم
     /// </summary>
-    public class Log : BaseEntity
+    public class AuditLog : BaseEntity
     {
-        #region Ctor
-
-        /// <summary>
-        ///     سازنده پیش فرض
-        /// </summary>
-        public Log()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        #endregion
-
         #region Properties
 
         /// <summary>
-        ///     متن لاگ
+        ///     sets or gets description of Log
         /// </summary>
-        public string Message { get; set; }
+        public virtual string Description { get; set; }
 
         /// <summary>
-        ///     عمل لاگ(خطا یا Info)
+        ///     sets or gets when log is operated
         /// </summary>
-        public string Action { get; set; }
+        public virtual DateTime OperatedOn { get; set; }
 
         /// <summary>
+        ///     sets or gets Type Of Entity
         /// </summary>
-        public LogLevelType LogLevel { get; set; }
+        public virtual string Entity { get; set; }
 
         /// <summary>
-        ///     تاریخ ایجاد لاگ
+        ///     gets or sets  Old value of  Properties before modification
         /// </summary>
-        public DateTime Date { get; set; }
+        public virtual string XmlOldValue { get; set; }
+
+        /// <summary>
+        ///     gets or sets XML Base OldValue of Properties (NotMapped)
+        /// </summary>
+        public virtual XElement XmlOldValueWrapper
+        {
+            get { return XElement.Parse(XmlOldValue); }
+            set { XmlOldValue = value.ToString(); }
+        }
+
+        /// <summary>
+        ///     gets or sets new value of  Properties after modification
+        /// </summary>
+        public virtual string XmlNewValue { get; set; }
+
+        /// <summary>
+        ///     gets or sets XML Base NewValue of Properties (NotMapped)
+        /// </summary>
+        public virtual XElement XmlNewValueWrapper
+        {
+            get { return XElement.Parse(XmlNewValue); }
+            set { XmlNewValue = value.ToString(); }
+        }
+
+        /// <summary>
+        ///     gets or sets Identifier Of Entity
+        /// </summary>
+        public virtual string EntityId { get; set; }
+
+        /// <summary>
+        ///     gets or sets user agent information
+        /// </summary>
+        public virtual string Agent { get; set; }
+
+        /// <summary>
+        ///     gets or sets user's ip address
+        /// </summary>
+        public virtual string OperantIp { get; set; }
 
         #endregion
 
         #region NavigationProperties
 
         /// <summary>
+        ///     sets or gets log's creator
         /// </summary>
-        public virtual Guid UserId { get; set; }
+        public virtual User OperantedBy { get; set; }
 
         /// <summary>
-        ///     کد اختصاصی کاربر
+        ///     sets or gets identifier of log's creator
         /// </summary>
-        public virtual User User { get; set; }
+        public virtual long OperantedById { get; set; }
 
         #endregion
     }

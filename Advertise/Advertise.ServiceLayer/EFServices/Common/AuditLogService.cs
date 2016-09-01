@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts.Common;
+
 namespace Advertise.ServiceLayer.EFServices.Common
 {
-    class AuditLogService :IAuditLogService 
+    internal class AuditLogService : IAuditLogService
     {
         public void Create()
         {

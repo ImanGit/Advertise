@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts;
+using Microsoft.AspNet.Identity;
 
 namespace Advertise.ServiceLayer.EFServices
 {
-    public class EmailService:IEmailService 
+    public class EmailService : IIdentityMessageService,IEmailService
     {
         public void Create()
         {
@@ -27,6 +25,11 @@ namespace Advertise.ServiceLayer.EFServices
         public void Get()
         {
             throw new NotImplementedException();
+        }
+
+        public Task SendAsync(IdentityMessage message)
+        {
+            return Task.FromResult(0);
         }
     }
 }

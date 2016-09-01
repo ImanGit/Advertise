@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Advertise.DomainClasses.Entities.Common;
+using Advertise.DomainClasses.Entities.Companies;
 
 namespace Advertise.DomainClasses.Entities.Categories
 {
@@ -32,7 +33,11 @@ namespace Advertise.DomainClasses.Entities.Categories
 
         /// <summary>
         /// </summary>
-        public virtual string Path { get; set; }
+        public virtual string ParentPath { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual bool IsActive { get; set; }
 
         #endregion
 
@@ -53,11 +58,15 @@ namespace Advertise.DomainClasses.Entities.Categories
 
         /// <summary>
         /// </summary>
-        public virtual ICollection<CategoryFollow> CategoryFollows { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
 
-       // /// <summary>
-        ///// </summary>
-       // public virtual ICollection<CategoryReview> CategoryReviews { get; set; }
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CategoryFollow> Follows { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual ICollection<CategoryReview> Reviews { get; set; }
 
         #endregion
     }

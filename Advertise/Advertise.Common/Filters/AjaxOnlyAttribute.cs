@@ -4,7 +4,6 @@ using System.Web.Mvc;
 namespace Advertise.Common.Filters
 {
     /// <summary>
-    /// 
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public sealed class AjaxOnlyAttribute : ActionFilterAttribute
