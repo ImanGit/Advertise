@@ -26,9 +26,12 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         #region Create
 
-        public void Add(AddCategoryViewModel viewModel)
+        public async void Add(AddCategoryViewModel viewModel)
         {
-            _mapper.Map(_category, viewModel);
+            var category = _mapper.Map<Category>(viewModel);
+            _category.Add(category);
+            
+
         }
 
         #endregion

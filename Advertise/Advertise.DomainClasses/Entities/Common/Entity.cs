@@ -13,12 +13,12 @@ namespace Advertise.DomainClasses.Entities.Common
         /// <summary>
         ///     gets or sets date that this entity was created
         /// </summary>
-        public virtual DateTime CreatedOn { get; set; }
+        public virtual DateTime? CreatedOn { get; set; }
 
         /// <summary>
         ///     gets or sets Date that this entity was updated
         /// </summary>
-        public virtual DateTime ModifiedOn { get; set; }
+        public virtual DateTime? ModifiedOn { get; set; }
 
         /// <summary>
         ///     gets or sets IP Address of Creator
@@ -51,16 +51,6 @@ namespace Advertise.DomainClasses.Entities.Common
         public virtual string CreatorAgent { get; set; }
 
         /// <summary>
-        ///     gets or sets date that this entity repoted last time
-        /// </summary>
-        public virtual DateTime? ReportedOn { get; set; }
-
-        /// <summary>
-        ///     gets or sets counter for Content's report
-        /// </summary>
-        public virtual int ReportCount { get; set; }
-
-        /// <summary>
         ///     gets or sets count of Modification Default is 1
         /// </summary>
         public virtual int Version { get; set; }
@@ -82,7 +72,7 @@ namespace Advertise.DomainClasses.Entities.Common
         /// <summary>
         ///     به عنوان آخرین تغییر دهنده
         /// </summary>
-        public virtual Guid ModifiedById { get; set; }
+        public virtual Guid? ModifiedById { get; set; }
 
         /// <summary>
         ///     به عنوان ایجاد کننده
@@ -92,7 +82,7 @@ namespace Advertise.DomainClasses.Entities.Common
         /// <summary>
         ///     به عنوان ایجاد کننده
         /// </summary>
-        public virtual Guid CreatedById { get; set; }
+        public virtual Guid? CreatedById { get; set; }
 
         #endregion
     }

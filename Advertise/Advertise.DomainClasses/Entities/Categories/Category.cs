@@ -11,7 +11,7 @@ namespace Advertise.DomainClasses.Entities.Categories
     public class Category : BaseEntity
     {
         #region Properties
-
+        
         /// <summary>
         ///     کد دسته بندی
         /// </summary>

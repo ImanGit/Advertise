@@ -7,9 +7,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @*<script src="~/Scripts/jquery-1.9.1.min.js"></script>*@
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
     @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/script")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,8 +38,7 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-   
+    @{Html.RenderPartial(MVC.Shared.Views._Noty);}
+    
 </body>
 </html>

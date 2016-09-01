@@ -12,13 +12,33 @@ namespace Advertise.Mapping.Profiles.Categories
         /// </summary>
         public CategoryProfile()
         {
-            CreateMap<Category, CategoryViewModel>()
-                .ForMember(d => d.CreatorUserName, opt => opt.MapFrom(src => src.CreatedBy.UserName))
-                .ForAllOtherMembers(opt => opt.Ignore());
+            CreateMap<Category, AddCategoryViewModel>()
+                .ProjectUsing(src => new AddCategoryViewModel
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath
+                });
+                //.ForMember(d => d.CreatorUserName, opt => opt.MapFrom(src => src.CreatedBy.UserName))
+                //.ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<CategoryViewModel, Category>().ForAllOtherMembers(opt => opt.Ignore());
+            CreateMap<AddCategoryViewModel, Category>()
+                .ProjectUsing(src => new Category
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath
+                });
+            //.ForAllOtherMembers(opt => opt.Ignore());
         }
 
+      
         /// <summary>
         /// </summary>
         public override string ProfileName => GetType().Name;

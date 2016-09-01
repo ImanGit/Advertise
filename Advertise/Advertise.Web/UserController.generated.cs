@@ -99,13 +99,7 @@ namespace Advertise.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string List = "List";
-                public readonly string Myview = "Myview";
-                public readonly string View = "View";
             }
-            public readonly string List = "~/Views/User/List.cshtml";
-            public readonly string Myview = "~/Views/User/Myview.cshtml";
-            public readonly string View = "~/Views/User/View.cshtml";
         }
     }
 

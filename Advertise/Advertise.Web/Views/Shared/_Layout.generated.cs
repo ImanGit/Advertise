@@ -64,20 +64,28 @@ WriteLiteral(">\r\n    <title>");
             #line hidden
 WriteLiteral(" - My ASP.NET Application</title>\r\n    ");
 
-WriteLiteral("\r\n    <script");
+WriteLiteral("\r\n    ");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 401), Tuple.Create("\"", 435)
-, Tuple.Create(Tuple.Create("", 407), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/modernizr-2.6.2.js")
-, 407), false)
-);
+WriteLiteral("\r\n    ");
 
-WriteLiteral("></script>\r\n");
+WriteLiteral("\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 11 "..\..\Views\Shared\_Layout.cshtml"
+            #line 12 "..\..\Views\Shared\_Layout.cshtml"
 Write(Styles.Render("~/bundles/css"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 13 "..\..\Views\Shared\_Layout.cshtml"
+Write(Scripts.Render("~/bundles/script"));
 
             
             #line default
@@ -121,7 +129,7 @@ WriteLiteral("></span>\r\n                </button>\r\n");
 WriteLiteral("                ");
 
             
-            #line 22 "..\..\Views\Shared\_Layout.cshtml"
+            #line 24 "..\..\Views\Shared\_Layout.cshtml"
            Write(Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }));
 
             
@@ -145,7 +153,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 32 "..\..\Views\Shared\_Layout.cshtml"
+            #line 34 "..\..\Views\Shared\_Layout.cshtml"
    Write(RenderBody());
 
             
@@ -154,7 +162,7 @@ WriteLiteral("        ");
 WriteLiteral("\r\n        <hr />\r\n        <footer>\r\n            <p>&copy; ");
 
             
-            #line 35 "..\..\Views\Shared\_Layout.cshtml"
+            #line 37 "..\..\Views\Shared\_Layout.cshtml"
                  Write(DateTime.Now.Year);
 
             
@@ -165,27 +173,27 @@ WriteLiteral(" - My ASP.NET Application</p>\r\n        </footer>\r\n    </div>\r
 WriteLiteral("    ");
 
             
-            #line 38 "..\..\Views\Shared\_Layout.cshtml"
+            #line 40 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
+WriteLiteral("\r\n");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1506), Tuple.Create("\"", 1542)
-, Tuple.Create(Tuple.Create("", 1512), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery-1.10.2.min.js")
-, 1512), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 1566), Tuple.Create("\"", 1598)
-, Tuple.Create(Tuple.Create("", 1572), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/bootstrap.min.js")
-, 1572), false)
-);
-
-WriteLiteral("></script>\r\n   \r\n</body>\r\n</html>");
+            
+            #line 41 "..\..\Views\Shared\_Layout.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 41 "..\..\Views\Shared\_Layout.cshtml"
+      Html.RenderPartial(MVC.Shared.Views._Noty);
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    \r\n</body>\r\n</html>");
 
         }
     }

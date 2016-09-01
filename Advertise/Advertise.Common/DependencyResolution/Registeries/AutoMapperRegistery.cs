@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Linq;
+using Advertise.DomainClasses.Entities.Categories;
+using Advertise.Mapping.Profiles.Categories;
+using Advertise.ViewModel.Models.Categories.Category;
 using AutoMapper;
 using StructureMap;
 
@@ -13,9 +16,9 @@ namespace Advertise.Common.DependencyResolution.Registeries
         /// </summary>
         public AutoMapperRegistery()
         {
-            var currentAssembly = typeof (AutoMapperRegistery).Assembly;
+            var profileAssembly = typeof (CategoryProfile).Assembly;
             var profiles =
-                currentAssembly.GetTypes()
+                profileAssembly.GetTypes()
                     .Where(t => typeof (Profile).IsAssignableFrom(t))
                     .Select(t => (Profile) Activator.CreateInstance(t));
 
@@ -24,6 +27,7 @@ namespace Advertise.Common.DependencyResolution.Registeries
                 foreach (var profile in profiles)
                 {
                     cfg.AddProfile(profile);
+                    
                 }
             });
 

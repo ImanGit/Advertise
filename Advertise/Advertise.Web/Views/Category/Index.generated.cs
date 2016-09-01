@@ -29,10 +29,10 @@ namespace ASP
     using Advertise.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/User/View.cshtml")]
-    public partial class _Views_User_View_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Index.cshtml")]
+    public partial class _Views_Category_Index_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
-        public _Views_User_View_cshtml()
+        public _Views_Category_Index_cshtml()
         {
         }
         public override void Execute()
@@ -40,14 +40,14 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 2 "..\..\Views\User\View.cshtml"
+            #line 2 "..\..\Views\Category\Index.cshtml"
   
-    ViewBag.Title = "View";
+    ViewBag.Title = "Index";
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>View</h2>\r\n\r\n");
+WriteLiteral("\r\n\r\n<h2>Index</h2>\r\n\r\n");
 
         }
     }

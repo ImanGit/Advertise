@@ -26,7 +26,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         #endregion
 
-        #region Retrieve
+        #region Read
 
         /// <summary>
         ///     گرفتن تعداد کل دسته بندی ها

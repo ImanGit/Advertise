@@ -66,7 +66,12 @@ namespace Advertise.Common.DependencyResolution
                 ioc.AddRegistry<ServiceLayerRegistery>();
                 ioc.AddRegistry<TaskRegistry>();
 
-                ioc.Scan(scanner => scanner.WithDefaultConventions());
+                ioc.Scan(scanner => {
+                    scanner.TheCallingAssembly();
+                    //scan.AssemblyContainingType<SomeType>(); // for other asms, if any.
+                    scanner.WithDefaultConventions();
+                    scanner.AddAllTypesOf<Profile>().NameBy(item => item.FullName);
+                });
                 ioc.Policies.SetAllProperties(y => y.OfType<HttpContextBase>());
             });
 

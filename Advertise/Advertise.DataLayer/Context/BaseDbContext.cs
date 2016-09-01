@@ -52,7 +52,7 @@ namespace Advertise.DataLayer.Context
 
             modelBuilder.Conventions.Add(new CustomeConvention());
 
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder.Configurations.AddFromAssembly(typeof (BaseConfig).Assembly);
             LoadEntities(typeof (BaseEntity).Assembly, modelBuilder, "Advertise.DomainClasses.Entities");

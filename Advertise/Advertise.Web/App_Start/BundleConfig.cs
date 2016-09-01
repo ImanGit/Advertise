@@ -17,6 +17,10 @@ namespace Advertise.Web
                 .Include("~/Content/iransans.css", "~/Content/bootstrap.css", "~/Content/font-awesome.css",
                     "~/Content/Site.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/script")
+                .Include("~/Scripts/jquery-3.1.0.min.js", "~/Scripts/bootstrap.min.js", "~/Scripts/jquery.noty.packaged.min.js",
+                    "~/Scripts/Custome/noty.alerts.js"));
+
             BundleTable.EnableOptimizations = true;
         }
     }

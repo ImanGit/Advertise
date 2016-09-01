@@ -277,7 +277,13 @@
     <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="App_Data\ErrorsLog\ErrorsLog.sqlite3" />
+    <Content Include="RazorHelpers\NotyBuilder.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotyBuilder.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\Custome\noty.alerts.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
@@ -285,7 +291,25 @@
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery.noty.packaged.js" />
+    <Content Include="Scripts\jquery.noty.packaged.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\noty\jquery.noty.js" />
+    <Content Include="Scripts\noty\layouts\bottom.js" />
+    <Content Include="Scripts\noty\layouts\bottomCenter.js" />
+    <Content Include="Scripts\noty\layouts\bottomLeft.js" />
+    <Content Include="Scripts\noty\layouts\bottomRight.js" />
+    <Content Include="Scripts\noty\layouts\center.js" />
+    <Content Include="Scripts\noty\layouts\centerLeft.js" />
+    <Content Include="Scripts\noty\layouts\centerRight.js" />
+    <Content Include="Scripts\noty\layouts\inline.js" />
+    <Content Include="Scripts\noty\layouts\top.js" />
+    <Content Include="Scripts\noty\layouts\topCenter.js" />
+    <Content Include="Scripts\noty\layouts\topLeft.js" />
+    <Content Include="Scripts\noty\layouts\topRight.js" />
+    <Content Include="Scripts\noty\themes\bootstrap.js" />
+    <Content Include="Scripts\noty\themes\default.js" />
+    <Content Include="Scripts\noty\themes\relax.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="T4MVC.tt">
@@ -319,6 +343,10 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\StructureMapConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="CategoryController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -332,6 +360,11 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RazorHelpers\NotyBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotyBuilder.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="SampleTemplate.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -348,15 +381,30 @@
     <Compile Include="UserController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\Category\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_Layout.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\User\View.generated.cs">
+    <Compile Include="Views\Shared\_Noty.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>View.cshtml</DependentUpon>
+      <DependentUpon>_Noty.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\_ViewStart.generated.cs">
       <AutoGen>True</AutoGen>
@@ -370,15 +418,23 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Views\User\View.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>View.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="T4MVC.tt.hooks.t4" />
-    <Content Include="Views\User\List.cshtml" />
-    <Content Include="Views\User\Myview.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Noty.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Noty.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,7 +443,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\ErrorsLog\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -395,6 +450,7 @@
     <Folder Include="File\Image\" />
     <Folder Include="File\UserFile\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

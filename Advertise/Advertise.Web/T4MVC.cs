@@ -29,6 +29,7 @@ public static partial class MVC
 {
     static readonly AdminClass s_Admin = new AdminClass();
     public static AdminClass Admin { get { return s_Admin; } }
+    public static Advertise.Web.Controllers.CategoryController Category = new Advertise.Web.Controllers.T4MVC_CategoryController();
     public static Advertise.Web.Controllers.DefaultController Default = new Advertise.Web.Controllers.T4MVC_DefaultController();
     public static Advertise.Web.Controllers.HomeController Home = new Advertise.Web.Controllers.T4MVC_HomeController();
     public static Advertise.Web.Controllers.UserController User = new Advertise.Web.Controllers.T4MVC_UserController();
@@ -84,6 +85,14 @@ namespace Links
         public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
         public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
         public static readonly string bootstrap_min_js_map = Url("bootstrap.min.js.map");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Custome {
+            private const string URLPATH = "~/Scripts/Custome";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string noty_alerts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/noty.alerts.min.js") ? Url("noty.alerts.min.js") : Url("noty.alerts.js");
+        }
+    
         public static readonly string jquery_1_9_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.intellisense.min.js") ? Url("jquery-1.9.1.intellisense.min.js") : Url("jquery-1.9.1.intellisense.js");
         public static readonly string jquery_1_9_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.min.js") ? Url("jquery-1.9.1.min.js") : Url("jquery-1.9.1.js");
         public static readonly string jquery_1_9_1_min_js = Url("jquery-1.9.1.min.js");
@@ -95,7 +104,46 @@ namespace Links
         public static readonly string jquery_3_1_0_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-3.1.0.slim.min.js") ? Url("jquery-3.1.0.slim.min.js") : Url("jquery-3.1.0.slim.js");
         public static readonly string jquery_3_1_0_slim_min_js = Url("jquery-3.1.0.slim.min.js");
         public static readonly string jquery_3_1_0_slim_min_map = Url("jquery-3.1.0.slim.min.map");
+        public static readonly string jquery_noty_packaged_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.noty.packaged.min.js") ? Url("jquery.noty.packaged.min.js") : Url("jquery.noty.packaged.js");
+        public static readonly string jquery_noty_packaged_min_js = Url("jquery.noty.packaged.min.js");
         public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class noty {
+            private const string URLPATH = "~/Scripts/noty";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string jquery_noty_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.noty.min.js") ? Url("jquery.noty.min.js") : Url("jquery.noty.js");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class layouts {
+                private const string URLPATH = "~/Scripts/noty/layouts";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string bottom_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bottom.min.js") ? Url("bottom.min.js") : Url("bottom.js");
+                public static readonly string bottomCenter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bottomCenter.min.js") ? Url("bottomCenter.min.js") : Url("bottomCenter.js");
+                public static readonly string bottomLeft_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bottomLeft.min.js") ? Url("bottomLeft.min.js") : Url("bottomLeft.js");
+                public static readonly string bottomRight_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bottomRight.min.js") ? Url("bottomRight.min.js") : Url("bottomRight.js");
+                public static readonly string center_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/center.min.js") ? Url("center.min.js") : Url("center.js");
+                public static readonly string centerLeft_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/centerLeft.min.js") ? Url("centerLeft.min.js") : Url("centerLeft.js");
+                public static readonly string centerRight_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/centerRight.min.js") ? Url("centerRight.min.js") : Url("centerRight.js");
+                public static readonly string inline_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inline.min.js") ? Url("inline.min.js") : Url("inline.js");
+                public static readonly string top_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/top.min.js") ? Url("top.min.js") : Url("top.js");
+                public static readonly string topCenter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/topCenter.min.js") ? Url("topCenter.min.js") : Url("topCenter.js");
+                public static readonly string topLeft_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/topLeft.min.js") ? Url("topLeft.min.js") : Url("topLeft.js");
+                public static readonly string topRight_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/topRight.min.js") ? Url("topRight.min.js") : Url("topRight.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class themes {
+                private const string URLPATH = "~/Scripts/noty/themes";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+                public static readonly string default_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/default.min.js") ? Url("default.min.js") : Url("default.js");
+                public static readonly string relax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/relax.min.js") ? Url("relax.min.js") : Url("relax.js");
+            }
+        
+        }
+    
         public static readonly string Site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.js") ? Url("Site.min.js") : Url("Site.js");
     }
 
@@ -169,6 +217,47 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class Custome 
+            {
+                public static class Assets
+                {
+                    public const string noty_alerts_js = "~/Scripts/Custome/noty.alerts.js"; 
+                }
+            }
+            public static partial class noty 
+            {
+                public static partial class layouts 
+                {
+                    public static class Assets
+                    {
+                        public const string bottom_js = "~/Scripts/noty/layouts/bottom.js"; 
+                        public const string bottomCenter_js = "~/Scripts/noty/layouts/bottomCenter.js"; 
+                        public const string bottomLeft_js = "~/Scripts/noty/layouts/bottomLeft.js"; 
+                        public const string bottomRight_js = "~/Scripts/noty/layouts/bottomRight.js"; 
+                        public const string center_js = "~/Scripts/noty/layouts/center.js"; 
+                        public const string centerLeft_js = "~/Scripts/noty/layouts/centerLeft.js"; 
+                        public const string centerRight_js = "~/Scripts/noty/layouts/centerRight.js"; 
+                        public const string inline_js = "~/Scripts/noty/layouts/inline.js"; 
+                        public const string top_js = "~/Scripts/noty/layouts/top.js"; 
+                        public const string topCenter_js = "~/Scripts/noty/layouts/topCenter.js"; 
+                        public const string topLeft_js = "~/Scripts/noty/layouts/topLeft.js"; 
+                        public const string topRight_js = "~/Scripts/noty/layouts/topRight.js"; 
+                    }
+                }
+                public static partial class themes 
+                {
+                    public static class Assets
+                    {
+                        public const string bootstrap_js = "~/Scripts/noty/themes/bootstrap.js"; 
+                        public const string default_js = "~/Scripts/noty/themes/default.js"; 
+                        public const string relax_js = "~/Scripts/noty/themes/relax.js"; 
+                    }
+                }
+                public static class Assets
+                {
+                    public const string jquery_noty_js = "~/Scripts/noty/jquery.noty.js"; 
+                }
+            }
             public static class Assets
             {
                 public const string _references_js = "~/Scripts/_references.js"; 
@@ -182,6 +271,8 @@ namespace Links
                 public const string jquery_3_1_0_min_js = "~/Scripts/jquery-3.1.0.min.js"; 
                 public const string jquery_3_1_0_slim_js = "~/Scripts/jquery-3.1.0.slim.js"; 
                 public const string jquery_3_1_0_slim_min_js = "~/Scripts/jquery-3.1.0.slim.min.js"; 
+                public const string jquery_noty_packaged_js = "~/Scripts/jquery.noty.packaged.js"; 
+                public const string jquery_noty_packaged_min_js = "~/Scripts/jquery.noty.packaged.min.js"; 
                 public const string modernizr_2_8_3_js = "~/Scripts/modernizr-2.8.3.js"; 
                 public const string Site_js = "~/Scripts/Site.js"; 
             }

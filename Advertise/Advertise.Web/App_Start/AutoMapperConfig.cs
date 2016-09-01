@@ -13,11 +13,11 @@ namespace Advertise.Web
         /// </summary>
         public static void RegisterAutoMapper()
         {
-            var config = new MapperConfiguration(cfg => // In Application_Start()
-            {
-                cfg.AddProfile<CategoryProfile>();
-            });
-            config.AssertConfigurationIsValid();
+            //var config = new MapperConfiguration(cfg => // In Application_Start()
+            //{
+            //    cfg.AddProfile<CategoryProfile>();
+            //});
+            //config.AssertConfigurationIsValid();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Data.Entity.Migrations;
+﻿using System.Configuration;
+using System.Data.Entity.Migrations;
+using System.Data.Entity.SqlServer;
 using Advertise.DataLayer.Context;
 
 namespace Advertise.DataLayer.Migrations

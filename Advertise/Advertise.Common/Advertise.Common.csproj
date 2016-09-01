@@ -149,6 +149,7 @@
     <Compile Include="DependencyResolution\Registeries\TaskRegistry.cs" />
     <Compile Include="DependencyResolution\StructureMapControllerFactory.cs" />
     <Compile Include="DependencyResolution\StructureMapFilterProvider.cs" />
+    <Compile Include="Extensions\ControllerExtension.cs" />
     <Compile Include="Extensions\CookieExtention.cs" />
     <Compile Include="Extensions\ConvertExtention.cs" />
     <Compile Include="Extensions\TypeExtention.cs" />
@@ -168,6 +169,12 @@
     <Compile Include="HiddenFields\IEncryptSettingsProvider.cs" />
     <Compile Include="HiddenFields\EncryptSettingsProvider.cs" />
     <Compile Include="Json\JsonNetValueProviderFactory.cs" />
+    <Compile Include="Noty\AlertType.cs" />
+    <Compile Include="Noty\AnimationType.cs" />
+    <Compile Include="Noty\Noty.cs" />
+    <Compile Include="Noty\MessageLocationType.cs" />
+    <Compile Include="Noty\MessageCloseType.cs" />
+    <Compile Include="Noty\NotyMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
