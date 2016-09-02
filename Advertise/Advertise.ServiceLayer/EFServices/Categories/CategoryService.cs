@@ -26,7 +26,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         #region Create
 
-        public async void Add(AddCategoryViewModel viewModel)
+        public async void Add(CategoryCreateViewModel viewModel)
         {
             var category = _mapper.Map<Category>(viewModel);
             _category.Add(category);
@@ -38,7 +38,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         #region Update
 
-        public Task EditAsync(EditCategoryViewModel viewModel)
+        public Task EditAsync(CategoryEditViewModel viewModel)
         {
             throw new NotImplementedException();
         }

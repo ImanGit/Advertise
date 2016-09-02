@@ -15,6 +15,21 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        public int GetCountAllVisitComany()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountForToday()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountForMonth()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete()
         {
             throw new NotImplementedException();

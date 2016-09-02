@@ -36,7 +36,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Create.cshtml")]
-    public partial class _Views_Category_Create_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.Category.AddCategoryViewModel>
+    public partial class _Views_Category_Create_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.Category.CategoryCreateViewModel>
     {
         public _Views_Category_Create_cshtml()
         {

@@ -15,6 +15,11 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        public bool EditForActiveOrUnActive()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete()
         {
             throw new NotImplementedException();

@@ -61,12 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Categories\Category\AddCategoryViewModel.cs" />
+    <Compile Include="Models\Categories\Category\CategoryCreateViewModel.cs" />
+    <Compile Include="Models\Categories\Category\CategoryDeleteViewModel.cs" />
     <Compile Include="Models\Categories\Category\CategoryDetailsViewModel.cs" />
+    <Compile Include="Models\Categories\Category\CategoryIndexViewModel.cs" />
     <Compile Include="Models\Categories\Category\CategoryListViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategorySearchRequest.cs" />
+    <Compile Include="Models\Categories\Category\CategorySearchViewModel.cs" />
     <Compile Include="Models\Categories\Category\CategoryViewModel.cs" />
-    <Compile Include="Models\Categories\Category\EditCategoryViewModel.cs" />
+    <Compile Include="Models\Categories\Category\CategoryEditViewModel.cs" />
     <Compile Include="Models\Common\BaseViewModel.cs" />
     <Compile Include="Models\Common\ViewModel.cs" />
     <Compile Include="Models\Users\User\ForgetPasswordViewModel.cs" />

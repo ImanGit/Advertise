@@ -14,7 +14,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         /// <summary>
         /// </summary>
-        void Add(AddCategoryViewModel viewModel);
+        void Add(CategoryCreateViewModel viewModel);
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         /// <summary>
         /// </summary>
-        Task EditAsync(EditCategoryViewModel viewModel);
+        Task EditAsync(CategoryEditViewModel viewModel);
 
         #endregion
 

@@ -32,7 +32,7 @@ namespace Advertise.Web.Controllers
         }
 
         [HttpPost]
-        public virtual async Task<ActionResult> Create(AddCategoryViewModel viewModel)
+        public virtual async Task<ActionResult> Create(CategoryCreateViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -43,6 +43,26 @@ namespace Advertise.Web.Controllers
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
             this.NotyError("دسته جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Category.Create());
+        }
+
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        public ActionResult Details()
+        {
+            return View();
+        }
+
+        public ActionResult List()
+        {
+            return View();
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
         }
     }
 }

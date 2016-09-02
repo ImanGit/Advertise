@@ -20,6 +20,36 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        public long GetCountAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountTwitter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountFaceBook()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountGooglePlus()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountYoutube()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountAllSocialComany()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Get()
         {
             throw new NotImplementedException();

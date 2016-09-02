@@ -12,8 +12,8 @@ namespace Advertise.Mapping.Profiles.Categories
         /// </summary>
         public CategoryProfile()
         {
-            CreateMap<Category, AddCategoryViewModel>()
-                .ProjectUsing(src => new AddCategoryViewModel
+            CreateMap<Category, CategoryCreateViewModel>()
+                .ProjectUsing(src => new CategoryCreateViewModel
                 {
                     Code = src.Code,
                     Description = src.Description,
@@ -25,7 +25,7 @@ namespace Advertise.Mapping.Profiles.Categories
                 //.ForMember(d => d.CreatorUserName, opt => opt.MapFrom(src => src.CreatedBy.UserName))
                 //.ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<AddCategoryViewModel, Category>()
+            CreateMap<CategoryCreateViewModel, Category>()
                 .ProjectUsing(src => new Category
                 {
                     Code = src.Code,

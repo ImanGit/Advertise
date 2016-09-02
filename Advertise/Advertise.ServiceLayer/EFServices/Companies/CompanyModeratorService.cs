@@ -15,6 +15,26 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        public void GetCountModeratorForComany()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetModeratorForComany()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetShowAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Edit()
         {
             throw new NotImplementedException();

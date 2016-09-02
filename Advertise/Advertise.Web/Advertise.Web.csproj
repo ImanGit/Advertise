@@ -435,6 +435,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Noty.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

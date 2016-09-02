@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Advertise.ViewModel.Models.Categories.Category
 {
-    public class CategorySearchRequest
+    class CategoryDeleteViewModel
     {
     }
 }
