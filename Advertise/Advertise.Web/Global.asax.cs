@@ -50,7 +50,7 @@ namespace Advertise.Web
         /// </summary>
         protected void Application_Error()
         {
-            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunOnError>())
+            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunOnErrorService>())
             {
                 task.Execute();
             }
@@ -66,7 +66,7 @@ namespace Advertise.Web
         /// <param name="e"></param>
         private void Application_BeginRequest(object sender, EventArgs e)
         {
-            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunOnEachRequest>())
+            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunOnEachRequestService>())
             {
                 task.Execute();
             }
@@ -84,7 +84,7 @@ namespace Advertise.Web
         {
             try
             {
-                foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunAfterEachRequest>())
+                foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunAfterEachRequestService>())
                 {
                     task.Execute();
                 }

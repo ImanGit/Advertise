@@ -24,7 +24,6 @@ namespace Advertise.Web.Controllers
             return View();
         }
 
-        // GET: Category
         [HttpGet]
         public virtual async Task<ActionResult> Create()
         {
@@ -39,15 +38,42 @@ namespace Advertise.Web.Controllers
                 return View();
             }
 
-            _categoryService.Add(viewModel);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+            await _categoryService.CreateAsync(viewModel);
             this.NotyError("دسته جدید با موفقیت ثبت شد.");
-            return RedirectToAction(MVC.Category.Create());
+            return RedirectToAction(MVC.Category.List());
         }
 
-        public ActionResult Edit()
+        [HttpGet]
+        public virtual async Task<ActionResult> Edit(Guid id)
         {
-            return View();
+            var viewModel = await _categoryService.GetForEditAsync(id);
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> Edit(CategoryEditViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            await _categoryService.EditAsync(viewModel);
+            this.NotyError("دسته جدید با موفقیت ویرایش شد.");
+            return RedirectToAction(MVC.Category.List());
+        }
+
+        public virtual async Task<ActionResult> List()
+        {
+            var viewModel = await _categoryService.GetListAsync();
+            return View(viewModel);
+        }
+
+        public virtual async Task<ActionResult> Delete(Guid id)
+        {
+            await _categoryService.DeleteAsync(id);
+            this.NotyError("دسته جدید با موفقیت حذف شد.");
+            return RedirectToAction(MVC.Category.List());
         }
 
         public ActionResult Details()
@@ -55,12 +81,7 @@ namespace Advertise.Web.Controllers
             return View();
         }
 
-        public ActionResult List()
-        {
-            return View();
-        }
-
-        public ActionResult Delete()
+        public ActionResult Find()
         {
             return View();
         }

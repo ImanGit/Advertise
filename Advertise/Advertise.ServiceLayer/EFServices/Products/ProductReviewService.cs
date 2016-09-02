@@ -20,6 +20,16 @@ namespace Advertise.ServiceLayer.EFServices.Products
             throw new NotImplementedException();
         }
 
+        public void GetCountAllReviwe()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetIdProductForShowReview()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Get()
         {
             throw new NotImplementedException();

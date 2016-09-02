@@ -36,6 +36,56 @@ namespace Advertise.Mapping.Profiles.Categories
                     ParentPath = src.ParentPath
                 });
             //.ForAllOtherMembers(opt => opt.Ignore());
+
+            CreateMap<Category, CategoryListViewModel>()
+                .ProjectUsing(src => new CategoryListViewModel
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath,
+                    Id = src.Id
+                });
+                //.ForAllOtherMembers(opt => opt.Ignore());
+
+            CreateMap<CategoryListViewModel, Category>()
+                .ProjectUsing(src => new Category
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath,
+                    Id = src.Id
+                });
+                //.ForAllOtherMembers(opt => opt.Ignore());
+
+            CreateMap<Category, CategoryEditViewModel>()
+                .ProjectUsing(src => new CategoryEditViewModel
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath,
+                    Id = src.Id
+                });
+
+            CreateMap<CategoryEditViewModel, Category>()
+                .ProjectUsing(src => new Category
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath,
+                    Id = src.Id
+                });
         }
 
       

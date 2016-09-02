@@ -9,6 +9,7 @@ namespace Advertise.ViewModel.Models.Categories.Category
 {
     public class CategoryListViewModel:BaseViewModel
     {
+        public Guid Id { get; set; }
         public string Code { get; set; }
 
         /// <summary>

@@ -55,6 +55,14 @@
       <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DNTProfiler.Common, Version=1.8.1129.0, Culture=neutral, PublicKeyToken=60fcf710de822a54, processorArchitecture=MSIL">
+      <HintPath>..\packages\DNTProfiler.EntityFramework.Core.1.8.1129.0\lib\net45\DNTProfiler.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DNTProfiler.EntityFramework.Core, Version=1.8.1129.0, Culture=neutral, PublicKeyToken=d53bce80735621b2, processorArchitecture=MSIL">
+      <HintPath>..\packages\DNTProfiler.EntityFramework.Core.1.8.1129.0\lib\net45\DNTProfiler.EntityFramework.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
       <Private>True</Private>
@@ -173,6 +181,10 @@
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -258,6 +270,7 @@
     <Content Include="Content\Fonts\IRANSans-web.ttf" />
     <Content Include="Content\Fonts\IRANSans-web.woff" />
     <Content Include="Content\Fonts\IRANSans-web.woff2" />
+    <Content Include="readme.txt" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
@@ -386,10 +399,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Create.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Category\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Details.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Find.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Find.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Category\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Index.generated.cs">
       <AutoGen>True</AutoGen>
@@ -435,10 +473,26 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Noty.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Category\Edit.cshtml" />
-    <Content Include="Views\Category\Details.cshtml" />
-    <Content Include="Views\Category\Delete.cshtml" />
-    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Category\Details.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Details.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\Find.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Find.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

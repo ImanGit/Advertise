@@ -20,6 +20,41 @@ namespace Advertise.ServiceLayer.EFServices.Products
             throw new NotImplementedException();
         }
 
+        public void EditContentCommentForUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditContentCommentForOperator()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditCommentForAccept()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetCountAllCommentNotAccept()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetAllCommentNotAccept()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetAcceptCommentOperator()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetAllOperatorForAcceptComment()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Get()
         {
             throw new NotImplementedException();

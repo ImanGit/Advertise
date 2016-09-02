@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts.Common;
 using Advertise.ViewModel.Models.Categories.Category;
@@ -14,7 +15,28 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         /// <summary>
         /// </summary>
-        void Add(CategoryCreateViewModel viewModel);
+        Task CreateAsync(CategoryCreateViewModel viewModel);
+
+        #endregion
+
+        #region Read
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<CategoryListViewModel>> GetListAsync();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CategoryEditViewModel> GetForEditAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        Task<CategoryListViewModel> FindById(Guid id);
 
         #endregion
 
@@ -26,37 +48,12 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         #endregion
 
-        #region Read
-
-        /// <summary>
-        ///     گرفتن تعداد کل دسته بندی ها
-        /// </summary>
-        Task<int> GetCount();
-
-        /// <summary>
-        ///     گرفتن آخرین دسته بندی ها بر اساس روز
-        /// </summary>
-        /// <returns></returns>
-        Task<int> GetLastToDay();
-
-        /// <summary>
-        /// </summary>
-        Task<CategoryListViewModel> FindById(Guid id);
-
-        #endregion
-
         #region Delete
 
         /// <summary>
         ///     پاک کردن به صورت منطقی
         /// </summary>
-        Task RemoveAsync(Guid id);
-
-        /// <summary>
-        ///     پاک کردن به صورت فیزیکی
-        /// </summary>
-        /// <returns></returns>
-        Task RemoveHard(Guid id);
+        Task DeleteAsync(Guid id);
 
         #endregion
     }

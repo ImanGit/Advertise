@@ -39,7 +39,7 @@ namespace Advertise.Web
             ValueProviderFactories.Factories.Remove(defaultJsonFactory);
             ValueProviderFactories.Factories.Insert(index, new JsonNetValueProviderFactory());
 
-            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunAtInit>())
+            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunAtInitService>())
             {
                 task.Execute();
             }

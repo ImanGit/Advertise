@@ -40,6 +40,11 @@ namespace Advertise.ServiceLayer.EFServices.Products
             throw new NotImplementedException();
         }
 
+        public bool GetUserLikeForOneProduct()
+        {
+            throw new NotImplementedException();
+        }
+
         public long Count()
         {
             throw new NotImplementedException();
