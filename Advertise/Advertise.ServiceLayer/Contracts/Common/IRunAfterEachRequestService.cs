@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// </summary>
-    public interface IRunAtStartUp : IBaseService
+    public interface IRunAfterEachRequestService : IBaseService
     {
         /// <summary>
         /// </summary>

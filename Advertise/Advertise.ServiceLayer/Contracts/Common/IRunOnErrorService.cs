@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// </summary>
-    public interface IRunOnError : IBaseService
+    public interface IRunOnErrorService : IBaseService
     {
         /// <summary>
         /// </summary>

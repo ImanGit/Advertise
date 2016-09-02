@@ -31,8 +31,17 @@ namespace Advertise.ServiceLayer.Contracts.Products
         #region Retrieve
 
         /// <summary>
+        /// تعداد کل نقد و بررسی های محصولات
         /// </summary>
-        void Get();
+        void GetCountAllReviwe();
+
+        /// <summary>
+        /// گرفتن آی دی محصول برای نمایش نقد و بررسی
+        /// </summary>
+        void GetIdProductForShowReview();
+
+
+
 
         #endregion
     }

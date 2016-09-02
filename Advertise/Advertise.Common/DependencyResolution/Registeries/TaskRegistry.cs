@@ -13,11 +13,11 @@ namespace Advertise.Common.DependencyResolution.Registeries
         {
             Scan(scan =>
             {
-                scan.AddAllTypesOf<IRunAfterEachRequest>();
-                scan.AddAllTypesOf<IRunAtInit>();
-                scan.AddAllTypesOf<IRunAtStartUp>();
-                scan.AddAllTypesOf<IRunOnEachRequest>();
-                scan.AddAllTypesOf<IRunOnError>();
+                scan.AddAllTypesOf<IRunAfterEachRequestService>();
+                scan.AddAllTypesOf<IRunAtInitService>();
+                scan.AddAllTypesOf<IRunAtStartUpService>();
+                scan.AddAllTypesOf<IRunOnEachRequestService>();
+                scan.AddAllTypesOf<IRunOnErrorService>();
             });
         }
     }
