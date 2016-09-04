@@ -37,213 +37,218 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+WriteLiteral("\n");
+
             
-            #line 3 "..\..\Views\Category\List.cshtml"
+            #line 25 "..\..\Views\Category\List.cshtml"
   
     ViewBag.Title = "List";
+
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>List</h2>\r\n\r\n<p>\r\n");
+WriteLiteral("\n\n<h2>List</h2>\n\n\n<p>\n");
 
 WriteLiteral("    ");
 
             
-            #line 10 "..\..\Views\Category\List.cshtml"
-Write(Html.ActionLink("Create New", "Create"));
+            #line 34 "..\..\Views\Category\List.cshtml"
+Write(Html.ActionLink("ایجاد جدید", "Create"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</p>\r\n<table");
+WriteLiteral("\n</p>\n<table");
 
 WriteLiteral(" class=\"table\"");
 
-WriteLiteral(">\r\n    <tr>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 15 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 18 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Title));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 21 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Description));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 24 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.ImageFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 27 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.ParentPath));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 30 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th></th>\r\n    </tr>\r\n\r\n");
-
-            
-            #line 35 "..\..\Views\Category\List.cshtml"
- foreach (var item in Model) {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    <tr>\r\n        <td>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 38 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral(">\n    <tr>\n\n\n        <th>\n");
 
 WriteLiteral("            ");
 
             
             #line 41 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Title));
+       Write(Html.DisplayNameFor(model => model.Code));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\n        </th>\n\n\n        <th>\n");
 
 WriteLiteral("            ");
 
             
-            #line 44 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Description));
+            #line 46 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayNameFor(model => model.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\n        </th>\n\n\n        <th>\n");
 
 WriteLiteral("            ");
 
             
-            #line 47 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.ImageFileName));
+            #line 51 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayNameFor(model => model.Description));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 50 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.ParentPath));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 53 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\n        </th>\n\n\n        <th>\n");
 
 WriteLiteral("            ");
 
             
             #line 56 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("Edit", "Edit", new { id=item.Id }));
+       Write(Html.DisplayNameFor(model => model.ImageFileName));
 
             
             #line default
             #line hidden
-WriteLiteral(" |\r\n");
+WriteLiteral("\n        </th>\n\n\n        <th>\n");
 
 WriteLiteral("            ");
-
-            
-            #line 57 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("Details", "Details", new { id=item.Id }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" |\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 58 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("Delete", "Delete", new { id=item.Id }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n    </tr>\r\n");
 
             
             #line 61 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayNameFor(model => model.ParentPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </th>\n\n\n        <th>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 66 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayNameFor(model => model.IsActive));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </th>\n\n        <th></th>\n    </tr>\n\n");
+
+            
+            #line 72 "..\..\Views\Category\List.cshtml"
+ foreach (var item in Model) {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <tr>\n\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 77 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayFor(modelItem => item.Code));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 82 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayFor(modelItem => item.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 87 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayFor(modelItem => item.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 92 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayFor(modelItem => item.ImageFileName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 97 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayFor(modelItem => item.ParentPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 102 "..\..\Views\Category\List.cshtml"
+       Write(Html.DisplayFor(modelItem => item.IsActive));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n        <td>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 106 "..\..\Views\Category\List.cshtml"
+       Write(Html.ActionLink("ویرایش", "Edit", new { id=item.Id }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" |\n");
+
+WriteLiteral("            ");
+
+            
+            #line 107 "..\..\Views\Category\List.cshtml"
+       Write(Html.ActionLink("جزییات", "Details", new { id=item.Id }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" |\n");
+
+WriteLiteral("            ");
+
+            
+            #line 108 "..\..\Views\Category\List.cshtml"
+       Write(Html.ActionLink("حذف", "Delete", new { id=item.Id }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </td>\n\n    </tr>\n");
+
+            
+            #line 112 "..\..\Views\Category\List.cshtml"
 }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</table>\r\n");
+WriteLiteral("\n</table>\n\n\n\n");
 
         }
     }

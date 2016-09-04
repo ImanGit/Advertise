@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Seed.sql" />
+    <Content Include="Scripts\SnapshotIsolation.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609011151252_init.resx">

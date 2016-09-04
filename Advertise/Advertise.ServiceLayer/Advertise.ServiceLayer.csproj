@@ -85,6 +85,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -168,6 +169,7 @@
     <Compile Include="Contracts\Users\IUserService.cs" />
     <Compile Include="Contracts\Users\IUserSettingService.cs" />
     <Compile Include="Contracts\Users\IUserSocialService.cs" />
+    <Compile Include="EFServices\Common\TransactionPerRequestService.cs" />
     <Compile Include="EFServices\Common\RunAfterEachRequestService.cs" />
     <Compile Include="EFServices\Common\RunAtInitService.cs" />
     <Compile Include="EFServices\Common\RunAtStartUpService.cs" />

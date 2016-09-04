@@ -27,14 +27,20 @@ namespace Advertise.Web
 
             #endregion
 
-            routes.LowercaseUrls = true;
-            routes.MapMvcAttributeRoutes();
+            //routes.LowercaseUrls = true;
+            //routes.MapMvcAttributeRoutes();
             //AreaRegistration.RegisterAllAreas();
 
-            routes.MapRoute("Default", "{controller}/{action}/{id}",
-                new {controller = MVC.Home.Name, action = MVC.Home.ActionNames.Index, id = UrlParameter.Optional},
-                new[] {$"{typeof (RouteConfig).Namespace}.Controllers"}
-                );
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Category", action = "List", id = UrlParameter.Optional }
+            );
+
+            //routes.MapRoute("Default", "{controller}/{action}/{id}",
+            //    new {controller = MVC.Home.Name, action = MVC.Home.ActionNames.Index, id = UrlParameter.Optional},
+            //    new[] {$"{typeof (RouteConfig).Namespace}.Controllers"}
+            //    );
         }
     }
 }

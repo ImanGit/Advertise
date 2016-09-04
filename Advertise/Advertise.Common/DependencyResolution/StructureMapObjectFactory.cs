@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using Advertise.Common.Controller;
 using Advertise.Common.DependencyResolution.Registeries;
 using Advertise.DataLayer.Context;
+using Advertise.ServiceLayer.Contracts.Categories;
+using Advertise.ServiceLayer.EFServices.Categories;
 using AutoMapper;
 using StructureMap;
 using StructureMap.Web;
@@ -16,12 +18,11 @@ namespace Advertise.Common.DependencyResolution
 {
     /// <summary>
     /// </summary>
-    public static class ApplicationObjectFactory
+    public static class StructureMapObjectFactory
     {
         #region Fields
 
-        private static readonly Lazy<Container> ContainerBuilder = new Lazy<Container>(DefaultContainer,
-            LazyThreadSafetyMode.ExecutionAndPublication);
+        private static readonly Lazy<Container> ContainerBuilder = new Lazy<Container>(DefaultContainer, LazyThreadSafetyMode.ExecutionAndPublication);
 
         #endregion
 
@@ -48,17 +49,11 @@ namespace Advertise.Common.DependencyResolution
                                 : null);
 
                 ioc.For<IUnitOfWork>().HybridHttpOrThreadLocalScoped().Use<ApplicationDbContext>();
-
                 ioc.For<HttpContextBase>().Use(() => new HttpContextWrapper(HttpContext.Current));
-
                 ioc.For<HttpServerUtilityBase>().Use(() => new HttpServerUtilityWrapper(HttpContext.Current.Server));
-
                 ioc.For<HttpRequestBase>().Use(ctx => ctx.GetInstance<HttpContextBase>().Request);
-
                 ioc.For<ISessionProvider>().Use<SessionProvider>();
-
                 ioc.For<IRemotingFormatter>().Use(ctx => new BinaryFormatter());
-
                 ioc.For<ITempDataProvider>().Use<CookieTempDataProvider>();
 
                 ioc.AddRegistry<AspNetIdentityRegistery>();
@@ -67,10 +62,10 @@ namespace Advertise.Common.DependencyResolution
                 ioc.AddRegistry<TaskRegistry>();
 
                 ioc.Scan(scanner => {
-                    scanner.TheCallingAssembly();
+                    //scanner.TheCallingAssembly();
                     //scan.AssemblyContainingType<SomeType>(); // for other asms, if any.
                     scanner.WithDefaultConventions();
-                    scanner.AddAllTypesOf<Profile>().NameBy(item => item.FullName);
+                    //scanner.AddAllTypesOf<Profile>().NameBy(item => item.FullName);
                 });
                 ioc.Policies.SetAllProperties(y => y.OfType<HttpContextBase>());
             });

@@ -49,10 +49,10 @@ namespace Advertise.Common.DependencyResolution
                 //return SampleObjectFactory.Container.GetInstance(typeof(SearchController)) as Controller;
                 throw new InvalidOperationException($"Page not found: {requestContext.HttpContext.Request.RawUrl}");
             }
-            var controller = ApplicationObjectFactory.Container.GetInstance(controllerType) as System.Web.Mvc.Controller;
+            var controller = StructureMapObjectFactory.Container.GetInstance(controllerType) as System.Web.Mvc.Controller;
             if (controller != null)
             {
-                controller.TempDataProvider = ApplicationObjectFactory.Container.GetInstance<ITempDataProvider>();
+                controller.TempDataProvider = StructureMapObjectFactory.Container.GetInstance<ITempDataProvider>();
             }
             return controller;
         }

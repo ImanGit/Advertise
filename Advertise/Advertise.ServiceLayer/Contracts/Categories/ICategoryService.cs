@@ -7,7 +7,6 @@ using Advertise.ViewModel.Models.Categories.Category;
 namespace Advertise.ServiceLayer.Contracts.Categories
 {
     /// <summary>
-    /// 
     /// </summary>
     public interface ICategoryService : IBaseService
     {
@@ -16,27 +15,6 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         /// </summary>
         Task CreateAsync(CategoryCreateViewModel viewModel);
-
-        #endregion
-
-        #region Read
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        Task<IEnumerable<CategoryListViewModel>> GetListAsync();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<CategoryEditViewModel> GetForEditAsync(Guid id);
-
-        /// <summary>
-        /// </summary>
-        Task<CategoryListViewModel> FindById(Guid id);
 
         #endregion
 
@@ -54,6 +32,38 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     پاک کردن به صورت منطقی
         /// </summary>
         Task DeleteAsync(Guid id);
+
+        #endregion
+
+        #region Read
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<CategoryCreateViewModel> GetForCreateAsync();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CategoryEditViewModel> GetForEditAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<CategoryListViewModel>> GetListAsync();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CategoryListViewModel> FindById(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        Task FillCreateViewModel(CategoryCreateViewModel viewModel);
 
         #endregion
     }

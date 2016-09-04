@@ -61,32 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Categories\Category\CategoryCreateViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategoryDeleteViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategoryDetailsViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategoryIndexViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategoryListViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategorySearchViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategoryViewModel.cs" />
-    <Compile Include="Models\Categories\Category\CategoryEditViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryCreateViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryDeleteViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryDetailsViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryIndexViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryListViewModel.cs" />
+    <Compile Include="Models\Categories\CategorySearchViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryEditViewModel.cs" />
     <Compile Include="Models\Common\BaseViewModel.cs" />
     <Compile Include="Models\Common\ViewModel.cs" />
-    <Compile Include="Models\Users\User\ForgetPasswordViewModel.cs" />
-    <Compile Include="Models\Users\User\SignUpViewModel.cs" />
-    <Compile Include="Models\Users\User\SingInViewModel.cs" />
-    <Compile Include="Models\Users\User\SingOutViewModel.cs" />
+    <Compile Include="Models\Users\ForgetPasswordViewModel.cs" />
+    <Compile Include="Models\Users\SignUpViewModel.cs" />
+    <Compile Include="Models\Users\SingInViewModel.cs" />
+    <Compile Include="Models\Users\SingOutViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\Users\User\AddUserViewModel.cs" />
-    <Compile Include="Models\Users\User\EditUserViewModel.cs" />
-    <Compile Include="Models\Users\User\UserListViewModel.cs" />
-    <Compile Include="Models\Users\User\UserSearchRequest.cs" />
-    <Compile Include="Models\Users\User\UserViewModel.cs" />
+    <Compile Include="Models\Users\AddUserViewModel.cs" />
+    <Compile Include="Models\Users\EditUserViewModel.cs" />
+    <Compile Include="Models\Users\UserListViewModel.cs" />
+    <Compile Include="Models\Users\UserSearchRequest.cs" />
+    <Compile Include="Models\Users\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Company\" />
-    <Folder Include="Models\Product\" />
-    <Folder Include="Models\Users\UserProfile\" />
-    <Folder Include="Models\Users\UserSocial\" />
+    <Folder Include="Models\Companies\" />
+    <Folder Include="Models\Products\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

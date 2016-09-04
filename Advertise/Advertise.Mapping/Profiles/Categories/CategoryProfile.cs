@@ -22,8 +22,6 @@ namespace Advertise.Mapping.Profiles.Categories
                     Title = src.Title,
                     ParentPath = src.ParentPath
                 });
-                //.ForMember(d => d.CreatorUserName, opt => opt.MapFrom(src => src.CreatedBy.UserName))
-                //.ForAllOtherMembers(opt => opt.Ignore());
 
             CreateMap<CategoryCreateViewModel, Category>()
                 .ProjectUsing(src => new Category
@@ -35,7 +33,6 @@ namespace Advertise.Mapping.Profiles.Categories
                     Title = src.Title,
                     ParentPath = src.ParentPath
                 });
-            //.ForAllOtherMembers(opt => opt.Ignore());
 
             CreateMap<Category, CategoryListViewModel>()
                 .ProjectUsing(src => new CategoryListViewModel
@@ -48,7 +45,6 @@ namespace Advertise.Mapping.Profiles.Categories
                     ParentPath = src.ParentPath,
                     Id = src.Id
                 });
-                //.ForAllOtherMembers(opt => opt.Ignore());
 
             CreateMap<CategoryListViewModel, Category>()
                 .ProjectUsing(src => new Category
@@ -61,7 +57,6 @@ namespace Advertise.Mapping.Profiles.Categories
                     ParentPath = src.ParentPath,
                     Id = src.Id
                 });
-                //.ForAllOtherMembers(opt => opt.Ignore());
 
             CreateMap<Category, CategoryEditViewModel>()
                 .ProjectUsing(src => new CategoryEditViewModel
@@ -76,19 +71,15 @@ namespace Advertise.Mapping.Profiles.Categories
                 });
 
             CreateMap<CategoryEditViewModel, Category>()
-                .ProjectUsing(src => new Category
-                {
-                    Code = src.Code,
-                    Description = src.Description,
-                    ImageFileName = src.ImageFileName,
-                    IsActive = src.IsActive,
-                    Title = src.Title,
-                    ParentPath = src.ParentPath,
-                    Id = src.Id
-                });
+                .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
+                .ForMember(dest => dest.Description,opts => opts.MapFrom(src => src.Description))
+                .ForMember(dest => dest.ImageFileName, opts => opts.MapFrom(src => src.ImageFileName))
+                .ForMember(dest => dest.IsActive, opts => opts.MapFrom(src => src.IsActive))
+                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
+                .ForMember(dest => dest.ParentPath, opts => opts.MapFrom(src => src.ParentPath))
+                .ForAllOtherMembers(opt => opt.Ignore());
         }
 
-      
         /// <summary>
         /// </summary>
         public override string ProfileName => GetType().Name;

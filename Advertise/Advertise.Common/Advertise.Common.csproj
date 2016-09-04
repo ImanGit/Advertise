@@ -142,7 +142,7 @@
     <Compile Include="Controller\SessionProvider.cs" />
     <Compile Include="Controller\ISessionProvider.cs" />
     <Compile Include="Controller\CookieTempDataProvider.cs" />
-    <Compile Include="DependencyResolution\ApplicationObjectFactory.cs" />
+    <Compile Include="DependencyResolution\StructureMapObjectFactory.cs" />
     <Compile Include="DependencyResolution\Registeries\AspNetIdentityRegistery.cs" />
     <Compile Include="DependencyResolution\Registeries\AutoMapperRegistery.cs" />
     <Compile Include="DependencyResolution\Registeries\ServiceLayerRegistery.cs" />

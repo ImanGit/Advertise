@@ -30,7 +30,7 @@ namespace Advertise.Web
             //set current Filter factory as StructureMapFitlerProvider
             var filterProider = FilterProviders.Providers.Single(p => p is FilterAttributeFilterProvider);
             FilterProviders.Providers.Remove(filterProider);
-            FilterProviders.Providers.Add(ApplicationObjectFactory.Container.GetInstance<StructureMapFilterProvider>());
+            FilterProviders.Providers.Add(StructureMapObjectFactory.Container.GetInstance<StructureMapFilterProvider>());
 
             // set default Json Factory
             var defaultJsonFactory =
@@ -39,7 +39,7 @@ namespace Advertise.Web
             ValueProviderFactories.Factories.Remove(defaultJsonFactory);
             ValueProviderFactories.Factories.Insert(index, new JsonNetValueProviderFactory());
 
-            foreach (var task in ApplicationObjectFactory.Container.GetAllInstances<IRunAtInitService>())
+            foreach (var task in StructureMapObjectFactory.Container.GetAllInstances<IRunAtInitService>())
             {
                 task.Execute();
             }

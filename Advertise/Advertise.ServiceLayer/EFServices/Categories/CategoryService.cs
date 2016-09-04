@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -18,16 +17,12 @@ namespace Advertise.ServiceLayer.EFServices.Categories
     /// </summary>
     public class CategoryService : ICategoryService
     {
-        #region Fields
-
-        private readonly IMapper _mapper;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IDbSet<Category> _category;
-
-        #endregion
-
         #region Ctor
 
+        /// <summary>
+        /// </summary>
+        /// <param name="mapper"></param>
+        /// <param name="unitOfWork"></param>
         public CategoryService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
@@ -39,6 +34,9 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         #region Create
 
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
         public async Task CreateAsync(CategoryCreateViewModel viewModel)
         {
             var category = _mapper.Map<Category>(viewModel);
@@ -50,18 +48,65 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         #region Update
 
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
         public async Task EditAsync(CategoryEditViewModel viewModel)
         {
-            var category = await _category.FirstAsync(a => a.Id == viewModel.Id);
+            var category = await _category.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, category);
-            await _unitOfWork.SaveChangesAsync();
-            //await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
+
+        #endregion
+
+        #region Delete
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task DeleteAsync(Guid id)
+        {
+            return _category.Where(model => model.Id == id).DeleteAsync();
+        }
+
+        #endregion
+
+        #region Fields
+
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IDbSet<Category> _category;
 
         #endregion
 
         #region Read
 
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public async Task<CategoryCreateViewModel> GetForCreateAsync()
+        {
+            return await Task.Run(() => new CategoryCreateViewModel {Description = "List Box"});
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<CategoryEditViewModel> GetForEditAsync(Guid id)
+        {
+            return await _category
+                .AsNoTracking()
+                .ProjectTo<CategoryEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<CategoryListViewModel>> GetListAsync()
         {
             return await _category
@@ -70,26 +115,14 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .ToListAsync();
         }
 
-        public async Task<CategoryEditViewModel> GetForEditAsync(Guid id)
-        {
-            return await _category
-                .AsNoTracking()
-                .ProjectTo<CategoryEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(a => a.Id == id);
-        }
-
         public async Task<CategoryListViewModel> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        #endregion
-
-        #region Delete
-
-        public Task DeleteAsync(Guid id)
+        public Task FillCreateViewModel(CategoryCreateViewModel viewModel)
         {
-            return _category.Where(a => a.Id == id).DeleteAsync();
+            throw new NotImplementedException();
         }
 
         #endregion

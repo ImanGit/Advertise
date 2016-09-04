@@ -229,6 +229,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Create.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Delete.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Details.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Details.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Edit.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Empty.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Empty.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\List.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>List.cshtml</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -270,11 +294,6 @@
     <Content Include="Content\Fonts\IRANSans-web.ttf" />
     <Content Include="Content\Fonts\IRANSans-web.woff" />
     <Content Include="Content\Fonts\IRANSans-web.woff2" />
-    <Content Include="readme.txt" />
-    <Content Include="SampleTemplate.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -295,6 +314,46 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>NotyBuilder.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Details.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Empty.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empty.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\List.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\MvcView\Create.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Delete.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Details.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Edit.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView\List.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="CodeTemplates\MvcView\_ListAjax.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\_Modal.cs.t4" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\Custome\noty.alerts.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -378,11 +437,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotyBuilder.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="SampleTemplate.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SampleTemplate.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -408,11 +462,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Category\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Category\Find.generated.cs">
       <AutoGen>True</AutoGen>
@@ -481,17 +530,13 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Delete.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Category\Edit.cshtml">
+    <Content Include="Views\Category\Find.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+      <LastGenOutput>Find.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Category\List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Category\Find.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Find.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

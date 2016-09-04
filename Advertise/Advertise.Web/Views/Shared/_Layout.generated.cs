@@ -62,18 +62,12 @@ WriteLiteral(">\r\n    <title>");
             
             #line default
             #line hidden
-WriteLiteral(" - My ASP.NET Application</title>\r\n    ");
-
-WriteLiteral("\r\n    ");
-
-WriteLiteral("\r\n    ");
-
-WriteLiteral("\r\n");
+WriteLiteral(" - سایت تبلیغات</title>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 12 "..\..\Views\Shared\_Layout.cshtml"
+            #line 8 "..\..\Views\Shared\_Layout.cshtml"
 Write(Styles.Render("~/bundles/css"));
 
             
@@ -84,7 +78,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 13 "..\..\Views\Shared\_Layout.cshtml"
+            #line 9 "..\..\Views\Shared\_Layout.cshtml"
 Write(Scripts.Render("~/bundles/script"));
 
             
@@ -129,8 +123,8 @@ WriteLiteral("></span>\r\n                </button>\r\n");
 WriteLiteral("                ");
 
             
-            #line 24 "..\..\Views\Shared\_Layout.cshtml"
-           Write(Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }));
+            #line 20 "..\..\Views\Shared\_Layout.cshtml"
+           Write(Html.ActionLink("سایت تبلیغات", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }));
 
             
             #line default
@@ -143,8 +137,8 @@ WriteLiteral(">\r\n                <ul");
 
 WriteLiteral(" class=\"nav navbar-nav\"");
 
-WriteLiteral(">\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <" +
-"div");
+WriteLiteral(">\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <di" +
+"v");
 
 WriteLiteral(" class=\"container body-content\"");
 
@@ -153,27 +147,18 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 34 "..\..\Views\Shared\_Layout.cshtml"
+            #line 29 "..\..\Views\Shared\_Layout.cshtml"
    Write(RenderBody());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <hr />\r\n        <footer>\r\n            <p>&copy; ");
-
-            
-            #line 37 "..\..\Views\Shared\_Layout.cshtml"
-                 Write(DateTime.Now.Year);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" - My ASP.NET Application</p>\r\n        </footer>\r\n    </div>\r\n");
+WriteLiteral("\r\n        <hr />\r\n        <footer>\r\n        </footer>\r\n    </div>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 40 "..\..\Views\Shared\_Layout.cshtml"
+            #line 34 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             
@@ -182,18 +167,18 @@ Write(RenderSection("scripts", required: false));
 WriteLiteral("\r\n");
 
             
-            #line 41 "..\..\Views\Shared\_Layout.cshtml"
+            #line 35 "..\..\Views\Shared\_Layout.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 41 "..\..\Views\Shared\_Layout.cshtml"
+            #line 35 "..\..\Views\Shared\_Layout.cshtml"
       Html.RenderPartial(MVC.Shared.Views._Noty);
             
             #line default
             #line hidden
-WriteLiteral("\r\n    \r\n</body>\r\n</html>");
+WriteLiteral("\r\n</body>\r\n</html>");
 
         }
     }

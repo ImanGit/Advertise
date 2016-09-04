@@ -50,426 +50,30 @@ WriteLiteral("\r\n\r\n<h2>Delete</h2>\r\n\r\n<h3>Are you sure you want to delete
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
-WriteLiteral(">\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 15 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.CreatedOn));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
+WriteLiteral(">\r\n        \r\n      \r\n\r\n    </dl>\r\n\r\n");
 
             
             #line 19 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.CreatedOn));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 23 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ModifiedOn));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 27 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ModifiedOn));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 31 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.CreatorIp));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 35 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.CreatorIp));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 39 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ModifierIp));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 43 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ModifierIp));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 47 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ModifyLocked));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 51 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ModifyLocked));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 55 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.IsDeleted));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 59 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.IsDeleted));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 63 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ModifierAgent));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 67 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ModifierAgent));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 71 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.CreatorAgent));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 75 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.CreatorAgent));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 79 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Version));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 83 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Version));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 87 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ModifiedById));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 91 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ModifiedById));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 95 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.CreatedById));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 99 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.CreatedById));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 103 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 107 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 111 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Title));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 115 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Title));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 119 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Description));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 123 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Description));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 127 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ImageFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 131 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ImageFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 135 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ParentPath));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 139 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ParentPath));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 143 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 147 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 151 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ParentId));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 155 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ParentId));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n    </dl>\r\n\r\n");
-
-            
-            #line 160 "..\..\Views\Category\Delete.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 160 "..\..\Views\Category\Delete.cshtml"
+            #line 19 "..\..\Views\Category\Delete.cshtml"
      using (Html.BeginForm()) {
         
             
             #line default
             #line hidden
             
-            #line 161 "..\..\Views\Category\Delete.cshtml"
+            #line 20 "..\..\Views\Category\Delete.cshtml"
    Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 161 "..\..\Views\Category\Delete.cshtml"
+            #line 20 "..\..\Views\Category\Delete.cshtml"
                                 
 
 
@@ -493,7 +97,7 @@ WriteLiteral(" /> |\r\n");
 WriteLiteral("            ");
 
             
-            #line 165 "..\..\Views\Category\Delete.cshtml"
+            #line 24 "..\..\Views\Category\Delete.cshtml"
        Write(Html.ActionLink("Back to List", "Index"));
 
             
@@ -502,7 +106,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n");
 
             
-            #line 167 "..\..\Views\Category\Delete.cshtml"
+            #line 26 "..\..\Views\Category\Delete.cshtml"
     }
 
             

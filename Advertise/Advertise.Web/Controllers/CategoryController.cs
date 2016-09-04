@@ -8,28 +8,47 @@ using Advertise.ViewModel.Models.Categories.Category;
 
 namespace Advertise.Web.Controllers
 {
+    /// <summary>
+    /// </summary>
     public partial class CategoryController : Controller
     {
-        private readonly ICategoryService _categoryService;
-        private readonly IUnitOfWork _unitOfWork;
+        #region Ctor
 
+        /// <summary>
+        /// </summary>
+        /// <param name="unitOfWork"></param>
+        /// <param name="categoryService"></param>
         public CategoryController(IUnitOfWork unitOfWork, ICategoryService categoryService)
         {
             _unitOfWork = unitOfWork;
             _categoryService = categoryService;
         }
 
+        #endregion
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public virtual ActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public virtual async Task<ActionResult> Create()
         {
-            return View();
+            var viewModel = await _categoryService.GetForCreateAsync();
+            return View(viewModel);
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
         [HttpPost]
         public virtual async Task<ActionResult> Create(CategoryCreateViewModel viewModel)
         {
@@ -37,12 +56,15 @@ namespace Advertise.Web.Controllers
             {
                 return View();
             }
-
             await _categoryService.CreateAsync(viewModel);
-            this.NotyError("دسته جدید با موفقیت ثبت شد.");
+            this.NotyInformation("دسته جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public virtual async Task<ActionResult> Edit(Guid id)
         {
@@ -57,33 +79,48 @@ namespace Advertise.Web.Controllers
             {
                 return View();
             }
-
             await _categoryService.EditAsync(viewModel);
-            this.NotyError("دسته جدید با موفقیت ویرایش شد.");
+            this.NotyInformation("دسته جدید با موفقیت ویرایش شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public virtual async Task<ActionResult> List()
         {
             var viewModel = await _categoryService.GetListAsync();
             return View(viewModel);
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
         public virtual async Task<ActionResult> Delete(Guid id)
         {
             await _categoryService.DeleteAsync(id);
-            this.NotyError("دسته جدید با موفقیت حذف شد.");
+            this.NotyInformation("دسته جدید با موفقیت حذف شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
-        public ActionResult Details()
+        public virtual ActionResult Details()
         {
             return View();
         }
 
-        public ActionResult Find()
+        public virtual ActionResult Find()
         {
             return View();
         }
+
+        #region Fields
+
+        private readonly ICategoryService _categoryService;
+        private readonly IUnitOfWork _unitOfWork;
+
+        #endregion
     }
 }

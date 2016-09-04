@@ -13,6 +13,7 @@ namespace Advertise.Common.DependencyResolution.Registeries
         {
             Scan(scan =>
             {
+                scan.Assembly("Advertise.ServiceLayer");
                 scan.AddAllTypesOf<IRunAfterEachRequestService>();
                 scan.AddAllTypesOf<IRunAtInitService>();
                 scan.AddAllTypesOf<IRunAtStartUpService>();

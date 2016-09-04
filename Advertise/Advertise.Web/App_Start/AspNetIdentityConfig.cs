@@ -29,13 +29,13 @@ namespace Advertise.Web
         {
             const int twoWeeks = 14;
 
-            ApplicationObjectFactory.Container.Configure(
+            StructureMapObjectFactory.Container.Configure(
                 config =>
                     config.For<IDataProtectionProvider>()
                         .HybridHttpOrThreadLocalScoped()
                         .Use(() => appBuilder.GetDataProtectionProvider()));
 
-            appBuilder.CreatePerOwinContext(() => ApplicationObjectFactory.Container.GetInstance<UserService>());
+            appBuilder.CreatePerOwinContext(() => StructureMapObjectFactory.Container.GetInstance<UserService>());
 
             appBuilder.UseCookieAuthentication(new CookieAuthenticationOptions
             {
@@ -47,13 +47,13 @@ namespace Advertise.Web
                 Provider = new CookieAuthenticationProvider
                 {
                     OnValidateIdentity =
-                        ApplicationObjectFactory.Container.GetInstance<IUserService>().OnValidateIdentity()
+                        StructureMapObjectFactory.Container.GetInstance<IUserService>().OnValidateIdentity()
                 }
             });
 
-            ApplicationObjectFactory.Container.GetInstance<IRoleService>().SeedDatabase();
+            StructureMapObjectFactory.Container.GetInstance<IRoleService>().SeedDatabase();
 
-            ApplicationObjectFactory.Container.GetInstance<IUserService>().SeedDatabase();
+            StructureMapObjectFactory.Container.GetInstance<IUserService>().SeedDatabase();
         }
     }
 }

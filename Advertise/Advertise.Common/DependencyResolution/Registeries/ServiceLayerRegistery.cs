@@ -15,6 +15,7 @@ namespace Advertise.Common.DependencyResolution.Registeries
             Policies.SetAllProperties(y => { y.OfType<IActivityLogService>(); });
             Scan(scanner =>
             {
+                scanner.Assembly("Advertise.ServiceLayer");
                 scanner.WithDefaultConventions();
                 scanner.AssemblyContainingType<UserService>();
             });
