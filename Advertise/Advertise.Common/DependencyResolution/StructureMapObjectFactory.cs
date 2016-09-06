@@ -8,8 +8,6 @@ using System.Web.Mvc;
 using Advertise.Common.Controller;
 using Advertise.Common.DependencyResolution.Registeries;
 using Advertise.DataLayer.Context;
-using Advertise.ServiceLayer.Contracts.Categories;
-using Advertise.ServiceLayer.EFServices.Categories;
 using AutoMapper;
 using StructureMap;
 using StructureMap.Web;
@@ -22,7 +20,8 @@ namespace Advertise.Common.DependencyResolution
     {
         #region Fields
 
-        private static readonly Lazy<Container> ContainerBuilder = new Lazy<Container>(DefaultContainer, LazyThreadSafetyMode.ExecutionAndPublication);
+        private static readonly Lazy<Container> ContainerBuilder = new Lazy<Container>(DefaultContainer,
+            LazyThreadSafetyMode.ExecutionAndPublication);
 
         #endregion
 
@@ -61,7 +60,8 @@ namespace Advertise.Common.DependencyResolution
                 ioc.AddRegistry<ServiceLayerRegistery>();
                 ioc.AddRegistry<TaskRegistry>();
 
-                ioc.Scan(scanner => {
+                ioc.Scan(scanner =>
+                {
                     //scanner.TheCallingAssembly();
                     //scan.AssemblyContainingType<SomeType>(); // for other asms, if any.
                     scanner.WithDefaultConventions();
@@ -82,6 +82,7 @@ namespace Advertise.Common.DependencyResolution
         /// <param name="container"></param>
         private static void ConfigureAutoMapper(IContainer container)
         {
+            // Exception - unmapped member
             container.GetInstance<IMapper>().ConfigurationProvider.AssertConfigurationIsValid();
         }
     }

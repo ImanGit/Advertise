@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Advertise.ViewModel.Models.Common;
 
-namespace Advertise.ViewModel.Models.Categories.Category
+namespace Advertise.ViewModel.Models.Categories
 {
-    public class CategoryListViewModel:BaseViewModel
+    public class CategoryListViewModel : BaseViewModel
     {
         public Guid Id { get; set; }
         public string Code { get; set; }

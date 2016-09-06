@@ -70,6 +70,13 @@ namespace Advertise.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Details()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public CategoryController Actions { get { return MVC.Category; } }
@@ -132,6 +139,15 @@ namespace Advertise.Web.Controllers
         public class ActionParamsClass_Delete
         {
             public readonly string id = "id";
+            public readonly string viewModel = "viewModel";
+        }
+        static readonly ActionParamsClass_Details s_params_Details = new ActionParamsClass_Details();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Details DetailsParams { get { return s_params_Details; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Details
+        {
+            public readonly string id = "id";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -189,10 +205,10 @@ namespace Advertise.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.Category.CategoryCreateViewModel viewModel);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.CategoryCreateViewModel viewModel);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Advertise.ViewModel.Models.Categories.Category.CategoryCreateViewModel viewModel)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Advertise.ViewModel.Models.Categories.CategoryCreateViewModel viewModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
@@ -213,10 +229,10 @@ namespace Advertise.Web.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.Category.CategoryEditViewModel viewModel);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.CategoryEditViewModel viewModel);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(Advertise.ViewModel.Models.Categories.Category.CategoryEditViewModel viewModel)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(Advertise.ViewModel.Models.Categories.CategoryEditViewModel viewModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
@@ -248,14 +264,27 @@ namespace Advertise.Web.Controllers
         }
 
         [NonAction]
-        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.CategoryDeleteViewModel viewModel);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Details()
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete(Advertise.ViewModel.Models.Categories.CategoryDeleteViewModel viewModel)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
+            DeleteOverride(callInfo, viewModel);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Details(System.Guid id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
-            DetailsOverride(callInfo);
-            return callInfo;
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            DetailsOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
         [NonAction]

@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/List.cshtml")]
-    public partial class _Views_Category_List_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<Advertise.ViewModel.Models.Categories.Category.CategoryListViewModel>>
+    public partial class _Views_Category_List_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<Advertise.ViewModel.Models.Categories.CategoryListViewModel>>
     {
         public _Views_Category_List_cshtml()
         {
@@ -44,7 +44,7 @@ WriteLiteral("\n");
             
             #line 25 "..\..\Views\Category\List.cshtml"
   
-    ViewBag.Title = "List";
+    ViewBag.Title = "لیست";
 
 
             
@@ -206,43 +206,49 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </td>\n\n        <td>\n");
+WriteLiteral("\n        </td>\r\n\r\n        <td>\r\n            <button");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"btn btn-primary btn-sm\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-edit\"");
+
+WriteLiteral(">");
 
             
             #line 106 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("ویرایش", "Edit", new { id=item.Id }));
+                                                                    Write(Html.ActionLink("ویرایش", "Edit", new { id = item.Id }));
 
             
             #line default
             #line hidden
-WriteLiteral(" |\n");
-
-WriteLiteral("            ");
-
-            
-            #line 107 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("جزییات", "Details", new { id=item.Id }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" |\n");
+WriteLiteral("</i></button>\r\n            \r\n");
 
 WriteLiteral("            ");
 
             
             #line 108 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("حذف", "Delete", new { id=item.Id }));
+       Write(Html.ActionLink("جزییات", "Details", new {id = item.Id}));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </td>\n\n    </tr>\n");
+WriteLiteral(" |\r\n");
+
+WriteLiteral("            ");
 
             
-            #line 112 "..\..\Views\Category\List.cshtml"
+            #line 109 "..\..\Views\Category\List.cshtml"
+       Write(Html.ActionLink("حذف", "Delete", new {id = item.Id}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n\r\n\r\n        </td>\n\n    </tr>\n");
+
+            
+            #line 116 "..\..\Views\Category\List.cshtml"
 }
 
             

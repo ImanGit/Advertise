@@ -1,5 +1,5 @@
 ﻿using Advertise.DomainClasses.Entities.Categories;
-using Advertise.ViewModel.Models.Categories.Category;
+using Advertise.ViewModel.Models.Categories;
 using AutoMapper;
 
 namespace Advertise.Mapping.Profiles.Categories
@@ -71,8 +71,52 @@ namespace Advertise.Mapping.Profiles.Categories
                 });
 
             CreateMap<CategoryEditViewModel, Category>()
+
                 .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
-                .ForMember(dest => dest.Description,opts => opts.MapFrom(src => src.Description))
+                .ForMember(dest => dest.Description, opts => opts.MapFrom(src => src.Description))
+                .ForMember(dest => dest.ImageFileName, opts => opts.MapFrom(src => src.ImageFileName))
+                .ForMember(dest => dest.IsActive, opts => opts.MapFrom(src => src.IsActive))
+                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
+                .ForMember(dest => dest.ParentPath, opts => opts.MapFrom(src => src.ParentPath))
+                .ForAllOtherMembers(opt => opt.Ignore())
+                ;
+
+            CreateMap<Category, CategoryDeleteViewModel>()
+               .ProjectUsing(src => new CategoryDeleteViewModel
+               {
+                   Code = src.Code,
+                   Description = src.Description,
+                   ImageFileName = src.ImageFileName,
+                   IsActive = src.IsActive,
+                   Title = src.Title,
+                   ParentPath = src.ParentPath,
+                   Id = src.Id
+               });
+
+            CreateMap<CategoryDeleteViewModel, Category>()
+                .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
+                .ForMember(dest => dest.Description, opts => opts.MapFrom(src => src.Description))
+                .ForMember(dest => dest.ImageFileName, opts => opts.MapFrom(src => src.ImageFileName))
+                .ForMember(dest => dest.IsActive, opts => opts.MapFrom(src => src.IsActive))
+                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
+                .ForMember(dest => dest.ParentPath, opts => opts.MapFrom(src => src.ParentPath))
+                .ForAllOtherMembers(opt => opt.Ignore());
+
+            CreateMap<Category, CategoryDetailsViewModel>()
+               .ProjectUsing(src => new CategoryDetailsViewModel
+               {
+                   Code = src.Code,
+                   Description = src.Description,
+                   ImageFileName = src.ImageFileName,
+                   IsActive = src.IsActive,
+                   Title = src.Title,
+                   ParentPath = src.ParentPath,
+                   Id = src.Id
+               });
+
+            CreateMap<CategoryDetailsViewModel, Category>()
+                .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
+                .ForMember(dest => dest.Description, opts => opts.MapFrom(src => src.Description))
                 .ForMember(dest => dest.ImageFileName, opts => opts.MapFrom(src => src.ImageFileName))
                 .ForMember(dest => dest.IsActive, opts => opts.MapFrom(src => src.IsActive))
                 .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))

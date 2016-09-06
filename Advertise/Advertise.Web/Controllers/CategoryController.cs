@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using Advertise.Common.Extensions;
 using Advertise.DataLayer.Context;
 using Advertise.ServiceLayer.Contracts.Categories;
-using Advertise.ViewModel.Models.Categories.Category;
+using Advertise.ViewModel.Models.Categories;
 
 namespace Advertise.Web.Controllers
 {
@@ -94,21 +94,38 @@ namespace Advertise.Web.Controllers
             return View(viewModel);
         }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpPost]
+        [HttpGet]
         public virtual async Task<ActionResult> Delete(Guid id)
         {
-            await _categoryService.DeleteAsync(id);
+            var viewModel = await _categoryService.GetForDeleteAsync(id);
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public virtual async Task<ActionResult> Delete(CategoryDeleteViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            await _categoryService.DeleteAsync(viewModel);
             this.NotyInformation("دسته جدید با موفقیت حذف شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
-        public virtual ActionResult Details()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public virtual async Task<ActionResult> Details(Guid id)
         {
-            return View();
+            var viewModel = await _categoryService.GetDetailsAsync(id);
+            return View(viewModel);
         }
 
         public virtual ActionResult Find()

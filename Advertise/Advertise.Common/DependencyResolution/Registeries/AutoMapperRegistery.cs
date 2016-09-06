@@ -2,7 +2,6 @@
 using System.Linq;
 using Advertise.DomainClasses.Entities.Categories;
 using Advertise.Mapping.Profiles.Categories;
-using Advertise.ViewModel.Models.Categories.Category;
 using AutoMapper;
 using StructureMap;
 

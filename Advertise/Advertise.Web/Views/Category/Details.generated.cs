@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Details.cshtml")]
-    public partial class _Views_Category_Details_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.Category.CategoryDetailsViewModel>
+    public partial class _Views_Category_Details_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.CategoryDetailsViewModel>
     {
         public _Views_Category_Details_cshtml()
         {
@@ -40,7 +40,7 @@ namespace ASP
             
             #line 3 "..\..\Views\Category\Details.cshtml"
   
-    ViewBag.Title = "Details";
+    ViewBag.Title = "جزییات";
 
             
             #line default
@@ -50,13 +50,145 @@ WriteLiteral("\r\n\r\n<h2>Details</h2>\r\n\r\n<div>\r\n    <h4>CategoryDetailsVi
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
-WriteLiteral(">\r\n    </dl>\r\n</div>\r\n<p>\r\n");
+WriteLiteral(">\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 14 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Code));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 18 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayFor(model => model.Code));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 22 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 26 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayFor(model => model.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 30 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 34 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 38 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.ImageFileName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 42 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayFor(model => model.ImageFileName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 46 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.ParentPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 50 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayFor(model => model.ParentPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 54 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.IsActive));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 58 "..\..\Views\Category\Details.cshtml"
+       Write(Html.DisplayFor(model => model.IsActive));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n    </dl>\r\n</div>\r\n<p>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 16 "..\..\Views\Category\Details.cshtml"
-Write(Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }));
+            #line 64 "..\..\Views\Category\Details.cshtml"
+Write(Html.ActionLink("ویرایش", "Edit", new {  id = Model.Id  }));
 
             
             #line default
@@ -66,8 +198,8 @@ WriteLiteral(" |\r\n");
 WriteLiteral("    ");
 
             
-            #line 17 "..\..\Views\Category\Details.cshtml"
-Write(Html.ActionLink("Back to List", "Index"));
+            #line 65 "..\..\Views\Category\Details.cshtml"
+Write(Html.ActionLink("برگشت به لیست", "List"));
 
             
             #line default

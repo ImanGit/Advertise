@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Find.cshtml")]
-    public partial class _Views_Category_Find_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.Category.CategorySearchViewModel>
+    public partial class _Views_Category_Find_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.CategoryFindViewModel>
     {
         public _Views_Category_Find_cshtml()
         {

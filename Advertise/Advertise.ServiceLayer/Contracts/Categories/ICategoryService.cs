@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts.Common;
-using Advertise.ViewModel.Models.Categories.Category;
+using Advertise.ViewModel.Models.Categories;
 
 namespace Advertise.ServiceLayer.Contracts.Categories
 {
@@ -31,7 +31,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         ///     پاک کردن به صورت منطقی
         /// </summary>
-        Task DeleteAsync(Guid id);
+        Task DeleteAsync(CategoryDeleteViewModel viewModel);
 
         #endregion
 
@@ -49,9 +49,22 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         Task<CategoryEditViewModel> GetForEditAsync(Guid id);
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<CategoryDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        /// <summary>
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<CategoryListViewModel>> GetListAsync();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CategoryDetailsViewModel> GetDetailsAsync(Guid id);
 
         /// <summary>
         /// </summary>

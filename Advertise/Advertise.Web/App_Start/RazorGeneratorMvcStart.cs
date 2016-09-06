@@ -1,24 +1,14 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
-using Advertise.Web;
 using RazorGenerator.Mvc;
-using WebActivatorEx;
 
-[assembly: PostApplicationStartMethod(typeof (RazorGeneratorMvcStart), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Advertise.Web.RazorGeneratorMvcStart), "Start")]
 
-namespace Advertise.Web
-{
-    /// <summary>
-    /// </summary>
-    public static class RazorGeneratorMvcStart
-    {
-        /// <summary>
-        /// </summary>
-        public static void Start()
-        {
-            var engine = new PrecompiledMvcEngine(typeof (RazorGeneratorMvcStart).Assembly)
-            {
+namespace Advertise.Web {
+    public static class RazorGeneratorMvcStart {
+        public static void Start() {
+            var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {
                 UsePhysicalViewsIfNewer = HttpContext.Current.Request.IsLocal
             };
 

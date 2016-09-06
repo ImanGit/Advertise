@@ -26,50 +26,44 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\Category\Create.cshtml"
-    using Advertise.Common.Noty;
-    
-    #line default
-    #line hidden
     using Advertise.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Create.cshtml")]
-    public partial class _Views_Category_Create_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.CategoryCreateViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Edit.cshtml")]
+    public partial class _Views_Category_Edit_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.CategoryEditViewModel>
     {
-        public _Views_Category_Create_cshtml()
+        public _Views_Category_Edit_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 4 "..\..\Views\Category\Create.cshtml"
+            #line 3 "..\..\Views\Category\Edit.cshtml"
   
-    ViewBag.Title = "ایجاد";
+    ViewBag.Title = "ویرایش";
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Create</h2>\r\n\r\n");
+WriteLiteral("\r\n\r\n<h2>Edit</h2>\r\n\r\n");
 
             
-            #line 10 "..\..\Views\Category\Create.cshtml"
- using (Html.BeginForm()) 
+            #line 9 "..\..\Views\Category\Edit.cshtml"
+ using (Html.BeginForm())
 {
     
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Category\Create.cshtml"
+            #line 11 "..\..\Views\Category\Edit.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Category\Create.cshtml"
+            #line 11 "..\..\Views\Category\Edit.cshtml"
                             
     
 
@@ -80,18 +74,29 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteLiteral(">\r\n        <h4>AddCategoryViewModel</h4>\r\n      \r\n\r\n        <hr />\r\n");
+WriteLiteral(">\r\n        <h4>CategoryEditViewModel</h4>\r\n        <hr />\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 19 "..\..\Views\Category\Create.cshtml"
+            #line 16 "..\..\Views\Category\Edit.cshtml"
    Write(Html.ValidationSummary(true, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <div");
+WriteLiteral("\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 17 "..\..\Views\Category\Edit.cshtml"
+   Write(Html.HiddenFor(model => model.Id));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -100,7 +105,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 21 "..\..\Views\Category\Create.cshtml"
+            #line 20 "..\..\Views\Category\Edit.cshtml"
        Write(Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -115,7 +120,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 23 "..\..\Views\Category\Create.cshtml"
+            #line 22 "..\..\Views\Category\Edit.cshtml"
            Write(Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -126,7 +131,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 24 "..\..\Views\Category\Create.cshtml"
+            #line 23 "..\..\Views\Category\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" }));
 
             
@@ -141,7 +146,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 29 "..\..\Views\Category\Create.cshtml"
+            #line 28 "..\..\Views\Category\Edit.cshtml"
        Write(Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -156,7 +161,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 31 "..\..\Views\Category\Create.cshtml"
+            #line 30 "..\..\Views\Category\Edit.cshtml"
            Write(Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -167,7 +172,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 32 "..\..\Views\Category\Create.cshtml"
+            #line 31 "..\..\Views\Category\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" }));
 
             
@@ -182,7 +187,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 37 "..\..\Views\Category\Create.cshtml"
+            #line 36 "..\..\Views\Category\Edit.cshtml"
        Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -197,7 +202,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 39 "..\..\Views\Category\Create.cshtml"
+            #line 38 "..\..\Views\Category\Edit.cshtml"
            Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -208,7 +213,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 40 "..\..\Views\Category\Create.cshtml"
+            #line 39 "..\..\Views\Category\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
 
             
@@ -223,7 +228,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 45 "..\..\Views\Category\Create.cshtml"
+            #line 44 "..\..\Views\Category\Edit.cshtml"
        Write(Html.LabelFor(model => model.ImageFileName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -238,7 +243,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 47 "..\..\Views\Category\Create.cshtml"
+            #line 46 "..\..\Views\Category\Edit.cshtml"
            Write(Html.EditorFor(model => model.ImageFileName, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -249,7 +254,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 48 "..\..\Views\Category\Create.cshtml"
+            #line 47 "..\..\Views\Category\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.ImageFileName, "", new { @class = "text-danger" }));
 
             
@@ -264,7 +269,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 53 "..\..\Views\Category\Create.cshtml"
+            #line 52 "..\..\Views\Category\Edit.cshtml"
        Write(Html.LabelFor(model => model.ParentPath, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -279,7 +284,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 55 "..\..\Views\Category\Create.cshtml"
+            #line 54 "..\..\Views\Category\Edit.cshtml"
            Write(Html.EditorFor(model => model.ParentPath, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -290,7 +295,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 56 "..\..\Views\Category\Create.cshtml"
+            #line 55 "..\..\Views\Category\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.ParentPath, "", new { @class = "text-danger" }));
 
             
@@ -305,7 +310,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 61 "..\..\Views\Category\Create.cshtml"
+            #line 60 "..\..\Views\Category\Edit.cshtml"
        Write(Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -324,7 +329,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 64 "..\..\Views\Category\Create.cshtml"
+            #line 63 "..\..\Views\Category\Edit.cshtml"
                Write(Html.EditorFor(model => model.IsActive));
 
             
@@ -335,7 +340,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 65 "..\..\Views\Category\Create.cshtml"
+            #line 64 "..\..\Views\Category\Edit.cshtml"
                Write(Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" }));
 
             
@@ -353,14 +358,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" value=\"Create\"");
+WriteLiteral(" value=\"Save\"");
 
 WriteLiteral(" class=\"btn btn-default\"");
 
 WriteLiteral(" />\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 76 "..\..\Views\Category\Create.cshtml"
+            #line 75 "..\..\Views\Category\Edit.cshtml"
 }
 
             
@@ -371,7 +376,7 @@ WriteLiteral("\r\n<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 79 "..\..\Views\Category\Create.cshtml"
+            #line 78 "..\..\Views\Category\Edit.cshtml"
 Write(Html.ActionLink("برگشت به لیست", "List"));
 
             

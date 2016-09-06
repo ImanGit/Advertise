@@ -2,8 +2,7 @@
 
 namespace Advertise.ViewModel.Models.Categories
 {
-    public class CategoryViewModel : BaseViewModel
+    public class CategoryFindViewModel : BaseViewModel
     {
-        public string CreatorUserName { get; set; }
     }
 }

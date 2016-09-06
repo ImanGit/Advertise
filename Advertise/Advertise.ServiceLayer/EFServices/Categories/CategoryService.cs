@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Categories;
 using Advertise.ServiceLayer.Contracts.Categories;
-using Advertise.ViewModel.Models.Categories.Category;
+using Advertise.ViewModel.Models.Categories;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using EntityFramework.Extensions;
@@ -65,11 +65,11 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         /// <summary>
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="viewModel"></param>
         /// <returns></returns>
-        public Task DeleteAsync(Guid id)
+        public Task DeleteAsync(CategoryDeleteViewModel viewModel)
         {
-            return _category.Where(model => model.Id == id).DeleteAsync();
+            return _category.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
         #endregion
@@ -105,6 +105,19 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<CategoryDeleteViewModel> GetForDeleteAsync(Guid id)
+        {
+            return await _category
+                .AsNoTracking()
+                .ProjectTo<CategoryDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
+        /// <summary>
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<CategoryListViewModel>> GetListAsync()
@@ -114,6 +127,19 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .ToListAsync();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<CategoryDetailsViewModel> GetDetailsAsync(Guid id)
+        {
+            return await _category
+                .AsNoTracking()
+                .ProjectTo<CategoryDetailsViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        } 
 
         public async Task<CategoryListViewModel> FindById(Guid id)
         {

@@ -66,7 +66,7 @@
     <Compile Include="Models\Categories\CategoryDetailsViewModel.cs" />
     <Compile Include="Models\Categories\CategoryIndexViewModel.cs" />
     <Compile Include="Models\Categories\CategoryListViewModel.cs" />
-    <Compile Include="Models\Categories\CategorySearchViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryFindViewModel.cs" />
     <Compile Include="Models\Categories\CategoryViewModel.cs" />
     <Compile Include="Models\Categories\CategoryEditViewModel.cs" />
     <Compile Include="Models\Common\BaseViewModel.cs" />

@@ -30,50 +30,187 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Category/Delete.cshtml")]
-    public partial class _Views_Category_Delete_cshtml : System.Web.Mvc.WebViewPage<Advertise.DomainClasses.Entities.Categories.Category>
+    public partial class _Views_Category_Delete_cshtml : System.Web.Mvc.WebViewPage<Advertise.ViewModel.Models.Categories.CategoryDeleteViewModel>
     {
         public _Views_Category_Delete_cshtml()
         {
         }
         public override void Execute()
         {
+WriteLiteral("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+WriteLiteral("\n");
+
             
-            #line 3 "..\..\Views\Category\Delete.cshtml"
+            #line 25 "..\..\Views\Category\Delete.cshtml"
   
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "حذف";
+
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Delete</h2>\r\n\r\n<h3>Are you sure you want to delete this?</h3>\r\n<div>\r\n   " +
-" <h4>Category</h4>\r\n    <hr />\r\n    <dl");
+WriteLiteral("\n\n<h2>Delete</h2>\n\n\n<h3>آیا برای حذف اطمینان دارید؟؟</h3>\n<div>\n    <h4>CategoryD" +
+"eleteViewModel</h4>\n    <hr />\n    <dl");
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
-WriteLiteral(">\r\n        \r\n      \r\n\r\n    </dl>\r\n\r\n");
+WriteLiteral(">\n\n\n        <dt>\n");
+
+WriteLiteral("            ");
 
             
-            #line 19 "..\..\Views\Category\Delete.cshtml"
+            #line 41 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.Code));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dt>\n\n        <dd>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 45 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.Code));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 51 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dt>\n\n        <dd>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 55 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 61 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dt>\n\n        <dd>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 65 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 71 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.ImageFileName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dt>\n\n        <dd>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 75 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.ImageFileName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 81 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.ParentPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dt>\n\n        <dd>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 85 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.ParentPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 91 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.IsActive));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dt>\n\n        <dd>\n");
+
+WriteLiteral("            ");
+
+            
+            #line 95 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.IsActive));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\n        </dd>\n\n\n    </dl>\n\n");
+
+            
+            #line 101 "..\..\Views\Category\Delete.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Category\Delete.cshtml"
+            #line 101 "..\..\Views\Category\Delete.cshtml"
      using (Html.BeginForm()) {
         
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Category\Delete.cshtml"
+            #line 102 "..\..\Views\Category\Delete.cshtml"
    Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Category\Delete.cshtml"
+            #line 102 "..\..\Views\Category\Delete.cshtml"
                                 
 
 
@@ -84,7 +221,7 @@ WriteLiteral("        <div");
 
 WriteLiteral(" class=\"form-actions no-color\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\n            <input");
 
 WriteLiteral(" type=\"submit\"");
 
@@ -92,27 +229,27 @@ WriteLiteral(" value=\"Delete\"");
 
 WriteLiteral(" class=\"btn btn-default\"");
 
-WriteLiteral(" /> |\r\n");
+WriteLiteral(" /> |\n");
 
 WriteLiteral("            ");
 
             
-            #line 24 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.ActionLink("Back to List", "Index"));
+            #line 106 "..\..\Views\Category\Delete.cshtml"
+       Write(Html.ActionLink("برگشت به لیست", "List"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n");
+WriteLiteral("\n        </div>\n");
 
             
-            #line 26 "..\..\Views\Category\Delete.cshtml"
+            #line 108 "..\..\Views\Category\Delete.cshtml"
     }
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n");
+WriteLiteral("</div>\n\n\n\n");
 
         }
     }

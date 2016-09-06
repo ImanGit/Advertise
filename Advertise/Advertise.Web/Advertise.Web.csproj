@@ -141,15 +141,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.7\lib\net40\RazorGenerator.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\RazorGenerator.Templating.2.3.11\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <HintPath>..\packages\RazorGenerator.Templating.2.4.7\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap, Version=4.3.0.442, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StructureMap.4.3.0\lib\net45\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=4.3.0.449, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.4.0\lib\net45\StructureMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -193,7 +193,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\T4MVCExtensions.3.17.4\lib\net40\T4MVCExtensions.dll</HintPath>
+      <HintPath>..\packages\T4MVCExtensions.3.17.5\lib\net40\T4MVCExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
@@ -229,30 +229,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Create.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Delete.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Details.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Details.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Edit.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Empty.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Empty.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\List.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>List.cshtml</LastGenOutput>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -260,14 +236,13 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\iransans.css" />
+    <Content Include="Content\Customs\iransans.css" />
     <Content Include="Content\Images\Avatar001.jpg" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Customs\site.css" />
     <Content Include="Content\Fonts\fontawesome-webfont.svg" />
     <Content Include="Error\Forbidden.html" />
     <Content Include="Error\GatewayTimeout.html" />
     <Content Include="Error\ServiceUnavailable.html" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Fonts\FontAwesome.otf" />
     <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
@@ -294,10 +269,6 @@
     <Content Include="Content\Fonts\IRANSans-web.ttf" />
     <Content Include="Content\Fonts\IRANSans-web.woff" />
     <Content Include="Content\Fonts\IRANSans-web.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
@@ -314,48 +285,18 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>NotyBuilder.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Create.cshtml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.tt</DependentUpon>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Delete.cshtml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.tt</DependentUpon>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Details.cshtml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.tt</DependentUpon>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Edit.cshtml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.tt</DependentUpon>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Empty.cshtml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Empty.tt</DependentUpon>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\List.cshtml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.tt</DependentUpon>
-    </Content>
-    <Content Include="CodeTemplates\MvcView\Create.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\Delete.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\Details.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\Edit.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\Empty.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
-    <Content Include="CodeTemplates\MvcView\List.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
-    <Content Include="CodeTemplates\MvcView\_ListAjax.cs.t4" />
-    <Content Include="CodeTemplates\MvcView\_Modal.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\Create.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\Delete.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\Details.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\Edit.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView__\List.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="CodeTemplates\MvcView__\_ListAjax.cs.t4" />
+    <Content Include="CodeTemplates\MvcView__\_Modal.cs.t4" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\Custome\noty.alerts.js" />
+    <Content Include="Scripts\Customs\noty.alerts.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
@@ -366,30 +307,31 @@
     <Content Include="Scripts\jquery.noty.packaged.js" />
     <Content Include="Scripts\jquery.noty.packaged.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\noty\jquery.noty.js" />
-    <Content Include="Scripts\noty\layouts\bottom.js" />
-    <Content Include="Scripts\noty\layouts\bottomCenter.js" />
-    <Content Include="Scripts\noty\layouts\bottomLeft.js" />
-    <Content Include="Scripts\noty\layouts\bottomRight.js" />
-    <Content Include="Scripts\noty\layouts\center.js" />
-    <Content Include="Scripts\noty\layouts\centerLeft.js" />
-    <Content Include="Scripts\noty\layouts\centerRight.js" />
-    <Content Include="Scripts\noty\layouts\inline.js" />
-    <Content Include="Scripts\noty\layouts\top.js" />
-    <Content Include="Scripts\noty\layouts\topCenter.js" />
-    <Content Include="Scripts\noty\layouts\topLeft.js" />
-    <Content Include="Scripts\noty\layouts\topRight.js" />
-    <Content Include="Scripts\noty\themes\bootstrap.js" />
-    <Content Include="Scripts\noty\themes\default.js" />
-    <Content Include="Scripts\noty\themes\relax.js" />
-    <Content Include="Scripts\Site.js" />
-    <Content Include="Scripts\_references.js" />
-    <Content Include="T4MVC.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>T4MVC.cs</LastGenOutput>
-    </Content>
+    <Content Include="Scripts\Noty\jquery.noty.js" />
+    <Content Include="Scripts\Noty\layouts\bottom.js" />
+    <Content Include="Scripts\Noty\layouts\bottomCenter.js" />
+    <Content Include="Scripts\Noty\layouts\bottomLeft.js" />
+    <Content Include="Scripts\Noty\layouts\bottomRight.js" />
+    <Content Include="Scripts\Noty\layouts\center.js" />
+    <Content Include="Scripts\Noty\layouts\centerLeft.js" />
+    <Content Include="Scripts\Noty\layouts\centerRight.js" />
+    <Content Include="Scripts\Noty\layouts\inline.js" />
+    <Content Include="Scripts\Noty\layouts\top.js" />
+    <Content Include="Scripts\Noty\layouts\topCenter.js" />
+    <Content Include="Scripts\Noty\layouts\topLeft.js" />
+    <Content Include="Scripts\Noty\layouts\topRight.js" />
+    <Content Include="Scripts\Noty\themes\bootstrap.js" />
+    <Content Include="Scripts\Noty\themes\default.js" />
+    <Content Include="Scripts\Noty\themes\relax.js" />
+    <Content Include="Scripts\Customs\site.js" />
+    <Content Include="Scripts\Customs\_references.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4MVC.tt.hooks.t4" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml">
@@ -420,11 +362,6 @@
     </Compile>
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="DefaultController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -445,9 +382,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Views\Category\Create.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -462,6 +396,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Category\Find.generated.cs">
       <AutoGen>True</AutoGen>
@@ -505,7 +444,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="T4MVC.tt.hooks.t4" />
     <Content Include="Views\Home\Index.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
@@ -538,6 +476,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Category\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -552,8 +494,6 @@
     <Folder Include="File\Avatar\" />
     <Folder Include="File\Image\" />
     <Folder Include="File\UserFile\" />
-    <Folder Include="Views\Default\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
