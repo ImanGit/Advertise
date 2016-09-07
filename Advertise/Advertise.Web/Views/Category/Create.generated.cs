@@ -80,7 +80,7 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteLiteral(">\r\n        <h4>AddCategoryViewModel</h4>\r\n      \r\n\r\n        <hr />\r\n");
+WriteLiteral(">\r\n        <h4>ایجاد دسته جدید</h4>\r\n      \r\n\r\n        <hr />\r\n");
 
 WriteLiteral("        ");
 
@@ -343,6 +343,10 @@ WriteLiteral("                    ");
             #line hidden
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
 
+WriteLiteral(" id=\"tree\"");
+
+WriteLiteral("></div>\r\n\r\n        <div");
+
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n            <div");
@@ -353,14 +357,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" value=\"Create\"");
+WriteLiteral(" value=\"ثبت\"");
 
-WriteLiteral(" class=\"btn btn-default\"");
+WriteLiteral(" class=\"btn btn-primary\"");
 
 WriteLiteral(" />\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 76 "..\..\Views\Category\Create.cshtml"
+            #line 78 "..\..\Views\Category\Create.cshtml"
 }
 
             
@@ -371,7 +375,7 @@ WriteLiteral("\r\n<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 79 "..\..\Views\Category\Create.cshtml"
+            #line 81 "..\..\Views\Category\Create.cshtml"
 Write(Html.ActionLink("برگشت به لیست", "List"));
 
             

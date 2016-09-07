@@ -14,12 +14,17 @@ namespace Advertise.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/bundles/css")
-                .Include("~/Content/iransans.css", "~/Content/bootstrap.css", "~/Content/font-awesome.css",
-                    "~/Content/Site.css"));
+                .Include("~/Content/Customs/iransans.css",
+                    "~/Content/Bootstrap/bootstrap.css",
+                    "~/Content/FontAwesome/font-awesome.css",
+                    "~/Content/Customs/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/script")
-                .Include("~/Scripts/jquery-3.1.0.min.js", "~/Scripts/bootstrap.min.js", "~/Scripts/jquery.noty.packaged.min.js",
-                    "~/Scripts/Custome/noty.alerts.js"));
+                .Include("~/Scripts/JQuery/jquery-3.1.0.js",
+                    "~/Scripts/Bootstrap/bootstrap.js",
+                    "~/Scripts/Noty/jquery.noty.packaged.js",
+                    "~/Scripts/Customs/noty.alerts.js",
+                    "~/Scripts/Customs/site.js"));
 
             BundleTable.EnableOptimizations = true;
         }

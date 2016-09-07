@@ -1,27 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Advertise.Common.Noty;
+using Microsoft.AspNet.Identity;
 
 namespace Advertise.Common.Extensions
 {
+    /// <summary>
+    /// </summary>
     public static class ControllerExtension
     {
-        #region Noty
-        private static void AddNotyAlert(this ControllerBase controller, NotyMessage message)
+        #region AlertMessage
+
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        private static void AddAlertMessage(this ControllerBase controller, NotyMessage message)
         {
             var noty = controller.TempData.ContainsKey(Noty.Noty.TempDataKey)
-                 ? (Noty.Noty)controller.TempData[Noty.Noty.TempDataKey]
-                 : new Noty.Noty();
+                ? (Noty.Noty) controller.TempData[Noty.Noty.TempDataKey]
+                : new Noty.Noty();
 
             noty.AddNotyMessage(message);
 
             controller.TempData[Noty.Noty.TempDataKey] = noty;
         }
-        public static void NotySuccessModal(this ControllerBase controller, string message, bool isSticky = false, MessageLocationType location = MessageLocationType.Center)
+
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        /// <param name="isSticky"></param>
+        /// <param name="location"></param>
+        public static void ShowSuccessMessageModal(this ControllerBase controller, string message, bool isSticky = false,
+            MessageLocationType location = MessageLocationType.Center)
         {
             var notyMessage = new NotyMessage
             {
@@ -33,11 +44,17 @@ namespace Advertise.Common.Extensions
                 OpenAnimation = AnimationType.BounceOut,
                 IsModal = true,
                 CloseWith = MessageCloseType.Click
-
             };
-            controller.AddNotyAlert(notyMessage);
+
+            controller.AddAlertMessage(notyMessage);
         }
-        public static void NotySuccess(this ControllerBase controller, string message, bool isSticky = false)
+
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        /// <param name="isSticky"></param>
+        public static void ShowSuccessMessage(this ControllerBase controller, string message, bool isSticky = false)
         {
             var notyMessage = new NotyMessage
             {
@@ -50,9 +67,16 @@ namespace Advertise.Common.Extensions
                 OpenAnimation = AnimationType.Bounce,
                 IsModal = true
             };
-            controller.AddNotyAlert(notyMessage);
+
+            controller.AddAlertMessage(notyMessage);
         }
-        public static void NotyInformation(this ControllerBase controller, string message, bool isSticky = false)
+
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        /// <param name="isSticky"></param>
+        public static void ShowInformationMessage(this ControllerBase controller, string message, bool isSticky = false)
         {
             var notyMessage = new NotyMessage
             {
@@ -60,10 +84,16 @@ namespace Advertise.Common.Extensions
                 IsSticky = isSticky,
                 Message = message
             };
-            controller.AddNotyAlert(notyMessage);
+
+            controller.AddAlertMessage(notyMessage);
         }
 
-        public static void NotyWarning(this ControllerBase controller, string message, bool isSticky = false)
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        /// <param name="isSticky"></param>
+        public static void ShowWarningMessage(this ControllerBase controller, string message, bool isSticky = false)
         {
             var notyMessage = new NotyMessage
             {
@@ -71,10 +101,16 @@ namespace Advertise.Common.Extensions
                 IsSticky = isSticky,
                 Message = message
             };
-            controller.AddNotyAlert(notyMessage);
+
+            controller.AddAlertMessage(notyMessage);
         }
 
-        public static void NotyError(this ControllerBase controller, string message, bool isSticky = false)
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        /// <param name="isSticky"></param>
+        public static void ShowErrorMessage(this ControllerBase controller, string message, bool isSticky = false)
         {
             var notyMessage = new NotyMessage
             {
@@ -82,9 +118,11 @@ namespace Advertise.Common.Extensions
                 IsSticky = isSticky,
                 Message = message
             };
-            controller.AddNotyAlert(notyMessage);
+
+            controller.AddAlertMessage(notyMessage);
         }
-        public static void NotyAlert(this ControllerBase controller, string message, bool isSticky = false)
+
+        public static void ShowAlertMessage(this ControllerBase controller, string message, bool isSticky = false)
         {
             var notyMessage = new NotyMessage
             {
@@ -92,7 +130,34 @@ namespace Advertise.Common.Extensions
                 IsSticky = isSticky,
                 Message = message
             };
-            controller.AddNotyAlert(notyMessage);
+
+            controller.AddAlertMessage(notyMessage);
+        }
+
+        #endregion
+
+        #region AddError
+
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="result"></param>
+        public static void AddErrors(this System.Web.Mvc.Controller controller, IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                controller.ModelState.AddModelError("", error);
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="property"></param>
+        /// <param name="error"></param>
+        public static void AddErrors(this System.Web.Mvc.Controller controller, string property, string error)
+        {
+            controller.ModelState.AddModelError(property, error);
         }
 
         #endregion

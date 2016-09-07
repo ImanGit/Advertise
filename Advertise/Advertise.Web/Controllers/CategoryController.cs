@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Advertise.Common.Controller;
 using Advertise.Common.Extensions;
 using Advertise.DataLayer.Context;
 using Advertise.ServiceLayer.Contracts.Categories;
@@ -10,7 +11,7 @@ namespace Advertise.Web.Controllers
 {
     /// <summary>
     /// </summary>
-    public partial class CategoryController : Controller
+    public partial class CategoryController : BaseController
     {
         #region Ctor
 
@@ -57,7 +58,7 @@ namespace Advertise.Web.Controllers
                 return View();
             }
             await _categoryService.CreateAsync(viewModel);
-            this.NotyInformation("دسته جدید با موفقیت ثبت شد.");
+            this.ShowInformationMessage("دسته جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
@@ -80,7 +81,7 @@ namespace Advertise.Web.Controllers
                 return View();
             }
             await _categoryService.EditAsync(viewModel);
-            this.NotyInformation("دسته جدید با موفقیت ویرایش شد.");
+            this.ShowInformationMessage("دسته جدید با موفقیت ویرایش شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
@@ -113,7 +114,7 @@ namespace Advertise.Web.Controllers
                 return View();
             }
             await _categoryService.DeleteAsync(viewModel);
-            this.NotyInformation("دسته جدید با موفقیت حذف شد.");
+            this.ShowInformationMessage("دسته جدید با موفقیت حذف شد.");
             return RedirectToAction(MVC.Category.List());
         }
 
