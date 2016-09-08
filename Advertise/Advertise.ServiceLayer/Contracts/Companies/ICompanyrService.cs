@@ -98,7 +98,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// موجود بودن کمپانی در دیتابیس
         /// </summary>
-        void GetInDB();
+        void GetInDb();
 
         /// <summary>
         /// نمایش کمپانی های فعال

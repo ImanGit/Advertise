@@ -6,7 +6,38 @@ using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Feature
 {
-    interface IFeatureService
+   public  interface IFeatureService
     {
+        #region Create
+
+        /// <summary>
+        /// </summary>
+        void Create();
+
+        #endregion
+
+        #region Update
+
+        /// <summary>
+        /// </summary>
+        void Edit();
+
+        #endregion
+
+        #region Delete
+
+        /// <summary>
+        /// </summary>
+        void Delete();
+
+        #endregion
+
+        #region Retrieve
+
+        /// <summary>
+        /// </summary>
+        void Get();
+
+        #endregion
     }
 }

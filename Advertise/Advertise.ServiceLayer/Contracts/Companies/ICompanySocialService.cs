@@ -44,9 +44,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         int GetCountAllSocialComany();
 
-
-
-
         #endregion
     }
 }

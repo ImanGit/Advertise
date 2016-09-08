@@ -31,8 +31,22 @@ namespace Advertise.ServiceLayer.Contracts.Products
         #region Retrieve
 
         /// <summary>
+        /// بازدید کل محصول
         /// </summary>
-        void Get();
+        int GetCountAllVisit();
+
+        /// <summary>
+        /// تعداد بازدیدهای امروز
+        /// </summary>
+        /// <returns></returns>
+        int GetCountForToday();
+
+        /// <summary>
+        /// تعداد بازدیدهای یک ماه گذشته
+        /// </summary>
+        /// <returns></returns>
+        int GetCountForMonth();
+
 
         #endregion
     }
