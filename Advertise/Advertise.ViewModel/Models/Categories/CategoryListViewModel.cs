@@ -7,7 +7,7 @@ namespace Advertise.ViewModel.Models.Categories
     {
         public Guid Id { get; set; }
         public string Code { get; set; }
-
+        public Guid? ParentId { get; set; }
         /// <summary>
         ///     عنوان دسته بندی
         /// </summary>

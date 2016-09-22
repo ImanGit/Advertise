@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
@@ -39,9 +40,17 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <param name="viewModel"></param>
         public async Task CreateAsync(CategoryCreateViewModel viewModel)
         {
-            var category = _mapper.Map<Category>(viewModel);
-            _category.Add(category);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+            
+                var category = _mapper.Map<Category>(viewModel);
+                var review = _mapper.Map<CategoryReview>(viewModel);
+            review.AuthoredById = new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709");
+                category.Reviews.Add(review);
+                _category.Add(category);
+                await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+            
+
+
+            
         }
 
         #endregion
@@ -126,6 +135,24 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .AsNoTracking()
                 .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .ToListAsync();
+        }
+
+        public  IList<CategoryListViewModel> GetChildList(Guid? parentId)
+        {
+            return  _category
+                .AsNoTracking()
+                .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .Where(category=>category.ParentId==parentId)
+                .ToList();
+        }
+
+        public IList<CategoryListViewModel> GetParentList()
+        {
+            return _category
+                .AsNoTracking()
+                .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .Where(category => category.ParentId == null)
+                .ToList();
         }
 
         /// <summary>

@@ -42,6 +42,10 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <returns></returns>
         Task<CategoryCreateViewModel> GetForCreateAsync();
 
+        IList<CategoryListViewModel> GetChildList(Guid? parentId);
+
+        IList<CategoryListViewModel> GetParentList();
+
         /// <summary>
         /// </summary>
         /// <param name="id"></param>

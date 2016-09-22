@@ -55,7 +55,7 @@ if (notyInput == null)
 
 #line default
 #line hidden
-WriteLiteralTo(__razor_helper_writer, "    <script>\r\n        $( document ).ready(function() {\r\n\r\n");
+WriteLiteralTo(__razor_helper_writer, "    <script>\r\n        $(function () {\r\n\r\n");
 
 
 #line 16 "..\..\RazorHelpers\NotyBuilder.cshtml"

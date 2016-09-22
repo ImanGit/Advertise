@@ -10,6 +10,12 @@ namespace Advertise.DomainClasses.Entities.Categories
     /// </summary>
     public class Category : BaseEntity
     {
+        public Category()
+        {
+            Reviews = new HashSet<CategoryReview>();
+        }
+
+
         #region Properties
         
         /// <summary>
@@ -36,6 +42,11 @@ namespace Advertise.DomainClasses.Entities.Categories
         public virtual string ParentPath { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public virtual bool HasChild { get; set; }
+
+        /// <summary>
         /// </summary>
         public virtual bool IsActive { get; set; }
 
@@ -50,7 +61,7 @@ namespace Advertise.DomainClasses.Entities.Categories
 
         /// <summary>
         /// </summary>
-        public virtual Guid ParentId { get; set; }
+        public virtual Guid? ParentId { get; set; }
 
         /// <summary>
         /// </summary>

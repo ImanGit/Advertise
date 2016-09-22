@@ -27,7 +27,7 @@ namespace Advertise.Web
 
             #endregion
 
-            //routes.LowercaseUrls = true;
+            routes.LowercaseUrls = true;
             //routes.MapMvcAttributeRoutes();
             //AreaRegistration.RegisterAllAreas();
 

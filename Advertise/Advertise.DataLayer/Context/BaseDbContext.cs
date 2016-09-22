@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -198,13 +199,31 @@ namespace Advertise.DataLayer.Context
 
         public Task<int> SaveAllChangesAsync(bool invalidateCacheDependencies = true, Guid? auditUserId = null)
         {
-            if (auditUserId.HasValue)
-                UpdateAuditFields(auditUserId.Value);
-            var result = SaveChangesAsync();
-            if (!invalidateCacheDependencies) return result;
-            var changedEntityNames = GetChangedEntityNames();
-            new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
-            return result;
+            try
+            {
+                if (auditUserId.HasValue)
+                    UpdateAuditFields(auditUserId.Value);
+                var result = SaveChangesAsync();
+                if (!invalidateCacheDependencies) return result;
+                var changedEntityNames = GetChangedEntityNames();
+                new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
+                return result;
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+            
         }
 
         #endregion
