@@ -84,7 +84,29 @@ Write(Scripts.Render("~/bundles/script"));
             
             #line default
             #line hidden
-WriteLiteral("\r\n</head>\r\n<body>\r\n    <div");
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 10 "..\..\Views\Shared\_Layout.cshtml"
+Write(Styles.Render("~/Content/kendoui/css"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 11 "..\..\Views\Shared\_Layout.cshtml"
+Write(Scripts.Render("~/bundles/kendo/js"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n\r\n\r\n \r\n\r\n</head>\r\n<body>\r\n    <div");
 
 WriteLiteral(" class=\"navbar navbar-inverse navbar-fixed-top\"");
 
@@ -123,7 +145,7 @@ WriteLiteral("></span>\r\n                </button>\r\n");
 WriteLiteral("                ");
 
             
-            #line 20 "..\..\Views\Shared\_Layout.cshtml"
+            #line 27 "..\..\Views\Shared\_Layout.cshtml"
            Write(Html.ActionLink("سایت تبلیغات", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }));
 
             
@@ -147,7 +169,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 29 "..\..\Views\Shared\_Layout.cshtml"
+            #line 36 "..\..\Views\Shared\_Layout.cshtml"
    Write(RenderBody());
 
             
@@ -158,7 +180,7 @@ WriteLiteral("\r\n        <hr />\r\n        <footer>\r\n        </footer>\r\n   
 WriteLiteral("    ");
 
             
-            #line 34 "..\..\Views\Shared\_Layout.cshtml"
+            #line 41 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             
@@ -167,13 +189,13 @@ Write(RenderSection("scripts", required: false));
 WriteLiteral("\r\n");
 
             
-            #line 35 "..\..\Views\Shared\_Layout.cshtml"
+            #line 42 "..\..\Views\Shared\_Layout.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 35 "..\..\Views\Shared\_Layout.cshtml"
+            #line 42 "..\..\Views\Shared\_Layout.cshtml"
       Html.RenderPartial(MVC.Shared.Views._Noty);
             
             #line default

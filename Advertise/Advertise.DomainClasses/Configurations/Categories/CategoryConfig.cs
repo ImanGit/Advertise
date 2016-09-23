@@ -13,7 +13,7 @@ namespace Advertise.DomainClasses.Configurations.Categories
         {
             Property(category => category.Title).IsRequired().HasMaxLength(100);
             Property(category => category.Description).IsRequired().HasMaxLength(1000);
-            Property(category => category.Code).IsRequired().HasMaxLength(100);
+            Property(category => category.Code).IsOptional().HasMaxLength(100);
             //Property(category => category.RowVersion).IsRowVersion();
         }
     }

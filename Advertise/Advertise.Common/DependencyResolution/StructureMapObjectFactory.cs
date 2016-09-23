@@ -66,6 +66,7 @@ namespace Advertise.Common.DependencyResolution
                     scanner.WithDefaultConventions();
                     //scanner.AddAllTypesOf<Profile>().NameBy(item => item.FullName);
                 });
+
                 ioc.Policies.SetAllProperties(y => y.OfType<HttpContextBase>());
             });
 

@@ -51,6 +51,7 @@ namespace Advertise.Web.Controllers
         /// <param name="viewModel"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateInput(false)]
         public virtual async Task<ActionResult> Create(CategoryCreateViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -119,7 +120,6 @@ namespace Advertise.Web.Controllers
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -133,6 +133,26 @@ namespace Advertise.Web.Controllers
         {
             return View();
         }
+
+        #region AjaxCall
+
+        [HttpGet]
+        public virtual JsonResult GetCategoryList(Guid? id)
+        {
+            if (id == null)
+            {
+                //دریافت ریشه‌ها
+                return Json(
+                    _categoryService.GetParentList(),
+                    JsonRequestBehavior.AllowGet);
+            }
+            //دریافت فرزندهای یک ریشه
+            return Json(
+                _categoryService.GetChildList(id),
+                JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
 
         #region Fields
 

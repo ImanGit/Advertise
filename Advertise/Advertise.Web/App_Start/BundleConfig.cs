@@ -26,6 +26,24 @@ namespace Advertise.Web
                     "~/Scripts/Customs/noty.alerts.js",
                     "~/Scripts/Customs/site.js"));
 
+            bundles.Add(new StyleBundle("~/Content/kendoui/css")
+                .Include("~/Content/KendoUI/kendo.common.min.css",
+                "~/Content/KendoUI/kendo.rtl.min.css",
+                "~/Content/KendoUI/kendo.bootstrap.min.css"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/kendo/js")
+                .Include("~/Scripts/KendoUI/js/jquery.min.js",
+                "~/Scripts/KendoUI/js/jszip.min.js",
+                "~/Scripts/KendoUI/js/kendo.web.min.js",
+                "~/Scripts/KendoUI/js/cultures/kendo.culture.fa-IR.min.js",
+                "~/Scripts/KendoUI/js/cultures/kendo.culture.fa.min.js",
+                "~/Scripts/KendoUI/js/messages/kendo.messages.en-US.min.js",
+                "~/Scripts/Customs/kendo.datasource.js",
+                "~/Scripts/Customs/kendo.ui.js"));
+
+            
+
             BundleTable.EnableOptimizations = true;
         }
     }
