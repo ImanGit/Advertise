@@ -54,7 +54,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public async Task EditAsync(CategoryEditViewModel viewModel)
         {
-            var category = await _category.FirstAsync(model => model.Id == viewModel.Id);
+            var category = await _category.FirstAsync(model => model.Id == viewModel.Id );
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }

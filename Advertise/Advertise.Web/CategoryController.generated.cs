@@ -165,6 +165,7 @@ namespace Advertise.Web.Controllers
                 public readonly string Edit = "Edit";
                 public readonly string Find = "Find";
                 public readonly string Index = "Index";
+                public readonly string Item = "Item";
                 public readonly string List = "List";
             }
             public readonly string Create = "~/Views/Category/Create.cshtml";
@@ -173,6 +174,7 @@ namespace Advertise.Web.Controllers
             public readonly string Edit = "~/Views/Category/Edit.cshtml";
             public readonly string Find = "~/Views/Category/Find.cshtml";
             public readonly string Index = "~/Views/Category/Index.cshtml";
+            public readonly string Item = "~/Views/Category/Item.cshtml";
             public readonly string List = "~/Views/Category/List.cshtml";
         }
     }

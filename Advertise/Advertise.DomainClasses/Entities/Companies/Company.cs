@@ -30,7 +30,7 @@ namespace Advertise.DomainClasses.Entities.Companies
         public virtual string Description { get; set; }
 
         /// <summary>
-        ///     برند؟
+        ///     لوگوی شرکت
         /// </summary>
         public virtual string LogoFileName { get; set; }
 

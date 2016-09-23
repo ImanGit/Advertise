@@ -58,24 +58,20 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -85,7 +81,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -126,7 +121,7 @@
     <Compile Include="Contracts\Users\IApplicationRoleStoreService.cs" />
     <Compile Include="Contracts\Users\IApplicationUserStoreService.cs" />
     <Compile Include="Contracts\Users\IApplicationSignInManagerService.cs" />
-    <Compile Include="Contracts\Companies\ICompanyrService.cs" />
+    <Compile Include="Contracts\Companies\ICompanyService.cs" />
     <Compile Include="Contracts\Companies\ICompanyFollowService.cs" />
     <Compile Include="Contracts\Companies\ICompanyImageService.cs" />
     <Compile Include="Contracts\Companies\ICompanyQuestionService.cs" />
@@ -157,8 +152,6 @@
     <Compile Include="Contracts\Products\IProductPropertyService.cs" />
     <Compile Include="Contracts\Products\IProductReviewService.cs" />
     <Compile Include="Contracts\Products\IProductVisitService.cs" />
-    <Compile Include="Contracts\Properties\IPropertyService.cs" />
-    <Compile Include="Contracts\Properties\IPropertyOptionService.cs" />
     <Compile Include="Contracts\Roles\IRoleService.cs" />
     <Compile Include="Contracts\Roles\IRoleActionService.cs" />
     <Compile Include="Contracts\Users\IUserClaimService.cs" />
@@ -169,7 +162,6 @@
     <Compile Include="Contracts\Users\IUserService.cs" />
     <Compile Include="Contracts\Users\IUserSettingService.cs" />
     <Compile Include="Contracts\Users\IUserSocialService.cs" />
-    <Compile Include="EFServices\Common\TransactionPerRequestService.cs" />
     <Compile Include="EFServices\Common\RunAfterEachRequestService.cs" />
     <Compile Include="EFServices\Common\RunAtInitService.cs" />
     <Compile Include="EFServices\Common\RunAtStartUpService.cs" />
@@ -201,7 +193,7 @@
     <Compile Include="EFServices\Companies\CompanyQuestionLikeService.cs" />
     <Compile Include="EFServices\Companies\CompanyQuestionService.cs" />
     <Compile Include="EFServices\Companies\CompanyReviewService.cs" />
-    <Compile Include="EFServices\Companies\CompanyServicer.cs" />
+    <Compile Include="EFServices\Companies\CompanyService.cs" />
     <Compile Include="EFServices\Companies\CompanySocialService.cs" />
     <Compile Include="EFServices\Companies\CompanyVisitService.cs" />
     <Compile Include="EFServices\Public\ConversationService.cs" />
@@ -220,8 +212,6 @@
     <Compile Include="EFServices\Products\ProductReviewService.cs" />
     <Compile Include="EFServices\Products\ProductServicer.cs" />
     <Compile Include="EFServices\Products\ProductVisitService.cs" />
-    <Compile Include="EFServices\Properties\PropertyOptionService.cs" />
-    <Compile Include="EFServices\Properties\PropertyService.cs" />
     <Compile Include="EFServices\Roles\RoleActionService.cs" />
     <Compile Include="EFServices\Roles\RoleService.cs" />
     <Compile Include="EFServices\Public\ShareService.cs" />

@@ -20,6 +20,21 @@ namespace Advertise.ServiceLayer.EFServices.Products
             throw new NotImplementedException();
         }
 
+        public int GetCountAllVisit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountForToday()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountForMonth()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Get()
         {
             throw new NotImplementedException();

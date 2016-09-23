@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -64,14 +60,43 @@
     <Compile Include="Models\Categories\CategoryCreateViewModel.cs" />
     <Compile Include="Models\Categories\CategoryDeleteViewModel.cs" />
     <Compile Include="Models\Categories\CategoryDetailsViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryFollow\CategoryFollowEditViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryFollow\CategoryFollowCreateViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryFollow\CategoryFollowIndexViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryFollow\CategoryFollowListViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryFollow\CategoryFollowViewModel.cs" />
     <Compile Include="Models\Categories\CategoryIndexViewModel.cs" />
     <Compile Include="Models\Categories\CategoryItemViewModel.cs" />
     <Compile Include="Models\Categories\CategoryListViewModel.cs" />
     <Compile Include="Models\Categories\CategoryFindViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryReview\CategoryReviewCreateViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryReview\CategoryReviewDeleteViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryReview\CategoryReviewDetailsViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryReview\CategoryReviewEditViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryReview\CategoryReviewListViewModel.cs" />
+    <Compile Include="Models\Categories\CategoryReview\CategoryReViewViewModel.cs" />
     <Compile Include="Models\Categories\CategoryViewModel.cs" />
     <Compile Include="Models\Categories\CategoryEditViewModel.cs" />
     <Compile Include="Models\Common\BaseViewModel.cs" />
     <Compile Include="Models\Common\ViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentIndexViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyDetailsViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyFindViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyFollow\CompanyFollowCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyFollow\CompanyFollowEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyFollow\CompanyFollowIndexViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyFollow\CompanyFollowListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyIndexViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyItemViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyViewModel.cs" />
     <Compile Include="Models\Users\ForgetPasswordViewModel.cs" />
     <Compile Include="Models\Users\SignUpViewModel.cs" />
     <Compile Include="Models\Users\SingInViewModel.cs" />
@@ -84,7 +109,6 @@
     <Compile Include="Models\Users\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Companies\" />
     <Folder Include="Models\Products\" />
   </ItemGroup>
   <ItemGroup>

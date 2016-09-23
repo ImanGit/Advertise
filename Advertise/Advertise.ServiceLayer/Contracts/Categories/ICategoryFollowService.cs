@@ -1,4 +1,8 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Categories.CategoryFollow;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Categories
 {
@@ -6,10 +10,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
     {
         #region Create
 
-        /// <summary>
-        ///     ایجاد کردن فالو برای اولین بار
-        /// </summary>
-        bool Create();
+                Task CreateAsync(CategoryFollowCreateViewModel  viewModel);
 
         #endregion
 
@@ -22,6 +23,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// </summary>
         bool EditFollowOrUnFollow();
 
+        Task EditAsync(CategoryFollowEditViewModel viewModel);
         #endregion
 
         #region Delete
@@ -80,6 +82,14 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <returns></returns>
         long GetMaxOrMinCategory();
 
+        #endregion
+
+        #region Read
+        Task<CategoryFollowCreateViewModel> GetForCreateAsync();
+
+        Task<CategoryFollowEditViewModel > GetForEditAsync(Guid id);
+
+        Task<IEnumerable<CategoryFollowListViewModel>> GetListAsync();
         #endregion
     }
 }

@@ -10,8 +10,8 @@ namespace Advertise.ViewModel.Models.Categories
         public Guid Id { get; set; }
 
         [DisplayName("کد شناسه")]
-        [Required(ErrorMessage = "لطفا کد شناسه را وارد کنید")]
-        [StringLength(50, ErrorMessage = "کد شناسه باید کمتر از ۵۰ کاراکتر باشد")]
+       // [Required(ErrorMessage = "لطفا کد شناسه را وارد کنید")]
+        //[StringLength(50, ErrorMessage = "کد شناسه باید کمتر از ۵۰ کاراکتر باشد")]
         public string Code { get; set; }
 
         /// <summary>

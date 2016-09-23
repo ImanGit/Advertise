@@ -6,6 +6,7 @@ namespace Advertise.ViewModel.Models.Categories
 {
     public class CategoryCreateViewModel : BaseViewModel
     {
+
         [DisplayName("کد شناسه")]
         [Required(ErrorMessage = "لطفا کد شناسه را وارد کنید")]
         [StringLength(50, ErrorMessage = "کد شناسه باید کمتر از ۵۰ کاراکتر باشد")]

@@ -13,7 +13,7 @@ namespace Advertise.DataLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201609011151252_init"; }
+            get { return "201609081115465_init"; }
         }
         
         string IMigrationMetadata.Source

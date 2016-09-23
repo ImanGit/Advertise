@@ -1,8 +1,7 @@
-﻿@using Advertise.Common.Noty
-@model Advertise.ViewModel.Models.Categories.CategoryCreateViewModel
+﻿@model Advertise.ViewModel.Models.Categories.CategoryCreateViewModel
 
 @{
-    ViewBag.Title = "ایجاد";
+    ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
@@ -12,9 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ایجاد دسته جدید</h4>
-      
-
+        <h4>CategoryCreateViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -67,11 +64,9 @@
             </div>
         </div>
 
-        <div id="tree"></div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="ثبت" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

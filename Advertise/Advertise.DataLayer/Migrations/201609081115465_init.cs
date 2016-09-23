@@ -31,8 +31,8 @@ namespace Advertise.DataLayer.Migrations
                         RoleAction_IsActive = c.Boolean(nullable: false),
                         RoleAction_RoleId = c.Guid(nullable: false),
                         RoleAction_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        RoleAction_CreatedOn = c.DateTime(nullable: false),
-                        RoleAction_ModifiedOn = c.DateTime(nullable: false),
+                        RoleAction_CreatedOn = c.DateTime(),
+                        RoleAction_ModifiedOn = c.DateTime(),
                         RoleAction_CreatorIp = c.String(),
                         RoleAction_ModifierIp = c.String(),
                         RoleAction_ModifyLocked = c.Boolean(nullable: false),
@@ -47,7 +47,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.RoleAction_Id)
                 .ForeignKey("dbo.AD_Users", t => t.RoleAction_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.RoleAction_ModifiedById)
-                .ForeignKey("dbo.AD_Roles", t => t.RoleAction_RoleId)
+                .ForeignKey("dbo.AD_Roles", t => t.RoleAction_RoleId, cascadeDelete: true)
                 .Index(t => t.RoleAction_RoleId)
                 .Index(t => t.RoleAction_ModifiedById)
                 .Index(t => t.RoleAction_CreatedById);
@@ -94,8 +94,8 @@ namespace Advertise.DataLayer.Migrations
                         UserBudget_Description = c.String(),
                         UserBudget_OwnedById = c.Guid(nullable: false),
                         UserBudget_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        UserBudget_CreatedOn = c.DateTime(nullable: false),
-                        UserBudget_ModifiedOn = c.DateTime(nullable: false),
+                        UserBudget_CreatedOn = c.DateTime(),
+                        UserBudget_ModifiedOn = c.DateTime(),
                         UserBudget_CreatorIp = c.String(),
                         UserBudget_ModifierIp = c.String(),
                         UserBudget_ModifyLocked = c.Boolean(nullable: false),
@@ -111,7 +111,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.UserBudget_Id)
                 .ForeignKey("dbo.AD_Users", t => t.UserBudget_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.UserBudget_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.UserBudget_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.UserBudget_OwnedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.UserBudget_OwnedById)
                 .Index(t => t.UserBudget_ModifiedById)
@@ -128,8 +128,8 @@ namespace Advertise.DataLayer.Migrations
                         FeatureOrder_UserBudgetId = c.Guid(nullable: false),
                         FeatureOrder_FeatureId = c.Guid(nullable: false),
                         FeatureOrder_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        FeatureOrder_CreatedOn = c.DateTime(nullable: false),
-                        FeatureOrder_ModifiedOn = c.DateTime(nullable: false),
+                        FeatureOrder_CreatedOn = c.DateTime(),
+                        FeatureOrder_ModifiedOn = c.DateTime(),
                         FeatureOrder_CreatorIp = c.String(),
                         FeatureOrder_ModifierIp = c.String(),
                         FeatureOrder_ModifyLocked = c.Boolean(nullable: false),
@@ -143,10 +143,10 @@ namespace Advertise.DataLayer.Migrations
                     })
                 .PrimaryKey(t => t.FeatureOrder_Id)
                 .ForeignKey("dbo.AD_Users", t => t.FeatureOrder_CreatedById)
-                .ForeignKey("dbo.AD_Features", t => t.FeatureOrder_FeatureId)
+                .ForeignKey("dbo.AD_Features", t => t.FeatureOrder_FeatureId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.FeatureOrder_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.FeatureOrder_OrderedById)
-                .ForeignKey("dbo.AD_UserBudgets", t => t.FeatureOrder_UserBudgetId)
+                .ForeignKey("dbo.AD_Users", t => t.FeatureOrder_OrderedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_UserBudgets", t => t.FeatureOrder_UserBudgetId, cascadeDelete: true)
                 .Index(t => t.FeatureOrder_OrderedById)
                 .Index(t => t.FeatureOrder_UserBudgetId)
                 .Index(t => t.FeatureOrder_FeatureId)
@@ -169,8 +169,8 @@ namespace Advertise.DataLayer.Migrations
                         Feature_StartedOn = c.DateTime(nullable: false),
                         Feature_ExpiredOn = c.DateTime(nullable: false),
                         Feature_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Feature_CreatedOn = c.DateTime(nullable: false),
-                        Feature_ModifiedOn = c.DateTime(nullable: false),
+                        Feature_CreatedOn = c.DateTime(),
+                        Feature_ModifiedOn = c.DateTime(),
                         Feature_CreatorIp = c.String(),
                         Feature_ModifierIp = c.String(),
                         Feature_ModifyLocked = c.Boolean(nullable: false),
@@ -199,8 +199,8 @@ namespace Advertise.DataLayer.Migrations
                         TagOrder_TagId = c.Guid(nullable: false),
                         TagOrder_ProductId = c.Guid(nullable: false),
                         TagOrder_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        TagOrder_CreatedOn = c.DateTime(nullable: false),
-                        TagOrder_ModifiedOn = c.DateTime(nullable: false),
+                        TagOrder_CreatedOn = c.DateTime(),
+                        TagOrder_ModifiedOn = c.DateTime(),
                         TagOrder_CreatorIp = c.String(),
                         TagOrder_ModifierIp = c.String(),
                         TagOrder_ModifyLocked = c.Boolean(nullable: false),
@@ -215,10 +215,10 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.TagOrder_Id)
                 .ForeignKey("dbo.AD_Users", t => t.TagOrder_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.TagOrder_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.TagOrder_OrderedById)
-                .ForeignKey("dbo.AD_Products", t => t.TagOrder_ProductId)
-                .ForeignKey("dbo.AD_Tags", t => t.TagOrder_TagId)
-                .ForeignKey("dbo.AD_UserBudgets", t => t.TagOrder_UserBudgetId)
+                .ForeignKey("dbo.AD_Users", t => t.TagOrder_OrderedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Products", t => t.TagOrder_ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Tags", t => t.TagOrder_TagId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_UserBudgets", t => t.TagOrder_UserBudgetId, cascadeDelete: true)
                 .Index(t => t.TagOrder_OrderedById)
                 .Index(t => t.TagOrder_UserBudgetId)
                 .Index(t => t.TagOrder_TagId)
@@ -248,8 +248,8 @@ namespace Advertise.DataLayer.Migrations
                         Product_CategoryId = c.Guid(nullable: false),
                         Product_CompanyId = c.Guid(nullable: false),
                         Product_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Product_CreatedOn = c.DateTime(nullable: false),
-                        Product_ModifiedOn = c.DateTime(nullable: false),
+                        Product_CreatedOn = c.DateTime(),
+                        Product_ModifiedOn = c.DateTime(),
                         Product_CreatorIp = c.String(),
                         Product_ModifierIp = c.String(),
                         Product_ModifyLocked = c.Boolean(nullable: false),
@@ -263,13 +263,13 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Product_Id)
-                .ForeignKey("dbo.AD_Addresses", t => t.Product_AddressId)
-                .ForeignKey("dbo.AD_Users", t => t.Product_ApprovedById)
-                .ForeignKey("dbo.AD_Categories", t => t.Product_CategoryId)
-                .ForeignKey("dbo.AD_Companies", t => t.Product_CompanyId)
+                .ForeignKey("dbo.AD_Addresses", t => t.Product_AddressId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.Product_ApprovedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Categories", t => t.Product_CategoryId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Companies", t => t.Product_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.Product_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Product_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Product_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.Product_OwnedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.Product_OwnedById)
                 .Index(t => t.Product_ApprovedById)
@@ -291,8 +291,8 @@ namespace Advertise.DataLayer.Migrations
                         Address_PostalCode = c.String(),
                         Address_CityId = c.Guid(nullable: false),
                         Address_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Address_CreatedOn = c.DateTime(nullable: false),
-                        Address_ModifiedOn = c.DateTime(nullable: false),
+                        Address_CreatedOn = c.DateTime(),
+                        Address_ModifiedOn = c.DateTime(),
                         Address_CreatorIp = c.String(),
                         Address_ModifierIp = c.String(),
                         Address_ModifyLocked = c.Boolean(nullable: false),
@@ -305,7 +305,7 @@ namespace Advertise.DataLayer.Migrations
                         Address_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.Address_Id)
-                .ForeignKey("dbo.AD_Cities", t => t.Address_CityId)
+                .ForeignKey("dbo.AD_Cities", t => t.Address_CityId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.Address_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Address_ModifiedById)
                 .Index(t => t.Address_CityId)
@@ -323,8 +323,8 @@ namespace Advertise.DataLayer.Migrations
                         City_ParentPath = c.String(),
                         City_ParentId = c.Guid(nullable: false),
                         City_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        City_CreatedOn = c.DateTime(nullable: false),
-                        City_ModifiedOn = c.DateTime(nullable: false),
+                        City_CreatedOn = c.DateTime(),
+                        City_ModifiedOn = c.DateTime(),
                         City_CreatorIp = c.String(),
                         City_ModifierIp = c.String(),
                         City_ModifyLocked = c.Boolean(nullable: false),
@@ -357,8 +357,8 @@ namespace Advertise.DataLayer.Migrations
                         Category_IsActive = c.Boolean(nullable: false),
                         Category_ParentId = c.Guid(nullable: false),
                         Category_RowVersion = c.Binary(),
-                        Category_CreatedOn = c.DateTime(nullable: false),
-                        Category_ModifiedOn = c.DateTime(nullable: false),
+                        Category_CreatedOn = c.DateTime(),
+                        Category_ModifiedOn = c.DateTime(),
                         Category_CreatorIp = c.String(),
                         Category_ModifierIp = c.String(),
                         Category_ModifyLocked = c.Boolean(nullable: false),
@@ -397,8 +397,8 @@ namespace Advertise.DataLayer.Migrations
                         Company_OwnedById = c.Guid(nullable: false),
                         Company_AddressId = c.Guid(nullable: false),
                         Company_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Company_CreatedOn = c.DateTime(nullable: false),
-                        Company_ModifiedOn = c.DateTime(nullable: false),
+                        Company_CreatedOn = c.DateTime(),
+                        Company_ModifiedOn = c.DateTime(),
                         Company_CreatorIp = c.String(),
                         Company_ModifierIp = c.String(),
                         Company_ModifyLocked = c.Boolean(nullable: false),
@@ -412,10 +412,10 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Company_Id)
-                .ForeignKey("dbo.AD_Addresses", t => t.Company_AddressId)
+                .ForeignKey("dbo.AD_Addresses", t => t.Company_AddressId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.Company_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Company_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Company_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.Company_OwnedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.Company_OwnedById)
                 .Index(t => t.Company_AddressId)
@@ -439,8 +439,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyAttachment_OwnedById = c.Guid(nullable: false),
                         CompanyAttachment_CompanyId = c.Guid(nullable: false),
                         CompanyAttachment_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyAttachment_CreatedOn = c.DateTime(nullable: false),
-                        CompanyAttachment_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyAttachment_CreatedOn = c.DateTime(),
+                        CompanyAttachment_ModifiedOn = c.DateTime(),
                         CompanyAttachment_CreatorIp = c.String(),
                         CompanyAttachment_ModifierIp = c.String(),
                         CompanyAttachment_ModifyLocked = c.Boolean(nullable: false),
@@ -453,10 +453,10 @@ namespace Advertise.DataLayer.Migrations
                         CompanyAttachment_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyAttachment_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyAttachment_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyAttachment_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyAttachment_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyAttachment_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyAttachment_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyAttachment_OwnedById, cascadeDelete: true)
                 .Index(t => t.CompanyAttachment_OwnedById)
                 .Index(t => t.CompanyAttachment_CompanyId)
                 .Index(t => t.CompanyAttachment_ModifiedById)
@@ -471,8 +471,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyFollow_FollowedById = c.Guid(nullable: false),
                         CompanyFollow_CompanyId = c.Guid(nullable: false),
                         CompanyFollow_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyFollow_CreatedOn = c.DateTime(nullable: false),
-                        CompanyFollow_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyFollow_CreatedOn = c.DateTime(),
+                        CompanyFollow_ModifiedOn = c.DateTime(),
                         CompanyFollow_CreatorIp = c.String(),
                         CompanyFollow_ModifierIp = c.String(),
                         CompanyFollow_ModifyLocked = c.Boolean(nullable: false),
@@ -486,9 +486,9 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyFollow_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyFollow_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyFollow_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyFollow_CreatedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyFollow_FollowedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyFollow_FollowedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyFollow_ModifiedById)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.CompanyFollow_FollowedById)
@@ -509,8 +509,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyImage_Order = c.Int(nullable: false),
                         CompanyImage_CompanyId = c.Guid(nullable: false),
                         CompanyImage_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyImage_CreatedOn = c.DateTime(nullable: false),
-                        CompanyImage_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyImage_CreatedOn = c.DateTime(),
+                        CompanyImage_ModifiedOn = c.DateTime(),
                         CompanyImage_CreatorIp = c.String(),
                         CompanyImage_ModifierIp = c.String(),
                         CompanyImage_ModifyLocked = c.Boolean(nullable: false),
@@ -523,7 +523,7 @@ namespace Advertise.DataLayer.Migrations
                         CompanyImage_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyImage_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyImage_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyImage_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyImage_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyImage_ModifiedById)
                 .Index(t => t.CompanyImage_CompanyId)
@@ -539,8 +539,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyModerator_ModeratedById = c.Guid(nullable: false),
                         CompanyModerator_CompanyId = c.Guid(nullable: false),
                         CompanyModerator_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyModerator_CreatedOn = c.DateTime(nullable: false),
-                        CompanyModerator_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyModerator_CreatedOn = c.DateTime(),
+                        CompanyModerator_ModifiedOn = c.DateTime(),
                         CompanyModerator_CreatorIp = c.String(),
                         CompanyModerator_ModifierIp = c.String(),
                         CompanyModerator_ModifyLocked = c.Boolean(nullable: false),
@@ -553,9 +553,9 @@ namespace Advertise.DataLayer.Migrations
                         CompanyModerator_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyModerator_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyModerator_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyModerator_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyModerator_CreatedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyModerator_ModeratedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyModerator_ModeratedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyModerator_ModifiedById)
                 .Index(t => t.CompanyModerator_ModeratedById)
                 .Index(t => t.CompanyModerator_CompanyId)
@@ -574,8 +574,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyQuestion_CompanyId = c.Guid(nullable: false),
                         CompanyQuestion_QuestionedById = c.Guid(nullable: false),
                         CompanyQuestion_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyQuestion_CreatedOn = c.DateTime(nullable: false),
-                        CompanyQuestion_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyQuestion_CreatedOn = c.DateTime(),
+                        CompanyQuestion_ModifiedOn = c.DateTime(),
                         CompanyQuestion_CreatorIp = c.String(),
                         CompanyQuestion_ModifierIp = c.String(),
                         CompanyQuestion_ModifyLocked = c.Boolean(nullable: false),
@@ -589,10 +589,10 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyQuestion_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyQuestion_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyQuestion_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyQuestion_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyQuestion_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyQuestion_QuestionedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyQuestion_QuestionedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_CompanyQuestions", t => t.CompanyQuestion_ReplyId)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.CompanyQuestion_ReplyId)
@@ -612,8 +612,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyQuestionLike_LikedById = c.Guid(nullable: false),
                         CompanyQuestionLike_QuestionId = c.Guid(nullable: false),
                         CompanyQuestionLike_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyQuestionLike_CreatedOn = c.DateTime(nullable: false),
-                        CompanyQuestionLike_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyQuestionLike_CreatedOn = c.DateTime(),
+                        CompanyQuestionLike_ModifiedOn = c.DateTime(),
                         CompanyQuestionLike_CreatorIp = c.String(),
                         CompanyQuestionLike_ModifierIp = c.String(),
                         CompanyQuestionLike_ModifyLocked = c.Boolean(nullable: false),
@@ -627,9 +627,9 @@ namespace Advertise.DataLayer.Migrations
                     })
                 .PrimaryKey(t => t.CompanyQuestionLike_Id)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionLike_CreatedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionLike_LikedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionLike_LikedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionLike_ModifiedById)
-                .ForeignKey("dbo.AD_CompanyQuestions", t => t.CompanyQuestionLike_QuestionId)
+                .ForeignKey("dbo.AD_CompanyQuestions", t => t.CompanyQuestionLike_QuestionId, cascadeDelete: true)
                 .Index(t => t.CompanyQuestionLike_LikedById)
                 .Index(t => t.CompanyQuestionLike_QuestionId)
                 .Index(t => t.CompanyQuestionLike_ModifiedById)
@@ -646,8 +646,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyQuestionReport_ReportedById = c.Guid(nullable: false),
                         CompanyQuestionReport_ReportedForId = c.Guid(nullable: false),
                         CompanyQuestionReport_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyQuestionReport_CreatedOn = c.DateTime(nullable: false),
-                        CompanyQuestionReport_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyQuestionReport_CreatedOn = c.DateTime(),
+                        CompanyQuestionReport_ModifiedOn = c.DateTime(),
                         CompanyQuestionReport_CreatorIp = c.String(),
                         CompanyQuestionReport_ModifierIp = c.String(),
                         CompanyQuestionReport_ModifyLocked = c.Boolean(nullable: false),
@@ -662,8 +662,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.CompanyQuestionReport_Id)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionReport_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionReport_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionReport_ReportedById)
-                .ForeignKey("dbo.AD_CompanyQuestions", t => t.CompanyQuestionReport_ReportedForId)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyQuestionReport_ReportedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_CompanyQuestions", t => t.CompanyQuestionReport_ReportedForId, cascadeDelete: true)
                 .Index(t => t.CompanyQuestionReport_ReportedById)
                 .Index(t => t.CompanyQuestionReport_ReportedForId)
                 .Index(t => t.CompanyQuestionReport_ModifiedById)
@@ -680,8 +680,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyReport_ReportedById = c.Guid(nullable: false),
                         CompanyReport_ReportedForId = c.Guid(nullable: false),
                         CompanyReport_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyReport_CreatedOn = c.DateTime(nullable: false),
-                        CompanyReport_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyReport_CreatedOn = c.DateTime(),
+                        CompanyReport_ModifiedOn = c.DateTime(),
                         CompanyReport_CreatorIp = c.String(),
                         CompanyReport_ModifierIp = c.String(),
                         CompanyReport_ModifyLocked = c.Boolean(nullable: false),
@@ -696,8 +696,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.CompanyReport_Id)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyReport_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyReport_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyReport_ReportedById)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyReport_ReportedForId)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyReport_ReportedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyReport_ReportedForId, cascadeDelete: true)
                 .Index(t => t.CompanyReport_ReportedById)
                 .Index(t => t.CompanyReport_ReportedForId)
                 .Index(t => t.CompanyReport_ModifiedById)
@@ -709,11 +709,13 @@ namespace Advertise.DataLayer.Migrations
                     {
                         CompanyReview_Id = c.Guid(nullable: false),
                         CompanyReview_Body = c.String(nullable: false, maxLength: 1000),
-                        CompanyReview_IsActive = c.Boolean(nullable: false),
+                        CompanyReview_Active = c.Boolean(nullable: false),
                         CompanyReview_CompanyId = c.Guid(nullable: false),
+                        CompanyReview_OwnerId = c.Guid(nullable: false),
+                        CompanyReview_ApproverId = c.Guid(nullable: false),
                         CompanyReview_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyReview_CreatedOn = c.DateTime(nullable: false),
-                        CompanyReview_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyReview_CreatedOn = c.DateTime(),
+                        CompanyReview_ModifiedOn = c.DateTime(),
                         CompanyReview_CreatorIp = c.String(),
                         CompanyReview_ModifierIp = c.String(),
                         CompanyReview_ModifyLocked = c.Boolean(nullable: false),
@@ -727,11 +729,15 @@ namespace Advertise.DataLayer.Migrations
                         Product_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyReview_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyReview_CompanyId)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyReview_ApproverId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyReview_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyReview_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyReview_ModifiedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyReview_OwnerId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Products", t => t.Product_Id)
                 .Index(t => t.CompanyReview_CompanyId)
+                .Index(t => t.CompanyReview_OwnerId)
+                .Index(t => t.CompanyReview_ApproverId)
                 .Index(t => t.CompanyReview_ModifiedById)
                 .Index(t => t.CompanyReview_CreatedById)
                 .Index(t => t.Product_Id);
@@ -747,8 +753,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanySocial_YoutubeLink = c.String(maxLength: 100),
                         CompanySocial_CompanyId = c.Guid(nullable: false),
                         CompanySocial_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanySocial_CreatedOn = c.DateTime(nullable: false),
-                        CompanySocial_ModifiedOn = c.DateTime(nullable: false),
+                        CompanySocial_CreatedOn = c.DateTime(),
+                        CompanySocial_ModifiedOn = c.DateTime(),
                         CompanySocial_CreatorIp = c.String(),
                         CompanySocial_ModifierIp = c.String(),
                         CompanySocial_ModifyLocked = c.Boolean(nullable: false),
@@ -761,7 +767,7 @@ namespace Advertise.DataLayer.Migrations
                         CompanySocial_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanySocial_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanySocial_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanySocial_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanySocial_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanySocial_ModifiedById)
                 .Index(t => t.CompanySocial_CompanyId)
@@ -777,8 +783,8 @@ namespace Advertise.DataLayer.Migrations
                         CompanyVisit_VisitedById = c.Guid(nullable: false),
                         CompanyVisit_CompanyId = c.Guid(nullable: false),
                         CompanyVisit_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CompanyVisit_CreatedOn = c.DateTime(nullable: false),
-                        CompanyVisit_ModifiedOn = c.DateTime(nullable: false),
+                        CompanyVisit_CreatedOn = c.DateTime(),
+                        CompanyVisit_ModifiedOn = c.DateTime(),
                         CompanyVisit_CreatorIp = c.String(),
                         CompanyVisit_ModifierIp = c.String(),
                         CompanyVisit_ModifyLocked = c.Boolean(nullable: false),
@@ -792,10 +798,10 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.CompanyVisit_Id)
-                .ForeignKey("dbo.AD_Companies", t => t.CompanyVisit_CompanyId)
+                .ForeignKey("dbo.AD_Companies", t => t.CompanyVisit_CompanyId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyVisit_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CompanyVisit_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.CompanyVisit_VisitedById)
+                .ForeignKey("dbo.AD_Users", t => t.CompanyVisit_VisitedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.CompanyVisit_VisitedById)
                 .Index(t => t.CompanyVisit_CompanyId)
@@ -812,8 +818,8 @@ namespace Advertise.DataLayer.Migrations
                         CategoryFollow_FollowedById = c.Guid(nullable: false),
                         CategoryFollow_CategoryId = c.Guid(nullable: false),
                         CategoryFollow_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CategoryFollow_CreatedOn = c.DateTime(nullable: false),
-                        CategoryFollow_ModifiedOn = c.DateTime(nullable: false),
+                        CategoryFollow_CreatedOn = c.DateTime(),
+                        CategoryFollow_ModifiedOn = c.DateTime(),
                         CategoryFollow_CreatorIp = c.String(),
                         CategoryFollow_ModifierIp = c.String(),
                         CategoryFollow_ModifyLocked = c.Boolean(nullable: false),
@@ -826,9 +832,9 @@ namespace Advertise.DataLayer.Migrations
                         CategoryFollow_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.CategoryFollow_Id)
-                .ForeignKey("dbo.AD_Categories", t => t.CategoryFollow_CategoryId)
+                .ForeignKey("dbo.AD_Categories", t => t.CategoryFollow_CategoryId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CategoryFollow_CreatedById)
-                .ForeignKey("dbo.AD_Users", t => t.CategoryFollow_FollowedById)
+                .ForeignKey("dbo.AD_Users", t => t.CategoryFollow_FollowedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CategoryFollow_ModifiedById)
                 .Index(t => t.CategoryFollow_FollowedById)
                 .Index(t => t.CategoryFollow_CategoryId)
@@ -845,8 +851,8 @@ namespace Advertise.DataLayer.Migrations
                         CategoryReview_AuthoredById = c.Guid(nullable: false),
                         CategoryReview_CategoryId = c.Guid(nullable: false),
                         CategoryReview_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        CategoryReview_CreatedOn = c.DateTime(nullable: false),
-                        CategoryReview_ModifiedOn = c.DateTime(nullable: false),
+                        CategoryReview_CreatedOn = c.DateTime(),
+                        CategoryReview_ModifiedOn = c.DateTime(),
                         CategoryReview_CreatorIp = c.String(),
                         CategoryReview_ModifierIp = c.String(),
                         CategoryReview_ModifyLocked = c.Boolean(nullable: false),
@@ -859,8 +865,8 @@ namespace Advertise.DataLayer.Migrations
                         CategoryReview_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.CategoryReview_Id)
-                .ForeignKey("dbo.AD_Users", t => t.CategoryReview_AuthoredById)
-                .ForeignKey("dbo.AD_Categories", t => t.CategoryReview_CategoryId)
+                .ForeignKey("dbo.AD_Users", t => t.CategoryReview_AuthoredById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Categories", t => t.CategoryReview_CategoryId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.CategoryReview_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.CategoryReview_ModifiedById)
                 .Index(t => t.CategoryReview_AuthoredById)
@@ -880,8 +886,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductComment_ApprovedById = c.Guid(nullable: false),
                         ProductComment_ProductId = c.Guid(nullable: false),
                         ProductComment_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductComment_CreatedOn = c.DateTime(nullable: false),
-                        ProductComment_ModifiedOn = c.DateTime(nullable: false),
+                        ProductComment_CreatedOn = c.DateTime(),
+                        ProductComment_ModifiedOn = c.DateTime(),
                         ProductComment_CreatorIp = c.String(),
                         ProductComment_ModifierIp = c.String(),
                         ProductComment_ModifyLocked = c.Boolean(nullable: false),
@@ -895,11 +901,11 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.ProductComment_Id)
-                .ForeignKey("dbo.AD_Users", t => t.ProductComment_ApprovedById)
-                .ForeignKey("dbo.AD_Users", t => t.ProductComment_CommentedById)
+                .ForeignKey("dbo.AD_Users", t => t.ProductComment_ApprovedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.ProductComment_CommentedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.ProductComment_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductComment_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductComment_ProductId)
+                .ForeignKey("dbo.AD_Products", t => t.ProductComment_ProductId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.ProductComment_CommentedById)
                 .Index(t => t.ProductComment_ApprovedById)
@@ -921,8 +927,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductImage_IsWatermarked = c.Boolean(nullable: false),
                         ProductImage_ProductId = c.Guid(nullable: false),
                         ProductImage_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductImage_CreatedOn = c.DateTime(nullable: false),
-                        ProductImage_ModifiedOn = c.DateTime(nullable: false),
+                        ProductImage_CreatedOn = c.DateTime(),
+                        ProductImage_ModifiedOn = c.DateTime(),
                         ProductImage_CreatorIp = c.String(),
                         ProductImage_ModifierIp = c.String(),
                         ProductImage_ModifyLocked = c.Boolean(nullable: false),
@@ -938,7 +944,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductImage_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductImage_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductImage_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductImage_ProductId)
+                .ForeignKey("dbo.AD_Products", t => t.ProductImage_ProductId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.ProductImage_ProductId)
                 .Index(t => t.ProductImage_ModifiedById)
@@ -955,8 +961,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductLike_LikedById = c.Guid(nullable: false),
                         ProductLike_ProductId = c.Guid(nullable: false),
                         ProductLike_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductLike_CreatedOn = c.DateTime(nullable: false),
-                        ProductLike_ModifiedOn = c.DateTime(nullable: false),
+                        ProductLike_CreatedOn = c.DateTime(),
+                        ProductLike_ModifiedOn = c.DateTime(),
                         ProductLike_CreatorIp = c.String(),
                         ProductLike_ModifierIp = c.String(),
                         ProductLike_ModifyLocked = c.Boolean(nullable: false),
@@ -971,9 +977,9 @@ namespace Advertise.DataLayer.Migrations
                     })
                 .PrimaryKey(t => t.ProductLike_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductLike_CreatedById)
-                .ForeignKey("dbo.AD_Users", t => t.ProductLike_LikedById)
+                .ForeignKey("dbo.AD_Users", t => t.ProductLike_LikedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.ProductLike_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductLike_ProductId)
+                .ForeignKey("dbo.AD_Products", t => t.ProductLike_ProductId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.ProductLike_LikedById)
                 .Index(t => t.ProductLike_ProductId)
@@ -990,8 +996,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductSpecification_ProductId = c.Guid(nullable: false),
                         ProductSpecification_SpecificationId = c.Guid(nullable: false),
                         ProductSpecification_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductSpecification_CreatedOn = c.DateTime(nullable: false),
-                        ProductSpecification_ModifiedOn = c.DateTime(nullable: false),
+                        ProductSpecification_CreatedOn = c.DateTime(),
+                        ProductSpecification_ModifiedOn = c.DateTime(),
                         ProductSpecification_CreatorIp = c.String(),
                         ProductSpecification_ModifierIp = c.String(),
                         ProductSpecification_ModifyLocked = c.Boolean(nullable: false),
@@ -1006,8 +1012,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductSpecification_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductSpecification_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductSpecification_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductSpecification_ProductId)
-                .ForeignKey("dbo.AD_Specifications", t => t.ProductSpecification_SpecificationId)
+                .ForeignKey("dbo.AD_Products", t => t.ProductSpecification_ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Specifications", t => t.ProductSpecification_SpecificationId, cascadeDelete: true)
                 .Index(t => t.ProductSpecification_ProductId)
                 .Index(t => t.ProductSpecification_SpecificationId)
                 .Index(t => t.ProductSpecification_ModifiedById)
@@ -1024,8 +1030,8 @@ namespace Advertise.DataLayer.Migrations
                         Specification_Order = c.Int(nullable: false),
                         Specification_CategoryId = c.Guid(nullable: false),
                         Specification_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Specification_CreatedOn = c.DateTime(nullable: false),
-                        Specification_ModifiedOn = c.DateTime(nullable: false),
+                        Specification_CreatedOn = c.DateTime(),
+                        Specification_ModifiedOn = c.DateTime(),
                         Specification_CreatorIp = c.String(),
                         Specification_ModifierIp = c.String(),
                         Specification_ModifyLocked = c.Boolean(nullable: false),
@@ -1038,7 +1044,7 @@ namespace Advertise.DataLayer.Migrations
                         Specification_CreatedById = c.Guid(),
                     })
                 .PrimaryKey(t => t.Specification_Id)
-                .ForeignKey("dbo.AD_Categories", t => t.Specification_CategoryId)
+                .ForeignKey("dbo.AD_Categories", t => t.Specification_CategoryId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.Specification_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Specification_ModifiedById)
                 .Index(t => t.Specification_CategoryId)
@@ -1056,8 +1062,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductReport_ReportedById = c.Guid(nullable: false),
                         ProductReport_ReportedForId = c.Guid(nullable: false),
                         ProductReport_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductReport_CreatedOn = c.DateTime(nullable: false),
-                        ProductReport_ModifiedOn = c.DateTime(nullable: false),
+                        ProductReport_CreatedOn = c.DateTime(),
+                        ProductReport_ModifiedOn = c.DateTime(),
                         ProductReport_CreatorIp = c.String(),
                         ProductReport_ModifierIp = c.String(),
                         ProductReport_ModifyLocked = c.Boolean(nullable: false),
@@ -1072,8 +1078,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductReport_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductReport_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductReport_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.ProductReport_ReportedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductReport_ReportedForId)
+                .ForeignKey("dbo.AD_Users", t => t.ProductReport_ReportedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Products", t => t.ProductReport_ReportedForId, cascadeDelete: true)
                 .Index(t => t.ProductReport_ReportedById)
                 .Index(t => t.ProductReport_ReportedForId)
                 .Index(t => t.ProductReport_ModifiedById)
@@ -1089,8 +1095,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductShare_SharedById = c.Guid(nullable: false),
                         ProductShare_ProductId = c.Guid(nullable: false),
                         ProductShare_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductShare_CreatedOn = c.DateTime(nullable: false),
-                        ProductShare_ModifiedOn = c.DateTime(nullable: false),
+                        ProductShare_CreatedOn = c.DateTime(),
+                        ProductShare_ModifiedOn = c.DateTime(),
                         ProductShare_CreatorIp = c.String(),
                         ProductShare_ModifierIp = c.String(),
                         ProductShare_ModifyLocked = c.Boolean(nullable: false),
@@ -1105,8 +1111,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductShare_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductShare_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductShare_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductShare_ProductId)
-                .ForeignKey("dbo.AD_Users", t => t.ProductShare_SharedById)
+                .ForeignKey("dbo.AD_Products", t => t.ProductShare_ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.ProductShare_SharedById, cascadeDelete: true)
                 .Index(t => t.ProductShare_SharedById)
                 .Index(t => t.ProductShare_ProductId)
                 .Index(t => t.ProductShare_ModifiedById)
@@ -1121,8 +1127,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductVisit_VisitedById = c.Guid(nullable: false),
                         ProductVisit_ProductId = c.Guid(nullable: false),
                         ProductVisit_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductVisit_CreatedOn = c.DateTime(nullable: false),
-                        ProductVisit_ModifiedOn = c.DateTime(nullable: false),
+                        ProductVisit_CreatedOn = c.DateTime(),
+                        ProductVisit_ModifiedOn = c.DateTime(),
                         ProductVisit_CreatorIp = c.String(),
                         ProductVisit_ModifierIp = c.String(),
                         ProductVisit_ModifyLocked = c.Boolean(nullable: false),
@@ -1138,8 +1144,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductVisit_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductVisit_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductVisit_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductVisit_ProductId)
-                .ForeignKey("dbo.AD_Users", t => t.ProductVisit_VisitedById)
+                .ForeignKey("dbo.AD_Products", t => t.ProductVisit_ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.ProductVisit_VisitedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.ProductVisit_VisitedById)
                 .Index(t => t.ProductVisit_ProductId)
@@ -1163,8 +1169,8 @@ namespace Advertise.DataLayer.Migrations
                         Tag_StartedOn = c.DateTime(nullable: false),
                         Tag_ExpiredOn = c.DateTime(nullable: false),
                         Tag_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Tag_CreatedOn = c.DateTime(nullable: false),
-                        Tag_ModifiedOn = c.DateTime(nullable: false),
+                        Tag_CreatedOn = c.DateTime(),
+                        Tag_ModifiedOn = c.DateTime(),
                         Tag_CreatorIp = c.String(),
                         Tag_ModifierIp = c.String(),
                         Tag_ModifyLocked = c.Boolean(nullable: false),
@@ -1193,7 +1199,7 @@ namespace Advertise.DataLayer.Migrations
                         UserClaim_ClaimValue = c.String(),
                     })
                 .PrimaryKey(t => t.UserClaim_Id)
-                .ForeignKey("dbo.AD_Users", t => t.UserClaim_UserId)
+                .ForeignKey("dbo.AD_Users", t => t.UserClaim_UserId, cascadeDelete: true)
                 .Index(t => t.UserClaim_UserId);
             
             CreateTable(
@@ -1220,8 +1226,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductCommentLike_LikedById = c.Guid(nullable: false),
                         ProductCommentLike_CommentId = c.Guid(nullable: false),
                         ProductCommentLike_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductCommentLike_CreatedOn = c.DateTime(nullable: false),
-                        ProductCommentLike_ModifiedOn = c.DateTime(nullable: false),
+                        ProductCommentLike_CreatedOn = c.DateTime(),
+                        ProductCommentLike_ModifiedOn = c.DateTime(),
                         ProductCommentLike_CreatorIp = c.String(),
                         ProductCommentLike_ModifierIp = c.String(),
                         ProductCommentLike_ModifyLocked = c.Boolean(nullable: false),
@@ -1235,9 +1241,9 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.ProductCommentLike_Id)
-                .ForeignKey("dbo.AD_ProductComments", t => t.ProductCommentLike_CommentId)
+                .ForeignKey("dbo.AD_ProductComments", t => t.ProductCommentLike_CommentId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.ProductCommentLike_CreatedById)
-                .ForeignKey("dbo.AD_Users", t => t.ProductCommentLike_LikedById)
+                .ForeignKey("dbo.AD_Users", t => t.ProductCommentLike_LikedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.ProductCommentLike_ModifiedById)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.ProductCommentLike_LikedById)
@@ -1265,8 +1271,8 @@ namespace Advertise.DataLayer.Migrations
                         UserProfile_OwnedById = c.Guid(nullable: false),
                         UserProfile_AddressId = c.Guid(nullable: false),
                         UserProfile_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        UserProfile_CreatedOn = c.DateTime(nullable: false),
-                        UserProfile_ModifiedOn = c.DateTime(nullable: false),
+                        UserProfile_CreatedOn = c.DateTime(),
+                        UserProfile_ModifiedOn = c.DateTime(),
                         UserProfile_CreatorIp = c.String(),
                         UserProfile_ModifierIp = c.String(),
                         UserProfile_ModifyLocked = c.Boolean(nullable: false),
@@ -1280,10 +1286,10 @@ namespace Advertise.DataLayer.Migrations
                         User_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.UserProfile_Id)
-                .ForeignKey("dbo.AD_Addresses", t => t.UserProfile_AddressId)
+                .ForeignKey("dbo.AD_Addresses", t => t.UserProfile_AddressId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.UserProfile_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.UserProfile_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.UserProfile_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.UserProfile_OwnedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.UserProfile_OwnedById)
                 .Index(t => t.UserProfile_AddressId)
@@ -1302,8 +1308,8 @@ namespace Advertise.DataLayer.Migrations
                         UserReport_ReportedById = c.Guid(nullable: false),
                         UserReport_ReportedForId = c.Guid(nullable: false),
                         UserReport_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        UserReport_CreatedOn = c.DateTime(nullable: false),
-                        UserReport_ModifiedOn = c.DateTime(nullable: false),
+                        UserReport_CreatedOn = c.DateTime(),
+                        UserReport_ModifiedOn = c.DateTime(),
                         UserReport_CreatorIp = c.String(),
                         UserReport_ModifierIp = c.String(),
                         UserReport_ModifyLocked = c.Boolean(nullable: false),
@@ -1319,8 +1325,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.UserReport_Id)
                 .ForeignKey("dbo.AD_Users", t => t.UserReport_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.UserReport_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.UserReport_ReportedById)
-                .ForeignKey("dbo.AD_Users", t => t.UserReport_ReportedForId)
+                .ForeignKey("dbo.AD_Users", t => t.UserReport_ReportedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.UserReport_ReportedForId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.UserReport_ReportedById)
                 .Index(t => t.UserReport_ReportedForId)
@@ -1338,7 +1344,7 @@ namespace Advertise.DataLayer.Migrations
                         Role_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.UserRole_RoleId)
-                .ForeignKey("dbo.AD_Users", t => t.UserRole_UserId)
+                .ForeignKey("dbo.AD_Users", t => t.UserRole_UserId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Roles", t => t.Role_Id)
                 .Index(t => t.UserRole_UserId)
                 .Index(t => t.Role_Id);
@@ -1352,8 +1358,8 @@ namespace Advertise.DataLayer.Migrations
                         UserSetting_Theme = c.Int(nullable: false),
                         UserSetting_OwnedById = c.Guid(nullable: false),
                         UserSetting_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        UserSetting_CreatedOn = c.DateTime(nullable: false),
-                        UserSetting_ModifiedOn = c.DateTime(nullable: false),
+                        UserSetting_CreatedOn = c.DateTime(),
+                        UserSetting_ModifiedOn = c.DateTime(),
                         UserSetting_CreatorIp = c.String(),
                         UserSetting_ModifierIp = c.String(),
                         UserSetting_ModifyLocked = c.Boolean(nullable: false),
@@ -1369,7 +1375,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.UserSetting_Id)
                 .ForeignKey("dbo.AD_Users", t => t.UserSetting_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.UserSetting_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.UserSetting_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.UserSetting_OwnedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.UserSetting_OwnedById)
                 .Index(t => t.UserSetting_ModifiedById)
@@ -1387,8 +1393,8 @@ namespace Advertise.DataLayer.Migrations
                         UserSocial_YoutubeLink = c.String(maxLength: 100),
                         UserSocial_OwnedById = c.Guid(nullable: false),
                         UserSocial_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        UserSocial_CreatedOn = c.DateTime(nullable: false),
-                        UserSocial_ModifiedOn = c.DateTime(nullable: false),
+                        UserSocial_CreatedOn = c.DateTime(),
+                        UserSocial_ModifiedOn = c.DateTime(),
                         UserSocial_CreatorIp = c.String(),
                         UserSocial_ModifierIp = c.String(),
                         UserSocial_ModifyLocked = c.Boolean(nullable: false),
@@ -1404,7 +1410,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.UserSocial_Id)
                 .ForeignKey("dbo.AD_Users", t => t.UserSocial_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.UserSocial_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.UserSocial_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.UserSocial_OwnedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.User_Id)
                 .Index(t => t.UserSocial_OwnedById)
                 .Index(t => t.UserSocial_ModifiedById)
@@ -1420,8 +1426,8 @@ namespace Advertise.DataLayer.Migrations
                         SpecificationOption_Description = c.String(),
                         SpecificationOption_SpecificationId = c.Guid(nullable: false),
                         SpecificationOption_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        SpecificationOption_CreatedOn = c.DateTime(nullable: false),
-                        SpecificationOption_ModifiedOn = c.DateTime(nullable: false),
+                        SpecificationOption_CreatedOn = c.DateTime(),
+                        SpecificationOption_ModifiedOn = c.DateTime(),
                         SpecificationOption_CreatorIp = c.String(),
                         SpecificationOption_ModifierIp = c.String(),
                         SpecificationOption_ModifyLocked = c.Boolean(nullable: false),
@@ -1436,7 +1442,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.SpecificationOption_Id)
                 .ForeignKey("dbo.AD_Users", t => t.SpecificationOption_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.SpecificationOption_ModifiedById)
-                .ForeignKey("dbo.AD_Specifications", t => t.SpecificationOption_SpecificationId)
+                .ForeignKey("dbo.AD_Specifications", t => t.SpecificationOption_SpecificationId, cascadeDelete: true)
                 .Index(t => t.SpecificationOption_SpecificationId)
                 .Index(t => t.SpecificationOption_ModifiedById)
                 .Index(t => t.SpecificationOption_CreatedById);
@@ -1448,8 +1454,8 @@ namespace Advertise.DataLayer.Migrations
                         Payment_Id = c.Guid(nullable: false),
                         Payment_Status = c.Int(nullable: false),
                         Payment_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Payment_CreatedOn = c.DateTime(nullable: false),
-                        Payment_ModifiedOn = c.DateTime(nullable: false),
+                        Payment_CreatedOn = c.DateTime(),
+                        Payment_ModifiedOn = c.DateTime(),
                         Payment_CreatorIp = c.String(),
                         Payment_ModifierIp = c.String(),
                         Payment_ModifyLocked = c.Boolean(nullable: false),
@@ -1478,8 +1484,8 @@ namespace Advertise.DataLayer.Migrations
                         PaymentTransaction_PayedById = c.Guid(nullable: false),
                         PaymentTransaction_BudgetId = c.Guid(nullable: false),
                         PaymentTransaction_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        PaymentTransaction_CreatedOn = c.DateTime(nullable: false),
-                        PaymentTransaction_ModifiedOn = c.DateTime(nullable: false),
+                        PaymentTransaction_CreatedOn = c.DateTime(),
+                        PaymentTransaction_ModifiedOn = c.DateTime(),
                         PaymentTransaction_CreatorIp = c.String(),
                         PaymentTransaction_ModifierIp = c.String(),
                         PaymentTransaction_ModifyLocked = c.Boolean(nullable: false),
@@ -1493,10 +1499,10 @@ namespace Advertise.DataLayer.Migrations
                         Payment_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.PaymentTransaction_Id)
-                .ForeignKey("dbo.AD_UserBudgets", t => t.PaymentTransaction_BudgetId)
+                .ForeignKey("dbo.AD_UserBudgets", t => t.PaymentTransaction_BudgetId, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Users", t => t.PaymentTransaction_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.PaymentTransaction_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.PaymentTransaction_PayedById)
+                .ForeignKey("dbo.AD_Users", t => t.PaymentTransaction_PayedById, cascadeDelete: true)
                 .ForeignKey("dbo.AD_Payments", t => t.Payment_Id)
                 .Index(t => t.PaymentTransaction_PayedById)
                 .Index(t => t.PaymentTransaction_BudgetId)
@@ -1513,8 +1519,8 @@ namespace Advertise.DataLayer.Migrations
                         BannedWord_GoodWord = c.String(),
                         BannedWord_IsStopWord = c.Boolean(nullable: false),
                         BannedWord_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        BannedWord_CreatedOn = c.DateTime(nullable: false),
-                        BannedWord_ModifiedOn = c.DateTime(nullable: false),
+                        BannedWord_CreatedOn = c.DateTime(),
+                        BannedWord_ModifiedOn = c.DateTime(),
                         BannedWord_CreatorIp = c.String(),
                         BannedWord_ModifierIp = c.String(),
                         BannedWord_ModifyLocked = c.Boolean(nullable: false),
@@ -1543,8 +1549,8 @@ namespace Advertise.DataLayer.Migrations
                         Email_SentById = c.Guid(nullable: false),
                         Email_RecievedById = c.Guid(nullable: false),
                         Email_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Email_CreatedOn = c.DateTime(nullable: false),
-                        Email_ModifiedOn = c.DateTime(nullable: false),
+                        Email_CreatedOn = c.DateTime(),
+                        Email_ModifiedOn = c.DateTime(),
                         Email_CreatorIp = c.String(),
                         Email_ModifierIp = c.String(),
                         Email_ModifyLocked = c.Boolean(nullable: false),
@@ -1559,8 +1565,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.Email_Id)
                 .ForeignKey("dbo.AD_Users", t => t.Email_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Email_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Email_RecievedById)
-                .ForeignKey("dbo.AD_Users", t => t.Email_SentById)
+                .ForeignKey("dbo.AD_Users", t => t.Email_RecievedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.Email_SentById, cascadeDelete: true)
                 .Index(t => t.Email_SentById)
                 .Index(t => t.Email_RecievedById)
                 .Index(t => t.Email_ModifiedById)
@@ -1574,8 +1580,8 @@ namespace Advertise.DataLayer.Migrations
                         Rating_Status = c.Int(nullable: false),
                         Rating_RatedById = c.Guid(nullable: false),
                         Rating_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Rating_CreatedOn = c.DateTime(nullable: false),
-                        Rating_ModifiedOn = c.DateTime(nullable: false),
+                        Rating_CreatedOn = c.DateTime(),
+                        Rating_ModifiedOn = c.DateTime(),
                         Rating_CreatorIp = c.String(),
                         Rating_ModifierIp = c.String(),
                         Rating_ModifyLocked = c.Boolean(nullable: false),
@@ -1590,7 +1596,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.Rating_Id)
                 .ForeignKey("dbo.AD_Users", t => t.Rating_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Rating_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Rating_RatedById)
+                .ForeignKey("dbo.AD_Users", t => t.Rating_RatedById, cascadeDelete: true)
                 .Index(t => t.Rating_RatedById)
                 .Index(t => t.Rating_ModifiedById)
                 .Index(t => t.Rating_CreatedById);
@@ -1606,8 +1612,8 @@ namespace Advertise.DataLayer.Migrations
                         Sms_SentById = c.Guid(nullable: false),
                         Sms_RecievedById = c.Guid(nullable: false),
                         Sms_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Sms_CreatedOn = c.DateTime(nullable: false),
-                        Sms_ModifiedOn = c.DateTime(nullable: false),
+                        Sms_CreatedOn = c.DateTime(),
+                        Sms_ModifiedOn = c.DateTime(),
                         Sms_CreatorIp = c.String(),
                         Sms_ModifierIp = c.String(),
                         Sms_ModifyLocked = c.Boolean(nullable: false),
@@ -1622,8 +1628,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.Sms_Id)
                 .ForeignKey("dbo.AD_Users", t => t.Sms_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Sms_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Sms_RecievedById)
-                .ForeignKey("dbo.AD_Users", t => t.Sms_SentById)
+                .ForeignKey("dbo.AD_Users", t => t.Sms_RecievedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.Sms_SentById, cascadeDelete: true)
                 .Index(t => t.Sms_SentById)
                 .Index(t => t.Sms_RecievedById)
                 .Index(t => t.Sms_ModifiedById)
@@ -1644,8 +1650,8 @@ namespace Advertise.DataLayer.Migrations
                         Conversation_ReceivedById = c.Guid(nullable: false),
                         Conversation_ReplyId = c.Guid(nullable: false),
                         Conversation_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Conversation_CreatedOn = c.DateTime(nullable: false),
-                        Conversation_ModifiedOn = c.DateTime(nullable: false),
+                        Conversation_CreatedOn = c.DateTime(),
+                        Conversation_ModifiedOn = c.DateTime(),
                         Conversation_CreatorIp = c.String(),
                         Conversation_ModifierIp = c.String(),
                         Conversation_ModifyLocked = c.Boolean(nullable: false),
@@ -1661,8 +1667,8 @@ namespace Advertise.DataLayer.Migrations
                 .ForeignKey("dbo.AD_Conversations", t => t.Conversation_ReplyId)
                 .ForeignKey("dbo.AD_Users", t => t.Conversation_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Conversation_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Conversation_ReceivedById)
-                .ForeignKey("dbo.AD_Users", t => t.Conversation_SentById)
+                .ForeignKey("dbo.AD_Users", t => t.Conversation_ReceivedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Users", t => t.Conversation_SentById, cascadeDelete: true)
                 .Index(t => t.Conversation_SentById)
                 .Index(t => t.Conversation_ReceivedById)
                 .Index(t => t.Conversation_ReplyId)
@@ -1680,8 +1686,8 @@ namespace Advertise.DataLayer.Migrations
                         News_ExpiredOn = c.DateTime(),
                         News_OwnedById = c.Guid(nullable: false),
                         News_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        News_CreatedOn = c.DateTime(nullable: false),
-                        News_ModifiedOn = c.DateTime(nullable: false),
+                        News_CreatedOn = c.DateTime(),
+                        News_ModifiedOn = c.DateTime(),
                         News_CreatorIp = c.String(),
                         News_ModifierIp = c.String(),
                         News_ModifyLocked = c.Boolean(nullable: false),
@@ -1696,7 +1702,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.News_Id)
                 .ForeignKey("dbo.AD_Users", t => t.News_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.News_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.News_OwnedById)
+                .ForeignKey("dbo.AD_Users", t => t.News_OwnedById, cascadeDelete: true)
                 .Index(t => t.News_OwnedById)
                 .Index(t => t.News_ModifiedById)
                 .Index(t => t.News_CreatedById);
@@ -1712,8 +1718,8 @@ namespace Advertise.DataLayer.Migrations
                         Statistic_SearchEngine = c.String(maxLength: 100),
                         Statistic_Keyword = c.String(maxLength: 100),
                         Statistic_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Statistic_CreatedOn = c.DateTime(nullable: false),
-                        Statistic_ModifiedOn = c.DateTime(nullable: false),
+                        Statistic_CreatedOn = c.DateTime(),
+                        Statistic_ModifiedOn = c.DateTime(),
                         Statistic_CreatorIp = c.String(),
                         Statistic_ModifierIp = c.String(),
                         Statistic_ModifyLocked = c.Boolean(nullable: false),
@@ -1742,8 +1748,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductCommentReport_ReportedById = c.Guid(nullable: false),
                         ProductCommentReport_ReportedForId = c.Guid(nullable: false),
                         ProductCommentReport_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductCommentReport_CreatedOn = c.DateTime(nullable: false),
-                        ProductCommentReport_ModifiedOn = c.DateTime(nullable: false),
+                        ProductCommentReport_CreatedOn = c.DateTime(),
+                        ProductCommentReport_ModifiedOn = c.DateTime(),
                         ProductCommentReport_CreatorIp = c.String(),
                         ProductCommentReport_ModifierIp = c.String(),
                         ProductCommentReport_ModifyLocked = c.Boolean(nullable: false),
@@ -1758,8 +1764,8 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductCommentReport_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductCommentReport_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductCommentReport_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.ProductCommentReport_ReportedById)
-                .ForeignKey("dbo.AD_ProductComments", t => t.ProductCommentReport_ReportedForId)
+                .ForeignKey("dbo.AD_Users", t => t.ProductCommentReport_ReportedById, cascadeDelete: true)
+                .ForeignKey("dbo.AD_ProductComments", t => t.ProductCommentReport_ReportedForId, cascadeDelete: true)
                 .Index(t => t.ProductCommentReport_ReportedById)
                 .Index(t => t.ProductCommentReport_ReportedForId)
                 .Index(t => t.ProductCommentReport_ModifiedById)
@@ -1774,8 +1780,8 @@ namespace Advertise.DataLayer.Migrations
                         ProductReview_IsActive = c.Boolean(nullable: false),
                         ProductReview_ProductId = c.Guid(nullable: false),
                         ProductReview_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ProductReview_CreatedOn = c.DateTime(nullable: false),
-                        ProductReview_ModifiedOn = c.DateTime(nullable: false),
+                        ProductReview_CreatedOn = c.DateTime(),
+                        ProductReview_ModifiedOn = c.DateTime(),
                         ProductReview_CreatorIp = c.String(),
                         ProductReview_ModifierIp = c.String(),
                         ProductReview_ModifyLocked = c.Boolean(nullable: false),
@@ -1790,7 +1796,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ProductReview_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ProductReview_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ProductReview_ModifiedById)
-                .ForeignKey("dbo.AD_Products", t => t.ProductReview_ProductId)
+                .ForeignKey("dbo.AD_Products", t => t.ProductReview_ProductId, cascadeDelete: true)
                 .Index(t => t.ProductReview_ProductId)
                 .Index(t => t.ProductReview_ModifiedById)
                 .Index(t => t.ProductReview_CreatedById);
@@ -1807,8 +1813,8 @@ namespace Advertise.DataLayer.Migrations
                         Notification_Type = c.Int(nullable: false),
                         Notification_OwnerId = c.Guid(nullable: false),
                         Notification_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Notification_CreatedOn = c.DateTime(nullable: false),
-                        Notification_ModifiedOn = c.DateTime(nullable: false),
+                        Notification_CreatedOn = c.DateTime(),
+                        Notification_ModifiedOn = c.DateTime(),
                         Notification_CreatorIp = c.String(),
                         Notification_ModifierIp = c.String(),
                         Notification_ModifyLocked = c.Boolean(nullable: false),
@@ -1823,7 +1829,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.Notification_Id)
                 .ForeignKey("dbo.AD_Users", t => t.Notification_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.Notification_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.Notification_OwnerId)
+                .ForeignKey("dbo.AD_Users", t => t.Notification_OwnerId, cascadeDelete: true)
                 .Index(t => t.Notification_OwnerId)
                 .Index(t => t.Notification_ModifiedById)
                 .Index(t => t.Notification_CreatedById);
@@ -1842,8 +1848,8 @@ namespace Advertise.DataLayer.Migrations
                         ActivityLog_Type = c.Int(nullable: false),
                         ActivityLog_OperantedById = c.Guid(nullable: false),
                         ActivityLog_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        ActivityLog_CreatedOn = c.DateTime(nullable: false),
-                        ActivityLog_ModifiedOn = c.DateTime(nullable: false),
+                        ActivityLog_CreatedOn = c.DateTime(),
+                        ActivityLog_ModifiedOn = c.DateTime(),
                         ActivityLog_CreatorIp = c.String(),
                         ActivityLog_ModifierIp = c.String(),
                         ActivityLog_ModifyLocked = c.Boolean(nullable: false),
@@ -1858,7 +1864,7 @@ namespace Advertise.DataLayer.Migrations
                 .PrimaryKey(t => t.ActivityLog_Id)
                 .ForeignKey("dbo.AD_Users", t => t.ActivityLog_CreatedById)
                 .ForeignKey("dbo.AD_Users", t => t.ActivityLog_ModifiedById)
-                .ForeignKey("dbo.AD_Users", t => t.ActivityLog_OperantedById)
+                .ForeignKey("dbo.AD_Users", t => t.ActivityLog_OperantedById, cascadeDelete: true)
                 .Index(t => t.ActivityLog_OperantedById)
                 .Index(t => t.ActivityLog_ModifiedById)
                 .Index(t => t.ActivityLog_CreatedById);
@@ -1878,8 +1884,8 @@ namespace Advertise.DataLayer.Migrations
                         AuditLog_OperantIp = c.String(),
                         AuditLog_OperantedById = c.Long(nullable: false),
                         AuditLog_RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        AuditLog_CreatedOn = c.DateTime(nullable: false),
-                        AuditLog_ModifiedOn = c.DateTime(nullable: false),
+                        AuditLog_CreatedOn = c.DateTime(),
+                        AuditLog_ModifiedOn = c.DateTime(),
                         AuditLog_CreatorIp = c.String(),
                         AuditLog_ModifierIp = c.String(),
                         AuditLog_ModifyLocked = c.Boolean(nullable: false),
@@ -1908,8 +1914,8 @@ namespace Advertise.DataLayer.Migrations
                         Category_Id = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => new { t.Company_Id, t.Category_Id })
-                .ForeignKey("dbo.AD_Companies", t => t.Company_Id)
-                .ForeignKey("dbo.AD_Categories", t => t.Category_Id)
+                .ForeignKey("dbo.AD_Companies", t => t.Company_Id, cascadeDelete: true)
+                .ForeignKey("dbo.AD_Categories", t => t.Category_Id, cascadeDelete: true)
                 .Index(t => t.Company_Id)
                 .Index(t => t.Category_Id);
             
@@ -2065,9 +2071,11 @@ namespace Advertise.DataLayer.Migrations
             DropForeignKey("dbo.AD_CompanySocials", "CompanySocial_ModifiedById", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanySocials", "CompanySocial_CreatedById", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanySocials", "CompanySocial_CompanyId", "dbo.AD_Companies");
+            DropForeignKey("dbo.AD_CompanyReviews", "CompanyReview_OwnerId", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanyReviews", "CompanyReview_ModifiedById", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanyReviews", "CompanyReview_CreatedById", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanyReviews", "CompanyReview_CompanyId", "dbo.AD_Companies");
+            DropForeignKey("dbo.AD_CompanyReviews", "CompanyReview_ApproverId", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanyReports", "CompanyReport_ReportedForId", "dbo.AD_Companies");
             DropForeignKey("dbo.AD_CompanyReports", "CompanyReport_ReportedById", "dbo.AD_Users");
             DropForeignKey("dbo.AD_CompanyReports", "CompanyReport_ModifiedById", "dbo.AD_Users");
@@ -2262,6 +2270,8 @@ namespace Advertise.DataLayer.Migrations
             DropIndex("dbo.AD_CompanyReviews", new[] { "Product_Id" });
             DropIndex("dbo.AD_CompanyReviews", new[] { "CompanyReview_CreatedById" });
             DropIndex("dbo.AD_CompanyReviews", new[] { "CompanyReview_ModifiedById" });
+            DropIndex("dbo.AD_CompanyReviews", new[] { "CompanyReview_ApproverId" });
+            DropIndex("dbo.AD_CompanyReviews", new[] { "CompanyReview_OwnerId" });
             DropIndex("dbo.AD_CompanyReviews", new[] { "CompanyReview_CompanyId" });
             DropIndex("dbo.AD_CompanyReports", new[] { "CompanyReport_CreatedById" });
             DropIndex("dbo.AD_CompanyReports", new[] { "CompanyReport_ModifiedById" });

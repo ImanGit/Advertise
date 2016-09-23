@@ -21,6 +21,7 @@ namespace Advertise.Mapping.Profiles.Categories
                     IsActive = src.IsActive,
                     Title = src.Title,
                     ParentPath = src.ParentPath
+                    
                 });
 
             CreateMap<CategoryCreateViewModel, Category>()

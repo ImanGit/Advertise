@@ -1,29 +1,91 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
+using Advertise.DataLayer.Context;
+using Advertise.DomainClasses.Entities.Categories;
 using Advertise.ServiceLayer.Contracts.Categories;
+using Advertise.ViewModel.Models.Categories;
+using Advertise.ViewModel.Models.Categories.CategoryReview;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using EntityFramework.Extensions;
 
 namespace Advertise.ServiceLayer.EFServices.Categories
 {
     public class CategoryReviewService : ICategoryReviewService
 
     {
-        public bool Create(int Id)
+        private readonly  IMapper _mapper;
+        private readonly  IUnitOfWork  _unitOfWork;
+        private readonly IDbSet<CategoryReview> _categoryReviews; 
+
+        #region Ctor
+
+        public CategoryReviewService(IMapper mapper  ,IUnitOfWork  unitOfWork )
         {
-            throw new NotImplementedException();
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
+            _categoryReviews = unitOfWork.Set<CategoryReview>();
+
+        }
+        #endregion
+        public async  Task  CreateAsync(CategoryReviewCreateViewModel viewModel  )
+        {
+            var categoryReview = _mapper.Map<CategoryReview>(viewModel);
+            _categoryReviews.Add(categoryReview);
+            await _unitOfWork .SaveAllChangesAsync(auditUserId : new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public bool Edit(int IdCat)
+        public async Task<CategoryReviewCreateViewModel> GetForCreateAsync()
         {
-            throw new NotImplementedException();
+            return await Task.Run(() => new CategoryReviewCreateViewModel());
         }
+        public async Task  EditAsync(CategoryReviewEditViewModel viewModel )
+        {
+            var categoryReview = await _categoryReviews.FirstAsync(model => model.Id == viewModel.Id);
+            _mapper.Map(viewModel, categoryReview);
+        }
+
+        public async Task<CategoryReviewEditViewModel> GetForEditAsync(Guid id)
+        {
+            return await _categoryReviews
+                .AsNoTracking()
+                .ProjectTo<CategoryReviewEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
+        public async Task<IEnumerable<CategoryReviewListViewModel>> GetListAsync()
+        {
+            return await _categoryReviews 
+               .AsNoTracking()
+               .ProjectTo<CategoryReviewListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+               .ToListAsync();
+        }
+
+        public async Task<CategoryReviewDetailsViewModel> GetDetailsAsync(Guid id)
+        {
+            return await _categoryReviews
+                .AsNoTracking()
+                .ProjectTo<CategoryReviewDetailsViewModel>(parameters: null,
+                    configuration: _mapper.ConfigurationProvider)
+                .FirstAsync(model => model.Id == id);
+        }
+
+
+
+
+
 
         public bool EditForIsShowOrNotShow()
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public  Task  DeleteAsync(CategoryEditViewModel viewModel)
         {
-            throw new NotImplementedException();
+            return _categoryReviews.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
         public void Get()
@@ -45,5 +107,17 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         {
             throw new NotImplementedException();
         }
+
+        public bool Create(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+      
     }
 }

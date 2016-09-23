@@ -1,4 +1,9 @@
-﻿using Advertise.ServiceLayer.Contracts.Common;
+﻿using System.Threading.Tasks;
+using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Categories.CategoryReview;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Advertise.ServiceLayer.Contracts.Categories
 
@@ -11,7 +16,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     ایجاد نقد و بررسی
         /// </summary>
         /// <param name="viewModel"></param>
-        bool Create(int Id);
+        Task  CreateAsync(CategoryReviewCreateViewModel viewModel );
 
         #endregion
 
@@ -28,7 +33,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <summary>
         ///     اصلاح نقد و بررسی
         /// </summary>
-        bool Edit(int IdCat);
+        Task  EditAsync(CategoryReviewEditViewModel viewModel);
 
         /// <summary>
         ///     نمایش یا عدم نمایش نقد و بررسی
@@ -50,6 +55,16 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         /// <returns></returns>
         bool GetCount();
 
+        #endregion
+
+        #region Read
+        Task<CategoryReviewCreateViewModel> GetForCreateAsync();
+
+        Task<CategoryReviewEditViewModel> GetForEditAsync(Guid id);
+
+        Task<IEnumerable <CategoryReviewListViewModel>> GetListAsync();
+
+        Task<CategoryReviewDetailsViewModel> GetDetailsAsync(Guid id);
         #endregion
     }
 }
