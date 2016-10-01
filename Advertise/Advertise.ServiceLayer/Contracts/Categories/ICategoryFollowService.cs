@@ -56,7 +56,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     آیا کاربر محصول را لایک کرده،جهت نمایش در صفحه کاربر
         /// </summary>
         /// <returns></returns>
-        bool GetUserFollowCategory();
+        bool GetUserFollowCategory(Guid idUser, Guid idCategory);
 
         /// <summary>
         ///     گرفتن تعداد فالورهای خود کاربر
@@ -68,7 +68,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     گرفتن تعداد فالور محصولات یک شهر
         /// </summary>
         /// <returns></returns>
-        int GetCountFollowUserInCity();
+        int GetCountFollowUserInCity(Guid idCity);
 
         /// <summary>
         ///     گرفتن تعداد آن فالور محصولات یک شهر

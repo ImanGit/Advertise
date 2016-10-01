@@ -53,8 +53,7 @@ namespace Advertise.Mapping.Profiles.Companies
                   Title = src.Title,
                   Type = src.Type,
 
-              }
-              );
+              });
 
             CreateMap<CompanyAttachmentEditViewModel, CompanyAttachment>()
                  .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))

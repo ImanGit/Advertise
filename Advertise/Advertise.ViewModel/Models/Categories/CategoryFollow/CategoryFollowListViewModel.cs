@@ -14,4 +14,3 @@ namespace Advertise.ViewModel.Models.Categories.CategoryFollow
 
     }
 }
-}

@@ -34,6 +34,14 @@
       <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DNTProfiler.Common, Version=1.8.1129.0, Culture=neutral, PublicKeyToken=60fcf710de822a54, processorArchitecture=MSIL">
+      <HintPath>..\packages\DNTProfiler.EntityFramework.Core.1.8.1129.0\lib\net45\DNTProfiler.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DNTProfiler.EntityFramework.Core, Version=1.8.1129.0, Culture=neutral, PublicKeyToken=d53bce80735621b2, processorArchitecture=MSIL">
+      <HintPath>..\packages\DNTProfiler.EntityFramework.Core.1.8.1129.0\lib\net45\DNTProfiler.EntityFramework.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
       <Private>True</Private>
@@ -127,6 +135,10 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -214,6 +226,9 @@
       <Project>{306a3a29-1b7c-48c4-abf9-98ef5f7692fd}</Project>
       <Name>Advertise.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

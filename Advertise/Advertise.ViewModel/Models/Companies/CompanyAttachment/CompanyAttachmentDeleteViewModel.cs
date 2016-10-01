@@ -27,7 +27,7 @@ namespace Advertise.ViewModel.Models.Companies.CompanyAttachment
 
         public string Description { get; set; }
 
-        public AttachmentType Type { get; set; }
+       // public AttachmentType Type { get; set; }
 
         public bool IsApproved { get; set; }
     }

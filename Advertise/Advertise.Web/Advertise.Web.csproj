@@ -890,11 +890,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\Category\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Category\Delete.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
