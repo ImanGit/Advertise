@@ -72,7 +72,6 @@
 /// <reference path="ckeditor/lang/zh.js" />
 /// <reference path="ckeditor/lang/zh-cn.js" />
 /// <reference path="ckeditor/styles.js" />
-/// <reference path="customs/kendo.datasource.js" />
 /// <reference path="customs/kendo.ui.js" />
 /// <reference path="Customs/noty.alerts.js" />
 /// <reference path="Customs/site.js" />

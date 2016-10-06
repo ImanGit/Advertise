@@ -32,7 +32,7 @@ $(function () {
         });
        
    
-
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     $("#getCategoryList").kendoTreeView({
@@ -72,7 +72,7 @@ $(function () {
     });
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                $("#Review").kendoEditor({
+    $("#Body").kendoEditor({
                 tools: [
                     "bold", "italic", "underline", "strikethrough", "justifyLeft",
                     "justifyCenter", "justifyRight", "justifyFull", "insertUnorderedList",
@@ -90,23 +90,23 @@ $(function () {
                     },
                     transport: {
                         read: {
-                            url: "",
+                            url: "/KendoEditorImages/GetFilesList",
                             dataType: "json",
                             contentType: 'application/json; charset=utf-8',
                             type: 'GET',
                             cache: false
                         },
                         destroy: {
-                            url: "",
+                            url: "/KendoEditorImages/DestroyFile",
                             type: "POST"
                         },
                         create: {
-                            url: "",
+                            url: "/KendoEditorImages/CreateFolder",
                             type: "POST"
                         },
-                        thumbnailUrl: "",
-                        uploadUrl: "",
-                        imageUrl: ""
+                        thumbnailUrl: "/KendoEditorImages/GetThumbnail",
+                        uploadUrl: "/KendoEditorImages/UploadFile",
+                        imageUrl: "/KendoEditorImages/GetFile?path={0}"
                     }
                 },
                 fileBrowser: {
@@ -115,26 +115,80 @@ $(function () {
                     },
                     transport: {
                         read: {
-                            url: "",
+                            url: "/KendoEditorFiles/GetFilesList",
                             dataType: "json",
                             contentType: 'application/json; charset=utf-8',
                             type: 'GET',
                             cache: false
                         },
                         destroy: {
-                            url: "",
+                            url: "/KendoEditorFiles/DestroyFile",
                             type: "POST"
                         },
                         create: {
-                            url: "",
+                            url: "/KendoEditorFiles/CreateFolder",
                             type: "POST"
                         },
-                        uploadUrl: "",
-                        fileUrl: ""
+                        uploadUrl: "/KendoEditorFiles/UploadFile",
+                        fileUrl: "/KendoEditorFiles/GetFile?path={0}"
                     }
                 },
                 change: function(e) {
-                    document.getElementById("Body").value = htmlEncode($("#Review").data("kendoEditor").value().text());
+                    document.getElementById("22").value = htmlEncode($("#Review").data("kendoEditor").value().text());
                 }
-            });
+    });
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $("#ImageFileName").kendoUpload({
+        name: "files",
+//        @*async: { // async configuration
+//            saveUrl: "@Url.Action("Save", "KendoFileUpload")", // the url to save a file is '/save'
+//        removeUrl: "@Url.Action("Remove", "KendoFileUpload")", // the url to remove a file is '/remove'
+//        autoUpload: false, // automatically upload files once selected
+//    removeVerb: 'POST'
+//},*@
+    multiple: false,
+showFileList: true,
+localization: {
+    select: 'انتخاب فایل‌ها برای ارسال',
+    remove: 'حذف فایل',
+    retry: 'سعی مجدد',
+    headerStatusUploading: 'در حال ارسال فایل‌ها',
+    headerStatusUploaded: 'پایان ارسال',
+    cancel: "لغو",
+    uploadSelectedFiles: "ارسال فایل‌ها",
+    dropFilesHere: "فایل‌ها را برای ارسال، کشیده و در اینجا رها کنید",
+    statusUploading: "در حال ارسال",
+    statusUploaded: "ارسال شد",
+    statusWarning: "اخطار",
+    statusFailed: "خطا در ارسال"
+},
+// template: kendo.template($('#fileListTemplate').html()),
+select: function (e) {
+    var fileReader = new FileReader();
+    fileReader.onload = function (event) {
+        console.log(event);
+        var mapImage = event.target.result;
+        $("#ImagePreview").attr('src', mapImage);
+
+    }
+    fileReader.readAsDataURL(e.files[0].rawFile);
+
+},
+remove: function () {
+    $("#ImagePreview").attr('src', '#');
+    console.log('File removed.');
+}
 });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+});
+
+
+
+
+

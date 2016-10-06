@@ -37,12 +37,12 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+WriteLiteral("\n");
 
 WriteLiteral("\n");
 
             
-            #line 25 "..\..\Views\Category\List.cshtml"
+            #line 5 "..\..\Views\Category\List.cshtml"
   
     ViewBag.Title = "لیست";
 
@@ -55,7 +55,7 @@ WriteLiteral("\n\n<h2>List</h2>\n\n\n<p>\n");
 WriteLiteral("    ");
 
             
-            #line 34 "..\..\Views\Category\List.cshtml"
+            #line 14 "..\..\Views\Category\List.cshtml"
 Write(Html.ActionLink("ایجاد جدید", "Create"));
 
             
@@ -70,7 +70,7 @@ WriteLiteral(">\n    <tr>\n\n\n        <th>\n");
 WriteLiteral("            ");
 
             
-            #line 41 "..\..\Views\Category\List.cshtml"
+            #line 21 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayNameFor(model => model.Code));
 
             
@@ -81,7 +81,7 @@ WriteLiteral("\n        </th>\n\n\n        <th>\n");
 WriteLiteral("            ");
 
             
-            #line 46 "..\..\Views\Category\List.cshtml"
+            #line 26 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayNameFor(model => model.Title));
 
             
@@ -92,7 +92,7 @@ WriteLiteral("\n        </th>\n\n\n        <th>\n");
 WriteLiteral("            ");
 
             
-            #line 51 "..\..\Views\Category\List.cshtml"
+            #line 31 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayNameFor(model => model.Description));
 
             
@@ -103,7 +103,7 @@ WriteLiteral("\n        </th>\n\n\n        <th>\n");
 WriteLiteral("            ");
 
             
-            #line 56 "..\..\Views\Category\List.cshtml"
+            #line 36 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayNameFor(model => model.ImageFileName));
 
             
@@ -114,7 +114,7 @@ WriteLiteral("\n        </th>\n\n\n        <th>\n");
 WriteLiteral("            ");
 
             
-            #line 61 "..\..\Views\Category\List.cshtml"
+            #line 41 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayNameFor(model => model.ParentPath));
 
             
@@ -125,7 +125,7 @@ WriteLiteral("\n        </th>\n\n\n        <th>\n");
 WriteLiteral("            ");
 
             
-            #line 66 "..\..\Views\Category\List.cshtml"
+            #line 46 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayNameFor(model => model.IsActive));
 
             
@@ -134,7 +134,7 @@ WriteLiteral("            ");
 WriteLiteral("\n        </th>\n\n        <th></th>\n    </tr>\n\n");
 
             
-            #line 72 "..\..\Views\Category\List.cshtml"
+            #line 52 "..\..\Views\Category\List.cshtml"
  foreach (var item in Model) {
 
             
@@ -145,7 +145,7 @@ WriteLiteral("    <tr>\n\n\n        <td>\n");
 WriteLiteral("            ");
 
             
-            #line 77 "..\..\Views\Category\List.cshtml"
+            #line 57 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayFor(modelItem => item.Code));
 
             
@@ -156,7 +156,7 @@ WriteLiteral("\n        </td>\n\n\n        <td>\n");
 WriteLiteral("            ");
 
             
-            #line 82 "..\..\Views\Category\List.cshtml"
+            #line 62 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayFor(modelItem => item.Title));
 
             
@@ -167,7 +167,7 @@ WriteLiteral("\n        </td>\n\n\n        <td>\n");
 WriteLiteral("            ");
 
             
-            #line 87 "..\..\Views\Category\List.cshtml"
+            #line 67 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayFor(modelItem => item.Description));
 
             
@@ -178,7 +178,7 @@ WriteLiteral("\n        </td>\n\n\n        <td>\n");
 WriteLiteral("            ");
 
             
-            #line 92 "..\..\Views\Category\List.cshtml"
+            #line 72 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayFor(modelItem => item.ImageFileName));
 
             
@@ -189,7 +189,7 @@ WriteLiteral("\n        </td>\n\n\n        <td>\n");
 WriteLiteral("            ");
 
             
-            #line 97 "..\..\Views\Category\List.cshtml"
+            #line 77 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayFor(modelItem => item.ParentPath));
 
             
@@ -200,7 +200,7 @@ WriteLiteral("\n        </td>\n\n\n        <td>\n");
 WriteLiteral("            ");
 
             
-            #line 102 "..\..\Views\Category\List.cshtml"
+            #line 82 "..\..\Views\Category\List.cshtml"
        Write(Html.DisplayFor(modelItem => item.IsActive));
 
             
@@ -217,7 +217,7 @@ WriteLiteral(" class=\"fa fa-edit\"");
 WriteLiteral(">");
 
             
-            #line 106 "..\..\Views\Category\List.cshtml"
+            #line 86 "..\..\Views\Category\List.cshtml"
                                                                     Write(Html.ActionLink("ویرایش", "Edit", new { id = item.Id }));
 
             
@@ -228,7 +228,7 @@ WriteLiteral("</i></button>\r\n            \r\n");
 WriteLiteral("            ");
 
             
-            #line 108 "..\..\Views\Category\List.cshtml"
+            #line 88 "..\..\Views\Category\List.cshtml"
        Write(Html.ActionLink("جزییات", "Details", new {id = item.Id}));
 
             
@@ -239,7 +239,7 @@ WriteLiteral(" |\r\n");
 WriteLiteral("            ");
 
             
-            #line 109 "..\..\Views\Category\List.cshtml"
+            #line 89 "..\..\Views\Category\List.cshtml"
        Write(Html.ActionLink("حذف", "Delete", new {id = item.Id}));
 
             
@@ -248,7 +248,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n\r\n\r\n\r\n        </td>\n\n    </tr>\n");
 
             
-            #line 116 "..\..\Views\Category\List.cshtml"
+            #line 96 "..\..\Views\Category\List.cshtml"
 }
 
             

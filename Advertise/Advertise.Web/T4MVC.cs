@@ -31,6 +31,11 @@ public static partial class MVC
     public static AdminClass Admin { get { return s_Admin; } }
     public static Advertise.Web.Controllers.CategoryController Category = new Advertise.Web.Controllers.T4MVC_CategoryController();
     public static Advertise.Web.Controllers.HomeController Home = new Advertise.Web.Controllers.T4MVC_HomeController();
+    public static Advertise.Web.Controllers.KendoEditorFilesController KendoEditorFiles = new Advertise.Web.Controllers.T4MVC_KendoEditorFilesController();
+    public static Advertise.Web.Controllers.KendoEditorImagesController KendoEditorImages = new Advertise.Web.Controllers.T4MVC_KendoEditorImagesController();
+    public static Advertise.Web.Controllers.KendoFileUploadController KendoFileUpload = new Advertise.Web.Controllers.T4MVC_KendoFileUploadController();
+    public static T4MVC.DefaultController Default = new T4MVC.DefaultController();
+    public static T4MVC.KendoController Kendo = new T4MVC.KendoController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -69,6 +74,32 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public string Protocol { get; set; }
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_JsonResult : System.Web.Mvc.JsonResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_JsonResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ContentResult : System.Web.Mvc.ContentResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ContentResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
 
 
 
@@ -79,39 +110,464 @@ namespace Links
         public const string UrlPath = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-        public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
-        public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
-        public static readonly string bootstrap_min_js_map = Url("bootstrap.min.js.map");
+        public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class AngularJS {
+            public const string UrlPath = "~/Scripts/AngularJS";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Bootstrap {
+            public const string UrlPath = "~/Scripts/Bootstrap";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+            public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+            public static readonly string bootstrap_min_js_map = Url("bootstrap.min.js.map");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class CKEditor {
+            public const string UrlPath = "~/Scripts/CKEditor";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class adapters {
+                public const string UrlPath = "~/Scripts/CKEditor/adapters";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string jquery_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.min.js") ? Url("jquery.min.js") : Url("jquery.js");
+            }
+        
+            public static readonly string build_config_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/build-config.min.js") ? Url("build-config.min.js") : Url("build-config.js");
+            public static readonly string CHANGES_md = Url("CHANGES.md");
+            public static readonly string ckeditor_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ckeditor.min.js") ? Url("ckeditor.min.js") : Url("ckeditor.js");
+            public static readonly string config_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/config.min.js") ? Url("config.min.js") : Url("config.js");
+            public static readonly string contents_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/contents.min.css") ? Url("contents.min.css") : Url("contents.css");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class lang {
+                public const string UrlPath = "~/Scripts/CKEditor/lang";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                public static readonly string de_ch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/de-ch.min.js") ? Url("de-ch.min.js") : Url("de-ch.js");
+                public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                public static readonly string tt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/tt.min.js") ? Url("tt.min.js") : Url("tt.js");
+                public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+            }
+        
+            public static readonly string LICENSE_md = Url("LICENSE.md");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class plugins {
+                public const string UrlPath = "~/Scripts/CKEditor/plugins";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string icons_png = Url("icons.png");
+                public static readonly string icons_hidpi_png = Url("icons_hidpi.png");
+            }
+        
+            public static readonly string README_md = Url("README.md");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class skins {
+                public const string UrlPath = "~/Scripts/CKEditor/skins";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            }
+        
+            public static readonly string styles_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/styles.min.js") ? Url("styles.min.js") : Url("styles.js");
+        }
+    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Customs {
             public const string UrlPath = "~/Scripts/Customs";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-            public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
+            public static readonly string kendo_ui_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/kendo.ui.min.js") ? Url("kendo.ui.min.js") : Url("kendo.ui.js");
             public static readonly string noty_alerts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/noty.alerts.min.js") ? Url("noty.alerts.min.js") : Url("noty.alerts.js");
             public static readonly string site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/site.min.js") ? Url("site.min.js") : Url("site.js");
         }
     
-        public static readonly string jquery_1_9_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-1.9.1.intellisense.min.js") ? Url("jquery-1.9.1.intellisense.min.js") : Url("jquery-1.9.1.intellisense.js");
-        public static readonly string jquery_1_9_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-1.9.1.min.js") ? Url("jquery-1.9.1.min.js") : Url("jquery-1.9.1.js");
-        public static readonly string jquery_1_9_1_min_js = Url("jquery-1.9.1.min.js");
-        public static readonly string jquery_1_9_1_min_map = Url("jquery-1.9.1.min.map");
-        public static readonly string jquery_3_1_0_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.intellisense.min.js") ? Url("jquery-3.1.0.intellisense.min.js") : Url("jquery-3.1.0.intellisense.js");
-        public static readonly string jquery_3_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.min.js") ? Url("jquery-3.1.0.min.js") : Url("jquery-3.1.0.js");
-        public static readonly string jquery_3_1_0_min_js = Url("jquery-3.1.0.min.js");
-        public static readonly string jquery_3_1_0_min_map = Url("jquery-3.1.0.min.map");
-        public static readonly string jquery_3_1_0_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.slim.min.js") ? Url("jquery-3.1.0.slim.min.js") : Url("jquery-3.1.0.slim.js");
-        public static readonly string jquery_3_1_0_slim_min_js = Url("jquery-3.1.0.slim.min.js");
-        public static readonly string jquery_3_1_0_slim_min_map = Url("jquery-3.1.0.slim.min.map");
-        public static readonly string jquery_noty_packaged_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.noty.packaged.min.js") ? Url("jquery.noty.packaged.min.js") : Url("jquery.noty.packaged.js");
-        public static readonly string jquery_noty_packaged_min_js = Url("jquery.noty.packaged.min.js");
-        public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class JQuery {
+            public const string UrlPath = "~/Scripts/JQuery";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string jquery_1_9_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-1.9.1.intellisense.min.js") ? Url("jquery-1.9.1.intellisense.min.js") : Url("jquery-1.9.1.intellisense.js");
+            public static readonly string jquery_1_9_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-1.9.1.min.js") ? Url("jquery-1.9.1.min.js") : Url("jquery-1.9.1.js");
+            public static readonly string jquery_1_9_1_min_js = Url("jquery-1.9.1.min.js");
+            public static readonly string jquery_1_9_1_min_map = Url("jquery-1.9.1.min.map");
+            public static readonly string jquery_3_1_0_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.intellisense.min.js") ? Url("jquery-3.1.0.intellisense.min.js") : Url("jquery-3.1.0.intellisense.js");
+            public static readonly string jquery_3_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.min.js") ? Url("jquery-3.1.0.min.js") : Url("jquery-3.1.0.js");
+            public static readonly string jquery_3_1_0_min_js = Url("jquery-3.1.0.min.js");
+            public static readonly string jquery_3_1_0_min_map = Url("jquery-3.1.0.min.map");
+            public static readonly string jquery_3_1_0_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.slim.min.js") ? Url("jquery-3.1.0.slim.min.js") : Url("jquery-3.1.0.slim.js");
+            public static readonly string jquery_3_1_0_slim_min_js = Url("jquery-3.1.0.slim.min.js");
+            public static readonly string jquery_3_1_0_slim_min_map = Url("jquery-3.1.0.slim.min.map");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class KendoUI {
+            public const string UrlPath = "~/Scripts/KendoUI";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class js {
+                public const string UrlPath = "~/Scripts/KendoUI/js";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string angular_min_js = Url("angular.min.js");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class cultures {
+                    public const string UrlPath = "~/Scripts/KendoUI/js/cultures";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string kendo_culture_en_US_min_js = Url("kendo.culture.en-US.min.js");
+                    public static readonly string kendo_culture_en_US_min_js_map = Url("kendo.culture.en-US.min.js.map");
+                    public static readonly string kendo_culture_en_min_js = Url("kendo.culture.en.min.js");
+                    public static readonly string kendo_culture_en_min_js_map = Url("kendo.culture.en.min.js.map");
+                    public static readonly string kendo_culture_fa_IR_min_js = Url("kendo.culture.fa-IR.min.js");
+                    public static readonly string kendo_culture_fa_IR_min_js_map = Url("kendo.culture.fa-IR.min.js.map");
+                    public static readonly string kendo_culture_fa_min_js = Url("kendo.culture.fa.min.js");
+                    public static readonly string kendo_culture_fa_min_js_map = Url("kendo.culture.fa.min.js.map");
+                }
+            
+                public static readonly string jquery_min_js = Url("jquery.min.js");
+                public static readonly string jquery_min_map = Url("jquery.min.map");
+                public static readonly string jszip_min_js = Url("jszip.min.js");
+                public static readonly string kendo_all_min_js = Url("kendo.all.min.js");
+                public static readonly string kendo_all_min_js_map = Url("kendo.all.min.js.map");
+                public static readonly string kendo_angular_min_js = Url("kendo.angular.min.js");
+                public static readonly string kendo_angular_min_js_map = Url("kendo.angular.min.js.map");
+                public static readonly string kendo_angular2_min_js = Url("kendo.angular2.min.js");
+                public static readonly string kendo_angular2_min_js_map = Url("kendo.angular2.min.js.map");
+                public static readonly string kendo_autocomplete_min_js = Url("kendo.autocomplete.min.js");
+                public static readonly string kendo_autocomplete_min_js_map = Url("kendo.autocomplete.min.js.map");
+                public static readonly string kendo_binder_min_js = Url("kendo.binder.min.js");
+                public static readonly string kendo_binder_min_js_map = Url("kendo.binder.min.js.map");
+                public static readonly string kendo_button_min_js = Url("kendo.button.min.js");
+                public static readonly string kendo_button_min_js_map = Url("kendo.button.min.js.map");
+                public static readonly string kendo_calendar_min_js = Url("kendo.calendar.min.js");
+                public static readonly string kendo_calendar_min_js_map = Url("kendo.calendar.min.js.map");
+                public static readonly string kendo_color_min_js = Url("kendo.color.min.js");
+                public static readonly string kendo_color_min_js_map = Url("kendo.color.min.js.map");
+                public static readonly string kendo_colorpicker_min_js = Url("kendo.colorpicker.min.js");
+                public static readonly string kendo_colorpicker_min_js_map = Url("kendo.colorpicker.min.js.map");
+                public static readonly string kendo_columnmenu_min_js = Url("kendo.columnmenu.min.js");
+                public static readonly string kendo_columnmenu_min_js_map = Url("kendo.columnmenu.min.js.map");
+                public static readonly string kendo_columnsorter_min_js = Url("kendo.columnsorter.min.js");
+                public static readonly string kendo_columnsorter_min_js_map = Url("kendo.columnsorter.min.js.map");
+                public static readonly string kendo_combobox_min_js = Url("kendo.combobox.min.js");
+                public static readonly string kendo_combobox_min_js_map = Url("kendo.combobox.min.js.map");
+                public static readonly string kendo_core_min_js = Url("kendo.core.min.js");
+                public static readonly string kendo_core_min_js_map = Url("kendo.core.min.js.map");
+                public static readonly string kendo_data_min_js = Url("kendo.data.min.js");
+                public static readonly string kendo_data_min_js_map = Url("kendo.data.min.js.map");
+                public static readonly string kendo_data_odata_min_js = Url("kendo.data.odata.min.js");
+                public static readonly string kendo_data_odata_min_js_map = Url("kendo.data.odata.min.js.map");
+                public static readonly string kendo_data_signalr_min_js = Url("kendo.data.signalr.min.js");
+                public static readonly string kendo_data_signalr_min_js_map = Url("kendo.data.signalr.min.js.map");
+                public static readonly string kendo_data_xml_min_js = Url("kendo.data.xml.min.js");
+                public static readonly string kendo_data_xml_min_js_map = Url("kendo.data.xml.min.js.map");
+                public static readonly string kendo_dataviz_barcode_min_js = Url("kendo.dataviz.barcode.min.js");
+                public static readonly string kendo_dataviz_barcode_min_js_map = Url("kendo.dataviz.barcode.min.js.map");
+                public static readonly string kendo_dataviz_chart_funnel_min_js = Url("kendo.dataviz.chart.funnel.min.js");
+                public static readonly string kendo_dataviz_chart_funnel_min_js_map = Url("kendo.dataviz.chart.funnel.min.js.map");
+                public static readonly string kendo_dataviz_chart_min_js = Url("kendo.dataviz.chart.min.js");
+                public static readonly string kendo_dataviz_chart_min_js_map = Url("kendo.dataviz.chart.min.js.map");
+                public static readonly string kendo_dataviz_chart_polar_min_js = Url("kendo.dataviz.chart.polar.min.js");
+                public static readonly string kendo_dataviz_chart_polar_min_js_map = Url("kendo.dataviz.chart.polar.min.js.map");
+                public static readonly string kendo_dataviz_core_min_js = Url("kendo.dataviz.core.min.js");
+                public static readonly string kendo_dataviz_core_min_js_map = Url("kendo.dataviz.core.min.js.map");
+                public static readonly string kendo_dataviz_diagram_min_js = Url("kendo.dataviz.diagram.min.js");
+                public static readonly string kendo_dataviz_diagram_min_js_map = Url("kendo.dataviz.diagram.min.js.map");
+                public static readonly string kendo_dataviz_gauge_min_js = Url("kendo.dataviz.gauge.min.js");
+                public static readonly string kendo_dataviz_gauge_min_js_map = Url("kendo.dataviz.gauge.min.js.map");
+                public static readonly string kendo_dataviz_map_min_js = Url("kendo.dataviz.map.min.js");
+                public static readonly string kendo_dataviz_map_min_js_map = Url("kendo.dataviz.map.min.js.map");
+                public static readonly string kendo_dataviz_min_js = Url("kendo.dataviz.min.js");
+                public static readonly string kendo_dataviz_min_js_map = Url("kendo.dataviz.min.js.map");
+                public static readonly string kendo_dataviz_mobile_min_js = Url("kendo.dataviz.mobile.min.js");
+                public static readonly string kendo_dataviz_mobile_min_js_map = Url("kendo.dataviz.mobile.min.js.map");
+                public static readonly string kendo_dataviz_qrcode_min_js = Url("kendo.dataviz.qrcode.min.js");
+                public static readonly string kendo_dataviz_qrcode_min_js_map = Url("kendo.dataviz.qrcode.min.js.map");
+                public static readonly string kendo_dataviz_sparkline_min_js = Url("kendo.dataviz.sparkline.min.js");
+                public static readonly string kendo_dataviz_sparkline_min_js_map = Url("kendo.dataviz.sparkline.min.js.map");
+                public static readonly string kendo_dataviz_stock_min_js = Url("kendo.dataviz.stock.min.js");
+                public static readonly string kendo_dataviz_stock_min_js_map = Url("kendo.dataviz.stock.min.js.map");
+                public static readonly string kendo_dataviz_themes_min_js = Url("kendo.dataviz.themes.min.js");
+                public static readonly string kendo_dataviz_themes_min_js_map = Url("kendo.dataviz.themes.min.js.map");
+                public static readonly string kendo_dataviz_treemap_min_js = Url("kendo.dataviz.treemap.min.js");
+                public static readonly string kendo_dataviz_treemap_min_js_map = Url("kendo.dataviz.treemap.min.js.map");
+                public static readonly string kendo_datepicker_min_js = Url("kendo.datepicker.min.js");
+                public static readonly string kendo_datepicker_min_js_map = Url("kendo.datepicker.min.js.map");
+                public static readonly string kendo_datetimepicker_min_js = Url("kendo.datetimepicker.min.js");
+                public static readonly string kendo_datetimepicker_min_js_map = Url("kendo.datetimepicker.min.js.map");
+                public static readonly string kendo_dom_min_js = Url("kendo.dom.min.js");
+                public static readonly string kendo_dom_min_js_map = Url("kendo.dom.min.js.map");
+                public static readonly string kendo_draganddrop_min_js = Url("kendo.draganddrop.min.js");
+                public static readonly string kendo_draganddrop_min_js_map = Url("kendo.draganddrop.min.js.map");
+                public static readonly string kendo_drawing_min_js = Url("kendo.drawing.min.js");
+                public static readonly string kendo_drawing_min_js_map = Url("kendo.drawing.min.js.map");
+                public static readonly string kendo_dropdownlist_min_js = Url("kendo.dropdownlist.min.js");
+                public static readonly string kendo_dropdownlist_min_js_map = Url("kendo.dropdownlist.min.js.map");
+                public static readonly string kendo_editable_min_js = Url("kendo.editable.min.js");
+                public static readonly string kendo_editable_min_js_map = Url("kendo.editable.min.js.map");
+                public static readonly string kendo_editor_min_js = Url("kendo.editor.min.js");
+                public static readonly string kendo_editor_min_js_map = Url("kendo.editor.min.js.map");
+                public static readonly string kendo_excel_min_js = Url("kendo.excel.min.js");
+                public static readonly string kendo_excel_min_js_map = Url("kendo.excel.min.js.map");
+                public static readonly string kendo_filebrowser_min_js = Url("kendo.filebrowser.min.js");
+                public static readonly string kendo_filebrowser_min_js_map = Url("kendo.filebrowser.min.js.map");
+                public static readonly string kendo_filtercell_min_js = Url("kendo.filtercell.min.js");
+                public static readonly string kendo_filtercell_min_js_map = Url("kendo.filtercell.min.js.map");
+                public static readonly string kendo_filtermenu_min_js = Url("kendo.filtermenu.min.js");
+                public static readonly string kendo_filtermenu_min_js_map = Url("kendo.filtermenu.min.js.map");
+                public static readonly string kendo_fx_min_js = Url("kendo.fx.min.js");
+                public static readonly string kendo_fx_min_js_map = Url("kendo.fx.min.js.map");
+                public static readonly string kendo_gantt_list_min_js = Url("kendo.gantt.list.min.js");
+                public static readonly string kendo_gantt_list_min_js_map = Url("kendo.gantt.list.min.js.map");
+                public static readonly string kendo_gantt_min_js = Url("kendo.gantt.min.js");
+                public static readonly string kendo_gantt_min_js_map = Url("kendo.gantt.min.js.map");
+                public static readonly string kendo_gantt_timeline_min_js = Url("kendo.gantt.timeline.min.js");
+                public static readonly string kendo_gantt_timeline_min_js_map = Url("kendo.gantt.timeline.min.js.map");
+                public static readonly string kendo_grid_min_js = Url("kendo.grid.min.js");
+                public static readonly string kendo_grid_min_js_map = Url("kendo.grid.min.js.map");
+                public static readonly string kendo_groupable_min_js = Url("kendo.groupable.min.js");
+                public static readonly string kendo_groupable_min_js_map = Url("kendo.groupable.min.js.map");
+                public static readonly string kendo_imagebrowser_min_js = Url("kendo.imagebrowser.min.js");
+                public static readonly string kendo_imagebrowser_min_js_map = Url("kendo.imagebrowser.min.js.map");
+                public static readonly string kendo_list_min_js = Url("kendo.list.min.js");
+                public static readonly string kendo_list_min_js_map = Url("kendo.list.min.js.map");
+                public static readonly string kendo_listview_min_js = Url("kendo.listview.min.js");
+                public static readonly string kendo_listview_min_js_map = Url("kendo.listview.min.js.map");
+                public static readonly string kendo_maskedtextbox_min_js = Url("kendo.maskedtextbox.min.js");
+                public static readonly string kendo_maskedtextbox_min_js_map = Url("kendo.maskedtextbox.min.js.map");
+                public static readonly string kendo_menu_min_js = Url("kendo.menu.min.js");
+                public static readonly string kendo_menu_min_js_map = Url("kendo.menu.min.js.map");
+                public static readonly string kendo_mobile_actionsheet_min_js = Url("kendo.mobile.actionsheet.min.js");
+                public static readonly string kendo_mobile_actionsheet_min_js_map = Url("kendo.mobile.actionsheet.min.js.map");
+                public static readonly string kendo_mobile_application_min_js = Url("kendo.mobile.application.min.js");
+                public static readonly string kendo_mobile_application_min_js_map = Url("kendo.mobile.application.min.js.map");
+                public static readonly string kendo_mobile_button_min_js = Url("kendo.mobile.button.min.js");
+                public static readonly string kendo_mobile_button_min_js_map = Url("kendo.mobile.button.min.js.map");
+                public static readonly string kendo_mobile_buttongroup_min_js = Url("kendo.mobile.buttongroup.min.js");
+                public static readonly string kendo_mobile_buttongroup_min_js_map = Url("kendo.mobile.buttongroup.min.js.map");
+                public static readonly string kendo_mobile_collapsible_min_js = Url("kendo.mobile.collapsible.min.js");
+                public static readonly string kendo_mobile_collapsible_min_js_map = Url("kendo.mobile.collapsible.min.js.map");
+                public static readonly string kendo_mobile_drawer_min_js = Url("kendo.mobile.drawer.min.js");
+                public static readonly string kendo_mobile_drawer_min_js_map = Url("kendo.mobile.drawer.min.js.map");
+                public static readonly string kendo_mobile_listview_min_js = Url("kendo.mobile.listview.min.js");
+                public static readonly string kendo_mobile_listview_min_js_map = Url("kendo.mobile.listview.min.js.map");
+                public static readonly string kendo_mobile_loader_min_js = Url("kendo.mobile.loader.min.js");
+                public static readonly string kendo_mobile_loader_min_js_map = Url("kendo.mobile.loader.min.js.map");
+                public static readonly string kendo_mobile_min_js = Url("kendo.mobile.min.js");
+                public static readonly string kendo_mobile_min_js_map = Url("kendo.mobile.min.js.map");
+                public static readonly string kendo_mobile_modalview_min_js = Url("kendo.mobile.modalview.min.js");
+                public static readonly string kendo_mobile_modalview_min_js_map = Url("kendo.mobile.modalview.min.js.map");
+                public static readonly string kendo_mobile_navbar_min_js = Url("kendo.mobile.navbar.min.js");
+                public static readonly string kendo_mobile_navbar_min_js_map = Url("kendo.mobile.navbar.min.js.map");
+                public static readonly string kendo_mobile_pane_min_js = Url("kendo.mobile.pane.min.js");
+                public static readonly string kendo_mobile_pane_min_js_map = Url("kendo.mobile.pane.min.js.map");
+                public static readonly string kendo_mobile_popover_min_js = Url("kendo.mobile.popover.min.js");
+                public static readonly string kendo_mobile_popover_min_js_map = Url("kendo.mobile.popover.min.js.map");
+                public static readonly string kendo_mobile_scroller_min_js = Url("kendo.mobile.scroller.min.js");
+                public static readonly string kendo_mobile_scroller_min_js_map = Url("kendo.mobile.scroller.min.js.map");
+                public static readonly string kendo_mobile_scrollview_min_js = Url("kendo.mobile.scrollview.min.js");
+                public static readonly string kendo_mobile_scrollview_min_js_map = Url("kendo.mobile.scrollview.min.js.map");
+                public static readonly string kendo_mobile_shim_min_js = Url("kendo.mobile.shim.min.js");
+                public static readonly string kendo_mobile_shim_min_js_map = Url("kendo.mobile.shim.min.js.map");
+                public static readonly string kendo_mobile_splitview_min_js = Url("kendo.mobile.splitview.min.js");
+                public static readonly string kendo_mobile_splitview_min_js_map = Url("kendo.mobile.splitview.min.js.map");
+                public static readonly string kendo_mobile_switch_min_js = Url("kendo.mobile.switch.min.js");
+                public static readonly string kendo_mobile_switch_min_js_map = Url("kendo.mobile.switch.min.js.map");
+                public static readonly string kendo_mobile_tabstrip_min_js = Url("kendo.mobile.tabstrip.min.js");
+                public static readonly string kendo_mobile_tabstrip_min_js_map = Url("kendo.mobile.tabstrip.min.js.map");
+                public static readonly string kendo_mobile_view_min_js = Url("kendo.mobile.view.min.js");
+                public static readonly string kendo_mobile_view_min_js_map = Url("kendo.mobile.view.min.js.map");
+                public static readonly string kendo_multiselect_min_js = Url("kendo.multiselect.min.js");
+                public static readonly string kendo_multiselect_min_js_map = Url("kendo.multiselect.min.js.map");
+                public static readonly string kendo_notification_min_js = Url("kendo.notification.min.js");
+                public static readonly string kendo_notification_min_js_map = Url("kendo.notification.min.js.map");
+                public static readonly string kendo_numerictextbox_min_js = Url("kendo.numerictextbox.min.js");
+                public static readonly string kendo_numerictextbox_min_js_map = Url("kendo.numerictextbox.min.js.map");
+                public static readonly string kendo_ooxml_min_js = Url("kendo.ooxml.min.js");
+                public static readonly string kendo_ooxml_min_js_map = Url("kendo.ooxml.min.js.map");
+                public static readonly string kendo_pager_min_js = Url("kendo.pager.min.js");
+                public static readonly string kendo_pager_min_js_map = Url("kendo.pager.min.js.map");
+                public static readonly string kendo_panelbar_min_js = Url("kendo.panelbar.min.js");
+                public static readonly string kendo_panelbar_min_js_map = Url("kendo.panelbar.min.js.map");
+                public static readonly string kendo_pdf_min_js = Url("kendo.pdf.min.js");
+                public static readonly string kendo_pdf_min_js_map = Url("kendo.pdf.min.js.map");
+                public static readonly string kendo_pivot_configurator_min_js = Url("kendo.pivot.configurator.min.js");
+                public static readonly string kendo_pivot_configurator_min_js_map = Url("kendo.pivot.configurator.min.js.map");
+                public static readonly string kendo_pivot_fieldmenu_min_js = Url("kendo.pivot.fieldmenu.min.js");
+                public static readonly string kendo_pivot_fieldmenu_min_js_map = Url("kendo.pivot.fieldmenu.min.js.map");
+                public static readonly string kendo_pivotgrid_min_js = Url("kendo.pivotgrid.min.js");
+                public static readonly string kendo_pivotgrid_min_js_map = Url("kendo.pivotgrid.min.js.map");
+                public static readonly string kendo_popup_min_js = Url("kendo.popup.min.js");
+                public static readonly string kendo_popup_min_js_map = Url("kendo.popup.min.js.map");
+                public static readonly string kendo_progressbar_min_js = Url("kendo.progressbar.min.js");
+                public static readonly string kendo_progressbar_min_js_map = Url("kendo.progressbar.min.js.map");
+                public static readonly string kendo_reorderable_min_js = Url("kendo.reorderable.min.js");
+                public static readonly string kendo_reorderable_min_js_map = Url("kendo.reorderable.min.js.map");
+                public static readonly string kendo_resizable_min_js = Url("kendo.resizable.min.js");
+                public static readonly string kendo_resizable_min_js_map = Url("kendo.resizable.min.js.map");
+                public static readonly string kendo_responsivepanel_min_js = Url("kendo.responsivepanel.min.js");
+                public static readonly string kendo_responsivepanel_min_js_map = Url("kendo.responsivepanel.min.js.map");
+                public static readonly string kendo_router_min_js = Url("kendo.router.min.js");
+                public static readonly string kendo_router_min_js_map = Url("kendo.router.min.js.map");
+                public static readonly string kendo_scheduler_agendaview_min_js = Url("kendo.scheduler.agendaview.min.js");
+                public static readonly string kendo_scheduler_agendaview_min_js_map = Url("kendo.scheduler.agendaview.min.js.map");
+                public static readonly string kendo_scheduler_dayview_min_js = Url("kendo.scheduler.dayview.min.js");
+                public static readonly string kendo_scheduler_dayview_min_js_map = Url("kendo.scheduler.dayview.min.js.map");
+                public static readonly string kendo_scheduler_min_js = Url("kendo.scheduler.min.js");
+                public static readonly string kendo_scheduler_min_js_map = Url("kendo.scheduler.min.js.map");
+                public static readonly string kendo_scheduler_monthview_min_js = Url("kendo.scheduler.monthview.min.js");
+                public static readonly string kendo_scheduler_monthview_min_js_map = Url("kendo.scheduler.monthview.min.js.map");
+                public static readonly string kendo_scheduler_recurrence_min_js = Url("kendo.scheduler.recurrence.min.js");
+                public static readonly string kendo_scheduler_recurrence_min_js_map = Url("kendo.scheduler.recurrence.min.js.map");
+                public static readonly string kendo_scheduler_timelineview_min_js = Url("kendo.scheduler.timelineview.min.js");
+                public static readonly string kendo_scheduler_timelineview_min_js_map = Url("kendo.scheduler.timelineview.min.js.map");
+                public static readonly string kendo_scheduler_view_min_js = Url("kendo.scheduler.view.min.js");
+                public static readonly string kendo_scheduler_view_min_js_map = Url("kendo.scheduler.view.min.js.map");
+                public static readonly string kendo_selectable_min_js = Url("kendo.selectable.min.js");
+                public static readonly string kendo_selectable_min_js_map = Url("kendo.selectable.min.js.map");
+                public static readonly string kendo_slider_min_js = Url("kendo.slider.min.js");
+                public static readonly string kendo_slider_min_js_map = Url("kendo.slider.min.js.map");
+                public static readonly string kendo_sortable_min_js = Url("kendo.sortable.min.js");
+                public static readonly string kendo_sortable_min_js_map = Url("kendo.sortable.min.js.map");
+                public static readonly string kendo_splitter_min_js = Url("kendo.splitter.min.js");
+                public static readonly string kendo_splitter_min_js_map = Url("kendo.splitter.min.js.map");
+                public static readonly string kendo_spreadsheet_min_js = Url("kendo.spreadsheet.min.js");
+                public static readonly string kendo_spreadsheet_min_js_map = Url("kendo.spreadsheet.min.js.map");
+                public static readonly string kendo_tabstrip_min_js = Url("kendo.tabstrip.min.js");
+                public static readonly string kendo_tabstrip_min_js_map = Url("kendo.tabstrip.min.js.map");
+                public static readonly string kendo_timepicker_min_js = Url("kendo.timepicker.min.js");
+                public static readonly string kendo_timepicker_min_js_map = Url("kendo.timepicker.min.js.map");
+                public static readonly string kendo_timezones_min_js = Url("kendo.timezones.min.js");
+                public static readonly string kendo_timezones_min_js_map = Url("kendo.timezones.min.js.map");
+                public static readonly string kendo_toolbar_min_js = Url("kendo.toolbar.min.js");
+                public static readonly string kendo_toolbar_min_js_map = Url("kendo.toolbar.min.js.map");
+                public static readonly string kendo_tooltip_min_js = Url("kendo.tooltip.min.js");
+                public static readonly string kendo_tooltip_min_js_map = Url("kendo.tooltip.min.js.map");
+                public static readonly string kendo_touch_min_js = Url("kendo.touch.min.js");
+                public static readonly string kendo_touch_min_js_map = Url("kendo.touch.min.js.map");
+                public static readonly string kendo_treelist_min_js = Url("kendo.treelist.min.js");
+                public static readonly string kendo_treelist_min_js_map = Url("kendo.treelist.min.js.map");
+                public static readonly string kendo_treeview_draganddrop_min_js = Url("kendo.treeview.draganddrop.min.js");
+                public static readonly string kendo_treeview_draganddrop_min_js_map = Url("kendo.treeview.draganddrop.min.js.map");
+                public static readonly string kendo_treeview_min_js = Url("kendo.treeview.min.js");
+                public static readonly string kendo_treeview_min_js_map = Url("kendo.treeview.min.js.map");
+                public static readonly string kendo_upload_min_js = Url("kendo.upload.min.js");
+                public static readonly string kendo_upload_min_js_map = Url("kendo.upload.min.js.map");
+                public static readonly string kendo_userevents_min_js = Url("kendo.userevents.min.js");
+                public static readonly string kendo_userevents_min_js_map = Url("kendo.userevents.min.js.map");
+                public static readonly string kendo_validator_min_js = Url("kendo.validator.min.js");
+                public static readonly string kendo_validator_min_js_map = Url("kendo.validator.min.js.map");
+                public static readonly string kendo_view_min_js = Url("kendo.view.min.js");
+                public static readonly string kendo_view_min_js_map = Url("kendo.view.min.js.map");
+                public static readonly string kendo_virtuallist_min_js = Url("kendo.virtuallist.min.js");
+                public static readonly string kendo_virtuallist_min_js_map = Url("kendo.virtuallist.min.js.map");
+                public static readonly string kendo_web_min_js = Url("kendo.web.min.js");
+                public static readonly string kendo_web_min_js_map = Url("kendo.web.min.js.map");
+                public static readonly string kendo_webcomponents_min_js = Url("kendo.webcomponents.min.js");
+                public static readonly string kendo_webcomponents_min_js_map = Url("kendo.webcomponents.min.js.map");
+                public static readonly string kendo_window_min_js = Url("kendo.window.min.js");
+                public static readonly string kendo_window_min_js_map = Url("kendo.window.min.js.map");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class messages {
+                    public const string UrlPath = "~/Scripts/KendoUI/js/messages";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string kendo_messages_en_US_min_js = Url("kendo.messages.en-US.min.js");
+                    public static readonly string kendo_messages_en_US_min_js_map = Url("kendo.messages.en-US.min.js.map");
+                }
+            
+                public static readonly string pako_deflate_min_js = Url("pako_deflate.min.js");
+            }
+        
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Modernizr {
+            public const string UrlPath = "~/Scripts/Modernizr";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
+        }
+    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Noty {
             public const string UrlPath = "~/Scripts/Noty";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string jquery_noty_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.noty.min.js") ? Url("jquery.noty.min.js") : Url("jquery.noty.js");
+            public static readonly string jquery_noty_packaged_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.noty.packaged.min.js") ? Url("jquery.noty.packaged.min.js") : Url("jquery.noty.packaged.js");
+            public static readonly string jquery_noty_packaged_min_js = Url("jquery.noty.packaged.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class layouts {
                 public const string UrlPath = "~/Scripts/Noty/layouts";
@@ -150,14 +606,21 @@ namespace Links
         public const string UrlPath = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-        public static readonly string bootstrap_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-theme.min.css") ? Url("bootstrap-theme.min.css") : Url("bootstrap-theme.css");
-        public static readonly string bootstrap_theme_css_map = Url("bootstrap-theme.css.map");
-        public static readonly string bootstrap_theme_min_css = Url("bootstrap-theme.min.css");
-        public static readonly string bootstrap_theme_min_css_map = Url("bootstrap-theme.min.css.map");
-        public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
-        public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
-        public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
-        public static readonly string bootstrap_min_css_map = Url("bootstrap.min.css.map");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Bootstrap {
+            public const string UrlPath = "~/Content/Bootstrap";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string bootstrap_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-theme.min.css") ? Url("bootstrap-theme.min.css") : Url("bootstrap-theme.css");
+            public static readonly string bootstrap_theme_css_map = Url("bootstrap-theme.css.map");
+            public static readonly string bootstrap_theme_min_css = Url("bootstrap-theme.min.css");
+            public static readonly string bootstrap_theme_min_css_map = Url("bootstrap-theme.min.css.map");
+            public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
+            public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
+            public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
+            public static readonly string bootstrap_min_css_map = Url("bootstrap.min.css.map");
+        }
+    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Customs {
             public const string UrlPath = "~/Content/Customs";
@@ -167,8 +630,15 @@ namespace Links
             public static readonly string site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/site.min.css") ? Url("site.min.css") : Url("site.css");
         }
     
-        public static readonly string font_awesome_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/font-awesome.min.css") ? Url("font-awesome.min.css") : Url("font-awesome.css");
-        public static readonly string font_awesome_min_css = Url("font-awesome.min.css");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class FontAwesome {
+            public const string UrlPath = "~/Content/FontAwesome";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string font_awesome_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/font-awesome.min.css") ? Url("font-awesome.min.css") : Url("font-awesome.css");
+            public static readonly string font_awesome_min_css = Url("font-awesome.min.css");
+        }
+    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Fonts {
             public const string UrlPath = "~/Content/Fonts";
@@ -211,7 +681,182 @@ namespace Links
             public const string UrlPath = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-            public static readonly string Avatar001_jpg = Url("Avatar001.jpg");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class KendoUI {
+            public const string UrlPath = "~/Content/KendoUI";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Bootstrap {
+                public const string UrlPath = "~/Content/KendoUI/Bootstrap";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string editor_png = Url("editor.png");
+                public static readonly string imagebrowser_png = Url("imagebrowser.png");
+                public static readonly string indeterminate_gif = Url("indeterminate.gif");
+                public static readonly string loading_image_gif = Url("loading-image.gif");
+                public static readonly string loading_gif = Url("loading.gif");
+                public static readonly string loading_2x_gif = Url("loading_2x.gif");
+                public static readonly string markers_png = Url("markers.png");
+                public static readonly string markers_2x_png = Url("markers_2x.png");
+                public static readonly string slider_h_gif = Url("slider-h.gif");
+                public static readonly string slider_v_gif = Url("slider-v.gif");
+                public static readonly string sprite_png = Url("sprite.png");
+                public static readonly string sprite_2x_png = Url("sprite_2x.png");
+                public static readonly string sprite_kpi_png = Url("sprite_kpi.png");
+                public static readonly string sprite_kpi_2x_png = Url("sprite_kpi_2x.png");
+            }
+        
+            public static readonly string kendo_black_min_css = Url("kendo.black.min.css");
+            public static readonly string kendo_black_min_css_map = Url("kendo.black.min.css.map");
+            public static readonly string kendo_black_mobile_min_css = Url("kendo.black.mobile.min.css");
+            public static readonly string kendo_black_mobile_min_css_map = Url("kendo.black.mobile.min.css.map");
+            public static readonly string kendo_blueopal_min_css = Url("kendo.blueopal.min.css");
+            public static readonly string kendo_blueopal_min_css_map = Url("kendo.blueopal.min.css.map");
+            public static readonly string kendo_blueopal_mobile_min_css = Url("kendo.blueopal.mobile.min.css");
+            public static readonly string kendo_blueopal_mobile_min_css_map = Url("kendo.blueopal.mobile.min.css.map");
+            public static readonly string kendo_bootstrap_min_css = Url("kendo.bootstrap.min.css");
+            public static readonly string kendo_bootstrap_min_css_map = Url("kendo.bootstrap.min.css.map");
+            public static readonly string kendo_bootstrap_mobile_min_css = Url("kendo.bootstrap.mobile.min.css");
+            public static readonly string kendo_bootstrap_mobile_min_css_map = Url("kendo.bootstrap.mobile.min.css.map");
+            public static readonly string kendo_common_bootstrap_core_min_css = Url("kendo.common-bootstrap.core.min.css");
+            public static readonly string kendo_common_bootstrap_core_min_css_map = Url("kendo.common-bootstrap.core.min.css.map");
+            public static readonly string kendo_common_bootstrap_min_css = Url("kendo.common-bootstrap.min.css");
+            public static readonly string kendo_common_bootstrap_min_css_map = Url("kendo.common-bootstrap.min.css.map");
+            public static readonly string kendo_common_fiori_min_css = Url("kendo.common-fiori.min.css");
+            public static readonly string kendo_common_fiori_min_css_map = Url("kendo.common-fiori.min.css.map");
+            public static readonly string kendo_common_material_core_min_css = Url("kendo.common-material.core.min.css");
+            public static readonly string kendo_common_material_core_min_css_map = Url("kendo.common-material.core.min.css.map");
+            public static readonly string kendo_common_material_min_css = Url("kendo.common-material.min.css");
+            public static readonly string kendo_common_material_min_css_map = Url("kendo.common-material.min.css.map");
+            public static readonly string kendo_common_nova_core_min_css = Url("kendo.common-nova.core.min.css");
+            public static readonly string kendo_common_nova_core_min_css_map = Url("kendo.common-nova.core.min.css.map");
+            public static readonly string kendo_common_nova_min_css = Url("kendo.common-nova.min.css");
+            public static readonly string kendo_common_nova_min_css_map = Url("kendo.common-nova.min.css.map");
+            public static readonly string kendo_common_office365_min_css = Url("kendo.common-office365.min.css");
+            public static readonly string kendo_common_office365_min_css_map = Url("kendo.common-office365.min.css.map");
+            public static readonly string kendo_common_core_min_css = Url("kendo.common.core.min.css");
+            public static readonly string kendo_common_core_min_css_map = Url("kendo.common.core.min.css.map");
+            public static readonly string kendo_common_min_css = Url("kendo.common.min.css");
+            public static readonly string kendo_common_min_css_map = Url("kendo.common.min.css.map");
+            public static readonly string kendo_dataviz_black_min_css = Url("kendo.dataviz.black.min.css");
+            public static readonly string kendo_dataviz_black_min_css_map = Url("kendo.dataviz.black.min.css.map");
+            public static readonly string kendo_dataviz_blueopal_min_css = Url("kendo.dataviz.blueopal.min.css");
+            public static readonly string kendo_dataviz_blueopal_min_css_map = Url("kendo.dataviz.blueopal.min.css.map");
+            public static readonly string kendo_dataviz_bootstrap_min_css = Url("kendo.dataviz.bootstrap.min.css");
+            public static readonly string kendo_dataviz_bootstrap_min_css_map = Url("kendo.dataviz.bootstrap.min.css.map");
+            public static readonly string kendo_dataviz_default_min_css = Url("kendo.dataviz.default.min.css");
+            public static readonly string kendo_dataviz_default_min_css_map = Url("kendo.dataviz.default.min.css.map");
+            public static readonly string kendo_dataviz_fiori_min_css = Url("kendo.dataviz.fiori.min.css");
+            public static readonly string kendo_dataviz_fiori_min_css_map = Url("kendo.dataviz.fiori.min.css.map");
+            public static readonly string kendo_dataviz_flat_min_css = Url("kendo.dataviz.flat.min.css");
+            public static readonly string kendo_dataviz_flat_min_css_map = Url("kendo.dataviz.flat.min.css.map");
+            public static readonly string kendo_dataviz_highcontrast_min_css = Url("kendo.dataviz.highcontrast.min.css");
+            public static readonly string kendo_dataviz_highcontrast_min_css_map = Url("kendo.dataviz.highcontrast.min.css.map");
+            public static readonly string kendo_dataviz_material_min_css = Url("kendo.dataviz.material.min.css");
+            public static readonly string kendo_dataviz_material_min_css_map = Url("kendo.dataviz.material.min.css.map");
+            public static readonly string kendo_dataviz_materialblack_min_css = Url("kendo.dataviz.materialblack.min.css");
+            public static readonly string kendo_dataviz_materialblack_min_css_map = Url("kendo.dataviz.materialblack.min.css.map");
+            public static readonly string kendo_dataviz_metro_min_css = Url("kendo.dataviz.metro.min.css");
+            public static readonly string kendo_dataviz_metro_min_css_map = Url("kendo.dataviz.metro.min.css.map");
+            public static readonly string kendo_dataviz_metroblack_min_css = Url("kendo.dataviz.metroblack.min.css");
+            public static readonly string kendo_dataviz_metroblack_min_css_map = Url("kendo.dataviz.metroblack.min.css.map");
+            public static readonly string kendo_dataviz_min_css = Url("kendo.dataviz.min.css");
+            public static readonly string kendo_dataviz_min_css_map = Url("kendo.dataviz.min.css.map");
+            public static readonly string kendo_dataviz_mobile_min_css = Url("kendo.dataviz.mobile.min.css");
+            public static readonly string kendo_dataviz_mobile_min_css_map = Url("kendo.dataviz.mobile.min.css.map");
+            public static readonly string kendo_dataviz_moonlight_min_css = Url("kendo.dataviz.moonlight.min.css");
+            public static readonly string kendo_dataviz_moonlight_min_css_map = Url("kendo.dataviz.moonlight.min.css.map");
+            public static readonly string kendo_dataviz_nova_min_css = Url("kendo.dataviz.nova.min.css");
+            public static readonly string kendo_dataviz_nova_min_css_map = Url("kendo.dataviz.nova.min.css.map");
+            public static readonly string kendo_dataviz_office365_min_css = Url("kendo.dataviz.office365.min.css");
+            public static readonly string kendo_dataviz_office365_min_css_map = Url("kendo.dataviz.office365.min.css.map");
+            public static readonly string kendo_dataviz_silver_min_css = Url("kendo.dataviz.silver.min.css");
+            public static readonly string kendo_dataviz_silver_min_css_map = Url("kendo.dataviz.silver.min.css.map");
+            public static readonly string kendo_dataviz_uniform_min_css = Url("kendo.dataviz.uniform.min.css");
+            public static readonly string kendo_dataviz_uniform_min_css_map = Url("kendo.dataviz.uniform.min.css.map");
+            public static readonly string kendo_default_min_css = Url("kendo.default.min.css");
+            public static readonly string kendo_default_min_css_map = Url("kendo.default.min.css.map");
+            public static readonly string kendo_default_mobile_min_css = Url("kendo.default.mobile.min.css");
+            public static readonly string kendo_default_mobile_min_css_map = Url("kendo.default.mobile.min.css.map");
+            public static readonly string kendo_fiori_min_css = Url("kendo.fiori.min.css");
+            public static readonly string kendo_fiori_min_css_map = Url("kendo.fiori.min.css.map");
+            public static readonly string kendo_fiori_mobile_min_css = Url("kendo.fiori.mobile.min.css");
+            public static readonly string kendo_fiori_mobile_min_css_map = Url("kendo.fiori.mobile.min.css.map");
+            public static readonly string kendo_flat_min_css = Url("kendo.flat.min.css");
+            public static readonly string kendo_flat_min_css_map = Url("kendo.flat.min.css.map");
+            public static readonly string kendo_flat_mobile_min_css = Url("kendo.flat.mobile.min.css");
+            public static readonly string kendo_flat_mobile_min_css_map = Url("kendo.flat.mobile.min.css.map");
+            public static readonly string kendo_highcontrast_min_css = Url("kendo.highcontrast.min.css");
+            public static readonly string kendo_highcontrast_min_css_map = Url("kendo.highcontrast.min.css.map");
+            public static readonly string kendo_highcontrast_mobile_min_css = Url("kendo.highcontrast.mobile.min.css");
+            public static readonly string kendo_highcontrast_mobile_min_css_map = Url("kendo.highcontrast.mobile.min.css.map");
+            public static readonly string kendo_material_min_css = Url("kendo.material.min.css");
+            public static readonly string kendo_material_min_css_map = Url("kendo.material.min.css.map");
+            public static readonly string kendo_material_mobile_min_css = Url("kendo.material.mobile.min.css");
+            public static readonly string kendo_material_mobile_min_css_map = Url("kendo.material.mobile.min.css.map");
+            public static readonly string kendo_materialblack_min_css = Url("kendo.materialblack.min.css");
+            public static readonly string kendo_materialblack_min_css_map = Url("kendo.materialblack.min.css.map");
+            public static readonly string kendo_materialblack_mobile_min_css = Url("kendo.materialblack.mobile.min.css");
+            public static readonly string kendo_materialblack_mobile_min_css_map = Url("kendo.materialblack.mobile.min.css.map");
+            public static readonly string kendo_metro_min_css = Url("kendo.metro.min.css");
+            public static readonly string kendo_metro_min_css_map = Url("kendo.metro.min.css.map");
+            public static readonly string kendo_metro_mobile_min_css = Url("kendo.metro.mobile.min.css");
+            public static readonly string kendo_metro_mobile_min_css_map = Url("kendo.metro.mobile.min.css.map");
+            public static readonly string kendo_metroblack_min_css = Url("kendo.metroblack.min.css");
+            public static readonly string kendo_metroblack_min_css_map = Url("kendo.metroblack.min.css.map");
+            public static readonly string kendo_metroblack_mobile_min_css = Url("kendo.metroblack.mobile.min.css");
+            public static readonly string kendo_metroblack_mobile_min_css_map = Url("kendo.metroblack.mobile.min.css.map");
+            public static readonly string kendo_mobile_all_min_css = Url("kendo.mobile.all.min.css");
+            public static readonly string kendo_mobile_all_min_css_map = Url("kendo.mobile.all.min.css.map");
+            public static readonly string kendo_mobile_android_dark_min_css = Url("kendo.mobile.android.dark.min.css");
+            public static readonly string kendo_mobile_android_dark_min_css_map = Url("kendo.mobile.android.dark.min.css.map");
+            public static readonly string kendo_mobile_android_light_min_css = Url("kendo.mobile.android.light.min.css");
+            public static readonly string kendo_mobile_android_light_min_css_map = Url("kendo.mobile.android.light.min.css.map");
+            public static readonly string kendo_mobile_blackberry_min_css = Url("kendo.mobile.blackberry.min.css");
+            public static readonly string kendo_mobile_blackberry_min_css_map = Url("kendo.mobile.blackberry.min.css.map");
+            public static readonly string kendo_mobile_common_min_css = Url("kendo.mobile.common.min.css");
+            public static readonly string kendo_mobile_common_min_css_map = Url("kendo.mobile.common.min.css.map");
+            public static readonly string kendo_mobile_fiori_min_css = Url("kendo.mobile.fiori.min.css");
+            public static readonly string kendo_mobile_fiori_min_css_map = Url("kendo.mobile.fiori.min.css.map");
+            public static readonly string kendo_mobile_flat_min_css = Url("kendo.mobile.flat.min.css");
+            public static readonly string kendo_mobile_flat_min_css_map = Url("kendo.mobile.flat.min.css.map");
+            public static readonly string kendo_mobile_ios_min_css = Url("kendo.mobile.ios.min.css");
+            public static readonly string kendo_mobile_ios_min_css_map = Url("kendo.mobile.ios.min.css.map");
+            public static readonly string kendo_mobile_material_min_css = Url("kendo.mobile.material.min.css");
+            public static readonly string kendo_mobile_material_min_css_map = Url("kendo.mobile.material.min.css.map");
+            public static readonly string kendo_mobile_meego_min_css = Url("kendo.mobile.meego.min.css");
+            public static readonly string kendo_mobile_meego_min_css_map = Url("kendo.mobile.meego.min.css.map");
+            public static readonly string kendo_mobile_nova_min_css = Url("kendo.mobile.nova.min.css");
+            public static readonly string kendo_mobile_nova_min_css_map = Url("kendo.mobile.nova.min.css.map");
+            public static readonly string kendo_mobile_office365_min_css = Url("kendo.mobile.office365.min.css");
+            public static readonly string kendo_mobile_office365_min_css_map = Url("kendo.mobile.office365.min.css.map");
+            public static readonly string kendo_mobile_wp8_min_css = Url("kendo.mobile.wp8.min.css");
+            public static readonly string kendo_mobile_wp8_min_css_map = Url("kendo.mobile.wp8.min.css.map");
+            public static readonly string kendo_moonlight_min_css = Url("kendo.moonlight.min.css");
+            public static readonly string kendo_moonlight_min_css_map = Url("kendo.moonlight.min.css.map");
+            public static readonly string kendo_moonlight_mobile_min_css = Url("kendo.moonlight.mobile.min.css");
+            public static readonly string kendo_moonlight_mobile_min_css_map = Url("kendo.moonlight.mobile.min.css.map");
+            public static readonly string kendo_nova_min_css = Url("kendo.nova.min.css");
+            public static readonly string kendo_nova_min_css_map = Url("kendo.nova.min.css.map");
+            public static readonly string kendo_nova_mobile_min_css = Url("kendo.nova.mobile.min.css");
+            public static readonly string kendo_nova_mobile_min_css_map = Url("kendo.nova.mobile.min.css.map");
+            public static readonly string kendo_office365_min_css = Url("kendo.office365.min.css");
+            public static readonly string kendo_office365_min_css_map = Url("kendo.office365.min.css.map");
+            public static readonly string kendo_office365_mobile_min_css = Url("kendo.office365.mobile.min.css");
+            public static readonly string kendo_office365_mobile_min_css_map = Url("kendo.office365.mobile.min.css.map");
+            public static readonly string kendo_rtl_min_css = Url("kendo.rtl.min.css");
+            public static readonly string kendo_rtl_min_css_map = Url("kendo.rtl.min.css.map");
+            public static readonly string kendo_silver_min_css = Url("kendo.silver.min.css");
+            public static readonly string kendo_silver_min_css_map = Url("kendo.silver.min.css.map");
+            public static readonly string kendo_silver_mobile_min_css = Url("kendo.silver.mobile.min.css");
+            public static readonly string kendo_silver_mobile_min_css_map = Url("kendo.silver.mobile.min.css.map");
+            public static readonly string kendo_uniform_min_css = Url("kendo.uniform.min.css");
+            public static readonly string kendo_uniform_min_css_map = Url("kendo.uniform.min.css.map");
+            public static readonly string kendo_uniform_mobile_min_css = Url("kendo.uniform.mobile.min.css");
+            public static readonly string kendo_uniform_mobile_min_css_map = Url("kendo.uniform.mobile.min.css.map");
         }
     
     }
@@ -222,13 +867,304 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class AngularJS 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Bootstrap 
+            {
+                public static class Assets
+                {
+                    public const string bootstrap_js = "~/Scripts/Bootstrap/bootstrap.js"; 
+                    public const string bootstrap_min_js = "~/Scripts/Bootstrap/bootstrap.min.js"; 
+                }
+            }
+            public static partial class CKEditor 
+            {
+                public static partial class adapters 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_js = "~/Scripts/CKEditor/adapters/jquery.js"; 
+                    }
+                }
+                public static partial class lang 
+                {
+                    public static class Assets
+                    {
+                        public const string af_js = "~/Scripts/CKEditor/lang/af.js"; 
+                        public const string ar_js = "~/Scripts/CKEditor/lang/ar.js"; 
+                        public const string bg_js = "~/Scripts/CKEditor/lang/bg.js"; 
+                        public const string bn_js = "~/Scripts/CKEditor/lang/bn.js"; 
+                        public const string bs_js = "~/Scripts/CKEditor/lang/bs.js"; 
+                        public const string ca_js = "~/Scripts/CKEditor/lang/ca.js"; 
+                        public const string cs_js = "~/Scripts/CKEditor/lang/cs.js"; 
+                        public const string cy_js = "~/Scripts/CKEditor/lang/cy.js"; 
+                        public const string da_js = "~/Scripts/CKEditor/lang/da.js"; 
+                        public const string de_ch_js = "~/Scripts/CKEditor/lang/de-ch.js"; 
+                        public const string de_js = "~/Scripts/CKEditor/lang/de.js"; 
+                        public const string el_js = "~/Scripts/CKEditor/lang/el.js"; 
+                        public const string en_au_js = "~/Scripts/CKEditor/lang/en-au.js"; 
+                        public const string en_ca_js = "~/Scripts/CKEditor/lang/en-ca.js"; 
+                        public const string en_gb_js = "~/Scripts/CKEditor/lang/en-gb.js"; 
+                        public const string en_js = "~/Scripts/CKEditor/lang/en.js"; 
+                        public const string eo_js = "~/Scripts/CKEditor/lang/eo.js"; 
+                        public const string es_js = "~/Scripts/CKEditor/lang/es.js"; 
+                        public const string et_js = "~/Scripts/CKEditor/lang/et.js"; 
+                        public const string eu_js = "~/Scripts/CKEditor/lang/eu.js"; 
+                        public const string fa_js = "~/Scripts/CKEditor/lang/fa.js"; 
+                        public const string fi_js = "~/Scripts/CKEditor/lang/fi.js"; 
+                        public const string fo_js = "~/Scripts/CKEditor/lang/fo.js"; 
+                        public const string fr_ca_js = "~/Scripts/CKEditor/lang/fr-ca.js"; 
+                        public const string fr_js = "~/Scripts/CKEditor/lang/fr.js"; 
+                        public const string gl_js = "~/Scripts/CKEditor/lang/gl.js"; 
+                        public const string gu_js = "~/Scripts/CKEditor/lang/gu.js"; 
+                        public const string he_js = "~/Scripts/CKEditor/lang/he.js"; 
+                        public const string hi_js = "~/Scripts/CKEditor/lang/hi.js"; 
+                        public const string hr_js = "~/Scripts/CKEditor/lang/hr.js"; 
+                        public const string hu_js = "~/Scripts/CKEditor/lang/hu.js"; 
+                        public const string id_js = "~/Scripts/CKEditor/lang/id.js"; 
+                        public const string is_js = "~/Scripts/CKEditor/lang/is.js"; 
+                        public const string it_js = "~/Scripts/CKEditor/lang/it.js"; 
+                        public const string ja_js = "~/Scripts/CKEditor/lang/ja.js"; 
+                        public const string ka_js = "~/Scripts/CKEditor/lang/ka.js"; 
+                        public const string km_js = "~/Scripts/CKEditor/lang/km.js"; 
+                        public const string ko_js = "~/Scripts/CKEditor/lang/ko.js"; 
+                        public const string ku_js = "~/Scripts/CKEditor/lang/ku.js"; 
+                        public const string lt_js = "~/Scripts/CKEditor/lang/lt.js"; 
+                        public const string lv_js = "~/Scripts/CKEditor/lang/lv.js"; 
+                        public const string mk_js = "~/Scripts/CKEditor/lang/mk.js"; 
+                        public const string mn_js = "~/Scripts/CKEditor/lang/mn.js"; 
+                        public const string ms_js = "~/Scripts/CKEditor/lang/ms.js"; 
+                        public const string nb_js = "~/Scripts/CKEditor/lang/nb.js"; 
+                        public const string nl_js = "~/Scripts/CKEditor/lang/nl.js"; 
+                        public const string no_js = "~/Scripts/CKEditor/lang/no.js"; 
+                        public const string pl_js = "~/Scripts/CKEditor/lang/pl.js"; 
+                        public const string pt_br_js = "~/Scripts/CKEditor/lang/pt-br.js"; 
+                        public const string pt_js = "~/Scripts/CKEditor/lang/pt.js"; 
+                        public const string ro_js = "~/Scripts/CKEditor/lang/ro.js"; 
+                        public const string ru_js = "~/Scripts/CKEditor/lang/ru.js"; 
+                        public const string si_js = "~/Scripts/CKEditor/lang/si.js"; 
+                        public const string sk_js = "~/Scripts/CKEditor/lang/sk.js"; 
+                        public const string sl_js = "~/Scripts/CKEditor/lang/sl.js"; 
+                        public const string sq_js = "~/Scripts/CKEditor/lang/sq.js"; 
+                        public const string sr_latn_js = "~/Scripts/CKEditor/lang/sr-latn.js"; 
+                        public const string sr_js = "~/Scripts/CKEditor/lang/sr.js"; 
+                        public const string sv_js = "~/Scripts/CKEditor/lang/sv.js"; 
+                        public const string th_js = "~/Scripts/CKEditor/lang/th.js"; 
+                        public const string tr_js = "~/Scripts/CKEditor/lang/tr.js"; 
+                        public const string tt_js = "~/Scripts/CKEditor/lang/tt.js"; 
+                        public const string ug_js = "~/Scripts/CKEditor/lang/ug.js"; 
+                        public const string uk_js = "~/Scripts/CKEditor/lang/uk.js"; 
+                        public const string vi_js = "~/Scripts/CKEditor/lang/vi.js"; 
+                        public const string zh_cn_js = "~/Scripts/CKEditor/lang/zh-cn.js"; 
+                        public const string zh_js = "~/Scripts/CKEditor/lang/zh.js"; 
+                    }
+                }
+                public static partial class plugins 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class skins 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                    public const string build_config_js = "~/Scripts/CKEditor/build-config.js"; 
+                    public const string ckeditor_js = "~/Scripts/CKEditor/ckeditor.js"; 
+                    public const string config_js = "~/Scripts/CKEditor/config.js"; 
+                    public const string contents_css = "~/Scripts/CKEditor/contents.css";
+                    public const string styles_js = "~/Scripts/CKEditor/styles.js"; 
+                }
+            }
             public static partial class Customs 
             {
                 public static class Assets
                 {
-                    public const string _references_js = "~/Scripts/Customs/_references.js"; 
+                    public const string kendo_ui_js = "~/Scripts/Customs/kendo.ui.js"; 
                     public const string noty_alerts_js = "~/Scripts/Customs/noty.alerts.js"; 
                     public const string site_js = "~/Scripts/Customs/site.js"; 
+                }
+            }
+            public static partial class JQuery 
+            {
+                public static class Assets
+                {
+                    public const string jquery_1_9_1_intellisense_js = "~/Scripts/JQuery/jquery-1.9.1.intellisense.js"; 
+                    public const string jquery_1_9_1_js = "~/Scripts/JQuery/jquery-1.9.1.js"; 
+                    public const string jquery_1_9_1_min_js = "~/Scripts/JQuery/jquery-1.9.1.min.js"; 
+                    public const string jquery_3_1_0_intellisense_js = "~/Scripts/JQuery/jquery-3.1.0.intellisense.js"; 
+                    public const string jquery_3_1_0_js = "~/Scripts/JQuery/jquery-3.1.0.js"; 
+                    public const string jquery_3_1_0_min_js = "~/Scripts/JQuery/jquery-3.1.0.min.js"; 
+                    public const string jquery_3_1_0_slim_js = "~/Scripts/JQuery/jquery-3.1.0.slim.js"; 
+                    public const string jquery_3_1_0_slim_min_js = "~/Scripts/JQuery/jquery-3.1.0.slim.min.js"; 
+                }
+            }
+            public static partial class KendoUI 
+            {
+                public static partial class js 
+                {
+                    public static partial class cultures 
+                    {
+                        public static class Assets
+                        {
+                            public const string kendo_culture_en_US_min_js = "~/Scripts/KendoUI/js/cultures/kendo.culture.en-US.min.js"; 
+                            public const string kendo_culture_en_min_js = "~/Scripts/KendoUI/js/cultures/kendo.culture.en.min.js"; 
+                            public const string kendo_culture_fa_IR_min_js = "~/Scripts/KendoUI/js/cultures/kendo.culture.fa-IR.min.js"; 
+                            public const string kendo_culture_fa_min_js = "~/Scripts/KendoUI/js/cultures/kendo.culture.fa.min.js"; 
+                        }
+                    }
+                    public static partial class messages 
+                    {
+                        public static class Assets
+                        {
+                            public const string kendo_messages_en_US_min_js = "~/Scripts/KendoUI/js/messages/kendo.messages.en-US.min.js"; 
+                        }
+                    }
+                    public static class Assets
+                    {
+                        public const string angular_min_js = "~/Scripts/KendoUI/js/angular.min.js"; 
+                        public const string jquery_min_js = "~/Scripts/KendoUI/js/jquery.min.js"; 
+                        public const string jszip_min_js = "~/Scripts/KendoUI/js/jszip.min.js"; 
+                        public const string kendo_all_min_js = "~/Scripts/KendoUI/js/kendo.all.min.js"; 
+                        public const string kendo_angular_min_js = "~/Scripts/KendoUI/js/kendo.angular.min.js"; 
+                        public const string kendo_angular2_min_js = "~/Scripts/KendoUI/js/kendo.angular2.min.js"; 
+                        public const string kendo_autocomplete_min_js = "~/Scripts/KendoUI/js/kendo.autocomplete.min.js"; 
+                        public const string kendo_binder_min_js = "~/Scripts/KendoUI/js/kendo.binder.min.js"; 
+                        public const string kendo_button_min_js = "~/Scripts/KendoUI/js/kendo.button.min.js"; 
+                        public const string kendo_calendar_min_js = "~/Scripts/KendoUI/js/kendo.calendar.min.js"; 
+                        public const string kendo_color_min_js = "~/Scripts/KendoUI/js/kendo.color.min.js"; 
+                        public const string kendo_colorpicker_min_js = "~/Scripts/KendoUI/js/kendo.colorpicker.min.js"; 
+                        public const string kendo_columnmenu_min_js = "~/Scripts/KendoUI/js/kendo.columnmenu.min.js"; 
+                        public const string kendo_columnsorter_min_js = "~/Scripts/KendoUI/js/kendo.columnsorter.min.js"; 
+                        public const string kendo_combobox_min_js = "~/Scripts/KendoUI/js/kendo.combobox.min.js"; 
+                        public const string kendo_core_min_js = "~/Scripts/KendoUI/js/kendo.core.min.js"; 
+                        public const string kendo_data_min_js = "~/Scripts/KendoUI/js/kendo.data.min.js"; 
+                        public const string kendo_data_odata_min_js = "~/Scripts/KendoUI/js/kendo.data.odata.min.js"; 
+                        public const string kendo_data_signalr_min_js = "~/Scripts/KendoUI/js/kendo.data.signalr.min.js"; 
+                        public const string kendo_data_xml_min_js = "~/Scripts/KendoUI/js/kendo.data.xml.min.js"; 
+                        public const string kendo_dataviz_barcode_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.barcode.min.js"; 
+                        public const string kendo_dataviz_chart_funnel_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.chart.funnel.min.js"; 
+                        public const string kendo_dataviz_chart_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.chart.min.js"; 
+                        public const string kendo_dataviz_chart_polar_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.chart.polar.min.js"; 
+                        public const string kendo_dataviz_core_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.core.min.js"; 
+                        public const string kendo_dataviz_diagram_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.diagram.min.js"; 
+                        public const string kendo_dataviz_gauge_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.gauge.min.js"; 
+                        public const string kendo_dataviz_map_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.map.min.js"; 
+                        public const string kendo_dataviz_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.min.js"; 
+                        public const string kendo_dataviz_mobile_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.mobile.min.js"; 
+                        public const string kendo_dataviz_qrcode_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.qrcode.min.js"; 
+                        public const string kendo_dataviz_sparkline_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.sparkline.min.js"; 
+                        public const string kendo_dataviz_stock_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.stock.min.js"; 
+                        public const string kendo_dataviz_themes_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.themes.min.js"; 
+                        public const string kendo_dataviz_treemap_min_js = "~/Scripts/KendoUI/js/kendo.dataviz.treemap.min.js"; 
+                        public const string kendo_datepicker_min_js = "~/Scripts/KendoUI/js/kendo.datepicker.min.js"; 
+                        public const string kendo_datetimepicker_min_js = "~/Scripts/KendoUI/js/kendo.datetimepicker.min.js"; 
+                        public const string kendo_dom_min_js = "~/Scripts/KendoUI/js/kendo.dom.min.js"; 
+                        public const string kendo_draganddrop_min_js = "~/Scripts/KendoUI/js/kendo.draganddrop.min.js"; 
+                        public const string kendo_drawing_min_js = "~/Scripts/KendoUI/js/kendo.drawing.min.js"; 
+                        public const string kendo_dropdownlist_min_js = "~/Scripts/KendoUI/js/kendo.dropdownlist.min.js"; 
+                        public const string kendo_editable_min_js = "~/Scripts/KendoUI/js/kendo.editable.min.js"; 
+                        public const string kendo_editor_min_js = "~/Scripts/KendoUI/js/kendo.editor.min.js"; 
+                        public const string kendo_excel_min_js = "~/Scripts/KendoUI/js/kendo.excel.min.js"; 
+                        public const string kendo_filebrowser_min_js = "~/Scripts/KendoUI/js/kendo.filebrowser.min.js"; 
+                        public const string kendo_filtercell_min_js = "~/Scripts/KendoUI/js/kendo.filtercell.min.js"; 
+                        public const string kendo_filtermenu_min_js = "~/Scripts/KendoUI/js/kendo.filtermenu.min.js"; 
+                        public const string kendo_fx_min_js = "~/Scripts/KendoUI/js/kendo.fx.min.js"; 
+                        public const string kendo_gantt_list_min_js = "~/Scripts/KendoUI/js/kendo.gantt.list.min.js"; 
+                        public const string kendo_gantt_min_js = "~/Scripts/KendoUI/js/kendo.gantt.min.js"; 
+                        public const string kendo_gantt_timeline_min_js = "~/Scripts/KendoUI/js/kendo.gantt.timeline.min.js"; 
+                        public const string kendo_grid_min_js = "~/Scripts/KendoUI/js/kendo.grid.min.js"; 
+                        public const string kendo_groupable_min_js = "~/Scripts/KendoUI/js/kendo.groupable.min.js"; 
+                        public const string kendo_imagebrowser_min_js = "~/Scripts/KendoUI/js/kendo.imagebrowser.min.js"; 
+                        public const string kendo_list_min_js = "~/Scripts/KendoUI/js/kendo.list.min.js"; 
+                        public const string kendo_listview_min_js = "~/Scripts/KendoUI/js/kendo.listview.min.js"; 
+                        public const string kendo_maskedtextbox_min_js = "~/Scripts/KendoUI/js/kendo.maskedtextbox.min.js"; 
+                        public const string kendo_menu_min_js = "~/Scripts/KendoUI/js/kendo.menu.min.js"; 
+                        public const string kendo_mobile_actionsheet_min_js = "~/Scripts/KendoUI/js/kendo.mobile.actionsheet.min.js"; 
+                        public const string kendo_mobile_application_min_js = "~/Scripts/KendoUI/js/kendo.mobile.application.min.js"; 
+                        public const string kendo_mobile_button_min_js = "~/Scripts/KendoUI/js/kendo.mobile.button.min.js"; 
+                        public const string kendo_mobile_buttongroup_min_js = "~/Scripts/KendoUI/js/kendo.mobile.buttongroup.min.js"; 
+                        public const string kendo_mobile_collapsible_min_js = "~/Scripts/KendoUI/js/kendo.mobile.collapsible.min.js"; 
+                        public const string kendo_mobile_drawer_min_js = "~/Scripts/KendoUI/js/kendo.mobile.drawer.min.js"; 
+                        public const string kendo_mobile_listview_min_js = "~/Scripts/KendoUI/js/kendo.mobile.listview.min.js"; 
+                        public const string kendo_mobile_loader_min_js = "~/Scripts/KendoUI/js/kendo.mobile.loader.min.js"; 
+                        public const string kendo_mobile_min_js = "~/Scripts/KendoUI/js/kendo.mobile.min.js"; 
+                        public const string kendo_mobile_modalview_min_js = "~/Scripts/KendoUI/js/kendo.mobile.modalview.min.js"; 
+                        public const string kendo_mobile_navbar_min_js = "~/Scripts/KendoUI/js/kendo.mobile.navbar.min.js"; 
+                        public const string kendo_mobile_pane_min_js = "~/Scripts/KendoUI/js/kendo.mobile.pane.min.js"; 
+                        public const string kendo_mobile_popover_min_js = "~/Scripts/KendoUI/js/kendo.mobile.popover.min.js"; 
+                        public const string kendo_mobile_scroller_min_js = "~/Scripts/KendoUI/js/kendo.mobile.scroller.min.js"; 
+                        public const string kendo_mobile_scrollview_min_js = "~/Scripts/KendoUI/js/kendo.mobile.scrollview.min.js"; 
+                        public const string kendo_mobile_shim_min_js = "~/Scripts/KendoUI/js/kendo.mobile.shim.min.js"; 
+                        public const string kendo_mobile_splitview_min_js = "~/Scripts/KendoUI/js/kendo.mobile.splitview.min.js"; 
+                        public const string kendo_mobile_switch_min_js = "~/Scripts/KendoUI/js/kendo.mobile.switch.min.js"; 
+                        public const string kendo_mobile_tabstrip_min_js = "~/Scripts/KendoUI/js/kendo.mobile.tabstrip.min.js"; 
+                        public const string kendo_mobile_view_min_js = "~/Scripts/KendoUI/js/kendo.mobile.view.min.js"; 
+                        public const string kendo_multiselect_min_js = "~/Scripts/KendoUI/js/kendo.multiselect.min.js"; 
+                        public const string kendo_notification_min_js = "~/Scripts/KendoUI/js/kendo.notification.min.js"; 
+                        public const string kendo_numerictextbox_min_js = "~/Scripts/KendoUI/js/kendo.numerictextbox.min.js"; 
+                        public const string kendo_ooxml_min_js = "~/Scripts/KendoUI/js/kendo.ooxml.min.js"; 
+                        public const string kendo_pager_min_js = "~/Scripts/KendoUI/js/kendo.pager.min.js"; 
+                        public const string kendo_panelbar_min_js = "~/Scripts/KendoUI/js/kendo.panelbar.min.js"; 
+                        public const string kendo_pdf_min_js = "~/Scripts/KendoUI/js/kendo.pdf.min.js"; 
+                        public const string kendo_pivot_configurator_min_js = "~/Scripts/KendoUI/js/kendo.pivot.configurator.min.js"; 
+                        public const string kendo_pivot_fieldmenu_min_js = "~/Scripts/KendoUI/js/kendo.pivot.fieldmenu.min.js"; 
+                        public const string kendo_pivotgrid_min_js = "~/Scripts/KendoUI/js/kendo.pivotgrid.min.js"; 
+                        public const string kendo_popup_min_js = "~/Scripts/KendoUI/js/kendo.popup.min.js"; 
+                        public const string kendo_progressbar_min_js = "~/Scripts/KendoUI/js/kendo.progressbar.min.js"; 
+                        public const string kendo_reorderable_min_js = "~/Scripts/KendoUI/js/kendo.reorderable.min.js"; 
+                        public const string kendo_resizable_min_js = "~/Scripts/KendoUI/js/kendo.resizable.min.js"; 
+                        public const string kendo_responsivepanel_min_js = "~/Scripts/KendoUI/js/kendo.responsivepanel.min.js"; 
+                        public const string kendo_router_min_js = "~/Scripts/KendoUI/js/kendo.router.min.js"; 
+                        public const string kendo_scheduler_agendaview_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.agendaview.min.js"; 
+                        public const string kendo_scheduler_dayview_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.dayview.min.js"; 
+                        public const string kendo_scheduler_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.min.js"; 
+                        public const string kendo_scheduler_monthview_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.monthview.min.js"; 
+                        public const string kendo_scheduler_recurrence_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.recurrence.min.js"; 
+                        public const string kendo_scheduler_timelineview_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.timelineview.min.js"; 
+                        public const string kendo_scheduler_view_min_js = "~/Scripts/KendoUI/js/kendo.scheduler.view.min.js"; 
+                        public const string kendo_selectable_min_js = "~/Scripts/KendoUI/js/kendo.selectable.min.js"; 
+                        public const string kendo_slider_min_js = "~/Scripts/KendoUI/js/kendo.slider.min.js"; 
+                        public const string kendo_sortable_min_js = "~/Scripts/KendoUI/js/kendo.sortable.min.js"; 
+                        public const string kendo_splitter_min_js = "~/Scripts/KendoUI/js/kendo.splitter.min.js"; 
+                        public const string kendo_spreadsheet_min_js = "~/Scripts/KendoUI/js/kendo.spreadsheet.min.js"; 
+                        public const string kendo_tabstrip_min_js = "~/Scripts/KendoUI/js/kendo.tabstrip.min.js"; 
+                        public const string kendo_timepicker_min_js = "~/Scripts/KendoUI/js/kendo.timepicker.min.js"; 
+                        public const string kendo_timezones_min_js = "~/Scripts/KendoUI/js/kendo.timezones.min.js"; 
+                        public const string kendo_toolbar_min_js = "~/Scripts/KendoUI/js/kendo.toolbar.min.js"; 
+                        public const string kendo_tooltip_min_js = "~/Scripts/KendoUI/js/kendo.tooltip.min.js"; 
+                        public const string kendo_touch_min_js = "~/Scripts/KendoUI/js/kendo.touch.min.js"; 
+                        public const string kendo_treelist_min_js = "~/Scripts/KendoUI/js/kendo.treelist.min.js"; 
+                        public const string kendo_treeview_draganddrop_min_js = "~/Scripts/KendoUI/js/kendo.treeview.draganddrop.min.js"; 
+                        public const string kendo_treeview_min_js = "~/Scripts/KendoUI/js/kendo.treeview.min.js"; 
+                        public const string kendo_upload_min_js = "~/Scripts/KendoUI/js/kendo.upload.min.js"; 
+                        public const string kendo_userevents_min_js = "~/Scripts/KendoUI/js/kendo.userevents.min.js"; 
+                        public const string kendo_validator_min_js = "~/Scripts/KendoUI/js/kendo.validator.min.js"; 
+                        public const string kendo_view_min_js = "~/Scripts/KendoUI/js/kendo.view.min.js"; 
+                        public const string kendo_virtuallist_min_js = "~/Scripts/KendoUI/js/kendo.virtuallist.min.js"; 
+                        public const string kendo_web_min_js = "~/Scripts/KendoUI/js/kendo.web.min.js"; 
+                        public const string kendo_webcomponents_min_js = "~/Scripts/KendoUI/js/kendo.webcomponents.min.js"; 
+                        public const string kendo_window_min_js = "~/Scripts/KendoUI/js/kendo.window.min.js"; 
+                        public const string pako_deflate_min_js = "~/Scripts/KendoUI/js/pako_deflate.min.js"; 
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Modernizr 
+            {
+                public static class Assets
+                {
+                    public const string modernizr_2_8_3_js = "~/Scripts/Modernizr/modernizr-2.8.3.js"; 
                 }
             }
             public static partial class Noty 
@@ -263,33 +1199,41 @@ namespace Links
                 public static class Assets
                 {
                     public const string jquery_noty_js = "~/Scripts/Noty/jquery.noty.js"; 
+                    public const string jquery_noty_packaged_js = "~/Scripts/Noty/jquery.noty.packaged.js"; 
+                    public const string jquery_noty_packaged_min_js = "~/Scripts/Noty/jquery.noty.packaged.min.js"; 
                 }
             }
             public static class Assets
             {
-                public const string bootstrap_js = "~/Scripts/bootstrap.js"; 
-                public const string bootstrap_min_js = "~/Scripts/bootstrap.min.js"; 
-                public const string jquery_1_9_1_intellisense_js = "~/Scripts/jquery-1.9.1.intellisense.js"; 
-                public const string jquery_1_9_1_js = "~/Scripts/jquery-1.9.1.js"; 
-                public const string jquery_1_9_1_min_js = "~/Scripts/jquery-1.9.1.min.js"; 
-                public const string jquery_3_1_0_intellisense_js = "~/Scripts/jquery-3.1.0.intellisense.js"; 
-                public const string jquery_3_1_0_js = "~/Scripts/jquery-3.1.0.js"; 
-                public const string jquery_3_1_0_min_js = "~/Scripts/jquery-3.1.0.min.js"; 
-                public const string jquery_3_1_0_slim_js = "~/Scripts/jquery-3.1.0.slim.js"; 
-                public const string jquery_3_1_0_slim_min_js = "~/Scripts/jquery-3.1.0.slim.min.js"; 
-                public const string jquery_noty_packaged_js = "~/Scripts/jquery.noty.packaged.js"; 
-                public const string jquery_noty_packaged_min_js = "~/Scripts/jquery.noty.packaged.min.js"; 
-                public const string modernizr_2_8_3_js = "~/Scripts/modernizr-2.8.3.js"; 
+                public const string _references_js = "~/Scripts/_references.js"; 
             }
         }
         public static partial class Content 
         {
+            public static partial class Bootstrap 
+            {
+                public static class Assets
+                {
+                    public const string bootstrap_theme_css = "~/Content/Bootstrap/bootstrap-theme.css";
+                    public const string bootstrap_theme_min_css = "~/Content/Bootstrap/bootstrap-theme.min.css";
+                    public const string bootstrap_css = "~/Content/Bootstrap/bootstrap.css";
+                    public const string bootstrap_min_css = "~/Content/Bootstrap/bootstrap.min.css";
+                }
+            }
             public static partial class Customs 
             {
                 public static class Assets
                 {
                     public const string iransans_css = "~/Content/Customs/iransans.css";
                     public const string site_css = "~/Content/Customs/site.css";
+                }
+            }
+            public static partial class FontAwesome 
+            {
+                public static class Assets
+                {
+                    public const string font_awesome_css = "~/Content/FontAwesome/font-awesome.css";
+                    public const string font_awesome_min_css = "~/Content/FontAwesome/font-awesome.min.css";
                 }
             }
             public static partial class Fonts 
@@ -304,14 +1248,94 @@ namespace Links
                 {
                 }
             }
+            public static partial class KendoUI 
+            {
+                public static partial class Bootstrap 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                    public const string kendo_black_min_css = "~/Content/KendoUI/kendo.black.min.css";
+                    public const string kendo_black_mobile_min_css = "~/Content/KendoUI/kendo.black.mobile.min.css";
+                    public const string kendo_blueopal_min_css = "~/Content/KendoUI/kendo.blueopal.min.css";
+                    public const string kendo_blueopal_mobile_min_css = "~/Content/KendoUI/kendo.blueopal.mobile.min.css";
+                    public const string kendo_bootstrap_min_css = "~/Content/KendoUI/kendo.bootstrap.min.css";
+                    public const string kendo_bootstrap_mobile_min_css = "~/Content/KendoUI/kendo.bootstrap.mobile.min.css";
+                    public const string kendo_common_bootstrap_core_min_css = "~/Content/KendoUI/kendo.common-bootstrap.core.min.css";
+                    public const string kendo_common_bootstrap_min_css = "~/Content/KendoUI/kendo.common-bootstrap.min.css";
+                    public const string kendo_common_fiori_min_css = "~/Content/KendoUI/kendo.common-fiori.min.css";
+                    public const string kendo_common_material_core_min_css = "~/Content/KendoUI/kendo.common-material.core.min.css";
+                    public const string kendo_common_material_min_css = "~/Content/KendoUI/kendo.common-material.min.css";
+                    public const string kendo_common_nova_core_min_css = "~/Content/KendoUI/kendo.common-nova.core.min.css";
+                    public const string kendo_common_nova_min_css = "~/Content/KendoUI/kendo.common-nova.min.css";
+                    public const string kendo_common_office365_min_css = "~/Content/KendoUI/kendo.common-office365.min.css";
+                    public const string kendo_common_core_min_css = "~/Content/KendoUI/kendo.common.core.min.css";
+                    public const string kendo_common_min_css = "~/Content/KendoUI/kendo.common.min.css";
+                    public const string kendo_dataviz_black_min_css = "~/Content/KendoUI/kendo.dataviz.black.min.css";
+                    public const string kendo_dataviz_blueopal_min_css = "~/Content/KendoUI/kendo.dataviz.blueopal.min.css";
+                    public const string kendo_dataviz_bootstrap_min_css = "~/Content/KendoUI/kendo.dataviz.bootstrap.min.css";
+                    public const string kendo_dataviz_default_min_css = "~/Content/KendoUI/kendo.dataviz.default.min.css";
+                    public const string kendo_dataviz_fiori_min_css = "~/Content/KendoUI/kendo.dataviz.fiori.min.css";
+                    public const string kendo_dataviz_flat_min_css = "~/Content/KendoUI/kendo.dataviz.flat.min.css";
+                    public const string kendo_dataviz_highcontrast_min_css = "~/Content/KendoUI/kendo.dataviz.highcontrast.min.css";
+                    public const string kendo_dataviz_material_min_css = "~/Content/KendoUI/kendo.dataviz.material.min.css";
+                    public const string kendo_dataviz_materialblack_min_css = "~/Content/KendoUI/kendo.dataviz.materialblack.min.css";
+                    public const string kendo_dataviz_metro_min_css = "~/Content/KendoUI/kendo.dataviz.metro.min.css";
+                    public const string kendo_dataviz_metroblack_min_css = "~/Content/KendoUI/kendo.dataviz.metroblack.min.css";
+                    public const string kendo_dataviz_min_css = "~/Content/KendoUI/kendo.dataviz.min.css";
+                    public const string kendo_dataviz_mobile_min_css = "~/Content/KendoUI/kendo.dataviz.mobile.min.css";
+                    public const string kendo_dataviz_moonlight_min_css = "~/Content/KendoUI/kendo.dataviz.moonlight.min.css";
+                    public const string kendo_dataviz_nova_min_css = "~/Content/KendoUI/kendo.dataviz.nova.min.css";
+                    public const string kendo_dataviz_office365_min_css = "~/Content/KendoUI/kendo.dataviz.office365.min.css";
+                    public const string kendo_dataviz_silver_min_css = "~/Content/KendoUI/kendo.dataviz.silver.min.css";
+                    public const string kendo_dataviz_uniform_min_css = "~/Content/KendoUI/kendo.dataviz.uniform.min.css";
+                    public const string kendo_default_min_css = "~/Content/KendoUI/kendo.default.min.css";
+                    public const string kendo_default_mobile_min_css = "~/Content/KendoUI/kendo.default.mobile.min.css";
+                    public const string kendo_fiori_min_css = "~/Content/KendoUI/kendo.fiori.min.css";
+                    public const string kendo_fiori_mobile_min_css = "~/Content/KendoUI/kendo.fiori.mobile.min.css";
+                    public const string kendo_flat_min_css = "~/Content/KendoUI/kendo.flat.min.css";
+                    public const string kendo_flat_mobile_min_css = "~/Content/KendoUI/kendo.flat.mobile.min.css";
+                    public const string kendo_highcontrast_min_css = "~/Content/KendoUI/kendo.highcontrast.min.css";
+                    public const string kendo_highcontrast_mobile_min_css = "~/Content/KendoUI/kendo.highcontrast.mobile.min.css";
+                    public const string kendo_material_min_css = "~/Content/KendoUI/kendo.material.min.css";
+                    public const string kendo_material_mobile_min_css = "~/Content/KendoUI/kendo.material.mobile.min.css";
+                    public const string kendo_materialblack_min_css = "~/Content/KendoUI/kendo.materialblack.min.css";
+                    public const string kendo_materialblack_mobile_min_css = "~/Content/KendoUI/kendo.materialblack.mobile.min.css";
+                    public const string kendo_metro_min_css = "~/Content/KendoUI/kendo.metro.min.css";
+                    public const string kendo_metro_mobile_min_css = "~/Content/KendoUI/kendo.metro.mobile.min.css";
+                    public const string kendo_metroblack_min_css = "~/Content/KendoUI/kendo.metroblack.min.css";
+                    public const string kendo_metroblack_mobile_min_css = "~/Content/KendoUI/kendo.metroblack.mobile.min.css";
+                    public const string kendo_mobile_all_min_css = "~/Content/KendoUI/kendo.mobile.all.min.css";
+                    public const string kendo_mobile_android_dark_min_css = "~/Content/KendoUI/kendo.mobile.android.dark.min.css";
+                    public const string kendo_mobile_android_light_min_css = "~/Content/KendoUI/kendo.mobile.android.light.min.css";
+                    public const string kendo_mobile_blackberry_min_css = "~/Content/KendoUI/kendo.mobile.blackberry.min.css";
+                    public const string kendo_mobile_common_min_css = "~/Content/KendoUI/kendo.mobile.common.min.css";
+                    public const string kendo_mobile_fiori_min_css = "~/Content/KendoUI/kendo.mobile.fiori.min.css";
+                    public const string kendo_mobile_flat_min_css = "~/Content/KendoUI/kendo.mobile.flat.min.css";
+                    public const string kendo_mobile_ios_min_css = "~/Content/KendoUI/kendo.mobile.ios.min.css";
+                    public const string kendo_mobile_material_min_css = "~/Content/KendoUI/kendo.mobile.material.min.css";
+                    public const string kendo_mobile_meego_min_css = "~/Content/KendoUI/kendo.mobile.meego.min.css";
+                    public const string kendo_mobile_nova_min_css = "~/Content/KendoUI/kendo.mobile.nova.min.css";
+                    public const string kendo_mobile_office365_min_css = "~/Content/KendoUI/kendo.mobile.office365.min.css";
+                    public const string kendo_mobile_wp8_min_css = "~/Content/KendoUI/kendo.mobile.wp8.min.css";
+                    public const string kendo_moonlight_min_css = "~/Content/KendoUI/kendo.moonlight.min.css";
+                    public const string kendo_moonlight_mobile_min_css = "~/Content/KendoUI/kendo.moonlight.mobile.min.css";
+                    public const string kendo_nova_min_css = "~/Content/KendoUI/kendo.nova.min.css";
+                    public const string kendo_nova_mobile_min_css = "~/Content/KendoUI/kendo.nova.mobile.min.css";
+                    public const string kendo_office365_min_css = "~/Content/KendoUI/kendo.office365.min.css";
+                    public const string kendo_office365_mobile_min_css = "~/Content/KendoUI/kendo.office365.mobile.min.css";
+                    public const string kendo_rtl_min_css = "~/Content/KendoUI/kendo.rtl.min.css";
+                    public const string kendo_silver_min_css = "~/Content/KendoUI/kendo.silver.min.css";
+                    public const string kendo_silver_mobile_min_css = "~/Content/KendoUI/kendo.silver.mobile.min.css";
+                    public const string kendo_uniform_min_css = "~/Content/KendoUI/kendo.uniform.min.css";
+                    public const string kendo_uniform_mobile_min_css = "~/Content/KendoUI/kendo.uniform.mobile.min.css";
+                }
+            }
             public static class Assets
             {
-                public const string bootstrap_theme_css = "~/Content/bootstrap-theme.css";
-                public const string bootstrap_theme_min_css = "~/Content/bootstrap-theme.min.css";
-                public const string bootstrap_css = "~/Content/bootstrap.css";
-                public const string bootstrap_min_css = "~/Content/bootstrap.min.css";
-                public const string font_awesome_css = "~/Content/font-awesome.css";
-                public const string font_awesome_min_css = "~/Content/font-awesome.min.css";
             }
         }
     }

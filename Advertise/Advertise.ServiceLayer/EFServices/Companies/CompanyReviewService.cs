@@ -25,6 +25,16 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        public void GetCountAllReviwe()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetIdCompanyForShowReview()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Get()
         {
             throw new NotImplementedException();

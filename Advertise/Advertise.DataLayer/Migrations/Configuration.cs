@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.SqlServer;
+using System.Web.UI.WebControls;
 using Advertise.DataLayer.Context;
 
 namespace Advertise.DataLayer.Migrations
@@ -28,6 +29,7 @@ namespace Advertise.DataLayer.Migrations
         /// <param name="context"></param>
         protected override void Seed(ApplicationDbContext context)
         {
+            
         }
 
         #endregion

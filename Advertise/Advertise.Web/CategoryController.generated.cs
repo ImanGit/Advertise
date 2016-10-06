@@ -77,6 +77,12 @@ namespace Advertise.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult GetCategoryList()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.GetCategoryList);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public CategoryController Actions { get { return MVC.Category; } }
@@ -97,9 +103,11 @@ namespace Advertise.Web.Controllers
             public readonly string Create = "Create";
             public readonly string Edit = "Edit";
             public readonly string List = "List";
+            public readonly string Item = "Item";
             public readonly string Delete = "Delete";
             public readonly string Details = "Details";
             public readonly string Find = "Find";
+            public readonly string GetCategoryList = "GetCategoryList";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -109,9 +117,11 @@ namespace Advertise.Web.Controllers
             public const string Create = "Create";
             public const string Edit = "Edit";
             public const string List = "List";
+            public const string Item = "Item";
             public const string Delete = "Delete";
             public const string Details = "Details";
             public const string Find = "Find";
+            public const string GetCategoryList = "GetCategoryList";
         }
 
 
@@ -122,6 +132,7 @@ namespace Advertise.Web.Controllers
         public class ActionParamsClass_Create
         {
             public readonly string viewModel = "viewModel";
+            public readonly string ImageFileName = "ImageFileName";
         }
         static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -149,6 +160,14 @@ namespace Advertise.Web.Controllers
         {
             public readonly string id = "id";
         }
+        static readonly ActionParamsClass_GetCategoryList s_params_GetCategoryList = new ActionParamsClass_GetCategoryList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetCategoryList GetCategoryListParams { get { return s_params_GetCategoryList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetCategoryList
+        {
+            public readonly string id = "id";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -165,6 +184,7 @@ namespace Advertise.Web.Controllers
                 public readonly string Edit = "Edit";
                 public readonly string Find = "Find";
                 public readonly string Index = "Index";
+                public readonly string Item = "Item";
                 public readonly string List = "List";
             }
             public readonly string Create = "~/Views/Category/Create.cshtml";
@@ -173,6 +193,7 @@ namespace Advertise.Web.Controllers
             public readonly string Edit = "~/Views/Category/Edit.cshtml";
             public readonly string Find = "~/Views/Category/Find.cshtml";
             public readonly string Index = "~/Views/Category/Index.cshtml";
+            public readonly string Item = "~/Views/Category/Item.cshtml";
             public readonly string List = "~/Views/Category/List.cshtml";
         }
     }
@@ -205,14 +226,15 @@ namespace Advertise.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.CategoryCreateViewModel viewModel);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Categories.CategoryCreateViewModel viewModel, System.Collections.Generic.IEnumerable<System.Web.HttpPostedFileBase> ImageFileName);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Advertise.ViewModel.Models.Categories.CategoryCreateViewModel viewModel)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Advertise.ViewModel.Models.Categories.CategoryCreateViewModel viewModel, System.Collections.Generic.IEnumerable<System.Web.HttpPostedFileBase> ImageFileName)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
-            CreateOverride(callInfo, viewModel);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ImageFileName", ImageFileName);
+            CreateOverride(callInfo, viewModel, ImageFileName);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -248,6 +270,17 @@ namespace Advertise.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.List);
             ListOverride(callInfo);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ItemOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Item()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Item);
+            ItemOverride(callInfo);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -295,6 +328,18 @@ namespace Advertise.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Find);
             FindOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetCategoryListOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid? id);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult GetCategoryList(System.Guid? id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.GetCategoryList);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            GetCategoryListOverride(callInfo, id);
             return callInfo;
         }
 

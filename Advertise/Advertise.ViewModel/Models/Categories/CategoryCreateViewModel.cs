@@ -30,6 +30,8 @@ namespace Advertise.ViewModel.Models.Categories
         /// <summary>
         ///     توضیحات دسته بندی
         /// </summary>
+        [DataType(DataType.MultilineText)]
+        [Required(ErrorMessage = "لطفا توضیحات را وارد کنید")]
         [DisplayName("توضیح")]
         public string Description { get; set; }
 

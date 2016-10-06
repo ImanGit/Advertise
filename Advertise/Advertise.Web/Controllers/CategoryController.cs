@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using Advertise.Common.Controller;
 using Advertise.Common.Extensions;
@@ -52,12 +55,34 @@ namespace Advertise.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateInput(false)]
-        public virtual async Task<ActionResult> Create(CategoryCreateViewModel viewModel)
+        public virtual async Task<ActionResult> Create(CategoryCreateViewModel viewModel, IEnumerable<HttpPostedFileBase> ImageFileName)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
+
+            foreach (string file in Request.Files)
+            {
+                HttpPostedFileBase hpf = Request.Files[file] as HttpPostedFileBase;
+                if (hpf.ContentLength > 0)
+                {
+                    string folderPath = Server.MapPath("~/Uploads");
+                    Directory.CreateDirectory(folderPath);
+
+                    string savedFileName = Server.MapPath("~/Uploads/" + hpf.FileName);
+                    hpf.SaveAs(savedFileName);
+                    return Content("File Uploaded Successfully");
+                }
+                else
+                {
+                    return Content("Invalid File");
+                }
+               // model1.Image = "~/ServerFolderPath/" + hpf.FileName;
+            }
+
+
+
             await _categoryService.CreateAsync(viewModel);
             this.ShowInformationMessage("دسته جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Category.List());
@@ -91,6 +116,17 @@ namespace Advertise.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         public virtual async Task<ActionResult> List()
+        {
+            var viewModel = await _categoryService.GetListAsync();
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public virtual async Task<ActionResult> Item()
         {
             var viewModel = await _categoryService.GetListAsync();
             return View(viewModel);

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Categories;
+using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Categories;
 using Advertise.ViewModel.Models.Categories;
 using AutoMapper;
@@ -29,6 +30,8 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _category = unitOfWork.Set<Category>();
+            _categoryFollow = unitOfWork.Set<CategoryFollow>();
+            _user = unitOfWork.Set<User>();
         }
 
         #endregion
@@ -88,6 +91,8 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IDbSet<Category> _category;
+        private readonly IDbSet<CategoryFollow> _categoryFollow;
+        private readonly IDbSet<User> _user;
 
         #endregion
 
@@ -98,7 +103,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public async Task<CategoryCreateViewModel> GetForCreateAsync()
         {
-            return await Task.Run(() => new CategoryCreateViewModel {Description = "List Box"});
+            return await Task.Run(() => new CategoryCreateViewModel());
         }
 
         /// <summary>
@@ -111,6 +116,26 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .AsNoTracking()
                 .ProjectTo<CategoryEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
+
+
+            var queryable = _category
+                .Join(_categoryFollow, c => c.Id, cf => cf.CategoryId, ((c, cf) => new {c, cf}))
+                .Join(_user, ccf => ccf.cf.FollowedById, u => u.Id, ((ccf, u) => new {ccf, u}))
+                .Where(
+                    w =>
+                        w.ccf.c.Id == new Guid("a5e31819-994a-8158-f104-39d9f88fbd71") &&
+                        w.u.Id == new Guid("a5e31819-994a-8158-f104-39d9f88fbd71"))
+                .Select(s=>new {s.u, s.ccf.c, s.ccf.cf});
+
+            var q= (from catf in _categoryFollow
+            join cat
+            in _category on catf.CategoryId equals cat.Id
+            join us
+            in _user on catf.FollowedById equals us.Id
+            where us.Id ==new Guid("") && cat.Id == new Guid("")
+            select new {cat,catf,us }).ToList();
+            var result = q.Count();
+
         }
 
         /// <summary>

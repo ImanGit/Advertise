@@ -1,8 +1,32 @@
-﻿@model Advertise.ViewModel.Models.Categories.CategoryItemViewModel
-
+﻿
+@model IEnumerable<Advertise.ViewModel.Models.Categories.CategoryListViewModel>
 @{
     ViewBag.Title = "Item";
 }
 
 <h2>Item</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="#" alt="..." class="img-thumbnail">
+                <div class="caption">
+                    <h3>@Html.DisplayFor(itemModel => item.Title)</h3>
+                    <p>@Html.DisplayFor(itemModel => item.Description)</p>
+                    <p>
+                        @Html.ActionLink("جزییات", "Details", new { id = item.Id })
+                        <a href="#" class="btn btn-default" role="button">@Html.DisplayFor(itemModel => item.Code)</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
+
+
+
 

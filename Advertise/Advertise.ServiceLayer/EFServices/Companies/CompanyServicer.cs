@@ -87,6 +87,11 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        public void GetInDb()
+        {
+            throw new NotImplementedException();
+        }
+
         public void GetInDB()
         {
             throw new NotImplementedException();

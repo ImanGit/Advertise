@@ -26,7 +26,7 @@
                         @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
+                
                 <div class="form-group">
                     @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -47,22 +47,24 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ImageFileName, new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.ImageFileName, new {@class = "control-label col-md-2" })
+                    <div class="col-md-10 k-rtl">
+                        <input type="file" id="ImageFileName" name="ImageFileName" accept=".jpg,.png">
+                        @Html.ValidationMessageFor(model => model.ImageFileName, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ImageFileName,"پیش نمایش", new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.ImageFileName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.ImageFileName, "", new { @class = "text-danger" })
+                        <img src="#" id="ImagePreview" class="img-thumbnail" width="300" height="300">
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"})
-                    <div class="col-md-10">
-                        <div class="k-rtl">
-                            <textarea id="Review" rows="10" cols="30" style="height: 440px"></textarea>
-                        </div>
-
-                        @*<input type="hidden" id="Body" name="Body" value="imannn"/>*@
-                        @Html.HiddenFor(model => model.Body)
+                    <div class="col-md-10 k-rtl">
+                            <textarea id="Body" name="Body" rows="10" cols="30" style="height: 440px"></textarea>
                         @Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"})
                     </div>
                 </div>

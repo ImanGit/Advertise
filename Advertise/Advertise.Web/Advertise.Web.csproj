@@ -543,7 +543,6 @@
     <Content Include="Scripts\CKEditor\config.js" />
     <Content Include="Scripts\CKEditor\contents.css" />
     <Content Include="Scripts\CKEditor\styles.js" />
-    <Content Include="Scripts\Customs\kendo.datasource.js" />
     <Content Include="Scripts\Customs\kendo.ui.js" />
     <Content Include="Scripts\Customs\noty.alerts.js" />
     <Content Include="Scripts\JQuery\jquery-1.9.1.js" />
@@ -865,11 +864,29 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\KendoEditorImagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KendoEditorFilesController.cs" />
+    <Compile Include="Controllers\KendoFileUploadController.cs" />
+    <Compile Include="DefaultController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KendoController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KendoEditorFilesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KendoEditorImagesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KendoFileUploadController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -915,6 +932,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Item.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Item.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Category\List.generated.cs">
       <AutoGen>True</AutoGen>
@@ -984,7 +1006,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Edit.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Category\Item.cshtml" />
+    <Content Include="Views\Category\Item.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Item.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -997,11 +1022,15 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Content\Images\" />
-    <Folder Include="File\Avatar\" />
-    <Folder Include="File\Image\" />
-    <Folder Include="File\UserFile\" />
+    <Folder Include="Files\Avatar\" />
+    <Folder Include="Files\Image\" />
+    <Folder Include="Files\UserFile\" />
     <Folder Include="Scripts\AngularJS\" />
     <Folder Include="Scripts\CKEditor\skins\" />
+    <Folder Include="Uploads\" />
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\KendoFileUpload\" />
+    <Folder Include="Views\Kendo\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

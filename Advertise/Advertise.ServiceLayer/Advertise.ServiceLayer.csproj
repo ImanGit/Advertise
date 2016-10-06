@@ -157,8 +157,6 @@
     <Compile Include="Contracts\Products\IProductPropertyService.cs" />
     <Compile Include="Contracts\Products\IProductReviewService.cs" />
     <Compile Include="Contracts\Products\IProductVisitService.cs" />
-    <Compile Include="Contracts\Properties\IPropertyService.cs" />
-    <Compile Include="Contracts\Properties\IPropertyOptionService.cs" />
     <Compile Include="Contracts\Roles\IRoleService.cs" />
     <Compile Include="Contracts\Roles\IRoleActionService.cs" />
     <Compile Include="Contracts\Users\IUserClaimService.cs" />
@@ -220,8 +218,6 @@
     <Compile Include="EFServices\Products\ProductReviewService.cs" />
     <Compile Include="EFServices\Products\ProductServicer.cs" />
     <Compile Include="EFServices\Products\ProductVisitService.cs" />
-    <Compile Include="EFServices\Properties\PropertyOptionService.cs" />
-    <Compile Include="EFServices\Properties\PropertyService.cs" />
     <Compile Include="EFServices\Roles\RoleActionService.cs" />
     <Compile Include="EFServices\Roles\RoleService.cs" />
     <Compile Include="EFServices\Public\ShareService.cs" />
