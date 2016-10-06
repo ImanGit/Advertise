@@ -72,7 +72,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public Task DeleteAsync(CategoryDeleteViewModel viewModel)
         {
-             return _category.Where(model => model.Id == viewModel.Id).Delete();
+             return _category.Where(model => model.Id == viewModel.Id).DeleteAsync( );
         }
 
         #endregion
