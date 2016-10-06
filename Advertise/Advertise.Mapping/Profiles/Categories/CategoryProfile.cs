@@ -1,5 +1,4 @@
-﻿using System;
-using Advertise.DomainClasses.Entities.Categories;
+﻿using Advertise.DomainClasses.Entities.Categories;
 using Advertise.ViewModel.Models.Categories;
 using AutoMapper;
 
@@ -16,47 +15,25 @@ namespace Advertise.Mapping.Profiles.Categories
             CreateMap<Category, CategoryCreateViewModel>()
                 .ProjectUsing(src => new CategoryCreateViewModel
                 {
+                    Code = src.Code,
                     Description = src.Description,
                     ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
                     Title = src.Title,
-                    ParentId = src.ParentId
-                });
-            CreateMap<CategoryReview, CategoryCreateViewModel>()
-                .ProjectUsing(src => new CategoryCreateViewModel
-                {
-                    Body = src.Body
+                    ParentPath = src.ParentPath
                     
                 });
 
             CreateMap<CategoryCreateViewModel, Category>()
-                .ForMember(dest => dest.Description, opts => opts.MapFrom(src => src.Description))
-                .ForMember(dest => dest.ImageFileName, opts => opts.MapFrom(src => src.ImageFileName))
-                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
-                .ForMember(dest => dest.ParentId, opts => opts.MapFrom(src => src.ParentId))
-                .ForAllOtherMembers(opt => opt.Ignore())
-                ;
-            CreateMap<CategoryCreateViewModel, CategoryReview>()
-                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
-                //.ForMember(dest=>dest.AuthoredById,opts=>opts.MapFrom(new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709")))
-                .ForAllOtherMembers(opt => opt.Ignore())
-                ;
-
-
-
-
-
-
-
-
-
-            //.ProjectUsing(src => new Category
-            //{
-            //    Description = src.Description,
-            //    ImageFileName = src.ImageFileName,
-            //    Title = src.Title,
-            //    ParentId = src.ParentId,
-            //    Review. = 
-            //});
+                .ProjectUsing(src => new Category
+                {
+                    Code = src.Code,
+                    Description = src.Description,
+                    ImageFileName = src.ImageFileName,
+                    IsActive = src.IsActive,
+                    Title = src.Title,
+                    ParentPath = src.ParentPath
+                });
 
             CreateMap<Category, CategoryListViewModel>()
                 .ProjectUsing(src => new CategoryListViewModel
@@ -67,8 +44,7 @@ namespace Advertise.Mapping.Profiles.Categories
                     IsActive = src.IsActive,
                     Title = src.Title,
                     ParentPath = src.ParentPath,
-                    Id = src.Id,
-                    ParentId = src.ParentId
+                    Id = src.Id
                 });
 
             CreateMap<CategoryListViewModel, Category>()
@@ -80,8 +56,7 @@ namespace Advertise.Mapping.Profiles.Categories
                     IsActive = src.IsActive,
                     Title = src.Title,
                     ParentPath = src.ParentPath,
-                    Id = src.Id,
-                    ParentId = src.ParentId
+                    Id = src.Id
                 });
 
             CreateMap<Category, CategoryEditViewModel>()

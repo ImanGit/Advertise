@@ -37,9 +37,9 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+WriteLiteral("\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
 
-WriteLiteral("\n");
+WriteLiteral("\r\n");
 
             
             #line 25 "..\..\Views\Category\Delete.cshtml"
@@ -50,12 +50,12 @@ WriteLiteral("\n");
             
             #line default
             #line hidden
-WriteLiteral("\n\n<h2>Delete</h2>\n\n\n<h3>آیا برای حذف اطمینان دارید؟؟</h3>\n<div>\n    <h4>CategoryD" +
-"eleteViewModel</h4>\n    <hr />\n    <dl");
+WriteLiteral("\r\n\r\n<h2>Delete</h2>\r\n\r\n\r\n<h3>آیا برای حذف اطمینان دارید؟؟</h3>\r\n<div>\r\n    <h4>Ca" +
+"tegoryDeleteViewModel</h4>\r\n    <hr />\r\n    <dl");
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
-WriteLiteral(">\n\n\n        <dt>\n");
+WriteLiteral(">\r\n\r\n\r\n        <dt>\r\n");
 
 WriteLiteral("            ");
 
@@ -66,7 +66,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dt>\n\n        <dd>\n");
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
 
 WriteLiteral("            ");
 
@@ -77,7 +77,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
 
 WriteLiteral("            ");
 
@@ -88,7 +88,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dt>\n\n        <dd>\n");
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
 
 WriteLiteral("            ");
 
@@ -99,7 +99,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
 
 WriteLiteral("            ");
 
@@ -110,7 +110,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dt>\n\n        <dd>\n");
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
 
 WriteLiteral("            ");
 
@@ -121,7 +121,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
 
 WriteLiteral("            ");
 
@@ -132,7 +132,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dt>\n\n        <dd>\n");
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
 
 WriteLiteral("            ");
 
@@ -143,7 +143,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
 
 WriteLiteral("            ");
 
@@ -154,7 +154,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dt>\n\n        <dd>\n");
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
 
 WriteLiteral("            ");
 
@@ -165,7 +165,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dd>\n\n\n\n        <dt>\n");
+WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
 
 WriteLiteral("            ");
 
@@ -176,7 +176,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dt>\n\n        <dd>\n");
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
 
 WriteLiteral("            ");
 
@@ -187,7 +187,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </dd>\n\n\n    </dl>\n\n");
+WriteLiteral("\r\n        </dd>\r\n\r\n\r\n    </dl>\r\n\r\n");
 
             
             #line 101 "..\..\Views\Category\Delete.cshtml"
@@ -221,7 +221,7 @@ WriteLiteral("        <div");
 
 WriteLiteral(" class=\"form-actions no-color\"");
 
-WriteLiteral(">\n            <input");
+WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"submit\"");
 
@@ -229,7 +229,7 @@ WriteLiteral(" value=\"Delete\"");
 
 WriteLiteral(" class=\"btn btn-default\"");
 
-WriteLiteral(" /> |\n");
+WriteLiteral(" /> |\r\n");
 
 WriteLiteral("            ");
 
@@ -240,7 +240,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\n        </div>\n");
+WriteLiteral("\r\n        </div>\r\n");
 
             
             #line 108 "..\..\Views\Category\Delete.cshtml"
@@ -249,7 +249,7 @@ WriteLiteral("\n        </div>\n");
             
             #line default
             #line hidden
-WriteLiteral("</div>\n\n\n\n");
+WriteLiteral("</div>\r\n\r\n\r\n\r\n");
 
         }
     }

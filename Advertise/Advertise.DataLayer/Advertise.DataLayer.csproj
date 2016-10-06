@@ -122,9 +122,9 @@
     <Compile Include="Context\BaseDbContext.cs" />
     <Compile Include="Conventions\CustomeConvention.cs" />
     <Compile Include="Context\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201609102034308_init.cs" />
-    <Compile Include="Migrations\201609102034308_init.Designer.cs">
-      <DependentUpon>201609102034308_init.cs</DependentUpon>
+    <Compile Include="Migrations\201609300912407_ fff.cs" />
+    <Compile Include="Migrations\201609300912407_ fff.Designer.cs">
+      <DependentUpon>201609300912407_ fff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,13 +144,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\InsertUser.sql" />
     <Content Include="Scripts\Seed.sql" />
     <Content Include="Scripts\SnapshotIsolation.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609102034308_init.resx">
-      <DependentUpon>201609102034308_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609300912407_ fff.resx">
+      <DependentUpon>201609300912407_ fff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,15 +1,19 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
-    public interface ICompanyrService : IBaseService
+    public interface ICompanyService : IBaseService
     {
         #region Create
 
         /// <summary>
         /// 
         /// </summary>
-        void Create();
+        Task CreateAsync(CompanyCreateViewModel  viewModel);
 
         #endregion
 
@@ -18,7 +22,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// ویرایش کمپانی
         /// </summary>
-        void Edit();
+        Task EditAsync(CompanyEditViewModel  viewModel);
 
         /// <summary>
         /// فعال یا غیر فعال کردن کمپانی
@@ -44,7 +48,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// حذف منطقی 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(CompanyDeleteViewModel   viewModel);
 
         /// <summary>
         /// حذف فیزیکی
@@ -106,7 +110,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <returns></returns>
         int GetActive();
 
-        
+
 
         /// <summary>
         /// نمایش کمپانی هایی که به صورت منطقی پاک شده اند
@@ -127,7 +131,54 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         /// <returns></returns>
         int Find();
+        
 
+
+        #endregion
+
+
+        #region Read
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<CompanyCreateViewModel> GetForCreateAsync();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyEditViewModel> GetForEditAsync(Guid id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<CompanyDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<CompanyListViewModel>> GetListAsync();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyDetailsViewModel> GetDetailsAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyListViewModel> FindById(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        Task FillCreateViewModel(CompanyCreateViewModel viewModel);
 
         #endregion
     }

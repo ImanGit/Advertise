@@ -39,6 +39,16 @@ namespace Advertise.DomainClasses.Entities.Public
         /// </summary>
         public virtual Guid CityId { get; set; }
 
+
+        /// <summary>
+        ///     کد اختصاصی کاربر
+        /// </summary>
+        public virtual City User { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public virtual Guid UserId { get; set; }
+
         #endregion
     }
 }

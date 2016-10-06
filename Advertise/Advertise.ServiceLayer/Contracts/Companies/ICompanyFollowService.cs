@@ -1,4 +1,9 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyFollow ;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyFollowService :IBaseService 
@@ -7,7 +12,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// ایجاد فالو یک کمپانی
         /// </summary>
-        void Create();
+        Task CreateAsync(CompanyFollowCreateViewModel viewModel);
 
         #endregion
 
@@ -17,6 +22,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         void EditForFollowOrUnFollow();
 
+        Task EditAsync(CompanyFollowEditViewModel viewModel);
         #endregion
 
         #region Delete
@@ -69,6 +75,14 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <returns></returns>
         int GetAllFollowerUser();
 
+        #endregion
+
+        #region Read
+        Task<CompanyFollowCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyFollowEditViewModel> GetForEditAsync(Guid id);
+
+        Task<IEnumerable<CompanyFollowListViewModel>> GetListAsync();
         #endregion
     }
 }

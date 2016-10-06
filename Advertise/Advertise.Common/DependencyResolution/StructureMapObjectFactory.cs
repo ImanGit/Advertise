@@ -46,7 +46,6 @@ namespace Advertise.Common.DependencyResolution
                             HttpContext.Current != null && HttpContext.Current.User != null
                                 ? HttpContext.Current.User.Identity
                                 : null);
-
                 ioc.For<IUnitOfWork>().HybridHttpOrThreadLocalScoped().Use<ApplicationDbContext>();
                 ioc.For<HttpContextBase>().Use(() => new HttpContextWrapper(HttpContext.Current));
                 ioc.For<HttpServerUtilityBase>().Use(() => new HttpServerUtilityWrapper(HttpContext.Current.Server));

@@ -34,7 +34,7 @@ namespace Advertise.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Category", action = "List", id = UrlParameter.Optional }
+                defaults: new { controller = MVC.Home.Name , action = MVC.Home.ActionNames.Index , id = UrlParameter.Optional }
             );
 
             //routes.MapRoute("Default", "{controller}/{action}/{id}",

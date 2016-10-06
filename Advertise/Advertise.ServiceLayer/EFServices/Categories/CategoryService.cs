@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
@@ -43,17 +42,9 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <param name="viewModel"></param>
         public async Task CreateAsync(CategoryCreateViewModel viewModel)
         {
-            
-                var category = _mapper.Map<Category>(viewModel);
-                var review = _mapper.Map<CategoryReview>(viewModel);
-            review.AuthoredById = new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709");
-                category.Reviews.Add(review);
-                _category.Add(category);
-                await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
-            
-
-
-            
+            var category = _mapper.Map<Category>(viewModel);
+            _category.Add(category);
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
         #endregion
@@ -66,7 +57,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public async Task EditAsync(CategoryEditViewModel viewModel)
         {
-            var category = await _category.FirstAsync(model => model.Id == viewModel.Id);
+            var category = await _category.FirstAsync(model => model.Id == viewModel.Id );
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
@@ -81,7 +72,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public Task DeleteAsync(CategoryDeleteViewModel viewModel)
         {
-            return _category.Where(model => model.Id == viewModel.Id).DeleteAsync();
+             return _category.Where(model => model.Id == viewModel.Id).Delete();
         }
 
         #endregion
@@ -162,24 +153,6 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .ToListAsync();
         }
 
-        public  IList<CategoryListViewModel> GetChildList(Guid? parentId)
-        {
-            return  _category
-                .AsNoTracking()
-                .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .Where(category=>category.ParentId==parentId)
-                .ToList();
-        }
-
-        public IList<CategoryListViewModel> GetParentList()
-        {
-            return _category
-                .AsNoTracking()
-                .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .Where(category => category.ParentId == null)
-                .ToList();
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -202,6 +175,18 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         {
             throw new NotImplementedException();
         }
+
+        public IList<CategoryListViewModel> GetChildList(Guid? parentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<CategoryListViewModel> GetParentList()
+        {
+            throw new NotImplementedException();
+        }
+
+     
 
         #endregion
     }

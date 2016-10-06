@@ -73,6 +73,12 @@ namespace Advertise.DomainClasses.Entities.Users
         /// </summary>
         public virtual byte[] RowVersion { get; set; }
 
+        /// <summary>
+        ///    کد آدرس کاربر
+        /// </summary>
+        public virtual Guid  IdAddress { get; set; }
+
+
         #endregion
 
         #region NavigationProperties
