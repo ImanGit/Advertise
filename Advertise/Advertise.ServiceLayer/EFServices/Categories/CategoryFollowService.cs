@@ -6,6 +6,7 @@ using System.Linq.Dynamic;
 using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Categories;
+using Advertise.DomainClasses.Entities.Public;
 using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Categories;
 using AutoMapper;
@@ -24,6 +25,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         private readonly IDbSet<CategoryFollow > _categoryFollow;
         private readonly IDbSet<Category> _categories;
         private readonly IDbSet<User> _user;
+        private readonly IDbSet<Address> _address;
 
         #endregion
         #region Ctor
@@ -34,6 +36,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             _categoryFollow = unitOfWork.Set<CategoryFollow>();
             _categories = unitOfWork.Set<Category>();
             _user = unitOfWork.Set<User >();
+            _address  = unitOfWork.Set<Address>();
         }
         #endregion
         #region Create
@@ -132,17 +135,38 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         }
 
-        public int GetCountFollowUserInCity(Guid idCity)
+        public int GetCountFollowUserInCity(Guid idAddress)
+        {
+        var countFollow= (from catf in _categoryFollow
+                join us
+                    in _user on catf.FollowedById equals us.Id
+                where 
+                us.IdAddress == idAddress &&
+                catf.IsFollow  == true 
+                select new {catf.Id });
+            return countFollow.Count( );
+
+        }
+
+        public int GetCountUnFollowUserInCity(Guid idAddress)
+        {
+            var countFollow = (from catf in _categoryFollow
+                               join us
+                                   in _user on catf.FollowedById equals us.Id
+                               where
+                               us.IdAddress == idAddress &&
+                               catf.IsFollow == false 
+                               select new { catf.Id });
+            return countFollow.Count();
+
+        }
+
+        public long GetMaxCategory()
         {
             throw new NotImplementedException();
         }
 
-        public int GetCountUnFollowUserInCity()
-        {
-            throw new NotImplementedException();
-        }
-
-        public long GetMaxOrMinCategory()
+        public long GetMinCategory()
         {
             throw new NotImplementedException();
         }

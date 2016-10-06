@@ -1,4 +1,9 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyImage1;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyImageService :IBaseService 
@@ -7,7 +12,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        void Create();
+        Task CreateAsync(CompanyImageCreateViewModel viewModel);
 
         #endregion
 
@@ -23,16 +28,17 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <returns></returns>
         int EditImageForComany();
 
+        Task EditAsync(CompanyImageEditViewModel viewModel);
+
         #endregion
 
         #region Delete
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
-
+        Task DeleteAsync(CompanyImageDeleteViewModel  viewModel);
         #endregion
-    
+
         #region Retrieve
         /// <summary>
         /// تعداد کل عکسها
@@ -62,6 +68,55 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         /// <returns></returns>
         int GetCountImageInPlan();
+
+        #endregion
+
+        #region Read
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<CompanyImageCreateViewModel> GetForCreateAsync();
+
+        IList<CompanyImageListViewModel> GetChildList(Guid? parentId);
+
+        IList<CompanyImageListViewModel> GetParentList();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyImageEditViewModel> GetForEditAsync(Guid id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<CompanyImageListViewModel>> GetListAsync();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyImageDetailsViewModel> GetDetailsAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyImageListViewModel> FindById(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        Task FillCreateViewModel(CompanyImageCreateViewModel viewModel);
 
         #endregion
     }

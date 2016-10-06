@@ -68,19 +68,20 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     گرفتن تعداد فالور محصولات یک شهر
         /// </summary>
         /// <returns></returns>
-        int GetCountFollowUserInCity(Guid idCity);
+        int GetCountFollowUserInCity(Guid idAddress);
 
         /// <summary>
         ///     گرفتن تعداد آن فالور محصولات یک شهر
         /// </summary>
         /// <returns></returns>
-        int GetCountUnFollowUserInCity();
+        int GetCountUnFollowUserInCity(Guid idAddress);
 
         /// <summary>
         ///     گرفتن بیشترین یا کمترین محصول فالو شده
         /// </summary>
         /// <returns></returns>
-        long GetMaxOrMinCategory();
+        long GetMaxCategory();
+        long GetMinCategory();
 
         #endregion
 

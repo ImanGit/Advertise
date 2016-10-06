@@ -67,10 +67,10 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// </summary>
         /// <param name="viewModel"></param>
         /// <returns></returns>
-        //public Task DeleteAsync(CategoryDeleteViewModel viewModel)
-        //{
-        //  // return _category.Where(model => model.Id == viewModel.Id).Count( );
-        //}
+        public Task DeleteAsync(CategoryDeleteViewModel viewModel)
+        {
+             return _category.Where(model => model.Id == viewModel.Id).Delete();
+        }
 
         #endregion
 
@@ -161,10 +161,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(CategoryDeleteViewModel viewModel)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         #endregion
     }
