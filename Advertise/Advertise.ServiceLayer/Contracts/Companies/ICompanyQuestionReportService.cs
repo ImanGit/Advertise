@@ -16,7 +16,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task CreateAsync(CompanyQrCreateViewModel viewModel);
         #endregion
 
-
         #region Update
         /// <summary>
         /// 
@@ -24,6 +23,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task EditAsync(CompanyQrEditViewModel viewModel);
 
         #endregion
+
         #region Delete
         /// <summary>
         /// 
@@ -95,6 +95,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<CompanyQrListViewModel>> GetListAsync();
+
 
         /// <summary>
         /// 

@@ -1,36 +1,33 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyQuestion;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyQuestionService : IBaseService
     {
         #region Create
-
         /// <summary>
         /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(CompanyQCreateViewModel viewModel);
         #endregion
 
         #region Update
-
         /// <summary>
-        /// تائید کردن پرسش و پاسخ
+        /// 
         /// </summary>
-        bool EditForApprove();
-
-
+        Task EditAsync(CompanyQEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
-
+        Task DeleteAsync(CompanyQDeleteViewModel viewModel);
         #endregion
 
         #region Retrieve
@@ -72,6 +69,52 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <returns></returns>
         int GetUnknown();
 
+
+        #endregion
+
+        #region Read
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<CompanyQCreateViewModel> GetForCreateAsync();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyQEditViewModel> GetForEditAsync(Guid id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<CompanyQDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<CompanyQListViewModel>> GetListAsync();
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyQDetailViewModel> GetDetailsAsync(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<CompanyQListViewModel> FindById(Guid id);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        Task FillCreateViewModel(CompanyQCreateViewModel viewModel);
 
         #endregion
     }
