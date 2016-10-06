@@ -20,14 +20,6 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         #endregion
 
-        #region Delete
-
-        /// <summary>
-        /// </summary>
-        void Delete();
-
-        #endregion
-
         #region Update
 
         /// <summary>
@@ -45,10 +37,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
 
         #region Retrieve
 
-        /// <summary>
-        /// </summary>
-        void Get();
-
+        
         /// <summary>
         ///     تعداد کل نقد و بررسی ها
         /// </summary>

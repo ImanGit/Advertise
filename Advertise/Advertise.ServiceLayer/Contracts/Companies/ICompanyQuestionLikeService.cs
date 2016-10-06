@@ -23,22 +23,11 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         void EditForFollowOrUnFollow();
 
         Task EditAsync(CompanyQlEditViewModel viewModel);
-        #endregion
 
-
-        #region Update
         /// <summary>
         /// لایک مجدد یا پس گرفتن لایک سوال
         /// </summary>
         void EditForLikeOrUnlike();
-
-        #endregion
-
-        #region Delete
-        /// <summary>
-        /// 
-        /// </summary>
-        void Delete();
 
         #endregion
 

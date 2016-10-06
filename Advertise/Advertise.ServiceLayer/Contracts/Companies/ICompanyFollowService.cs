@@ -25,14 +25,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task EditAsync(CompanyFollowEditViewModel viewModel);
         #endregion
 
-        #region Delete
-        /// <summary>
-        /// 
-        /// </summary>
-        void Delete();
-
-        #endregion
-
         #region Retrieve
         /// <summary>
         /// تعداد همه فالورها

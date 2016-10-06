@@ -26,19 +26,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         Task EditAsync(CategoryFollowEditViewModel viewModel);
         #endregion
 
-        #region Delete
-
-        /// <summary>
-        /// </summary>
-        bool Delete();
-
-        #endregion
-
         #region Retrieve
-
-        /// <summary>
-        /// </summary>
-        void Get();
 
         /// <summary>
         ///     گرفتن تعداد لایک های یک محصول

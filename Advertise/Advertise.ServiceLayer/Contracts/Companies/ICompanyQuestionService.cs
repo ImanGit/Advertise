@@ -74,46 +74,18 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #region Read
 
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
         Task<CompanyQCreateViewModel> GetForCreateAsync();
 
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         Task<CompanyQEditViewModel> GetForEditAsync(Guid id);
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
         Task<CompanyQDeleteViewModel> GetForDeleteAsync(Guid id);
 
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
         Task<IEnumerable<CompanyQListViewModel>> GetListAsync();
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         Task<CompanyQDetailViewModel> GetDetailsAsync(Guid id);
 
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         Task<CompanyQListViewModel> FindById(Guid id);
 
-        /// <summary>
-        /// </summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
         Task FillCreateViewModel(CompanyQCreateViewModel viewModel);
 
         #endregion

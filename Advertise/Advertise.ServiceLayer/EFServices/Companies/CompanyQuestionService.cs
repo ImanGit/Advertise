@@ -45,6 +45,10 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _mapper.Map(viewModel, companyQ);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
+        public bool EditForApprove()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Read
@@ -137,26 +141,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
 
         #endregion
-        public void Create()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool EditForApprove()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
+        #region Retrive
         public void GetCountNotApprove()
         {
             throw new NotImplementedException();
@@ -187,9 +172,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

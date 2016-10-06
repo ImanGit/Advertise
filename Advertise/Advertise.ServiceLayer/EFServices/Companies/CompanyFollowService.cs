@@ -21,6 +21,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyFollow > _companyFollow;
 
         #endregion
+
         #region Ctor
         public CompanyFollowService(IMapper mapper, IUnitOfWork unitOfWork)
         {
@@ -29,6 +30,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyFollow = unitOfWork.Set<CompanyFollow>();
         }
         #endregion
+
         #region Create
         public async Task CreateAsync(CompanyFollowCreateViewModel viewModel)
         {
@@ -37,12 +39,18 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
         #endregion
+
         #region Edit
         public async Task EditAsync(CompanyFollowEditViewModel viewModel)
         {
             var category = await _companyFollow.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+        }
+
+        public void EditForFollowOrUnFollow()
+        {
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -74,26 +82,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
         #endregion
 
-        public void Create()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditForFollowOrUnFollow()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
+        #region Retrive
         public int GetCountAll()
         {
             throw new NotImplementedException();
@@ -129,14 +118,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
-
-       
-      
-
+        #endregion
 
     }
 }

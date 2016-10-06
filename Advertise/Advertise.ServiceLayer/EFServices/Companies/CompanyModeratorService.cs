@@ -22,23 +22,16 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyModerator> _companyModerator;
 
         #endregion
-
+        #region Ctor
         public CompanyModeratorService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
-            _companyModerator = unitOfWork.Set<CompanyModerator >();
+            _companyModerator = unitOfWork.Set<CompanyModerator>();
         }
-        public void Create()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
+        #region Retrive
         public void GetCountModeratorForComany()
         {
             throw new NotImplementedException();
@@ -59,51 +52,15 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Edit()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task CreateAsync(CompanyModeratorCreateViewModel  viewModel)
-        {
-            var companyImage = _mapper.Map<CompanyModerator>(viewModel);
-            _companyModerator.Add(companyImage);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
-        }
-
-        public async Task EditAsync(CompanyModeratorEditViewModel  viewModel)
+        #region Edit
+        public async Task EditAsync(CompanyModeratorEditViewModel viewModel)
         {
             var companyImage = await _companyModerator.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, companyImage);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
-
-        public Task DeleteAsync(CompanyModeratorDeleteViewModel viewModel)
-        {
-            return _companyModerator.Where(model => model.Id == viewModel.Id).DeleteAsync();
-        }
-
-        public async Task<CompanyModeratorCreateViewModel> GetForCreateAsync()
-        {
-            return await Task.Run(() => new CompanyModeratorCreateViewModel());
-        }
-
-        public IList<CompanyModeratorListViewModel> GetChildList(Guid? parentId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<CompanyModeratorListViewModel> GetParentList()
-        {
-            throw new NotImplementedException();
-        }
-
-        #region Edit
 
         public async Task<CompanyModeratorEditViewModel> GetForEditAsync(Guid id)
         {
@@ -114,12 +71,44 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         }
         #endregion
 
+        #region Create
+        public async Task CreateAsync(CompanyModeratorCreateViewModel viewModel)
+        {
+            var companyImage = _mapper.Map<CompanyModerator>(viewModel);
+            _companyModerator.Add(companyImage);
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+        }
+
+        public async Task<CompanyModeratorCreateViewModel> GetForCreateAsync()
+        {
+            return await Task.Run(() => new CompanyModeratorCreateViewModel());
+        }
+        #endregion
+
+        #region Delete
+        public Task DeleteAsync(CompanyModeratorDeleteViewModel viewModel)
+        {
+            return _companyModerator.Where(model => model.Id == viewModel.Id).DeleteAsync();
+        }
+
         public async Task<CompanyModeratorDeleteViewModel> GetForDeleteAsync(Guid id)
         {
             return await _companyModerator
                 .AsNoTracking()
                 .ProjectTo<CompanyModeratorDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
+        }
+        #endregion
+
+        #region Read
+        public IList<CompanyModeratorListViewModel> GetChildList(Guid? parentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<CompanyModeratorListViewModel> GetParentList()
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<CompanyModeratorListViewModel>> GetListAsync()
@@ -129,7 +118,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
                 .ProjectTo<CompanyModeratorListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .ToListAsync();
         }
-        public async Task<CompanyModeratorDetailViewModel > GetDetailsAsync(Guid id)
+        public async Task<CompanyModeratorDetailViewModel> GetDetailsAsync(Guid id)
         {
             return await _companyModerator
                 .AsNoTracking()
@@ -150,5 +139,8 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
     }
 }

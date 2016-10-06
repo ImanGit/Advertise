@@ -21,6 +21,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyQuestionLike> _companyQuestionLike ;
 
         #endregion
+
         #region Ctor
         public CompanyQuestionLikeService(IMapper mapper, IUnitOfWork unitOfWork)
         {
@@ -29,12 +30,18 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyQuestionLike = unitOfWork.Set<CompanyQuestionLike >();
         }
         #endregion
+
         #region Create
         public async Task CreateAsync(CompanyQlCreateViewModel viewModel)
         {
             var companyQuestionLike = _mapper.Map<CompanyQuestionLike>(viewModel);
             _companyQuestionLike.Add(companyQuestionLike);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+        }
+
+        public async Task<CompanyQlCreateViewModel> GetForCreateAsync()
+        {
+            return await Task.Run(() => new CompanyQlCreateViewModel());
         }
         #endregion
 
@@ -49,20 +56,23 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         {
             throw new NotImplementedException();
         }
+
+        public void EditForFollowOrUnFollow()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<CompanyQlEditViewModel> GetForEditAsync(Guid id)
+        {
+            return await _companyQuestionLike
+                .AsNoTracking()
+                .ProjectTo<CompanyQlEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
         #endregion
 
-
-
-        public void Edit()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
+        #region Retrive
         public void GetCountForques()
         {
             throw new NotImplementedException();
@@ -88,38 +98,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
-
-      
-
-        public void EditForFollowOrUnFollow()
-        {
-            throw new NotImplementedException();
-        }
-
-        #region Read
-        public async Task<CompanyQlCreateViewModel> GetForCreateAsync()
-        {
-            return await Task.Run(() => new CompanyQlCreateViewModel());
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<CompanyQlEditViewModel> GetForEditAsync(Guid id)
-        {
-            return await _companyQuestionLike 
-                .AsNoTracking()
-                .ProjectTo<CompanyQlEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
-        }
-        
         #endregion
-
-
+      
     }
 }

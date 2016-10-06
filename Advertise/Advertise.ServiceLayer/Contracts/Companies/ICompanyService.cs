@@ -38,10 +38,9 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// ویرایش عنوان محصولات
         /// </summary>
-        void EditCopamanyCategory();
+       // void EditCopamanyCategory();
 
         #endregion
-
 
         #region Delete
 
@@ -136,48 +135,20 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-
         #region Read
 
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
         Task<CompanyCreateViewModel> GetForCreateAsync();
 
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         Task<CompanyEditViewModel> GetForEditAsync(Guid id);
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
         Task<CompanyDeleteViewModel> GetForDeleteAsync(Guid id);
 
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
         Task<IEnumerable<CompanyListViewModel>> GetListAsync();
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         Task<CompanyDetailsViewModel> GetDetailsAsync(Guid id);
 
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         Task<CompanyListViewModel> FindById(Guid id);
 
-        /// <summary>
-        /// </summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
         Task FillCreateViewModel(CompanyCreateViewModel viewModel);
 
         #endregion

@@ -20,14 +20,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Delete
-
-        /// <summary>
-        /// </summary>
-        void Delete();
-
-        #endregion
-
         #region Retrieve
 
         /// <summary>

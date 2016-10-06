@@ -22,6 +22,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyQuestionReport> _companyQr;
 
         #endregion
+
         #region Ctor
         public CompanyQuestionReportService(IMapper mapper, IUnitOfWork unitOfWork)
         {
@@ -30,6 +31,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyQr = unitOfWork.Set<CompanyQuestionReport >();
         }
         #endregion
+
         #region Create
         public async Task CreateAsync(CompanyQrCreateViewModel viewModel)
         {
@@ -37,7 +39,13 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyQr.Add(companyQr );
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
+
+        public async Task<CompanyQrCreateViewModel> GetForCreateAsync()
+        {
+            return await Task.Run(() => new CompanyQrCreateViewModel());
+        }
         #endregion
+
         #region Edit
         public async Task EditAsync(CompanyQrEditViewModel viewModel)
         {
@@ -45,18 +53,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
-        #endregion
 
-        #region Read
-        public async Task<CompanyQrCreateViewModel> GetForCreateAsync()
-        {
-            return await Task.Run(() => new CompanyQrCreateViewModel());
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public async Task<CompanyQrEditViewModel> GetForEditAsync(Guid id)
         {
             return await _companyQr
@@ -64,6 +61,16 @@ namespace Advertise.ServiceLayer.EFServices.Companies
                 .ProjectTo<CompanyQrEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
+
+        #endregion
+
+        #region Read
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         public async Task<IEnumerable<CompanyQrListViewModel >> GetListAsync()
         {
@@ -73,11 +80,44 @@ namespace Advertise.ServiceLayer.EFServices.Companies
                .ToListAsync();
         }
 
+
+        public async Task<CompanyQrDetailViewModel> GetDetailsAsync(Guid id)
+        {
+            return await _companyQr
+                .AsNoTracking()
+                .ProjectTo<CompanyQrDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
+        public Task<CompanyQrListViewModel> FindById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task FillCreateViewModel(CompanyQrCreateViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Delete
+
         public Task DeleteAsync(CompanyQrDeleteViewModel viewModel)
         {
             return _companyQr.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
+        public async Task<CompanyQrDeleteViewModel> GetForDeleteAsync(Guid id)
+        {
+            return await _companyQr
+                .AsNoTracking()
+                .ProjectTo<CompanyQrDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+        #endregion
+
+        #region Retrive
 
         public void GetReportId()
         {
@@ -108,33 +148,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         {
             throw new NotImplementedException();
         }
-
-        public async Task<CompanyQrDeleteViewModel> GetForDeleteAsync(Guid id)
-        {
-            return await _companyQr
-                .AsNoTracking()
-                .ProjectTo<CompanyQrDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
-        }
-
-        public async Task<CompanyQrDetailViewModel> GetDetailsAsync(Guid id)
-        {
-            return await _companyQr
-                .AsNoTracking()
-                .ProjectTo<CompanyQrDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
-        }
-
-        public Task<CompanyQrListViewModel> FindById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task FillCreateViewModel(CompanyQrCreateViewModel viewModel)
-        {
-            throw new NotImplementedException();
-        }
-       
 
         #endregion
     }

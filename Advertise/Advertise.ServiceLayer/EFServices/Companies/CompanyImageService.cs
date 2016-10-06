@@ -23,16 +23,16 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
         #endregion
 
+        #region Ctor
         public CompanyImageService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _companyImage = unitOfWork.Set<CompanyImage>();
         }
-        public void Create()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
+
+        #region Edit
 
         public void EditImageProductForComany()
         {
@@ -44,16 +44,23 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Edit()
+        public async Task EditAsync(CompanyImageEditViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var companyImage = await _companyImage.FirstAsync(model => model.Id == viewModel.Id);
+            _mapper.Map(viewModel, companyImage);
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public void Delete()
+        public async Task<CompanyImageEditViewModel> GetForEditAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _companyImage
+                .AsNoTracking()
+                .ProjectTo<CompanyImageEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
         }
+        #endregion
 
+        #region Retrive
         public int GetCountAllImage()
         {
             throw new NotImplementedException();
@@ -79,10 +86,8 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
+
         #region Create
         public async Task CreateAsync(CompanyImageCreateViewModel viewModel)
         {
@@ -90,25 +95,32 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyImage.Add(companyImage);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
-        #endregion
-        #region Edit
-        public async Task EditAsync(CompanyImageEditViewModel viewModel)
+
+        public async Task<CompanyImageCreateViewModel> GetForCreateAsync()
         {
-            var companyImage = await _companyImage.FirstAsync(model => model.Id == viewModel.Id);
-            _mapper.Map(viewModel, companyImage);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+            return await Task.Run(() => new CompanyImageCreateViewModel());
         }
         #endregion
+
+        #region Delete
+
 
         public Task DeleteAsync(CompanyImageDeleteViewModel viewModel)
         {
             return _companyImage.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
-        public async Task<CompanyImageCreateViewModel > GetForCreateAsync()
+        public async Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id)
         {
-            return await Task.Run(() => new CompanyImageCreateViewModel());
+            return await _companyImage
+                .AsNoTracking()
+                .ProjectTo<CompanyImageDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
         }
+        #endregion
+
+        #region Read
+       
 
         public IList<CompanyImageListViewModel> GetChildList(Guid? parentId)
         {
@@ -118,25 +130,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         public IList<CompanyImageListViewModel> GetParentList()
         {
             throw new NotImplementedException();
-        }
-
-        #region Edit
-
-        public async Task<CompanyImageEditViewModel> GetForEditAsync(Guid id)
-        {
-            return await _companyImage
-                .AsNoTracking()
-                .ProjectTo<CompanyImageEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
-        }
-        #endregion
-
-        public async Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id)
-        {
-            return await _companyImage
-                .AsNoTracking()
-                .ProjectTo<CompanyImageDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
         }
 
         public async Task<IEnumerable<CompanyImageListViewModel>> GetListAsync()
@@ -163,6 +156,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-       
+
+        #endregion
     }
 }
