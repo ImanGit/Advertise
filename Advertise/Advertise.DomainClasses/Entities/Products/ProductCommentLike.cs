@@ -17,7 +17,7 @@ namespace Advertise.DomainClasses.Entities.Products
 
         /// <summary>
         /// </summary>
-        public virtual bool IsDisLike { get; set; }
+      //  public virtual bool IsDisLike { get; set; }
 
         #endregion
 

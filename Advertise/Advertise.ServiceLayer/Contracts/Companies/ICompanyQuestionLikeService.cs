@@ -31,6 +31,14 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
+
+        #region Read
+        Task<CompanyQlCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyQlEditViewModel> GetForEditAsync(Guid id);
+
+        #endregion
+
         #region Retrieve
         /// <summary>
         /// تعداد لایکهای یک سوال
@@ -60,13 +68,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         /// <returns></returns>
         int GetAllLikeUser();
-
-        #endregion
-
-        #region Read
-        Task<CompanyQlCreateViewModel> GetForCreateAsync();
-
-        Task<CompanyQlEditViewModel> GetForEditAsync(Guid id);
 
         #endregion
     }

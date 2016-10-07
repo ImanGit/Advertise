@@ -1,30 +1,40 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Products.ProductCommentLike ;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Products
 {
     public interface IProductCommentLikeService : IBaseService
     {
         #region Create
-
         /// <summary>
+        /// ایجاد فالو یک کمپانی
         /// </summary>
-        void Create();
+        Task CreateAsync(ProductClCreateViewModel viewModel);
 
         #endregion
 
         #region Update
+        /// <summary>
+        /// فالو کردن مجدد یک کمپانی یا آن فالو کردن
+        /// </summary>
+        void EditForFollowOrUnFollow();
+
+        Task EditAsync(ProductClEditViewModel  viewModel);
 
         /// <summary>
+        /// لایک مجدد یا پس گرفتن لایک سوال
         /// </summary>
-        void Edit();
+        void EditForLikeOrUnlike();
 
         #endregion
 
-        #region Delete
+        #region Read
+        Task<ProductClCreateViewModel> GetForCreateAsync();
 
-        /// <summary>
-        /// </summary>
-        void Delete();
+        Task<ProductClEditViewModel> GetForEditAsync(Guid id);
 
         #endregion
 
