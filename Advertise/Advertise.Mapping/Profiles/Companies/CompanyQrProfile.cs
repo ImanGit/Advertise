@@ -9,9 +9,9 @@ using Advertise.ViewModel.Models.Companies.CompanyQuestionReport;
 
 namespace Advertise.Mapping.Profiles.Companies
 {
-    class CompanyQrtProfile : Profile
+    class CompanyQrProfile : Profile
     {
-        public CompanyQrtProfile()
+        public CompanyQrProfile()
         {
 
             CreateMap<CompanyQuestionReport , CompanyQrCreateViewModel >()
