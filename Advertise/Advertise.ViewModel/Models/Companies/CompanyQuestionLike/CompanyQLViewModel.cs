@@ -10,7 +10,7 @@ using Advertise.ViewModel.Models.Common;
 
 namespace Advertise.ViewModel.Models.Companies.CompanyQuestionLike
 {
-  public   class CompanyQlViewModel
+  public   class CompanyQlViewModel:BaseViewModel 
     {
         public string CreatorUserName { get; set; }
     }

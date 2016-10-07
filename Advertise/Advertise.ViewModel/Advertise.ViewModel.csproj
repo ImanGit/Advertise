@@ -114,7 +114,7 @@
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentIndexViewModel.cs" />
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentListViewModel.cs" />
     <Compile Include="Models\Companies\CompanyDetailsViewModel.cs" />
-    <Compile Include="Models\Companies\CompanyCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyCreateViewModel.cs.cs" />
     <Compile Include="Models\Companies\CompanyDeleteViewModel.cs" />
     <Compile Include="Models\Companies\CompanyEditViewModel.cs" />
     <Compile Include="Models\Companies\CompanyFindViewModel.cs" />
@@ -137,7 +137,50 @@
     <Compile Include="Models\Companies\CompanyModerator\CompanyModeratorEditViewModel.cs" />
     <Compile Include="Models\Companies\CompanyModerator\CompanyModeratorListViewModel.cs" />
     <Compile Include="Models\Companies\CompanyModerator\CompanyModeratorViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionLike\CompanyQLCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionLike\CompanyQLEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionLike\CompanyQLViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionReport\CompanyQrCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionReport\CompanyQrDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionReport\CompanyQrDetailViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionReport\CompanyQrEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionReport\CompanyQrListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestionReport\CompanyQrViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestion\CompanyQCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestion\CompanyQDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestion\CompanyQDetailViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestion\CompanyQEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestion\CompanyQListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyQuestion\CompanyQViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReport\CompanyRCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReport\CompanyRDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReport\CompanyRDetailViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReport\CompanyREditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReport\CompanyRListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReport\CompanyRViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReview\CompanyReviewCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReview\CompanyReviewDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReview\CompanyReviewDetailViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReview\CompanyReviewEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReview\CompanyReviewListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyReview\CompanyReviewViewModel.cs" />
+    <Compile Include="Models\Companies\CompanySocial\CompanySocialDetailViewModel.cs" />
+    <Compile Include="Models\Companies\CompanySocial\CompanySocialCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanySocial\CompanySocialDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanySocial\CompanySocialEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanySocial\CompanySocialViewModel.cs" />
+    <Compile Include="Models\Companies\CompanySocial\CompanySocialListViewModel.cs" />
     <Compile Include="Models\Companies\CompanyViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyVisit\CompanyVisitCreateViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentLike\ProductClCreateViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentLike\ProductClEditViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentLike\ProductClViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentReport\ProductCrCreateViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentReport\ProductCrDeleteViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentReport\ProductCrDetailViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentReport\ProductCrEditViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentReport\ProductCrListViewModel.cs" />
+    <Compile Include="Models\Products\ProductCommentReport\ProductCrViewModel.cs" />
     <Compile Include="Models\Users\ForgetPasswordViewModel.cs" />
     <Compile Include="Models\Users\SignUpViewModel.cs" />
     <Compile Include="Models\Users\SingInViewModel.cs" />
@@ -149,9 +192,7 @@
     <Compile Include="Models\Users\UserSearchRequest.cs" />
     <Compile Include="Models\Users\UserViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Products\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
