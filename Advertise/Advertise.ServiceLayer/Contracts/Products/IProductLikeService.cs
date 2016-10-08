@@ -1,4 +1,7 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Products.ProductLike;
+using System;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Products
 {
@@ -7,26 +10,33 @@ namespace Advertise.ServiceLayer.Contracts.Products
     public interface IProductLikeService : IBaseService
     {
         #region Create
-
         /// <summary>
+        /// ایجاد فالو یک کمپانی
         /// </summary>
-        void Create();
+        Task CreateAsync(ProductLikeCreateViewModel viewModel);
 
         #endregion
 
         #region Update
+        /// <summary>
+        /// فالو کردن مجدد یک کمپانی یا آن فالو کردن
+        /// </summary>
+        void EditForFollowOrUnFollow();
+
+        Task EditAsync(ProductLikeEditViewModel viewModel);
 
         /// <summary>
+        /// لایک مجدد یا پس گرفتن لایک سوال
         /// </summary>
-        void Edit();
+        void EditForLikeOrUnlike();
 
         #endregion
 
-        #region Delete
 
-        /// <summary>
-        /// </summary>
-        void Delete();
+        #region Read
+        Task<ProductLikeCreateViewModel> GetForCreateAsync();
+
+        Task<ProductLikeEditViewModel> GetForEditAsync(Guid id);
 
         #endregion
 
