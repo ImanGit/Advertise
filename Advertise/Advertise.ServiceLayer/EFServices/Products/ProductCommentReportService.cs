@@ -124,7 +124,7 @@ namespace Advertise.ServiceLayer.EFServices.Products
 
         #endregion
 
-        #region Read
+        #region Retrive
 
         public void GetReportId()
         {

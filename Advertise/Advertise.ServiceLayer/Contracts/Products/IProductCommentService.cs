@@ -1,41 +1,50 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Products.ProductComment;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Products
 {
     public interface IProductCommentService : IBaseService
     {
         #region Create
-
         /// <summary>
+        /// 
         /// </summary>
-        void Create();
+        Task CreateAsync(ProductCCreateViewModel viewModel);
+        #endregion
+
+        #region Update
+        /// <summary>
+        /// 
+        /// </summary>
+        Task EditAsync(ProductCEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
+        /// 
         /// </summary>
-        void Delete();
-
+        Task DeleteAsync(ProductCDeleteViewModel viewModel);
         #endregion
 
-        #region Update
+        #region Read
 
-        /// <summary>
-        ///     اصلاح محتویات کامنت توسط کاربر(فیلد مربوط به Approve باید فالس بشه که بعد اپراتور تائیدش کنه
-        /// </summary>
-        void EditContentCommentForUser();
+        Task<ProductCCreateViewModel> GetForCreateAsync();
 
-        /// <summary>
-        ///     ویرایش متن کامنت توسط اپراتور
-        /// </summary>
-        void EditContentCommentForOperator();
+        Task<ProductCEditViewModel> GetForEditAsync(Guid id);
 
-        /// <summary>
-        ///     تائید کامنت جهت نمایش در سایت توسط اپراتور
-        /// </summary>
-        void EditCommentForAccept();
+        Task<ProductCDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<ProductCListViewModel >> GetListAsync();
+
+        Task<ProductCDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<ProductCListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(ProductCCreateViewModel viewModel);
 
         #endregion
 

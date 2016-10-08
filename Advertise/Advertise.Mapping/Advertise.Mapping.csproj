@@ -71,13 +71,22 @@
     <Compile Include="Profiles\Categories\CategoryReViewProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryFollowProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryImageProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanryQlProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyAttachmentProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyModeratorProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanyQrProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanyReviewProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanyRProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanyQuestionProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanySocialProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanyVisitProfile.cs" />
+    <Compile Include="Profiles\Products\ProductClProfile.cs" />
+    <Compile Include="Profiles\Products\ProductCProfile.cs" />
+    <Compile Include="Profiles\Products\ProductCrProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Profiles\Products\" />
     <Folder Include="Profiles\Users\" />
   </ItemGroup>
   <ItemGroup>
