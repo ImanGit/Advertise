@@ -1,25 +1,52 @@
 ﻿using System;
 using Advertise.ServiceLayer.Contracts.Products;
+using AutoMapper;
+using Advertise.DataLayer.Context;
+using Advertise.DomainClasses.Entities .Products ;
+using System.Threading.Tasks;
+using Advertise.ViewModel.Models.Products.ProductVisit;
+using System.Data.Entity;
 
 namespace Advertise.ServiceLayer.EFServices.Products
 {
     public class ProductVisitService : IProductVisitService
     {
-        public void Create()
+        #region Fields
+
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IDbSet<ProductVisit> _productVisit;
+
+        #endregion
+
+        #region Ctor
+
+        public ProductVisitService(IMapper mapper, IUnitOfWork unitOfWork)
         {
-            throw new NotImplementedException();
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
+            _productVisit = unitOfWork.Set<ProductVisit>();
         }
 
-        public void Edit()
+        #endregion
+
+        #region Create
+
+        public async Task CreateAsync(ProductVisitCreateViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var productv = _mapper.Map<ProductVisit>(viewModel);
+            _productVisit.Add(productv);
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public void Delete()
+        public async Task<ProductVisitCreateViewModel> GetForCreateAsync()
         {
-            throw new NotImplementedException();
+            return await Task.Run(() => new ProductVisitCreateViewModel());
         }
 
+        #endregion
+
+        #region Retrive
         public int GetCountAllVisit()
         {
             throw new NotImplementedException();
@@ -35,9 +62,6 @@ namespace Advertise.ServiceLayer.EFServices.Products
             throw new NotImplementedException();
         }
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

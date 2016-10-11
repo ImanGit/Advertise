@@ -1,4 +1,6 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Products.ProductVisit;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Products
 {
@@ -6,26 +8,8 @@ namespace Advertise.ServiceLayer.Contracts.Products
     {
         #region Create
 
-        /// <summary>
-        /// </summary>
-        void Create();
-
-        #endregion
-
-        #region Update
-
-        /// <summary>
-        /// </summary>
-        void Edit();
-
-        #endregion
-
-        #region Delete
-
-        /// <summary>
-        /// </summary>
-        void Delete();
-
+        Task CreateAsync(ProductVisitCreateViewModel viewModel);
+        Task<ProductVisitCreateViewModel> GetForCreateAsync();
         #endregion
 
         #region Retrieve
