@@ -1,6 +1,7 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
 using Advertise.ViewModel.Models.Companies.CompanyAttachment;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Companies

@@ -159,7 +159,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        Task<Contracts.Companies.IEnumerable<CompanyImageListViewModel>> ICompanyImageService.GetListAsync()
+        Task<IEnumerable<CompanyImageListViewModel>> ICompanyImageService.GetListAsync()
         {
             throw new NotImplementedException();
         }

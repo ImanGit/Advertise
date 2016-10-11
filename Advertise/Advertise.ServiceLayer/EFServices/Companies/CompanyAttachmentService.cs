@@ -128,11 +128,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        Task<IEnumerable<CompanyAttachmentListViewModel>> ICompanyAttachmentService.GetListAsync()
-        {
-            throw new NotImplementedException();
-        }
-
 
         #endregion
 
@@ -173,10 +168,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        Task<Contracts.Companies.IEnumerable<CompanyAttachmentListViewModel>> ICompanyAttachmentService.GetListAsync()
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
     }
