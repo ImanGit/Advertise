@@ -110,6 +110,7 @@
     <Compile Include="Models\Common\ViewModel.cs" />
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentDeleteViewModel.cs" />
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentDetailsViewModel.cs" />
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentEditViewModel.cs" />
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentIndexViewModel.cs" />
     <Compile Include="Models\Companies\CompanyAttachment\CompanyAttachmentListViewModel.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Models\Products\ProductReview\ProductRwEditViewModel.cs" />
     <Compile Include="Models\Products\ProductReview\ProductRwListViewModel.cs" />
     <Compile Include="Models\Products\ProductReview\ProductRwViewModel.cs" />
+    <Compile Include="Models\Products\ProductVisit\ProductVisitCreateViewModel.cs" />
     <Compile Include="Models\Users\ForgetPasswordViewModel.cs" />
     <Compile Include="Models\Users\SignUpViewModel.cs" />
     <Compile Include="Models\Users\SingInViewModel.cs" />
@@ -223,7 +225,6 @@
     <Folder Include="Models\Products\ProductShare\" />
     <Folder Include="Models\Products\ProductSpecification\" />
     <Folder Include="Models\Products\ProductStatus\" />
-    <Folder Include="Models\Products\ProductVisit\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
