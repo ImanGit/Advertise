@@ -1,32 +1,55 @@
 ﻿
 @model IEnumerable<Advertise.ViewModel.Models.Categories.CategoryListViewModel>
 @{
-    ViewBag.Title = "Item";
+    ViewBag.Title = "مشاهده";
 }
 
-<h2>Item</h2>
-<div class="row">
-    @foreach (var item in Model)
-    {
+<div class="panel panel-default">
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="#" alt="..." class="img-thumbnail">
-                <div class="caption">
-                    <h3>@Html.DisplayFor(itemModel => item.Title)</h3>
-                    <p>@Html.DisplayFor(itemModel => item.Description)</p>
-                    <p>
-                        @Html.ActionLink("جزییات", "Details", new { id = item.Id })
-                        <a href="#" class="btn btn-default" role="button">@Html.DisplayFor(itemModel => item.Code)</a>
-                    </p>
+    <div class="panel-heading">
+        <h3 class="panel-title">مشاهده دسته ها</h3>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        @if (System.IO.File.Exists(  Request.MapPath("~/Uploads/" + @item.ImageFileName)))
+                        {
+                            <img src="~/Uploads/@item.ImageFileName" alt="@item.ImageFileName" class="img-thumbnail" width="300" height="300">
+                        }
+                        else
+                        {
+                            <img src="~/Files/Avatar/no-preview.png" alt="no" class="img-thumbnail" width="300" height="300">
+                        }
+
+                        <div class="caption">
+                            <h3>@Html.DisplayFor(itemModel => item.Title)</h3>
+                            <p>@Html.DisplayFor(itemModel => item.Description)</p>
+                            <p>
+                                @Html.ActionLink("جزییات", "Details", new {id = item.Id})
+                                <a href="#" class="btn btn-default" role="button"><i class="fa fa-heart"></i> </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            }
+
         </div>
 
-    }
+    </div>
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-2">
+                @Html.ActionLink("برگشت به لیست", "List", new { Controller = "Category" }, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
 
 </div>
-
-
-
-

@@ -42,82 +42,171 @@ WriteLiteral("\r\n");
             
             #line 3 "..\..\Views\Category\Item.cshtml"
   
-    ViewBag.Title = "Item";
+    ViewBag.Title = "مشاهده";
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Item</h2>\r\n<div");
+WriteLiteral("\r\n\r\n<div");
+
+WriteLiteral(" class=\"panel panel-default\"");
+
+WriteLiteral(">\r\n\r\n    <div");
+
+WriteLiteral(" class=\"panel-heading\"");
+
+WriteLiteral(">\r\n        <h3");
+
+WriteLiteral(" class=\"panel-title\"");
+
+WriteLiteral(">مشاهده دسته ها</h3>\r\n    </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(">\r\n\r\n        <div");
 
 WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 9 "..\..\Views\Category\Item.cshtml"
-    
+            #line 16 "..\..\Views\Category\Item.cshtml"
+            
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Category\Item.cshtml"
-     foreach (var item in Model)
-    {
+            #line 16 "..\..\Views\Category\Item.cshtml"
+             foreach (var item in Model)
+            {
 
 
             
             #line default
             #line hidden
-WriteLiteral("        <div");
+WriteLiteral("                <div");
 
 WriteLiteral(" class=\"col-sm-6 col-md-4\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"thumbnail\"");
 
-WriteLiteral(">\r\n                <img");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" src=\"#\"");
+            
+            #line 21 "..\..\Views\Category\Item.cshtml"
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 21 "..\..\Views\Category\Item.cshtml"
+                         if (System.IO.File.Exists(  Request.MapPath("~/Uploads/" + @item.ImageFileName)))
+                        {
 
-WriteLiteral(" alt=\"...\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 639), Tuple.Create("\"", 674)
+, Tuple.Create(Tuple.Create("", 645), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/")
+, 645), false)
+            
+            #line 23 "..\..\Views\Category\Item.cshtml"
+, Tuple.Create(Tuple.Create("", 655), Tuple.Create<System.Object, System.Int32>(item.ImageFileName
+            
+            #line default
+            #line hidden
+, 655), false)
+);
+
+WriteAttribute("alt", Tuple.Create(" alt=\"", 675), Tuple.Create("\"", 700)
+            
+            #line 23 "..\..\Views\Category\Item.cshtml"
+, Tuple.Create(Tuple.Create("", 681), Tuple.Create<System.Object, System.Int32>(item.ImageFileName
+            
+            #line default
+            #line hidden
+, 681), false)
+);
 
 WriteLiteral(" class=\"img-thumbnail\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(" width=\"300\"");
+
+WriteLiteral(" height=\"300\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 24 "..\..\Views\Category\Item.cshtml"
+                        }
+                        else
+                        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 867), Tuple.Create("\"", 902)
+, Tuple.Create(Tuple.Create("", 873), Tuple.Create<System.Object, System.Int32>(Href("~/Files/Avatar/no-preview.png")
+, 873), false)
+);
+
+WriteLiteral(" alt=\"no\"");
+
+WriteLiteral(" class=\"img-thumbnail\"");
+
+WriteLiteral(" width=\"300\"");
+
+WriteLiteral(" height=\"300\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 28 "..\..\Views\Category\Item.cshtml"
+                        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        <div");
 
 WriteLiteral(" class=\"caption\"");
 
-WriteLiteral(">\r\n                    <h3>");
+WriteLiteral(">\r\n                            <h3>");
 
             
-            #line 16 "..\..\Views\Category\Item.cshtml"
-                   Write(Html.DisplayFor(itemModel => item.Title));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</h3>\r\n                    <p>");
-
-            
-            #line 17 "..\..\Views\Category\Item.cshtml"
-                  Write(Html.DisplayFor(itemModel => item.Description));
+            #line 31 "..\..\Views\Category\Item.cshtml"
+                           Write(Html.DisplayFor(itemModel => item.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n                    <p>\r\n");
-
-WriteLiteral("                        ");
+WriteLiteral("</h3>\r\n                            <p>");
 
             
-            #line 19 "..\..\Views\Category\Item.cshtml"
-                   Write(Html.ActionLink("جزییات", "Details", new { id = item.Id }));
+            #line 32 "..\..\Views\Category\Item.cshtml"
+                          Write(Html.DisplayFor(itemModel => item.Description));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                        <a");
+WriteLiteral("</p>\r\n                            <p>\r\n");
+
+WriteLiteral("                                ");
+
+            
+            #line 34 "..\..\Views\Category\Item.cshtml"
+                           Write(Html.ActionLink("جزییات", "Details", new {id = item.Id}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                                <a");
 
 WriteLiteral(" href=\"#\"");
 
@@ -125,27 +214,45 @@ WriteLiteral(" class=\"btn btn-default\"");
 
 WriteLiteral(" role=\"button\"");
 
-WriteLiteral(">");
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-heart\"");
+
+WriteLiteral("></i> </a>\r\n                            </p>\r\n                        </div>\r\n   " +
+"                 </div>\r\n                </div>\r\n");
 
             
-            #line 20 "..\..\Views\Category\Item.cshtml"
-                                                                     Write(Html.DisplayFor(itemModel => item.Code));
+            #line 40 "..\..\Views\Category\Item.cshtml"
 
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n     " +
-"   </div>\r\n");
-
-            
-            #line 25 "..\..\Views\Category\Item.cshtml"
-
-    }
+            }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</div>\r\n\r\n\r\n\r\n\r\n");
+WriteLiteral("\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"panel-footer\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 50 "..\..\Views\Category\Item.cshtml"
+           Write(Html.ActionLink("برگشت به لیست", "List", new { Controller = "Category" }, new { @class = "btn btn-default" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n");
 
         }
     }

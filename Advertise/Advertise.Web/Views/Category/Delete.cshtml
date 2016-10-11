@@ -1,112 +1,55 @@
 ﻿
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @model Advertise.ViewModel.Models.Categories.CategoryDeleteViewModel
-
 
 @{
     ViewBag.Title = "حذف";
 
 }
+@using (Html.BeginForm(MVC.Category.Delete(), FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
 
-<h2>Delete</h2>
+    <div class="panel panel-default">
 
-
-<h3>آیا برای حذف اطمینان دارید؟؟</h3>
-<div>
-    <h4>CategoryDeleteViewModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Code)
-        </dd>
-
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageFileName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageFileName)
-        </dd>
-
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentPath)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ParentPath)
-        </dd>
-
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("برگشت به لیست", "List")
+        <div class="panel-heading">
+            <h3 class="panel-title">حذف دسته</h3>
         </div>
+
+        <div class="panel-body">
+
+            <h3>آیا برای حذف اطمینان دارید؟</h3>
+            <div>
+                <hr/>
+                <dl class="dl-horizontal">
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+
+
+
+                </dl>
+
+            </div>
+
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <input type="submit" value="حذف" class="btn btn-primary"/>
+                </div>
+
+                <div class="col-md-2">
+                    @Html.ActionLink("برگشت به لیست", "List", new {Controller = "Category"}, new {@class = "btn btn-default"})
+                </div>
+            </div>
+        </div>
+
+    </div>
     }
-</div>
-
-
-

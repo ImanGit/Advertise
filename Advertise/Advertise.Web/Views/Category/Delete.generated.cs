@@ -37,12 +37,10 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
-
 WriteLiteral("\r\n");
 
             
-            #line 25 "..\..\Views\Category\Delete.cshtml"
+            #line 4 "..\..\Views\Category\Delete.cshtml"
   
     ViewBag.Title = "حذف";
 
@@ -50,207 +48,118 @@ WriteLiteral("\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Delete</h2>\r\n\r\n\r\n<h3>آیا برای حذف اطمینان دارید؟؟</h3>\r\n<div>\r\n    <h4>Ca" +
-"tegoryDeleteViewModel</h4>\r\n    <hr />\r\n    <dl");
-
-WriteLiteral(" class=\"dl-horizontal\"");
-
-WriteLiteral(">\r\n\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("\r\n");
 
             
-            #line 41 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 45 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 51 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Title));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 55 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Title));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 61 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Description));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 65 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Description));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 71 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ImageFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 75 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ImageFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 81 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.ParentPath));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 85 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.ParentPath));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n\r\n\r\n        <dt>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 91 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 95 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </dd>\r\n\r\n\r\n    </dl>\r\n\r\n");
-
-            
-            #line 101 "..\..\Views\Category\Delete.cshtml"
+            #line 8 "..\..\Views\Category\Delete.cshtml"
+ using (Html.BeginForm(MVC.Category.Delete(), FormMethod.Post))
+{
     
             
             #line default
             #line hidden
             
-            #line 101 "..\..\Views\Category\Delete.cshtml"
-     using (Html.BeginForm()) {
-        
-            
-            #line default
-            #line hidden
-            
-            #line 102 "..\..\Views\Category\Delete.cshtml"
-   Write(Html.AntiForgeryToken());
+            #line 10 "..\..\Views\Category\Delete.cshtml"
+Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 102 "..\..\Views\Category\Delete.cshtml"
-                                
+            #line 10 "..\..\Views\Category\Delete.cshtml"
+                            
 
 
             
             #line default
             #line hidden
-WriteLiteral("        <div");
+WriteLiteral("    <div");
 
-WriteLiteral(" class=\"form-actions no-color\"");
+WriteLiteral(" class=\"panel panel-default\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-heading\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"panel-title\"");
+
+WriteLiteral(">حذف دسته</h3>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(">\r\n\r\n            <h3>آیا برای حذف اطمینان دارید؟</h3>\r\n            <div>\r\n       " +
+"         <hr/>\r\n                <dl");
+
+WriteLiteral(" class=\"dl-horizontal\"");
+
+WriteLiteral(">\r\n\r\n\r\n                    <dt>\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 27 "..\..\Views\Category\Delete.cshtml"
+                   Write(Html.DisplayNameFor(model => model.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </dt>\r\n                    <dd>\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 30 "..\..\Views\Category\Delete.cshtml"
+                   Write(Html.DisplayFor(model => model.Title));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </dd>\r\n\r\n\r\n\r\n                </dl>\r\n\r\n            </div>\r\n\r" +
+"\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-footer\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n\r\n                <div");
+
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" value=\"Delete\"");
+WriteLiteral(" value=\"حذف\"");
 
-WriteLiteral(" class=\"btn btn-default\"");
+WriteLiteral(" class=\"btn btn-primary\"");
 
-WriteLiteral(" /> |\r\n");
+WriteLiteral("/>\r\n                </div>\r\n\r\n                <div");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
 
             
-            #line 106 "..\..\Views\Category\Delete.cshtml"
-       Write(Html.ActionLink("برگشت به لیست", "List"));
+            #line 49 "..\..\Views\Category\Delete.cshtml"
+               Write(Html.ActionLink("برگشت به لیست", "List", new {Controller = "Category"}, new {@class = "btn btn-default"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n");
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n");
 
             
-            #line 108 "..\..\Views\Category\Delete.cshtml"
+            #line 55 "..\..\Views\Category\Delete.cshtml"
     }
-
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n\r\n\r\n\r\n");
-
         }
     }
 }

@@ -49,7 +49,7 @@ WriteLiteral("\r\n");
 
             
             #line 6 "..\..\Views\Category\Create.cshtml"
- using (Html.BeginForm(MVC.Category.Create(),FormMethod.Post,new { enctype = "multipart/form-data" }))
+ using (Html.BeginForm(MVC.Category.Create(), FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     
             
@@ -142,8 +142,7 @@ WriteLiteral("                        ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n                \r\n         " +
-"       <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -194,7 +193,7 @@ WriteLiteral("                    ");
 
             
             #line 39 "..\..\Views\Category\Create.cshtml"
-               Write(Html.LabelFor(model => model.ParentId, new {@class = "control-label col-md-2"}));
+               Write(Html.LabelFor(model => model.ParentId, new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -228,7 +227,7 @@ WriteLiteral("                        ");
 
             
             #line 45 "..\..\Views\Category\Create.cshtml"
-                   Write(Html.ValidationMessageFor(model => model.ParentId, "", new {@class = "text-danger"}));
+                   Write(Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -243,7 +242,7 @@ WriteLiteral("                    ");
 
             
             #line 50 "..\..\Views\Category\Create.cshtml"
-               Write(Html.LabelFor(model => model.ImageFileName, new {@class = "control-label col-md-2" }));
+               Write(Html.LabelFor(model => model.ImageFileName, new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -268,7 +267,7 @@ WriteLiteral("                        ");
 
             
             #line 53 "..\..\Views\Category\Create.cshtml"
-                   Write(Html.ValidationMessageFor(model => model.ImageFileName, "", new {@class = "text-danger"}));
+                   Write(Html.ValidationMessageFor(model => model.ImageFileName, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -277,24 +276,19 @@ WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n  
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n                    <label class = \"control-label col-md-2\">پیش نمایش</label>\r" +
+"\n                    ");
 
-WriteLiteral("                    ");
-
-            
-            #line 58 "..\..\Views\Category\Create.cshtml"
-               Write(Html.LabelFor(model => model.ImageFileName,"پیش نمایش", new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
 WriteLiteral("\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteLiteral(" src=\"#\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 2893), Tuple.Create("\"", 2928)
+, Tuple.Create(Tuple.Create("", 2899), Tuple.Create<System.Object, System.Int32>(Href("~/Files/Avatar/no-preview.png")
+, 2899), false)
+);
 
 WriteLiteral(" id=\"ImagePreview\"");
 
@@ -313,8 +307,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 65 "..\..\Views\Category\Create.cshtml"
-               Write(Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"}));
+            #line 66 "..\..\Views\Category\Create.cshtml"
+               Write(Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -323,7 +317,7 @@ WriteLiteral("\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10 k-rtl\"");
 
-WriteLiteral(">\r\n                            <textarea");
+WriteLiteral(">\r\n                        <textarea");
 
 WriteLiteral(" id=\"Body\"");
 
@@ -340,14 +334,14 @@ WriteLiteral("></textarea>\r\n");
 WriteLiteral("                        ");
 
             
-            #line 68 "..\..\Views\Category\Create.cshtml"
-                   Write(Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"}));
+            #line 69 "..\..\Views\Category\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                \r\n       " +
-"     </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n\r\n            </div>\r\n   " +
+"     </div>\r\n\r\n        <div");
 
 WriteLiteral(" class=\"panel-footer\"");
 
@@ -355,9 +349,9 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                \r\n                <div");
+WriteLiteral(">\r\n\r\n                <div");
 
-WriteLiteral(" class=\"col-md-offset-1 col-md-1\"");
+WriteLiteral(" class=\"col-md-2\"");
 
 WriteLiteral(">\r\n                    <input");
 
@@ -376,8 +370,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 84 "..\..\Views\Category\Create.cshtml"
-               Write(Html.ActionLink("برگشت به لیست", "List",new {Controller="Category"},new {@class="btn btn-default"}));
+            #line 85 "..\..\Views\Category\Create.cshtml"
+               Write(Html.ActionLink("برگشت به لیست", "List", new { Controller = "Category" }, new { @class = "btn btn-default" }));
 
             
             #line default
@@ -385,7 +379,7 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 89 "..\..\Views\Category\Create.cshtml"
+            #line 90 "..\..\Views\Category\Create.cshtml"
 }
             
             #line default

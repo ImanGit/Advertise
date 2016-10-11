@@ -1,24 +1,13 @@
 ﻿@model Advertise.ViewModel.Models.Categories.CategoryCreateViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "ایجاد";
 }
-@using (Html.BeginForm(MVC.Category.Create(),FormMethod.Post,new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(MVC.Category.Create(), FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-    
-    <div class="form-horizontal">
-        <h4>CategoryCreateViewModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="panel panel-default">
 
         <div class="panel-heading">
             <h3 class="panel-title">ایجاد دسته جدید</h3>
@@ -37,7 +26,7 @@
                         @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -47,59 +36,54 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ParentId, new {@class = "control-label col-md-2"})
+                    @Html.LabelFor(model => model.ParentId, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         <div class="k-rtl">
                             <div id="getCategoryList"></div>
                         </div>
                         @Html.HiddenFor(model => model.ParentId)
-                        @Html.ValidationMessageFor(model => model.ParentId, "", new {@class = "text-danger"})
+                        @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ImageFileName, new {@class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.ImageFileName, new { @class = "control-label col-md-2" })
                     <div class="col-md-10 k-rtl">
                         <input type="file" id="ImageFileName" name="ImageFileName" accept=".jpg,.png">
-                        @Html.ValidationMessageFor(model => model.ImageFileName, "", new {@class = "text-danger"})
+                        @Html.ValidationMessageFor(model => model.ImageFileName, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ImageFileName,"پیش نمایش", new { @class = "control-label col-md-2" })
+                    <label class = "control-label col-md-2">پیش نمایش</label>
+                    @*@Html.LabelFor(model => model.ImageFileName, "پیش نمایش", new {@class = "control-label col-md-2"})*@
                     <div class="col-md-10">
-                        <img src="#" id="ImagePreview" class="img-thumbnail" width="300" height="300">
+                        <img src="~/Files/Avatar/no-preview.png" id="ImagePreview" class="img-thumbnail" width="300" height="300">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"})
+                    @Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" })
                     <div class="col-md-10 k-rtl">
-                            <textarea id="Body" name="Body" rows="10" cols="30" style="height: 440px"></textarea>
-                        @Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"})
+                        <textarea id="Body" name="Body" rows="10" cols="30" style="height: 440px"></textarea>
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
 
-<<<<<<< HEAD
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-=======
         <div class="panel-footer">
             <div class="row">
-                
-                <div class="col-md-offset-1 col-md-1">
+
+                <div class="col-md-2">
                     <input type="submit" value="ثبت" class="btn btn-primary" />
                 </div>
 
                 <div class="col-md-2">
-                    @Html.ActionLink("برگشت به لیست", "List",new {Controller="Category"},new {@class="btn btn-default"})
+                    @Html.ActionLink("برگشت به لیست", "List", new { Controller = "Category" }, new { @class = "btn btn-default" })
                 </div>
->>>>>>> origin/master
             </div>
         </div>
     </div>

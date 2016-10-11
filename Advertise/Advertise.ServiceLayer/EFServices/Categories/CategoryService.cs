@@ -30,6 +30,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             _unitOfWork = unitOfWork;
             _category = unitOfWork.Set<Category>();
             _categoryFollow = unitOfWork.Set<CategoryFollow>();
+            _categoryReview = unitOfWork.Set<CategoryReview>();
             _user = unitOfWork.Set<User>();
         }
 
@@ -43,6 +44,9 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         public async Task CreateAsync(CategoryCreateViewModel viewModel)
         {
             var category = _mapper.Map<Category>(viewModel);
+            var review = _mapper.Map<CategoryReview>(viewModel);
+            review.AuthoredById = new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709");
+            category.Reviews.Add(review);
             _category.Add(category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
@@ -57,7 +61,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public async Task EditAsync(CategoryEditViewModel viewModel)
         {
-            var category = await _category.FirstAsync(model => model.Id == viewModel.Id );
+            var category = await _category.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
@@ -72,7 +76,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public Task DeleteAsync(CategoryDeleteViewModel viewModel)
         {
-             return _category.Where(model => model.Id == viewModel.Id).Delete();
+            return _category.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
         #endregion
@@ -83,6 +87,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         private readonly IUnitOfWork _unitOfWork;
         private readonly IDbSet<Category> _category;
         private readonly IDbSet<CategoryFollow> _categoryFollow;
+        private readonly IDbSet<CategoryReview> _categoryReview;
         private readonly IDbSet<User> _user;
 
         #endregion
@@ -103,34 +108,22 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         /// <returns></returns>
         public async Task<CategoryEditViewModel> GetForEditAsync(Guid id)
         {
-            return await _category
+          var category=await _category
                 .AsNoTracking()
                 .ProjectTo<CategoryEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
 
+           var review = await _categoryReview
+               .AsNoTracking()
+              .ProjectTo<CategoryEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+              .FirstOrDefaultAsync(model => model.CategoryId == id);
 
-            var queryable = _category
-                .Join(_categoryFollow, c => c.Id, cf => cf.CategoryId, ((c, cf) => new {c, cf}))
-                .Join(_user, ccf => ccf.cf.FollowedById, u => u.Id, ((ccf, u) => new {ccf, u}))
-                .Where(
-                    w =>
-                        w.ccf.c.Id == new Guid("a5e31819-994a-8158-f104-39d9f88fbd71") &&
-                        w.u.Id == new Guid("a5e31819-994a-8158-f104-39d9f88fbd71"))
-                .Select(s=>new {s.u, s.ccf.c, s.ccf.cf});
+            category.Body = review.Body;
 
-            var q= (from catf in _categoryFollow
-            join cat
-            in _category on catf.CategoryId equals cat.Id
-            join us
-            in _user on catf.FollowedById equals us.Id
-            where us.Id ==new Guid("") && cat.Id == new Guid("")
-            select new {cat,catf,us }).ToList();
-            var result = q.Count();
-
+            return  category;
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -153,8 +146,25 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .ToListAsync();
         }
 
+        public IList<CategoryListViewModel> GetChildList(Guid? parentId)
+        {
+            return _category
+                .AsNoTracking()
+                .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .Where(category => category.ParentId == parentId)
+                .ToList();
+        }
+
+        public IList<CategoryListViewModel> GetParentList()
+        {
+            return _category
+                .AsNoTracking()
+                .ProjectTo<CategoryListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .Where(category => category.ParentId == null)
+                .ToList();
+        }
+
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -164,7 +174,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                 .AsNoTracking()
                 .ProjectTo<CategoryDetailsViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
-        } 
+        }
 
         public async Task<CategoryListViewModel> FindById(Guid id)
         {
@@ -175,18 +185,6 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         {
             throw new NotImplementedException();
         }
-
-        public IList<CategoryListViewModel> GetChildList(Guid? parentId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<CategoryListViewModel> GetParentList()
-        {
-            throw new NotImplementedException();
-        }
-
-     
 
         #endregion
     }

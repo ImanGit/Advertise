@@ -45,344 +45,450 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Edit</h2>\r\n\r\n");
+WriteLiteral("\r\n");
 
             
-            #line 9 "..\..\Views\Category\Edit.cshtml"
- using (Html.BeginForm())
+            #line 6 "..\..\Views\Category\Edit.cshtml"
+ using (Html.BeginForm(MVC.Category.Edit(), FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Category\Edit.cshtml"
+            #line 8 "..\..\Views\Category\Edit.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Category\Edit.cshtml"
+            #line 8 "..\..\Views\Category\Edit.cshtml"
                             
-    
+
 
             
             #line default
             #line hidden
 WriteLiteral("    <div");
 
+WriteLiteral(" class=\"panel panel-default\"");
+
+WriteLiteral(">\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-heading\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"panel-title\"");
+
+WriteLiteral(">ویرایش دسته</h3>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(">\r\n\r\n            <div");
+
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteLiteral(">\r\n        <h4>CategoryEditViewModel</h4>\r\n        <hr />\r\n");
+WriteLiteral(">\r\n\r\n");
 
-WriteLiteral("        ");
-
-            
-            #line 16 "..\..\Views\Category\Edit.cshtml"
-   Write(Html.ValidationSummary(true, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("        ");
-
-            
-            #line 17 "..\..\Views\Category\Edit.cshtml"
-   Write(Html.HiddenFor(model => model.Id));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("                ");
 
             
             #line 20 "..\..\Views\Category\Edit.cshtml"
-       Write(Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" }));
+           Write(Html.ValidationSummary(true, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n\r\n                <div");
 
-WriteLiteral(" class=\"col-md-10\"");
+WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
-
-            
-            #line 22 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 23 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" }));
+               Write(Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 28 "..\..\Views\Category\Edit.cshtml"
-       Write(Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 30 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } }));
+            #line 25 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
+
+            
+            #line 26 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
 
             
             #line 31 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" }));
+               Write(Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 36 "..\..\Views\Category\Edit.cshtml"
-       Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 38 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
+            #line 33 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
+
+            
+            #line 34 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
 
             
             #line 39 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
+               Write(Html.LabelFor(model => model.ParentId, new { @class = "control-label col-md-2" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    <div");
 
-WriteLiteral(" class=\"form-group\"");
+WriteLiteral(" class=\"col-md-10\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n                        <div");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"k-rtl\"");
+
+WriteLiteral(">\r\n                            <div");
+
+WriteLiteral(" id=\"getCategoryList\"");
+
+WriteLiteral("></div>\r\n                        </div>\r\n");
+
+WriteLiteral("                        ");
 
             
             #line 44 "..\..\Views\Category\Edit.cshtml"
-       Write(Html.LabelFor(model => model.ImageFileName, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 46 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.EditorFor(model => model.ImageFileName, new { htmlAttributes = new { @class = "form-control" } }));
+                   Write(Html.HiddenFor(model => model.ParentId));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 47 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.ImageFileName, "", new { @class = "text-danger" }));
+            #line 45 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                    ");
 
             
-            #line 52 "..\..\Views\Category\Edit.cshtml"
-       Write(Html.LabelFor(model => model.ParentPath, htmlAttributes: new { @class = "control-label col-md-2" }));
+            #line 50 "..\..\Views\Category\Edit.cshtml"
+               Write(Html.LabelFor(model => model.ImageFileName, new { @class = "control-label col-md-2" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10 k-rtl\"");
+
+WriteLiteral(">\r\n                        <input");
+
+WriteLiteral(" type=\"file\"");
+
+WriteLiteral(" id=\"ImageFileName\"");
+
+WriteLiteral(" name=\"ImageFileName\"");
+
+WriteLiteral(" accept=\".jpg,.png\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 53 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.ImageFileName, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                    <label");
+
+WriteLiteral(" class=\"control-label col-md-2\"");
+
+WriteLiteral(">پیش نمایش</label>\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
 WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 54 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.EditorFor(model => model.ParentPath, new { htmlAttributes = new { @class = "form-control" } }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 55 "..\..\Views\Category\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.ParentPath, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
 
             
             #line 60 "..\..\Views\Category\Edit.cshtml"
-       Write(Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" }));
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 60 "..\..\Views\Category\Edit.cshtml"
+                         if (Model.ImageFileName == null)
+                        {
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("                            <img");
 
-WriteLiteral(" class=\"col-md-10\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 2850), Tuple.Create("\"", 2885)
+, Tuple.Create(Tuple.Create("", 2856), Tuple.Create<System.Object, System.Int32>(Href("~/Files/Avatar/no-preview.png")
+, 2856), false)
+);
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(" id=\"ImagePreview\"");
 
-WriteLiteral(" class=\"checkbox\"");
+WriteLiteral(" class=\"img-thumbnail\"");
+
+WriteLiteral(" width=\"300\"");
+
+WriteLiteral(" height=\"300\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 63 "..\..\Views\Category\Edit.cshtml"
+                        }
+                        else
+                        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 3070), Tuple.Create("\"", 3106)
+, Tuple.Create(Tuple.Create("", 3076), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/")
+, 3076), false)
+            
+            #line 66 "..\..\Views\Category\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 3086), Tuple.Create<System.Object, System.Int32>(Model.ImageFileName
+            
+            #line default
+            #line hidden
+, 3086), false)
+);
+
+WriteLiteral(" id=\"ImagePreview\"");
+
+WriteLiteral(" class=\"img-thumbnail\"");
+
+WriteLiteral(" width=\"300\"");
+
+WriteLiteral(" height=\"300\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 67 "..\..\Views\Category\Edit.cshtml"
+                        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
 WriteLiteral("                    ");
 
             
-            #line 63 "..\..\Views\Category\Edit.cshtml"
-               Write(Html.EditorFor(model => model.IsActive));
+            #line 73 "..\..\Views\Category\Edit.cshtml"
+               Write(Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10 k-rtl\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 75 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.TextAreaFor(model=>model.Body, new { htmlAttributes = new { @class = "form-control" }, rows = 10, columns = 40, style="height: 440px" }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
-            #line 64 "..\..\Views\Category\Edit.cshtml"
-               Write(Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" }));
+            #line 76 "..\..\Views\Category\Edit.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n\r\n            </div>\r\n   " +
+"     </div>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"form-group\"");
+WriteLiteral(" class=\"panel-footer\"");
 
 WriteLiteral(">\r\n            <div");
 
-WriteLiteral(" class=\"col-md-offset-2 col-md-10\"");
+WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                <input");
+WriteLiteral(">\r\n\r\n                <div");
+
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" value=\"Save\"");
+WriteLiteral(" value=\"ثبت\"");
 
-WriteLiteral(" class=\"btn btn-default\"");
+WriteLiteral(" class=\"btn btn-primary\"");
 
-WriteLiteral(" />\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
+WriteLiteral(" />\r\n                </div>\r\n\r\n                <div");
+
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
 
             
-            #line 75 "..\..\Views\Category\Edit.cshtml"
+            #line 92 "..\..\Views\Category\Edit.cshtml"
+               Write(Html.ActionLink("برگشت به لیست", "List", new { Controller = "Category" }, new { @class = "btn btn-default" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
+
+            
+            #line 97 "..\..\Views\Category\Edit.cshtml"
 }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n<div>\r\n");
+WriteLiteral("\r\n\r\n");
 
-WriteLiteral("    ");
+DefineSection("scripts", () => {
+
+WriteLiteral("\r\n    <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(@">
+        function expandAndSelectNode(id, treeViewName) {
+            // get the Kendo TreeView widget by it's ID given by treeviewName
+            var treeView = $(treeViewName).data('kendoTreeView');
+
+            // find node with data-id = id
+            var item = $(treeViewName).find(""li[data-id='"" + id + ""']"").find("".k-in"");
+
+            // expand all parent nodes
+            $(item).parentsUntil('.k-treeview').filter('.k-item').each(
+                function(index, element) {
+                    $(treeViewName).data('kendoTreeView').expand($(this));
+                }
+            );
+
+            // get DataSourceItem by given id
+            var nodeDataItem = treeView.dataSource.get(id);
+
+            //get node within treeview widget by uid
+            var node = treeView.findByUid(nodeDataItem.uid);
+
+            treeView.select(node);
+            //$(treeView).select(node);
+            //treeView.select("".k-item:last"");
+        }
+
+        expandAndSelectNode(");
 
             
-            #line 78 "..\..\Views\Category\Edit.cshtml"
-Write(Html.ActionLink("برگشت به لیست", "List"));
+            #line 128 "..\..\Views\Category\Edit.cshtml"
+                       Write(Model.ParentId);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</div>\r\n");
+WriteLiteral(", \"#getCategoryList\");\r\n    </script>\r\n\r\n");
+
+});
 
         }
     }

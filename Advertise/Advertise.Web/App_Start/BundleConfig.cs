@@ -38,7 +38,7 @@ namespace Advertise.Web
                 "~/Scripts/KendoUI/js/kendo.web.min.js",
                 "~/Scripts/KendoUI/js/cultures/kendo.culture.fa-IR.min.js",
                 "~/Scripts/KendoUI/js/cultures/kendo.culture.fa.min.js",
-                "~/Scripts/KendoUI/js/messages/kendo.messages.en-US.min.js",
+                "~/Scripts/KendoUI/js/messages/kendo.messages.fa-IR.min.js",
                 "~/Scripts/Customs/kendo.datasource.js",
                 "~/Scripts/Customs/kendo.ui.js"));
 

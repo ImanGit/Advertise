@@ -1,14 +1,4 @@
-﻿function htmlEncode(value){
-  //create a in-memory div, set it's inner text(which jQuery automatically encodes)
-  //then grab the encoded contents back out.  The div never exists on the page.
-  return $('<div/>').text(value).html().replace(/&/g,'%26');
-}
-
-function htmlDecode(value){
-  return $('<div/>').html(value).text();
-}
-
-
+﻿
 
 $(function () {
     // جهت استفاده از فایل: kendo.culture.fa-IR.js
@@ -17,7 +7,7 @@ $(function () {
          var getCategoryList = new kendo.data.HierarchicalDataSource({
             transport: {
                 read: {
-                    url: "GetCategoryList",
+                    url: "/Category/GetCategoryList",
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
                     type: "GET"
@@ -132,9 +122,6 @@ $(function () {
                         uploadUrl: "/KendoEditorFiles/UploadFile",
                         fileUrl: "/KendoEditorFiles/GetFile?path={0}"
                     }
-                },
-                change: function(e) {
-                    document.getElementById("22").value = htmlEncode($("#Review").data("kendoEditor").value().text());
                 }
     });
 
@@ -153,7 +140,7 @@ $(function () {
     multiple: false,
 showFileList: true,
 localization: {
-    select: 'انتخاب فایل‌ها برای ارسال',
+    select: 'انتخاب فایل‌',
     remove: 'حذف فایل',
     retry: 'سعی مجدد',
     headerStatusUploading: 'در حال ارسال فایل‌ها',
@@ -179,7 +166,7 @@ select: function (e) {
 
 },
 remove: function () {
-    $("#ImagePreview").attr('src', '#');
+    $("#ImagePreview").attr('src', '/Files/Avatar/no-preview.png');
     console.log('File removed.');
 }
 });

@@ -30,10 +30,12 @@ public static partial class MVC
     static readonly AdminClass s_Admin = new AdminClass();
     public static AdminClass Admin { get { return s_Admin; } }
     public static Advertise.Web.Controllers.CategoryController Category = new Advertise.Web.Controllers.T4MVC_CategoryController();
+    public static Advertise.Web.Controllers.CompanyController Company = new Advertise.Web.Controllers.T4MVC_CompanyController();
     public static Advertise.Web.Controllers.HomeController Home = new Advertise.Web.Controllers.T4MVC_HomeController();
     public static Advertise.Web.Controllers.KendoEditorFilesController KendoEditorFiles = new Advertise.Web.Controllers.T4MVC_KendoEditorFilesController();
     public static Advertise.Web.Controllers.KendoEditorImagesController KendoEditorImages = new Advertise.Web.Controllers.T4MVC_KendoEditorImagesController();
     public static Advertise.Web.Controllers.KendoFileUploadController KendoFileUpload = new Advertise.Web.Controllers.T4MVC_KendoFileUploadController();
+    public static Advertise.Web.Controllers.PostController Post = new Advertise.Web.Controllers.T4MVC_PostController();
     public static T4MVC.DefaultController Default = new T4MVC.DefaultController();
     public static T4MVC.KendoController Kendo = new T4MVC.KendoController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -681,6 +683,7 @@ namespace Links
             public const string UrlPath = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string Pic_jpg = Url("Pic.jpg");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

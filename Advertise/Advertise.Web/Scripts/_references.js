@@ -206,6 +206,7 @@
 /// <reference path="kendoui/js/kendo.webcomponents.min.js" />
 /// <reference path="kendoui/js/kendo.window.min.js" />
 /// <reference path="kendoui/js/messages/kendo.messages.en-us.min.js" />
+/// <reference path="kendoui/js/messages/kendo.messages.fa-ir.min.js" />
 /// <reference path="kendoui/js/pako_deflate.min.js" />
 /// <reference path="modernizr/modernizr-2.8.3.js" />
 /// <reference path="Noty/jquery.noty.js" />

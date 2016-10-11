@@ -7,95 +7,95 @@
 
 }
 
-<h2>List</h2>
+<div class="panel panel-default">
 
+    <div class="panel-heading">
+        <h3 class="panel-title">لیست دسته ها</h3>
+    </div>
 
-<p>
-    @Html.ActionLink("ایجاد جدید", "Create")
-</p>
-<table class="table">
-    <tr>
+    <div class="panel-body">
 
-
-        <th>
-            @Html.DisplayNameFor(model => model.Code)
-        </th>
-
-
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-
-
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-
-
-        <th>
-            @Html.DisplayNameFor(model => model.ImageFileName)
-        </th>
-
-
-        <th>
-            @Html.DisplayNameFor(model => model.ParentPath)
-        </th>
-
-
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item.Code)
-        </td>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageFileName)
-        </td>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item.ParentPath)
-        </td>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-
-        <td>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-edit">@Html.ActionLink("ویرایش", "Edit", new { id = item.Id })</i></button>
-            
-            @Html.ActionLink("جزییات", "Details", new {id = item.Id}) |
-            @Html.ActionLink("حذف", "Delete", new {id = item.Id})
+        <table class="table">
+            <tr>
 
 
 
-        </td>
 
-    </tr>
-}
-
-</table>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
 
 
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
 
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+
+                    <td>
+                        
+                        <a class="btn-sm btn btn-default" href="@Url.Action(MVC.Category.Edit(item.Id))"
+                           type="button">
+                            <i class="fa fa-edit"></i>
+                            ویرایش
+                        </a>
+                        |
+                        <a class="btn-sm btn btn-default" href="@Url.Action(MVC.Category.Details(item.Id))"
+                           type="button">
+                            <i class="fa fa-info-circle"></i>
+                            جزییات
+                        </a>
+                        |
+                        <a class="btn-sm btn btn-danger" href="@Url.Action(MVC.Category.Delete(item.Id))"
+                           type="button">
+                            <i class="fa fa-trash-o"></i>
+                            حذف
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+
+
+
+    </div>
+
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-2">
+                @Html.ActionLink("ایجاد جدید", "Create", new { Controller = "Category" }, new { @class = "btn btn-primary" })
+            </div>
+            <div class="col-md-2">
+                @Html.ActionLink("مشاهده دسته ها", "Item", new {Controller = "Category"}, new {@class = "btn btn-default"})
+            </div>
+
+        </div>
+    </div>
+</div>

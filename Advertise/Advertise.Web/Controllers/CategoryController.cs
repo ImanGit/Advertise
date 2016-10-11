@@ -8,6 +8,7 @@ using Advertise.Common.Controller;
 using Advertise.Common.Extensions;
 using Advertise.DataLayer.Context;
 using Advertise.ServiceLayer.Contracts.Categories;
+using Advertise.Utility.Generators;
 using Advertise.ViewModel.Models.Categories;
 
 namespace Advertise.Web.Controllers
@@ -62,27 +63,25 @@ namespace Advertise.Web.Controllers
                 return View();
             }
 
-            foreach (string file in Request.Files)
+            
+
+            // The Name of the Upload component is "files"
+            if (ImageFileName != null)
             {
-                HttpPostedFileBase hpf = Request.Files[file] as HttpPostedFileBase;
-                if (hpf.ContentLength > 0)
+                foreach (var file in ImageFileName)
                 {
-                    string folderPath = Server.MapPath("~/Uploads");
-                    Directory.CreateDirectory(folderPath);
+                    // Some browsers send file names with full path.
+                    // We are only interested in the file name.
+                    viewModel.ImageFileName = Guid.NewGuid().ToString() + ".jpg";
+                    var fileName = System.IO.Path.GetFileName(file.FileName);
+                    var physicalPath = System.IO.Path.Combine(Server.MapPath("~/Uploads"), viewModel.ImageFileName);
 
-                    string savedFileName = Server.MapPath("~/Uploads/" + hpf.FileName);
-                    hpf.SaveAs(savedFileName);
-                    return Content("File Uploaded Successfully");
+                    // The files are not actually saved in this demo
+                    file.SaveAs(physicalPath);
+
                 }
-                else
-                {
-                    return Content("Invalid File");
-                }
-               // model1.Image = "~/ServerFolderPath/" + hpf.FileName;
             }
-
-
-
+            
             await _categoryService.CreateAsync(viewModel);
             this.ShowInformationMessage("دسته جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Category.List());

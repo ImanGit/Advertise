@@ -122,6 +122,12 @@
     <Compile Include="Models\Companies\CompanyFollow\CompanyFollowEditViewModel.cs" />
     <Compile Include="Models\Companies\CompanyFollow\CompanyFollowIndexViewModel.cs" />
     <Compile Include="Models\Companies\CompanyFollow\CompanyFollowListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyImage1\CompanyImageCreateViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyImage1\CompanyImageDeleteViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyImage1\CompanyImageDetailsViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyImage1\CompanyImageEditViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyImage1\CompanyImageListViewModel.cs" />
+    <Compile Include="Models\Companies\CompanyImage1\CompanyImageModel.cs" />
     <Compile Include="Models\Companies\CompanyIndexViewModel.cs" />
     <Compile Include="Models\Companies\CompanyItemViewModel.cs" />
     <Compile Include="Models\Companies\CompanyListViewModel.cs" />

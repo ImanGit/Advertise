@@ -37,9 +37,9 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\n");
+WriteLiteral("\r\n");
 
-WriteLiteral("\n");
+WriteLiteral("\r\n");
 
             
             #line 5 "..\..\Views\Category\List.cshtml"
@@ -50,211 +50,220 @@ WriteLiteral("\n");
             
             #line default
             #line hidden
-WriteLiteral("\n\n<h2>List</h2>\n\n\n<p>\n");
+WriteLiteral("\r\n\r\n<div");
 
-WriteLiteral("    ");
+WriteLiteral(" class=\"panel panel-default\"");
 
-            
-            #line 14 "..\..\Views\Category\List.cshtml"
-Write(Html.ActionLink("ایجاد جدید", "Create"));
+WriteLiteral(">\r\n\r\n    <div");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\n</p>\n<table");
+WriteLiteral(" class=\"panel-heading\"");
+
+WriteLiteral(">\r\n        <h3");
+
+WriteLiteral(" class=\"panel-title\"");
+
+WriteLiteral(">لیست دسته ها</h3>\r\n    </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(">\r\n\r\n        <table");
 
 WriteLiteral(" class=\"table\"");
 
-WriteLiteral(">\n    <tr>\n\n\n        <th>\n");
+WriteLiteral(">\r\n            <tr>\r\n\r\n\r\n\r\n\r\n                <th>\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 21 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Code));
+WriteLiteral("                    ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\n        </th>\n\n\n        <th>\n");
-
-WriteLiteral("            ");
-
-            
-            #line 26 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Title));
+            #line 25 "..\..\Views\Category\List.cshtml"
+               Write(Html.DisplayNameFor(model => model.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </th>\n\n\n        <th>\n");
+WriteLiteral("\r\n                </th>\r\n\r\n\r\n                <th>\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 31 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Description));
+WriteLiteral("                    ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\n        </th>\n\n\n        <th>\n");
-
-WriteLiteral("            ");
-
-            
-            #line 36 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.ImageFileName));
+            #line 30 "..\..\Views\Category\List.cshtml"
+               Write(Html.DisplayNameFor(model => model.Description));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </th>\n\n\n        <th>\n");
+WriteLiteral("\r\n                </th>\r\n\r\n                <th>\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                    ");
 
             
-            #line 41 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.ParentPath));
+            #line 34 "..\..\Views\Category\List.cshtml"
+               Write(Html.DisplayNameFor(model => model.IsActive));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </th>\n\n\n        <th>\n");
+WriteLiteral("\r\n                </th>\r\n\r\n                <th></th>\r\n            </tr>\r\n\r\n");
 
-WriteLiteral("            ");
+            
+            #line 40 "..\..\Views\Category\List.cshtml"
+            
+            
+            #line default
+            #line hidden
+            
+            #line 40 "..\..\Views\Category\List.cshtml"
+             foreach (var item in Model)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <tr>\r\n\r\n\r\n                    <td>\r\n");
+
+WriteLiteral("                        ");
 
             
             #line 46 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.IsActive));
+                   Write(Html.DisplayFor(modelItem => item.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </th>\n\n        <th></th>\n    </tr>\n\n");
+WriteLiteral("\r\n                    </td>\r\n\r\n\r\n                    <td>\r\n");
+
+WriteLiteral("                        ");
 
             
-            #line 52 "..\..\Views\Category\List.cshtml"
- foreach (var item in Model) {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    <tr>\n\n\n        <td>\n");
-
-WriteLiteral("            ");
-
-            
-            #line 57 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Code));
+            #line 51 "..\..\Views\Category\List.cshtml"
+                   Write(Html.DisplayFor(modelItem => item.Description));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </td>\n\n\n        <td>\n");
+WriteLiteral("\r\n                    </td>\r\n\r\n                    <td>\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 62 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Title));
+WriteLiteral("                        ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\n        </td>\n\n\n        <td>\n");
-
-WriteLiteral("            ");
-
-            
-            #line 67 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Description));
+            #line 55 "..\..\Views\Category\List.cshtml"
+                   Write(Html.DisplayFor(modelItem => item.IsActive));
 
             
             #line default
             #line hidden
-WriteLiteral("\n        </td>\n\n\n        <td>\n");
+WriteLiteral("\r\n                    </td>\r\n\r\n                    <td>\r\n                        " +
+"\r\n                        <a");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"btn-sm btn btn-default\"");
 
+WriteAttribute("href", Tuple.Create(" href=\"", 1312), Tuple.Create("\"", 1358)
             
-            #line 72 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.ImageFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\n        </td>\n\n\n        <td>\n");
-
-WriteLiteral("            ");
-
-            
-            #line 77 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.ParentPath));
-
+            #line 60 "..\..\Views\Category\List.cshtml"
+, Tuple.Create(Tuple.Create("", 1319), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Category.Edit(item.Id))
             
             #line default
             #line hidden
-WriteLiteral("\n        </td>\n\n\n        <td>\n");
+, 1319), false)
+);
 
-WriteLiteral("            ");
+WriteLiteral("\r\n                           type=\"button\"");
 
-            
-            #line 82 "..\..\Views\Category\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.IsActive));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\n        </td>\r\n\r\n        <td>\r\n            <button");
-
-WriteLiteral(" class=\"btn btn-primary btn-sm\"");
-
-WriteLiteral("><i");
+WriteLiteral(">\r\n                            <i");
 
 WriteLiteral(" class=\"fa fa-edit\"");
 
-WriteLiteral(">");
+WriteLiteral("></i>\r\n                            ویرایش\r\n                        </a>\r\n        " +
+"                |\r\n                        <a");
+
+WriteLiteral(" class=\"btn-sm btn btn-default\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1610), Tuple.Create("\"", 1659)
+            
+            #line 66 "..\..\Views\Category\List.cshtml"
+, Tuple.Create(Tuple.Create("", 1617), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Category.Details(item.Id))
+            
+            #line default
+            #line hidden
+, 1617), false)
+);
+
+WriteLiteral("\r\n                           type=\"button\"");
+
+WriteLiteral(">\r\n                            <i");
+
+WriteLiteral(" class=\"fa fa-info-circle\"");
+
+WriteLiteral("></i>\r\n                            جزییات\r\n                        </a>\r\n        " +
+"                |\r\n                        <a");
+
+WriteLiteral(" class=\"btn-sm btn btn-danger\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1917), Tuple.Create("\"", 1965)
+            
+            #line 72 "..\..\Views\Category\List.cshtml"
+, Tuple.Create(Tuple.Create("", 1924), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Category.Delete(item.Id))
+            
+            #line default
+            #line hidden
+, 1924), false)
+);
+
+WriteLiteral("\r\n                           type=\"button\"");
+
+WriteLiteral(">\r\n                            <i");
+
+WriteLiteral(" class=\"fa fa-trash-o\"");
+
+WriteLiteral("></i>\r\n                            حذف\r\n                        </a>\r\n\r\n         " +
+"           </td>\r\n\r\n                </tr>\r\n");
 
             
-            #line 86 "..\..\Views\Category\List.cshtml"
-                                                                    Write(Html.ActionLink("ویرایش", "Edit", new { id = item.Id }));
+            #line 81 "..\..\Views\Category\List.cshtml"
+            }
 
             
             #line default
             #line hidden
-WriteLiteral("</i></button>\r\n            \r\n");
+WriteLiteral("\r\n        </table>\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n    <div");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"panel-footer\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
 
             
-            #line 88 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("جزییات", "Details", new {id = item.Id}));
+            #line 93 "..\..\Views\Category\List.cshtml"
+           Write(Html.ActionLink("ایجاد جدید", "Create", new { Controller = "Category" }, new { @class = "btn btn-primary" }));
 
             
             #line default
             #line hidden
-WriteLiteral(" |\r\n");
+WriteLiteral("\r\n            </div>\r\n            <div");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"col-md-2\"");
 
-            
-            #line 89 "..\..\Views\Category\List.cshtml"
-       Write(Html.ActionLink("حذف", "Delete", new {id = item.Id}));
+WriteLiteral(">\r\n");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\r\n\r\n\r\n        </td>\n\n    </tr>\n");
+WriteLiteral("                ");
 
             
             #line 96 "..\..\Views\Category\List.cshtml"
-}
+           Write(Html.ActionLink("مشاهده دسته ها", "Item", new {Controller = "Category"}, new {@class = "btn btn-default"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\n</table>\n\n\n\n");
+WriteLiteral("\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
         }
     }
