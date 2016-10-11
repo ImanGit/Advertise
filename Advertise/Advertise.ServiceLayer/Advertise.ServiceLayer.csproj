@@ -171,6 +171,7 @@
     <Compile Include="EFServices\Companies\CompanyReportService.cs" />
     <Compile Include="EFServices\Feature\FeatureOrderService.cs" />
     <Compile Include="EFServices\Feature\FeatureService.cs" />
+    <Compile Include="EFServices\Products\ProductCommentReportService.cs" />
     <Compile Include="EFServices\Public\AddressService.cs" />
     <Compile Include="EFServices\Public\BannedWordService.cs" />
     <Compile Include="EFServices\Categories\CategoryFollowService.cs" />

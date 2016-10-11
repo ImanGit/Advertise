@@ -31,6 +31,25 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task DeleteAsync(CompanyRDeleteViewModel viewModel);
         #endregion
 
+        #region Read
+
+        Task<CompanyRCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyREditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyRDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyRListViewModel>> GetListAsync();
+
+        Task<CompanyRDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyRListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyRCreateViewModel viewModel);
+
+        #endregion
+
+
         #region Retrieve
 
         /// <summary>
@@ -63,23 +82,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Read
-
-        Task<CompanyRCreateViewModel> GetForCreateAsync();
-
-        Task<CompanyREditViewModel> GetForEditAsync(Guid id);
-
-        Task<CompanyRDeleteViewModel> GetForDeleteAsync(Guid id);
-
-        Task<IEnumerable<CompanyRListViewModel>> GetListAsync();
-
-        Task<CompanyRDetailViewModel> GetDetailsAsync(Guid id);
-
-        Task<CompanyRListViewModel> FindById(Guid id);
-
-        Task FillCreateViewModel(CompanyRCreateViewModel viewModel);
-
-        #endregion
 
     }
 }

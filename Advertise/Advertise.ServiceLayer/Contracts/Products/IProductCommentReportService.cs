@@ -48,7 +48,7 @@ namespace Advertise.ServiceLayer.Contracts.Products
 
         #endregion
 
-        #region
+        #region Retrive
         void GetReportId();
 
         /// <summary>

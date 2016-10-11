@@ -84,6 +84,8 @@
     <Compile Include="Profiles\Products\ProductClProfile.cs" />
     <Compile Include="Profiles\Products\ProductCProfile.cs" />
     <Compile Include="Profiles\Products\ProductCrProfile.cs" />
+    <Compile Include="Profiles\Products\ProductImageProfile.cs" />
+    <Compile Include="Profiles\Products\ProductLikeProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

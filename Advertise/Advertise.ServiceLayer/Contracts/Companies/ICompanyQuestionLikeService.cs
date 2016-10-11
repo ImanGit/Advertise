@@ -31,6 +31,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
+      
 
         #region Read
         Task<CompanyQlCreateViewModel> GetForCreateAsync();

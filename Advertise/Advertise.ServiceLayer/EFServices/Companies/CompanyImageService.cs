@@ -60,33 +60,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         }
         #endregion
 
-        #region Retrive
-        public int GetCountAllImage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetAllImage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetCountAllImageCompany()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetAllImageCompany()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetCountImageInPlan()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
+      
 
         #region Create
         public async Task CreateAsync(CompanyImageCreateViewModel viewModel)
@@ -156,6 +130,34 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+
+        #endregion
+
+        #region Retrive
+        public int GetCountAllImage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetAllImage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountAllImageCompany()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetAllImageCompany()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCountImageInPlan()
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion
     }

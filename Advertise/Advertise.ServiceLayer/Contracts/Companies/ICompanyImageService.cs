@@ -39,6 +39,25 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task DeleteAsync(CompanyImageDeleteViewModel  viewModel);
         #endregion
 
+        #region Read
+
+        Task<CompanyImageCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyImageEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyImageListViewModel>> GetListAsync();
+
+        Task<CompanyImageDetailsViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyImageListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyImageCreateViewModel viewModel);
+
+        #endregion
+
+
         #region Retrieve
         /// <summary>
         /// تعداد کل عکسها
@@ -71,22 +90,5 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Read
-
-        Task<CompanyImageCreateViewModel> GetForCreateAsync();
-
-        Task<CompanyImageEditViewModel> GetForEditAsync(Guid id);
-
-        Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id);
-
-        Task<IEnumerable<CompanyImageListViewModel>> GetListAsync();
-
-        Task<CompanyImageDetailsViewModel> GetDetailsAsync(Guid id);
-
-        Task<CompanyImageListViewModel> FindById(Guid id);
-
-        Task FillCreateViewModel(CompanyImageCreateViewModel viewModel);
-
-        #endregion
     }
 }

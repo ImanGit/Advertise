@@ -30,20 +30,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task DeleteAsync(CompanyReviewDeleteViewModel viewModel);
         #endregion
 
-        #region Retrieve
-
-        /// <summary>
-        /// تعداد کل نقد و بررسی های شرکتها
-        /// </summary>
-        void GetCountAllReviwe();
-
-        /// <summary>
-        /// گرفتن آی دی شرکت برای نمایش نقد و بررسی
-        /// </summary>
-        void GetIdCompanyForShowReview();
-
-        #endregion
-
         #region Read
 
         Task<CompanyReviewCreateViewModel> GetForCreateAsync();
@@ -61,5 +47,21 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task FillCreateViewModel(CompanyReviewCreateViewModel viewModel);
 
         #endregion
+
+        #region Retrieve
+
+        /// <summary>
+        /// تعداد کل نقد و بررسی های شرکتها
+        /// </summary>
+        void GetCountAllReviwe();
+
+        /// <summary>
+        /// گرفتن آی دی شرکت برای نمایش نقد و بررسی
+        /// </summary>
+        void GetIdCompanyForShowReview();
+
+        #endregion
+
+       
     }
 }
