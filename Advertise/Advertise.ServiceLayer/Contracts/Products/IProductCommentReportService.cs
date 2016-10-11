@@ -1,42 +1,54 @@
-﻿using System;
+﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Products.ProductCommentReport ;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 namespace Advertise.ServiceLayer.Contracts.Products
 {
     public  interface IProductCommentReportService
     {
+
         #region Create
-
         /// <summary>
+        /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(ProductCrCreateViewModel  viewModel);
         #endregion
 
         #region Update
-
         /// <summary>
+        /// 
         /// </summary>
-        void Edit();
+        Task EditAsync(ProductCrEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
+        /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(ProductCrDeleteViewModel viewModel);
+        #endregion
+       
+        #region Read
+
+        Task<ProductCrCreateViewModel> GetForCreateAsync();
+
+        Task<ProductCrEditViewModel > GetForEditAsync(Guid id);
+
+        Task<ProductCrDeleteViewModel > GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<ProductCrListViewModel>> GetListAsync();
+
+        Task<ProductCrDetailViewModel > GetDetailsAsync(Guid id);
+
+        Task<ProductCrListViewModel > FindById(Guid id);
+
+        Task FillCreateViewModel(ProductCrCreateViewModel viewModel);
 
         #endregion
 
-        #region Retrieve
-
-        /// <summary>
-        /// گرفتن آی دی ریپورت جهت نمایش آن
-        /// </summary>
+        #region Retrive
         void GetReportId();
 
         /// <summary>

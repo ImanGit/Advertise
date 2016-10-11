@@ -1,36 +1,33 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyQuestion;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyQuestionService : IBaseService
     {
         #region Create
-
         /// <summary>
         /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(CompanyQCreateViewModel viewModel);
         #endregion
 
         #region Update
-
         /// <summary>
-        /// تائید کردن پرسش و پاسخ
+        /// 
         /// </summary>
-        bool EditForApprove();
-
-
+        Task EditAsync(CompanyQEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
-
+        Task DeleteAsync(CompanyQDeleteViewModel viewModel);
         #endregion
 
         #region Retrieve
@@ -72,6 +69,24 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <returns></returns>
         int GetUnknown();
 
+
+        #endregion
+
+        #region Read
+
+        Task<CompanyQCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyQEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyQDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyQListViewModel>> GetListAsync();
+
+        Task<CompanyQDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyQListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyQCreateViewModel viewModel);
 
         #endregion
     }

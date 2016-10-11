@@ -1,36 +1,50 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
-
+using Advertise.ViewModel.Models.Companies.CompanyReview ;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyReviewService : IBaseService
     {
+
         #region Create
-
         /// <summary>
+        /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(CompanyReviewCreateViewModel  viewModel);
         #endregion
 
         #region Update
-
         /// <summary>
+        /// 
         /// </summary>
-        void Edit();
-
-        /// <summary>
-        /// فعال یا غیر فعال کردن نقد و بررسی
-        /// </summary>
-        /// <returns></returns>
-        bool EditForActiveOrUnActive();
+        Task EditAsync(CompanyReviewEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
+        /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(CompanyReviewDeleteViewModel viewModel);
+        #endregion
+
+        #region Read
+
+        Task<CompanyReviewCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyReviewEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyReviewDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyReviewListViewModel>> GetListAsync();
+
+        Task<CompanyReviewDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyReviewListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyReviewCreateViewModel viewModel);
 
         #endregion
 
@@ -47,5 +61,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         void GetIdCompanyForShowReview();
 
         #endregion
+
+       
     }
 }

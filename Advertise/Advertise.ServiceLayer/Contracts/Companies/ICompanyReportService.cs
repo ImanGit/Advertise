@@ -1,28 +1,26 @@
-﻿using System;
+﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyReport;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Advertise.ServiceLayer.Contracts.Companies ;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
-    interface ICompanyReportService
+    interface ICompanyReportService : IBaseService
 
     {
         #region Create
         /// <summary>
         /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(CompanyRCreateViewModel viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        void Edit();
+        Task EditAsync(CompanyREditViewModel viewModel);
 
         #endregion
 
@@ -30,9 +28,27 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(CompanyRDeleteViewModel viewModel);
+        #endregion
+
+        #region Read
+
+        Task<CompanyRCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyREditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyRDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyRListViewModel>> GetListAsync();
+
+        Task<CompanyRDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyRListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyRCreateViewModel viewModel);
 
         #endregion
+
 
         #region Retrieve
 
@@ -66,13 +82,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Find
 
-        /// <summary>
-        /// جستجوی کمپانی مورد نظر
-        /// </summary>
-        void FindCompany();
-
-        #endregion
     }
 }

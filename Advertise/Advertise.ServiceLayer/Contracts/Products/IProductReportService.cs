@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Advertise.ViewModel.Models.Products.ProductReport ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,35 +10,44 @@ namespace Advertise.ServiceLayer.Contracts.Products
     public  interface  IProductReportService
     {
         #region Create
-
         /// <summary>
+        /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(ProductRCreateViewModel viewModel);
         #endregion
 
         #region Update
-
         /// <summary>
+        /// 
         /// </summary>
-        void Edit();
+        Task EditAsync(ProductREditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
+        /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(ProductRDeleteViewModel viewModel);
+        #endregion
+
+        #region Read
+
+        Task<ProductRCreateViewModel> GetForCreateAsync();
+
+        Task<ProductREditViewModel> GetForEditAsync(Guid id);
+
+        Task<ProductRDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<ProductRListViewModel>> GetListAsync();
+
+        Task<ProductRDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<ProductRListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(ProductRCreateViewModel viewModel);
 
         #endregion
 
-        #region Retrieve
-
-        /// <summary>
-        /// </summary>
-        void Get();
-
-        #endregion
     }
 }

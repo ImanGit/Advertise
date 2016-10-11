@@ -1,17 +1,29 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyQuestionLike ;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyQuestionLikeService :IBaseService 
     {
         #region Create
         /// <summary>
-        /// 
+        /// ایجاد فالو یک کمپانی
         /// </summary>
-        void Create();
+        Task CreateAsync(CompanyQlCreateViewModel viewModel);
 
         #endregion
 
         #region Update
+        /// <summary>
+        /// فالو کردن مجدد یک کمپانی یا آن فالو کردن
+        /// </summary>
+        void EditForFollowOrUnFollow();
+
+        Task EditAsync(CompanyQlEditViewModel viewModel);
+
         /// <summary>
         /// لایک مجدد یا پس گرفتن لایک سوال
         /// </summary>
@@ -19,11 +31,12 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Delete
-        /// <summary>
-        /// 
-        /// </summary>
-        void Delete();
+      
+
+        #region Read
+        Task<CompanyQlCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyQlEditViewModel> GetForEditAsync(Guid id);
 
         #endregion
 

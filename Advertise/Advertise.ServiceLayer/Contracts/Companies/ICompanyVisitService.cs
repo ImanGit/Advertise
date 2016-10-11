@@ -1,34 +1,21 @@
-﻿using System;
-using Advertise.ServiceLayer.Contracts.Common;
+﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyVisit;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
-    public interface ICompanyVisitService:IBaseService 
+    public interface ICompanyVisitService : IBaseService
     {
         #region Create
-        /// <summary>
-        /// 
-        /// </summary>
-        void Create();
 
-        #endregion
-
-        #region Update
-        /// <summary>
-        /// 
-        /// </summary>
-        void Edit();
-
-        #endregion
-
-        #region Delete
-        /// <summary>
-        /// 
-        /// </summary>
-       // void Delete();
-
+        Task CreateAsync(CompanyVisitCreateViewModel viewModel);
+        Task<CompanyVisitCreateViewModel> GetForCreateAsync();
         #endregion
 
         #region Retrieve
+
         /// <summary>
         /// بازدید کل کمپانی
         /// </summary>
@@ -49,5 +36,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
 
         #endregion
+
     }
 }

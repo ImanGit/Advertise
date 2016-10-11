@@ -1,20 +1,55 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using Advertise.DataLayer.Context;
+using Advertise.DomainClasses.Entities.Companies;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Advertise.ServiceLayer.Contracts.Companies;
+using Advertise.ViewModel.Models.Companies.CompanyVisit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using EntityFramework.Extensions;
+using System.Data.Entity;
 
 namespace Advertise.ServiceLayer.EFServices.Companies
 {
     public class CompanyVisitService : ICompanyVisitService
     {
-        public void Create()
+        #region Fields
+
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IDbSet<CompanyVisit> _companyVisit;
+
+        #endregion
+
+        #region Ctor
+
+        public CompanyVisitService(IMapper mapper, IUnitOfWork unitOfWork)
         {
-            throw new NotImplementedException();
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
+            _companyVisit = unitOfWork.Set<CompanyVisit>();
         }
 
-        public void Edit()
+        #endregion
+
+        #region Create
+
+        public async Task CreateAsync(CompanyVisitCreateViewModel  viewModel)
         {
-            throw new NotImplementedException();
+            var companyr = _mapper.Map<CompanyVisit>(viewModel);
+            _companyVisit.Add(companyr);
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
+        public async Task<CompanyVisitCreateViewModel> GetForCreateAsync()
+        {
+            return await Task.Run(() => new CompanyVisitCreateViewModel());
+        }
+        #endregion
+
+        #region Retrive
         public int GetCountAllVisitComany()
         {
             throw new NotImplementedException();
@@ -30,14 +65,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

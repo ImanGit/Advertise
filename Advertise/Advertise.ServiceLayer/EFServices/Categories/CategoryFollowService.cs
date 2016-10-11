@@ -54,6 +54,11 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
+
+        public bool EditFollowOrUnFollow()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Read
@@ -83,34 +88,16 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         }
 
         #endregion
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
 
-        //bool ICategoryFollowService.Create()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        public bool EditFollowOrUnFollow()
-        {
-            throw new NotImplementedException();
-        }
-
-        //bool ICategoryFollowService.Delete()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+        #region Retrive
         public int GetCount(Guid id)
         {
             return _categoryFollow.Count(a => a.CategoryId == id && a.IsFollow == true);
         }
 
-        public int GetUnCount( Guid id)
+        public int GetUnCount(Guid id)
         {
-            return _categoryFollow.Count(a => a.CategoryId == id && a.IsFollow == false );
+            return _categoryFollow.Count(a => a.CategoryId == id && a.IsFollow == false);
         }
 
         //public bool GetUserFollowCategory(Guid id)
@@ -118,13 +105,16 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         //   // return _categoryFollow.Where(a => a.);
         //}
 
-        public bool  GetUserFollowCategory(Guid idUser ,Guid idCategory)
+        public bool GetUserFollowCategory(Guid idUser, Guid idCategory)
         {
-            var dd = (from catf  in _categoryFollow join cat
-                     in _categories on catf .CategoryId equals cat .Id join us
-                     in _user on catf.FollowedById equals us.Id where us.Id ==idUser && cat.Id ==idCategory
-                      select new   {catf.IsFollow  }).ToList() ;
-            if (dd.Count ==0 )
+            var dd = (from catf in _categoryFollow
+                      join cat
+in _categories on catf.CategoryId equals cat.Id
+                      join us
+in _user on catf.FollowedById equals us.Id
+                      where us.Id == idUser && cat.Id == idCategory
+                      select new { catf.IsFollow }).ToList();
+            if (dd.Count == 0)
             {
                 return false;
             }
@@ -137,14 +127,14 @@ namespace Advertise.ServiceLayer.EFServices.Categories
 
         public int GetCountFollowUserInCity(Guid idAddress)
         {
-        var countFollow= (from catf in _categoryFollow
-                join us
-                    in _user on catf.FollowedById equals us.Id
-                where 
-                us.IdAddress == idAddress &&
-                catf.IsFollow  == true 
-                select new {catf.Id });
-            return countFollow.Count( );
+            var countFollow = (from catf in _categoryFollow
+                               join us
+                                   in _user on catf.FollowedById equals us.Id
+                               where
+                               us.IdAddress == idAddress &&
+                               catf.IsFollow == true
+                               select new { catf.Id });
+            return countFollow.Count();
 
         }
 
@@ -155,7 +145,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
                                    in _user on catf.FollowedById equals us.Id
                                where
                                us.IdAddress == idAddress &&
-                               catf.IsFollow == false 
+                               catf.IsFollow == false
                                select new { catf.Id });
             return countFollow.Count();
 
@@ -171,21 +161,6 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             throw new NotImplementedException();
         }
 
-        public void Create()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool  Delete()
-        {
-            throw new NotImplementedException();
-        }
-
         public int GetCount()
         {
             throw new NotImplementedException();
@@ -196,11 +171,14 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             throw new NotImplementedException();
         }
 
-       
+
 
         public int GetUserFollowCount()
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
     }
 }

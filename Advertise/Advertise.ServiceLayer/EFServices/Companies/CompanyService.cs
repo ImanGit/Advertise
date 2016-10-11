@@ -33,26 +33,37 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
         #endregion
 
-        /// <summary>
-        /// </summary>
-        /// <param name="viewModel"></param>
+        #region Create
         public async Task CreateAsync(CompanyCreateViewModel viewModel)
         {
             var company = _mapper.Map<Company>(viewModel);
             _company.Add(company);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId : new Guid("9d2b0228-4d0d-4c23-8b49-01a698857709"));
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9d2b0228-4d0d-4c23-8b49-01a698857709"));
         }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
+        public async Task<CompanyCreateViewModel> GetForCreateAsync()
+        {
+            return await Task.Run(() => new CompanyCreateViewModel { Description = "" });
+        }
+
+        #endregion
+
+        #region Edit
         public async Task EditAsync(CompanyEditViewModel viewModel)
         {
-            var company = await _company.FirstAsync(model => model.Id == viewModel.Id );
+            var company = await _company.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, company);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId : new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
+
+        public async Task<CompanyEditViewModel> GetForEditAsync(Guid id)
+        {
+            return await _company
+                .AsNoTracking()
+                .ProjectTo<CompanyEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
 
         public bool EditForActiveOrDeActive()
         {
@@ -69,6 +80,8 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+        #endregion
+
         #region Fields
 
         private readonly IMapper _mapper;
@@ -77,22 +90,27 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
         #endregion
 
-        /// <summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
-        /// </summary>
+        #region Delete
         public Task DeleteAsync(CompanyDeleteViewModel viewModel)
         {
-            return _company.Where(model => model.Id == viewModel.Id ).DeleteAsync();
+            return _company.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
-
-
-
         public void DeleteHard()
         {
             throw new NotImplementedException();
         }
 
+        public async Task<CompanyDeleteViewModel> GetForDeleteAsync(Guid id)
+        {
+            return await _company
+                .AsNoTracking()
+                .ProjectTo<CompanyDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(model => model.Id == id);
+        }
+
+        #endregion
+
+        #region Retrive
         public void GetAll()
         {
             throw new NotImplementedException();
@@ -138,11 +156,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public void GetInDB()
-        {
-            throw new NotImplementedException();
-        }
-
         public int GetActive()
         {
             throw new NotImplementedException();
@@ -164,45 +177,10 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         }
 
 
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
+       
         #region Read
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public async Task<CompanyCreateViewModel > GetForCreateAsync()
-        {
-            return await Task.Run(() => new CompanyCreateViewModel { Description = "" });
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<CompanyEditViewModel > GetForEditAsync(Guid id)
-        {
-            return await _company 
-                .AsNoTracking()
-                .ProjectTo<CompanyEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<CompanyDeleteViewModel > GetForDeleteAsync(Guid id)
-        {
-            return await _company 
-                .AsNoTracking()
-                .ProjectTo<CompanyDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(model => model.Id == id);
-        }
 
         /// <summary>
         /// </summary>

@@ -1,27 +1,24 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyModerator ;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
    public  interface ICompanyModeratorService : IBaseService
     {
         #region Create
-        // <summary>
+        /// <summary>
         /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(CompanyModeratorCreateViewModel  viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        void Edit();
+        Task EditAsync(CompanyModeratorEditViewModel  viewModel);
 
         #endregion
 
@@ -29,8 +26,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
-
+        Task DeleteAsync(CompanyModeratorDeleteViewModel  viewModel);
         #endregion
 
         #region Retrieve
@@ -47,6 +43,24 @@ namespace Advertise.ServiceLayer.Contracts.Companies
        int GetCountAll();
        int GetShowAll();
 
-       #endregion
+        #endregion
+
+        #region Read
+
+        Task<CompanyModeratorCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyModeratorEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyModeratorDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyModeratorListViewModel>> GetListAsync();
+
+        Task<CompanyModeratorDetailViewModel > GetDetailsAsync(Guid id);
+
+        Task<CompanyModeratorListViewModel > FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyModeratorCreateViewModel viewModel);
+
+        #endregion
     }
 }

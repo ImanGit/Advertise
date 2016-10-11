@@ -1,32 +1,62 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyAttachment;
+using System;
+using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyAttachmentService : IBaseService
     {
         #region Create
-
         /// <summary>
+        /// 
         /// </summary>
-        void Create();
+        Task CreateAsync(CompanyAttachmentCreateViewModel viewModel);
 
         #endregion
 
         #region Update
+        /// <summary>
+        /// ویرایش عکس یک محصول یک شرکت
+        /// </summary>
+        void EditImageProductForComany();
 
         /// <summary>
+        /// اصلاح عکسهای یک شرکت
         /// </summary>
-        void Edit();
+        /// <returns></returns>
+        int EditImageForComany();
+
+        Task EditAsync(CompanyAttachmentEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
+        /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(CompanyAttachmentDeleteViewModel viewModel);
+        #endregion
+
+        #region Read
+
+        Task<CompanyAttachmentCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyAttachmentEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyAttachmentDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyAttachmentListViewModel>> GetListAsync();
+
+        Task<CompanyAttachmentDetailsViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyAttachmentListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyAttachmentCreateViewModel viewModel);
 
         #endregion
+
+
 
         #region Retrieve
 

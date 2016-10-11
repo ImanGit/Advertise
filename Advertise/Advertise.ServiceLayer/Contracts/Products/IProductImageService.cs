@@ -1,17 +1,36 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Products.ProductImage;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Advertise.ServiceLayer.Contracts.Products
 {
-    public interface IProductImageService:IBaseService 
+    public interface IProductImageService: IBaseService 
     {
+
+       
         #region Create
         /// <summary>
         /// 
         /// </summary>
-        void Create();
+        Task CreateAsync(ProductImageCreateViewModel  viewModel);
 
         #endregion
 
         #region Update
+        /// <summary>
+        /// ویرایش عکس یک محصول یک شرکت
+        /// </summary>
+        void EditImageProductForComany();
+
+        /// <summary>
+        /// اصلاح عکسهای یک شرکت
+        /// </summary>
+        /// <returns></returns>
+        int EditImageForComany();
+
+        Task EditAsync(ProductImageEditViewModel viewModel);
 
         /// <summary>
         /// اصلاح الویت عکسهای یک محصول یک شرکت
@@ -26,11 +45,28 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(ProductImageDeleteViewModel viewModel);
+        #endregion
+
+        #region Read
+
+        Task<ProductImageCreateViewModel> GetForCreateAsync();
+
+        Task<ProductImageEditViewModel> GetForEditAsync(Guid id);
+
+        Task<ProductImageDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<ProductImageListViewModel>> GetListAsync();
+
+        Task<ProductImageDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<ProductImageListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(ProductImageCreateViewModel viewModel);
 
         #endregion
 
-          #region Retrieve
+        #region Retrieve
         /// <summary>
         /// تعداد کل عکسها
         /// </summary>

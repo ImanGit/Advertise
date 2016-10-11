@@ -1,38 +1,60 @@
-﻿using System;
+﻿using Advertise.ServiceLayer.Contracts.Common;
+using Advertise.ViewModel.Models.Companies.CompanyQuestionReport  ;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
-    interface ICompanyQuestionReportService
+    interface ICompanyQuestionReportService :IBaseService 
 
     {
         #region Create
-
         /// <summary>
         /// 
         /// </summary>
-        void Create();
-
+        Task CreateAsync(CompanyQrCreateViewModel viewModel);
         #endregion
 
         #region Update
-
         /// <summary>
         /// 
         /// </summary>
-        void Edit();
+        Task EditAsync(CompanyQrEditViewModel viewModel);
 
         #endregion
 
         #region Delete
-
         /// <summary>
         /// 
         /// </summary>
-        void Delete();
+        Task DeleteAsync(CompanyQrDeleteViewModel viewModel);
+        #endregion
+
+        #region Find
+
+        /// <summary>
+        /// جستجوی کمپانی مورد نظر
+        /// </summary>
+        void FindCompany();
+
+        #endregion
+
+        #region Read
+
+        Task<CompanyQrCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyQrEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyQrDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyQrListViewModel>> GetListAsync();
+
+        Task<CompanyQrDetailViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyQrListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyQrCreateViewModel viewModel);
 
         #endregion
 
@@ -65,15 +87,6 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
 
 
-
-        #endregion
-
-        #region Find
-
-        /// <summary>
-        /// جستجوی کمپانی مورد نظر
-        /// </summary>
-        void FindCompany();
 
         #endregion
     }

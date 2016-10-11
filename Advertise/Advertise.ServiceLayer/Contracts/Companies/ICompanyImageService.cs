@@ -39,6 +39,25 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         Task DeleteAsync(CompanyImageDeleteViewModel  viewModel);
         #endregion
 
+        #region Read
+
+        Task<CompanyImageCreateViewModel> GetForCreateAsync();
+
+        Task<CompanyImageEditViewModel> GetForEditAsync(Guid id);
+
+        Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id);
+
+        Task<IEnumerable<CompanyImageListViewModel>> GetListAsync();
+
+        Task<CompanyImageDetailsViewModel> GetDetailsAsync(Guid id);
+
+        Task<CompanyImageListViewModel> FindById(Guid id);
+
+        Task FillCreateViewModel(CompanyImageCreateViewModel viewModel);
+
+        #endregion
+
+
         #region Retrieve
         /// <summary>
         /// تعداد کل عکسها
@@ -71,53 +90,5 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #endregion
 
-        #region Read
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        Task<CompanyImageCreateViewModel> GetForCreateAsync();
-
-        IList<CompanyImageListViewModel> GetChildList(Guid? parentId);
-
-        IList<CompanyImageListViewModel> GetParentList();
-
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<CompanyImageEditViewModel> GetForEditAsync(Guid id);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        Task<CompanyImageDeleteViewModel> GetForDeleteAsync(Guid id);
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        Task<IEnumerable<CompanyImageListViewModel>> GetListAsync();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<CompanyImageDetailsViewModel> GetDetailsAsync(Guid id);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<CompanyImageListViewModel> FindById(Guid id);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
-        Task FillCreateViewModel(CompanyImageCreateViewModel viewModel);
-
-        #endregion
     }
 }
