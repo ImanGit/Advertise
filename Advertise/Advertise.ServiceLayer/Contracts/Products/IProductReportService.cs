@@ -49,6 +49,5 @@ namespace Advertise.ServiceLayer.Contracts.Products
 
         #endregion
 
-
     }
 }

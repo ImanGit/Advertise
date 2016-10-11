@@ -86,6 +86,9 @@
     <Compile Include="Profiles\Products\ProductCrProfile.cs" />
     <Compile Include="Profiles\Products\ProductImageProfile.cs" />
     <Compile Include="Profiles\Products\ProductLikeProfile.cs" />
+    <Compile Include="Profiles\Products\ProductReportProfile.cs" />
+    <Compile Include="Profiles\Products\ProductReviewProfile.cs" />
+    <Compile Include="Profiles\Products\ProductVisitProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

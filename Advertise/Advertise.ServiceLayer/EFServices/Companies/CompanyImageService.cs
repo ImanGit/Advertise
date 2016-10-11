@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Advertise.ServiceLayer.Contracts.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyImage1;
-using AutoMapper;
-using Advertise.DataLayer.Context;
-using Advertise.DomainClasses.Entities.Companies;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
+using Advertise.DataLayer.Context;
+using Advertise.DomainClasses.Entities.Companies ;
+using Advertise.ServiceLayer.Contracts.Companies ;
+using Advertise.ViewModel.Models.Companies ;
+using Advertise.ViewModel.Models.Companies.CompanyImage1 ;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using EntityFramework.Extensions;
+
 
 namespace Advertise.ServiceLayer.EFServices.Companies
 {
@@ -59,8 +61,6 @@ namespace Advertise.ServiceLayer.EFServices.Companies
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
         #endregion
-
-      
 
         #region Create
         public async Task CreateAsync(CompanyImageCreateViewModel viewModel)
@@ -155,6 +155,11 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         }
 
         public int GetCountImageInPlan()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Contracts.Companies.IEnumerable<CompanyImageListViewModel>> ICompanyImageService.GetListAsync()
         {
             throw new NotImplementedException();
         }
