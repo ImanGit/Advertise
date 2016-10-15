@@ -196,10 +196,13 @@
   <ItemGroup>
     <Folder Include="Authentication\" />
     <Folder Include="Authorization\" />
+    <Folder Include="AutoMapper\" />
     <Folder Include="Caching\" />
     <Folder Include="Globalization\" />
     <Folder Include="Helpers\" />
+    <Folder Include="IocConfig\" />
     <Folder Include="Localization\" />
+    <Folder Include="ORM\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Advertise.DataLayer\Advertise.DataLayer.csproj">

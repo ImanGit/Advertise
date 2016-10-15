@@ -163,6 +163,8 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
+       
+
         public int Find()
         {
             throw new NotImplementedException();

@@ -5,65 +5,69 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Advertise.ViewModel.Models.Common;
+using System.ComponentModel;
+using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Advertise.ViewModel.Models.Companies
 {
-    public  class CompanyEditViewModel:BaseViewModel 
+    public class CompanyEditViewModel : BaseViewModel
     {
         public Guid Id { get; set; }
-        /// <summary>
-        ///     کد کمپانی
-        /// </summary>
+
+        public Guid CompanyId { get; set; }
+
+        public Guid ReviewId { get; set; }
+
+        [DisplayName("کد شناسه")]
+        [Required(ErrorMessage = "لطفا کد شناسه را وارد کنید")]
+        [StringLength(50, ErrorMessage = "کد شناسه باید کمتر از ۵۰ کاراکتر باشد")]
         public string Code { get; set; }
 
-        /// <summary>
-        ///     نام شرکت
-        /// </summary>
+        [DisplayName("نام شرکت")]
+        [Required(ErrorMessage = " نام شرکت الزامی است")]
+        [StringLength(100, ErrorMessage = "نام شرکت/واحد خدماتی باید کمتر از 100 کاراکتر باشد")]
         public string BrandName { get; set; }
 
-        /// <summary>
-        ///     توضیحات مربوط به شرکت
-        /// </summary>
+        [DisplayName("توضیحات ")]
         public string Description { get; set; }
 
-        /// <summary>
-        ///     لوگوی شرکت
-        /// </summary>
+        [DisplayName("مسیر لوگو")]
         public string LogoFileName { get; set; }
 
-        /// <summary>
-        ///     تاریخچه شرکت
-        /// </summary>
+        [DisplayName("مسیر بک گراند شرکت")]
         public string BackgroundFileName { get; set; }
 
-        /// <summary>
-        ///     شماره تلفن(های) شرکت
-        /// </summary>
+        [DisplayName("شماره ثابت")]
+        [RegularExpression("[^0-9]", ErrorMessage = "فقط عدد وارد شود")]
         public string PhoneNumber { get; set; }
 
-        /// <summary>
-        ///     شماره همراه
-        /// </summary>
+        [DisplayName("شماره همراه")]
+        [Required(ErrorMessage = "وارد کردن شماره همراه الزامی است")]
+        [StringLength(11, ErrorMessage = "شماره همراه نباید بیش از 11 عدد باشد")]
+        [RegularExpression("[^0-9]", ErrorMessage = "فقط عدد وارد شود")]
         public string MobileNumber { get; set; }
 
-        /// <summary>
-        ///     آدرس ایمیل شرکت
-        /// </summary>
+        [DisplayName("آدرس ایمیل")]
+        [RegularExpression(
+            @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+            ErrorMessage = "آدرس ایمیل اشتباه است")]
         public string Email { get; set; }
 
-        /// <summary>
-        ///     آدرس وب سایت شرکت
-        /// </summary>
+        [DisplayName("آدرس وب سایت")]
         public string WebSite { get; set; }
 
-        /// <summary>
-        /// </summary>
+        [RegularExpression("[^0-9]", ErrorMessage = "فقط عدد وارد شود")]
+        [DisplayName("تعداد افراد استخدامی")]
         public long EmployeeCount { get; set; }
 
-        /// <summary>
-        ///     سال تاسیس
-        /// </summary>
+        [DisplayName("سال تاسیس")]
         public DateTime EstablishedOn { get; set; }
+
+        [DisplayName("بررسی")]
+        [AllowHtml]
+        public string Body { get; set; }
+
 
     }
 }

@@ -15,57 +15,57 @@ namespace Advertise.Mapping.Profiles.Products
         public ProductCProfile()
         {
 
-            CreateMap<ProductComment, ProductCCreateViewModel>()
-                .ProjectUsing(src => new ProductCCreateViewModel
+            CreateMap<ProductComment, ProductCommentCreateViewModel>()
+                .ProjectUsing(src => new ProductCommentCreateViewModel
                 {
                     IsApproved =src.IsApproved ,
                     Body =src.Body ,
                     Status =src.Status  
                 });
-            CreateMap<ProductCCreateViewModel, ProductComment>()
+            CreateMap<ProductCommentCreateViewModel, ProductComment>()
                .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
                .ForMember(dest => dest.Status, opts => opts.MapFrom(src => src.Status))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<ProductComment, ProductCEditViewModel>()
-                .ProjectUsing(src => new ProductCEditViewModel
+            CreateMap<ProductComment, ProductCommentEditViewModel>()
+                .ProjectUsing(src => new ProductCommentEditViewModel
                 {
                     IsApproved = src.IsApproved,
                     Body = src.Body,
                     Status = src.Status,
                     Id = src.Id
                 });
-            CreateMap<ProductCEditViewModel, ProductComment>()
+            CreateMap<ProductCommentEditViewModel, ProductComment>()
                .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
                .ForMember(dest => dest.Status, opts => opts.MapFrom(src => src.Status))
                .ForAllOtherMembers(opt => opt.Ignore());
 
 
-            CreateMap<ProductComment, ProductCDetailViewModel>()
-               .ProjectUsing(src => new ProductCDetailViewModel
+            CreateMap<ProductComment, ProductCommentDetailViewModel>()
+               .ProjectUsing(src => new ProductCommentDetailViewModel
                {
                    IsApproved = src.IsApproved,
                    Body = src.Body,
                    Status = src.Status,
                    Id = src.Id
                });
-            CreateMap<ProductCDetailViewModel, ProductComment>()
+            CreateMap<ProductCommentDetailViewModel, ProductComment>()
                 .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
                .ForMember(dest => dest.Status, opts => opts.MapFrom(src => src.Status))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<ProductComment, ProductCDeleteViewModel>()
-              .ProjectUsing(src => new ProductCDeleteViewModel
+            CreateMap<ProductComment, ProductCommentDeleteViewModel>()
+              .ProjectUsing(src => new ProductCommentDeleteViewModel
               {
                   IsApproved = src.IsApproved,
                   Body = src.Body,
                   Status = src.Status,
                   Id = src.Id
               });
-            CreateMap<ProductCDeleteViewModel, ProductComment>()
+            CreateMap<ProductCommentDeleteViewModel, ProductComment>()
                 .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
                .ForMember(dest => dest.Status, opts => opts.MapFrom(src => src.Status))

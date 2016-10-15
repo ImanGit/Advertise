@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Companies ;
+using Advertise.DomainClasses.Entities.Users;
 using Advertise.ServiceLayer.Contracts.Companies ;
 using Advertise.ViewModel.Models.Companies ;
 using AutoMapper;
@@ -29,6 +30,9 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _company = unitOfWork.Set<Company>();
+            _companyReview = unitOfWork.Set<CompanyReview >();
+            _companyFollow = unitOfWork.Set<CompanyFollow>();
+            _user = unitOfWork.Set<User >();
         }
 
         #endregion
@@ -37,8 +41,10 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         public async Task CreateAsync(CompanyCreateViewModel viewModel)
         {
             var company = _mapper.Map<Company>(viewModel);
+            var companyReview = _mapper.Map<CompanyReview >(viewModel);
+            company.Reviews.Add(companyReview);
             _company.Add(company);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9d2b0228-4d0d-4c23-8b49-01a698857709"));
+            await _unitOfWork.SaveAllChangesAsync(auditUserId : new Guid("9d2b0228-4d0d-4c23-8b49-01a698857709"));
         }
 
         public async Task<CompanyCreateViewModel> GetForCreateAsync()
@@ -58,10 +64,20 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
         public async Task<CompanyEditViewModel> GetForEditAsync(Guid id)
         {
-            return await _company
+            var company= await _company
                 .AsNoTracking()
                 .ProjectTo<CompanyEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
+
+
+            var companyReview= await _companyReview 
+               .AsNoTracking()
+               .ProjectTo<CompanyEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+               .FirstOrDefaultAsync(model => model.CompanyId  == id);
+
+            company.Body = companyReview.Body;
+            return company;
+
         }
 
 
@@ -87,7 +103,9 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IDbSet<Company> _company;
-
+        private readonly IDbSet<CompanyReview> _companyReview;
+        private readonly IDbSet<CompanyFollow> _companyFollow;
+        private readonly IDbSet<User  > _user;
         #endregion
 
         #region Delete

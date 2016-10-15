@@ -37,385 +37,233 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n\r\n");
+
+WriteLiteral("\r\n");
+
             
-            #line 3 "..\..\Views\Company\List.cshtml"
+            #line 10 "..\..\Views\Company\List.cshtml"
   
-    ViewBag.Title = "List";
+    ViewBag.Title = "لیست";
+
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>List</h2>\r\n\r\n<p>\r\n    <a href =\"#\" class=\"btn btn-primary\" onclick =\"Crea" +
-"te()\">افزودن نعت</a>\r\n</p>\r\n<table");
+WriteLiteral("\r\n\r\n<div");
+
+WriteLiteral(" class=\"panel panel-default\"");
+
+WriteLiteral(">\r\n\r\n    <div");
+
+WriteLiteral(" class=\"panel-heading\"");
+
+WriteLiteral(">\r\n        <h3");
+
+WriteLiteral(" class=\"panel-title\"");
+
+WriteLiteral(">لیست شرکت ها</h3>\r\n    </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(">\r\n\r\n        <table");
 
 WriteLiteral(" class=\"table\"");
 
-WriteLiteral(">\r\n    <tr>\r\n        <th>\r\n");
+WriteLiteral(">\r\n            <tr>\r\n\r\n\r\n\r\n\r\n                <th>\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 15 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Code));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 18 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.BrandName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 21 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Description));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 24 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.LogoFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 27 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.BackgroundFileName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("                    ");
 
             
             #line 30 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.PhoneNumber));
+               Write(Html.DisplayNameFor(model => model.BrandName ));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
+WriteLiteral("\r\n                </th>\r\n\r\n\r\n                <th>\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 33 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.MobileNumber));
+WriteLiteral("                    ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 36 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.Email));
+            #line 35 "..\..\Views\Company\List.cshtml"
+               Write(Html.DisplayNameFor(model => model.Email ));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
+WriteLiteral("\r\n                </th>\r\n\r\n                <th>\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                    ");
 
             
             #line 39 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.WebSite));
+               Write(Html.DisplayNameFor(model => model.MobileNumber ));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 42 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.EmployeeCount));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th>\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("\r\n                </th>\r\n\r\n                <th></th>\r\n            </tr>\r\n\r\n");
 
             
             #line 45 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayNameFor(model => model.EstablishedOn));
+            
+            
+            #line default
+            #line hidden
+            
+            #line 45 "..\..\Views\Company\List.cshtml"
+             foreach (var item in Model)
+            {
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </th>\r\n        <th></th>\r\n    </tr>\r\n\r\n");
+WriteLiteral("                <tr>\r\n\r\n\r\n                    <td>\r\n");
+
+WriteLiteral("                        ");
 
             
-            #line 50 "..\..\Views\Company\List.cshtml"
- foreach (var item in Model) {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    <tr>\r\n        <td>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 53 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Code));
+            #line 51 "..\..\Views\Company\List.cshtml"
+                   Write(Html.DisplayFor(modelItem => item.BrandName));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\r\n                    </td>\r\n\r\n\r\n                    <td>\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                        ");
 
             
             #line 56 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.BrandName));
+                   Write(Html.DisplayFor(modelItem => item.Email));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\r\n                    </td>\r\n\r\n                    <td>\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 59 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Description));
+WriteLiteral("                        ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 62 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.LogoFileName));
+            #line 60 "..\..\Views\Company\List.cshtml"
+                   Write(Html.DisplayFor(modelItem => item.MobileNumber));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\r\n                    </td>\r\n\r\n                    <td>\r\n\r\n                      " +
+"  <a");
 
-WriteLiteral("            ");
+WriteLiteral(" class=\"btn-sm btn btn-default\"");
 
+WriteAttribute("href", Tuple.Create(" href=\"", 1536), Tuple.Create("\"", 1582)
             
             #line 65 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.BackgroundFileName));
-
+, Tuple.Create(Tuple.Create("", 1543), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Company .Edit(item.Id))
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+, 1543), false)
+);
 
-WriteLiteral("            ");
+WriteLiteral("\r\n                           type=\"button\"");
 
-            
-            #line 68 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.PhoneNumber));
+WriteLiteral(">\r\n                            <i");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral(" class=\"fa fa-edit\"");
 
-WriteLiteral("            ");
+WriteLiteral("></i>\r\n                            ویرایش\r\n                        </a>\r\n        " +
+"                |\r\n                        <a");
 
+WriteLiteral(" class=\"btn-sm btn btn-default\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1834), Tuple.Create("\"", 1882)
             
             #line 71 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.MobileNumber));
-
+, Tuple.Create(Tuple.Create("", 1841), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Company.Details(item.Id))
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+, 1841), false)
+);
 
-WriteLiteral("            ");
+WriteLiteral("\r\n                           type=\"button\"");
 
-            
-            #line 74 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.Email));
+WriteLiteral(">\r\n                            <i");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral(" class=\"fa fa-info-circle\"");
 
-WriteLiteral("            ");
+WriteLiteral("></i>\r\n                            جزییات\r\n                        </a>\r\n        " +
+"                |\r\n                        <a");
 
+WriteLiteral(" class=\"btn-sm btn btn-danger\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2140), Tuple.Create("\"", 2187)
             
             #line 77 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.WebSite));
-
+, Tuple.Create(Tuple.Create("", 2147), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Company.Delete(item.Id))
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+, 2147), false)
+);
 
-WriteLiteral("            ");
+WriteLiteral("\r\n                           type=\"button\"");
 
-            
-            #line 80 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.EmployeeCount));
+WriteLiteral(">\r\n                            <i");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral(" class=\"fa fa-trash-o\"");
 
-WriteLiteral("            ");
-
-            
-            #line 83 "..\..\Views\Company\List.cshtml"
-       Write(Html.DisplayFor(modelItem => item.EstablishedOn));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("></i>\r\n                            حذف\r\n                        </a>\r\n\r\n         " +
+"           </td>\r\n\r\n                </tr>\r\n");
 
             
             #line 86 "..\..\Views\Company\List.cshtml"
-       Write(Html.ActionLink("Edit", "Edit", new {  id=item.Id  }));
+            }
 
             
             #line default
             #line hidden
-WriteLiteral(" |\r\n");
+WriteLiteral("\r\n        </table>\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n    <div");
 
-WriteLiteral("            ");
-
-            
-            #line 87 "..\..\Views\Company\List.cshtml"
-       Write(Html.ActionLink("Details", "Details", new {  id=item.Id  }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" |\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 88 "..\..\Views\Company\List.cshtml"
-       Write(Html.ActionLink("Delete", "Delete", new {  id=item.Id  }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </td>\r\n    </tr>\r\n");
-
-            
-            #line 91 "..\..\Views\Company\List.cshtml"
-}
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n</table>\r\n<!-- Modal -->\r\n<div");
-
-WriteLiteral(" class=\"modal fade\"");
-
-WriteLiteral(" id=\"myModal\"");
-
-WriteLiteral(" tabindex=\"-1\"");
-
-WriteLiteral(" role=\"dialog\"");
-
-WriteLiteral(" aria-labelledby=\"myModalLabel\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"modal-dialog\"");
-
-WriteLiteral(" role=\"document\"");
+WriteLiteral(" class=\"panel-footer\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"modal-content\"");
+WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n            <div");
 
-WriteLiteral(" class=\"modal-header\"");
+WriteLiteral(" class=\"col-md-2\"");
 
-WriteLiteral(">\r\n                <button");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" type=\"button\"");
+WriteLiteral("                ");
 
-WriteLiteral(" class=\"close\"");
+            
+            #line 98 "..\..\Views\Company\List.cshtml"
+           Write(Html.ActionLink("ایجاد جدید", "Create", new { Controller = "Company" }, new { @class = "btn btn-primary" }));
 
-WriteLiteral(" data-dismiss=\"modal\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n            <div");
 
-WriteLiteral(" aria-label=\"Close\"");
+WriteLiteral(" class=\"col-md-2\"");
 
-WriteLiteral("><span");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" aria-hidden=\"true\"");
+WriteLiteral("                ");
 
-WriteLiteral(">&times;</span></button>\r\n                <h4");
+            
+            #line 101 "..\..\Views\Company\List.cshtml"
+           Write(Html.ActionLink("مشاهده شرکت ها", "Item", new { Controller = "Company" }, new { @class = "btn btn-default" }));
 
-WriteLiteral(" class=\"modal-title\"");
-
-WriteLiteral(" id=\"myModalLabel\"");
-
-WriteLiteral(">Modal title</h4>\r\n            </div>\r\n            <div");
-
-WriteLiteral(" class=\"modal-body\"");
-
-WriteLiteral(" id =\"Bodymodal\">\r\n                ...\r\n            </div>\r\n            \r\n       " +
-" </div>\r\n    </div>\r\n</div>\r\n");
-
-DefineSection("scripts", () => {
-
-WriteLiteral(@"
-    <script >
-        function Create() {
-            $.ajax({
-                url: ""/Company/Create"",
-                type: ""Get"",
-                date: {}
-            }).done(function (result) {
-                $('#myModal').modal('show');
-                $('#myModalLabel').html('افزودن شرکت جدید');
-                $('#Bodymodal').html(result);
-
-            });
-        }
-    </script>
-");
-
-});
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
         }
     }

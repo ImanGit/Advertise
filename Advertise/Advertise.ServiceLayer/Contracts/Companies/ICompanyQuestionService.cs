@@ -12,14 +12,14 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        Task CreateAsync(CompanyQCreateViewModel viewModel);
+        Task CreateAsync(CompanyQuestionCreateViewModel viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        Task EditAsync(CompanyQEditViewModel viewModel);
+        Task EditAsync(CompanyQuestionEditViewModel viewModel);
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        Task DeleteAsync(CompanyQDeleteViewModel viewModel);
+        Task DeleteAsync(CompanyQuestionDeleteViewModel viewModel);
         #endregion
 
         #region Retrieve
@@ -74,19 +74,19 @@ namespace Advertise.ServiceLayer.Contracts.Companies
 
         #region Read
 
-        Task<CompanyQCreateViewModel> GetForCreateAsync();
+        Task<CompanyQuestionCreateViewModel> GetForCreateAsync();
 
-        Task<CompanyQEditViewModel> GetForEditAsync(Guid id);
+        Task<CompanyQuestionEditViewModel> GetForEditAsync(Guid id);
 
-        Task<CompanyQDeleteViewModel> GetForDeleteAsync(Guid id);
+        Task<CompanyQuestionDeleteViewModel> GetForDeleteAsync(Guid id);
 
-        Task<IEnumerable<CompanyQListViewModel>> GetListAsync();
+        Task<IEnumerable<CompanyQuestionListViewModel>> GetListAsync();
 
-        Task<CompanyQDetailViewModel> GetDetailsAsync(Guid id);
+        Task<CompanyQuestionDetailViewModel> GetDetailsAsync(Guid id);
 
-        Task<CompanyQListViewModel> FindById(Guid id);
+        Task<CompanyQuestionListViewModel> FindById(Guid id);
 
-        Task FillCreateViewModel(CompanyQCreateViewModel viewModel);
+        Task FillCreateViewModel(CompanyQuestionCreateViewModel viewModel);
 
         #endregion
     }

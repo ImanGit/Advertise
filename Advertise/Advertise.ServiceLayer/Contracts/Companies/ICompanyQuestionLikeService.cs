@@ -12,7 +12,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// ایجاد فالو یک کمپانی
         /// </summary>
-        Task CreateAsync(CompanyQlCreateViewModel viewModel);
+        Task CreateAsync(CompanyQuestionLikeCreateViewModel viewModel);
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// </summary>
         void EditForFollowOrUnFollow();
 
-        Task EditAsync(CompanyQlEditViewModel viewModel);
+        Task EditAsync(CompanyQuestionLikeEditViewModel viewModel);
 
         /// <summary>
         /// لایک مجدد یا پس گرفتن لایک سوال
@@ -34,9 +34,9 @@ namespace Advertise.ServiceLayer.Contracts.Companies
       
 
         #region Read
-        Task<CompanyQlCreateViewModel> GetForCreateAsync();
+        Task<CompanyQuestionLikeCreateViewModel> GetForCreateAsync();
 
-        Task<CompanyQlEditViewModel> GetForEditAsync(Guid id);
+        Task<CompanyQuestionLikeEditViewModel> GetForEditAsync(Guid id);
 
         #endregion
 

@@ -36,34 +36,34 @@ namespace Advertise.ServiceLayer.EFServices.Products
 
         #region Create
 
-        public async Task CreateAsync(ProductCCreateViewModel viewModel)
+        public async Task CreateAsync(ProductCommentCreateViewModel viewModel)
         {
             var productC = _mapper.Map<ProductComment>(viewModel);
             _productC.Add(productC);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<ProductCCreateViewModel> GetForCreateAsync()
+        public async Task<ProductCommentCreateViewModel> GetForCreateAsync()
         {
-            return await Task.Run(() => new ProductCCreateViewModel());
+            return await Task.Run(() => new ProductCommentCreateViewModel());
         }
 
         #endregion
 
         #region Edit
 
-        public async Task EditAsync(ProductCEditViewModel viewModel)
+        public async Task EditAsync(ProductCommentEditViewModel viewModel)
         {
             var product = await _productC.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, product);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<ProductCEditViewModel> GetForEditAsync(Guid id)
+        public async Task<ProductCommentEditViewModel> GetForEditAsync(Guid id)
         {
             return await _productC
                 .AsNoTracking()
-                .ProjectTo<ProductCEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductCommentEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
@@ -77,29 +77,29 @@ namespace Advertise.ServiceLayer.EFServices.Products
         /// <param name="id"></param>
         /// <returns></returns>
 
-        public async Task<IEnumerable<ProductCListViewModel>> GetListAsync()
+        public async Task<IEnumerable<ProductCommentListViewModel>> GetListAsync()
         {
             return await _productC
                 .AsNoTracking()
-                .ProjectTo<ProductCListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductCommentListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .ToListAsync();
         }
 
 
-        public async Task<ProductCDetailViewModel> GetDetailsAsync(Guid id)
+        public async Task<ProductCommentDetailViewModel> GetDetailsAsync(Guid id)
         {
             return await _productC
                 .AsNoTracking()
-                .ProjectTo<ProductCDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductCommentDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public Task<ProductCListViewModel> FindById(Guid id)
+        public Task<ProductCommentListViewModel> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task FillCreateViewModel(ProductCCreateViewModel viewModel)
+        public Task FillCreateViewModel(ProductCommentCreateViewModel viewModel)
         {
             throw new NotImplementedException();
         }
@@ -108,16 +108,16 @@ namespace Advertise.ServiceLayer.EFServices.Products
 
         #region Delete
 
-        public Task DeleteAsync(ProductCDeleteViewModel viewModel)
+        public Task DeleteAsync(ProductCommentDeleteViewModel viewModel)
         {
             return _productC.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
-        public async Task<ProductCDeleteViewModel> GetForDeleteAsync(Guid id)
+        public async Task<ProductCommentDeleteViewModel> GetForDeleteAsync(Guid id)
         {
             return await _productC
                 .AsNoTracking()
-                .ProjectTo<ProductCDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductCommentDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
         #endregion

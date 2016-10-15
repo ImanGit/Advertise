@@ -14,52 +14,52 @@ namespace Advertise.Mapping.Profiles.Products
         public ProductCrProfile()
         {
 
-            CreateMap<ProductCommentReport , ProductCrCreateViewModel >()
-                .ProjectUsing(src => new ProductCrCreateViewModel
+            CreateMap<ProductCommentReport , ProductCommentReportCreateViewModel >()
+                .ProjectUsing(src => new ProductCommentReportCreateViewModel
                 {
 
                     //Type  = src.Type 
                     Reason = src.Reason,
                     IsRead = src.IsRead
                 });
-            CreateMap<ProductCrCreateViewModel, ProductCommentReport>()
+            CreateMap<ProductCommentReportCreateViewModel, ProductCommentReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<ProductCommentReport, ProductCrEditViewModel >()
-                .ProjectUsing(src => new ProductCrEditViewModel
+            CreateMap<ProductCommentReport, ProductCommentReportEditViewModel >()
+                .ProjectUsing(src => new ProductCommentReportEditViewModel
                 {
                     Reason = src.Reason,
                     IsRead = src.IsRead,
                     Id = src.Id
                 });
-            CreateMap<ProductCrEditViewModel, ProductCommentReport>()
+            CreateMap<ProductCommentReportEditViewModel, ProductCommentReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());
 
 
-            CreateMap<ProductCommentReport, ProductCrDetailViewModel >()
-               .ProjectUsing(src => new ProductCrDetailViewModel
+            CreateMap<ProductCommentReport, ProductCommentReportDetailViewModel >()
+               .ProjectUsing(src => new ProductCommentReportDetailViewModel
                {
                    Reason = src.Reason,
                    IsRead = src.IsRead,
                    Id = src.Id
                });
-            CreateMap<ProductCrDetailViewModel, ProductCommentReport>()
+            CreateMap<ProductCommentReportDetailViewModel, ProductCommentReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<ProductCommentReport, ProductCrDeleteViewModel >()
-              .ProjectUsing(src => new ProductCrDeleteViewModel
+            CreateMap<ProductCommentReport, ProductCommentReportDeleteViewModel >()
+              .ProjectUsing(src => new ProductCommentReportDeleteViewModel
               {
                   Reason = src.Reason,
                   IsRead = src.IsRead,
                   Id = src.Id
               });
-            CreateMap<ProductCrDeleteViewModel, ProductCommentReport>()
+            CreateMap<ProductCommentReportDeleteViewModel, ProductCommentReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());

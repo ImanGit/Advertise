@@ -32,13 +32,13 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     گرفتن تعداد لایک های یک محصول
         /// </summary>
         /// <returns></returns>
-        int GetCount();
+        int GetCount(Guid idCategory);
 
         /// <summary>
         ///     گرفتن تعداد لایکهایی که پس گرفته شدن
         /// </summary>
         /// <returns></returns>
-        int GetUnCount();
+        int GetUnCount(Guid idCategory);
 
         /// <summary>
         ///     آیا کاربر محصول را لایک کرده،جهت نمایش در صفحه کاربر
@@ -50,7 +50,7 @@ namespace Advertise.ServiceLayer.Contracts.Categories
         ///     گرفتن تعداد فالورهای خود کاربر
         /// </summary>
         /// <returns></returns>
-        int GetUserFollowCount();
+        int GetUserFollowCount(Guid idUser);
 
         /// <summary>
         ///     گرفتن تعداد فالور محصولات یک شهر

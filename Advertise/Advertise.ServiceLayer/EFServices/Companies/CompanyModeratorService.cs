@@ -22,6 +22,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyModerator> _companyModerator;
 
         #endregion
+
         #region Ctor
         public CompanyModeratorService(IMapper mapper, IUnitOfWork unitOfWork)
         {

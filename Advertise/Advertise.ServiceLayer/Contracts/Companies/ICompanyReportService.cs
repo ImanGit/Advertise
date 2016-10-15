@@ -13,14 +13,14 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        Task CreateAsync(CompanyRCreateViewModel viewModel);
+        Task CreateAsync(CompanyReportCreateViewModel viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        Task EditAsync(CompanyREditViewModel viewModel);
+        Task EditAsync(CompanyReportEditViewModel viewModel);
 
         #endregion
 
@@ -28,24 +28,24 @@ namespace Advertise.ServiceLayer.Contracts.Companies
         /// <summary>
         /// 
         /// </summary>
-        Task DeleteAsync(CompanyRDeleteViewModel viewModel);
+        Task DeleteAsync(CompanyReportDeleteViewModel viewModel);
         #endregion
 
         #region Read
 
-        Task<CompanyRCreateViewModel> GetForCreateAsync();
+        Task<CompanyReportCreateViewModel> GetForCreateAsync();
 
-        Task<CompanyREditViewModel> GetForEditAsync(Guid id);
+        Task<CompanyReportEditViewModel> GetForEditAsync(Guid id);
 
-        Task<CompanyRDeleteViewModel> GetForDeleteAsync(Guid id);
+        Task<CompanyReportDeleteViewModel> GetForDeleteAsync(Guid id);
 
-        Task<IEnumerable<CompanyRListViewModel>> GetListAsync();
+        Task<IEnumerable<CompanyReportListViewModel>> GetListAsync();
 
-        Task<CompanyRDetailViewModel> GetDetailsAsync(Guid id);
+        Task<CompanyReportDetailViewModel> GetDetailsAsync(Guid id);
 
-        Task<CompanyRListViewModel> FindById(Guid id);
+        Task<CompanyReportListViewModel> FindById(Guid id);
 
-        Task FillCreateViewModel(CompanyRCreateViewModel viewModel);
+        Task FillCreateViewModel(CompanyReportCreateViewModel viewModel);
 
         #endregion
 

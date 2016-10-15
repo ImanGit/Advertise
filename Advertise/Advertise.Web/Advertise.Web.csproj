@@ -845,8 +845,14 @@
     <None Include="T4MVC.tt.hooks.t4" />
     <None Include="T4MVC.tt.settings.xml" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Uploads\07832238-b589-4c91-995e-78a7b9f60ece.jpg" />
+    <Content Include="Uploads\3da5a5f0-e341-40fb-8d9d-f767a61069ed.jpg" />
+    <Content Include="Uploads\425229966_133309_6089422151121539277.jpg" />
+    <Content Include="Uploads\425310631_83133_3056043199818377169.jpg" />
+    <Content Include="Uploads\4ae3bd55-3067-40de-8931-5c5fc559f8bd.jpg" />
     <Content Include="Uploads\528.jpg" />
     <Content Include="Uploads\abstract-art-faces-wallpaper-2.jpg" />
+    <Content Include="Uploads\f5d5d53c-a9d6-4e23-9b55-1f5fca6bccb2.jpg" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -927,6 +933,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Views\Category\Create.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -991,6 +1000,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Company\Item.generated.cs">
+      <DependentUpon>Item.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Company\List1.generated.cs">
       <AutoGen>True</AutoGen>
@@ -1097,6 +1111,11 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Uploads\fda63966-eb6e-435f-b133-ad30e9fa6e76" />
+    <Content Include="Views\Company\Item.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Item.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1110,6 +1129,9 @@
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Files\Image\" />
     <Folder Include="Files\UserFile\" />
+    <Folder Include="File\Avatar\" />
+    <Folder Include="File\Image\" />
+    <Folder Include="File\UserFile\" />
     <Folder Include="Scripts\AngularJS\" />
     <Folder Include="Scripts\CKEditor\skins\" />
     <Folder Include="Uploads\New folder %282%29dddddd\" />
@@ -1117,6 +1139,7 @@
     <Folder Include="Views\Default\" />
     <Folder Include="Views\KendoFileUpload\" />
     <Folder Include="Views\Kendo\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

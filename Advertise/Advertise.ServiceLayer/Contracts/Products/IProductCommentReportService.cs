@@ -12,14 +12,14 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        Task CreateAsync(ProductCrCreateViewModel  viewModel);
+        Task CreateAsync(ProductCommentReportCreateViewModel  viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        Task EditAsync(ProductCrEditViewModel viewModel);
+        Task EditAsync(ProductCommentReportEditViewModel viewModel);
 
         #endregion
 
@@ -27,24 +27,24 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        Task DeleteAsync(ProductCrDeleteViewModel viewModel);
+        Task DeleteAsync(ProductCommentReportDeleteViewModel viewModel);
         #endregion
        
         #region Read
 
-        Task<ProductCrCreateViewModel> GetForCreateAsync();
+        Task<ProductCommentReportCreateViewModel> GetForCreateAsync();
 
-        Task<ProductCrEditViewModel > GetForEditAsync(Guid id);
+        Task<ProductCommentReportEditViewModel > GetForEditAsync(Guid id);
 
-        Task<ProductCrDeleteViewModel > GetForDeleteAsync(Guid id);
+        Task<ProductCommentReportDeleteViewModel > GetForDeleteAsync(Guid id);
 
-        Task<IEnumerable<ProductCrListViewModel>> GetListAsync();
+        Task<IEnumerable<ProductCommentReportListViewModel>> GetListAsync();
 
-        Task<ProductCrDetailViewModel > GetDetailsAsync(Guid id);
+        Task<ProductCommentReportDetailViewModel > GetDetailsAsync(Guid id);
 
-        Task<ProductCrListViewModel > FindById(Guid id);
+        Task<ProductCommentReportListViewModel > FindById(Guid id);
 
-        Task FillCreateViewModel(ProductCrCreateViewModel viewModel);
+        Task FillCreateViewModel(ProductCommentReportCreateViewModel viewModel);
 
         #endregion
 

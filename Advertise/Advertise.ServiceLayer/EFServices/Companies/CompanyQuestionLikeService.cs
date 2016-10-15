@@ -32,41 +32,55 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         #endregion
 
         #region Create
-        public async Task CreateAsync(CompanyQlCreateViewModel viewModel)
+        public async Task CreateAsync(CompanyQuestionLikeCreateViewModel  viewModel)
         {
             var companyQuestionLike = _mapper.Map<CompanyQuestionLike>(viewModel);
             _companyQuestionLike.Add(companyQuestionLike);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<CompanyQlCreateViewModel> GetForCreateAsync()
+        public async Task<CompanyQuestionLikeCreateViewModel> GetForCreateAsync()
         {
-            return await Task.Run(() => new CompanyQlCreateViewModel());
+            return await Task.Run(() => new CompanyQuestionLikeCreateViewModel());
         }
+
+        Task<CompanyQuestionLikeEditViewModel> ICompanyQuestionLikeService.GetForEditAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region Edit
-        public async Task EditAsync(CompanyQlEditViewModel  viewModel)
+        public async Task EditAsync(CompanyQuestionLikeEditViewModel  viewModel)
         {
             var category = await _companyQuestionLike.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
+
+       
         public void EditForLikeOrUnlike()
         {
             throw new NotImplementedException();
         }
 
+        Task<CompanyQuestionLikeCreateViewModel> ICompanyQuestionLikeService.GetForCreateAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+      
         public void EditForFollowOrUnFollow()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<CompanyQlEditViewModel> GetForEditAsync(Guid id)
+        public async Task<CompanyQuestionLikeEditViewModel > GetForEditAsync(Guid id)
         {
             return await _companyQuestionLike
                 .AsNoTracking()
-                .ProjectTo<CompanyQlEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyQuestionLikeEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 

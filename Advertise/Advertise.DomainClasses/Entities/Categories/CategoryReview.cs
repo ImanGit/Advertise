@@ -1,6 +1,7 @@
 ﻿using System;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Users;
+using System.Collections.Generic;
 
 namespace Advertise.DomainClasses.Entities.Categories
 {
@@ -8,6 +9,7 @@ namespace Advertise.DomainClasses.Entities.Categories
     /// </summary>
     public class CategoryReview : BaseEntity
     {
+
         #region Properties
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace Advertise.DomainClasses.Entities.Categories
         /// <summary>
         /// </summary>
         public virtual Guid CategoryId { get; set; }
+        public HashSet<CategoryReview> Reviews { get; private set; }
 
         #endregion
     }

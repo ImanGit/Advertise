@@ -13,7 +13,7 @@ namespace Advertise.ViewModel.Models.Companies.CompanyAttachment
     {
         public Guid Id { get; set; }
         [DisplayName("مسیر فایل")]
-        [Required(ErrorMessage = "لطفا کد شناسه را وارد کنید")]
+        [Required(ErrorMessage = "لطفا مسیر فایل را وارد کنید")]
         // [StringLength(50, ErrorMessage = "کد شناسه باید کمتر از ۵۰ کاراکتر باشد")]
         public string FileName { get; set; }
 

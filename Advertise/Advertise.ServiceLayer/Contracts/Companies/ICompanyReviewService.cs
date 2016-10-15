@@ -3,6 +3,7 @@ using Advertise.ViewModel.Models.Companies.CompanyReview ;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 namespace Advertise.ServiceLayer.Contracts.Companies
 {
     public interface ICompanyReviewService : IBaseService
