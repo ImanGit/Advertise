@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyImage1 ;
+using Advertise.ViewModel.Models.Companies ;
 using AutoMapper;
 
 namespace Advertise.Mapping.Profiles.Companies

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyModerator ;
+using Advertise.ViewModel.Models.Companies ;
 using AutoMapper;
 
 

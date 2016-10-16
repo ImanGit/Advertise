@@ -1,5 +1,5 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
-using Advertise.ViewModel.Models.Companies.CompanyQuestion;
+using Advertise.ViewModel.Models.Companies;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

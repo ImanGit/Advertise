@@ -2,7 +2,7 @@
 using Advertise.ServiceLayer.Contracts.Companies;
 using AutoMapper;
 using System.Threading.Tasks;
-using Advertise.ViewModel.Models.Companies.CompanyAttachment;
+using Advertise.ViewModel.Models.Companies;
 using System.Collections.Generic;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Companies;

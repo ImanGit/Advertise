@@ -1,6 +1,6 @@
 ﻿using System;
 using Advertise.ServiceLayer.Contracts.Products;
-using Advertise.ViewModel.Models.Products.ProductImage;
+using Advertise.ViewModel.Models.Products;
 using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Products;
 using Advertise.DataLayer.Context;

@@ -4,7 +4,7 @@ using Advertise.DataLayer.Context;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Advertise.ServiceLayer.Contracts.Products;
-using Advertise.ViewModel.Models.Products.ProductComment;
+using Advertise.ViewModel.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;

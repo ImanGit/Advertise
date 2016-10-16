@@ -5,67 +5,67 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Advertise.DomainClasses.Entities.Products ;
-using Advertise.ViewModel.Models.Products .ProductReport ;
+using Advertise.ViewModel.Models.Products  ;
 
 namespace Advertise.Mapping.Profiles.Products
 {
-    class ProductReportProfile : Profile
+    class ProductReporteportProfile : Profile
     {
-        public ProductReportProfile()
+        public ProductReporteportProfile()
         {
 
-            CreateMap<ProductReport, ProductRCreateViewModel>()
-                .ProjectUsing(src => new ProductRCreateViewModel
+            CreateMap<ProductReport, ProductReportCreateViewModel>()
+                .ProjectUsing(src => new ProductReportCreateViewModel
                 {
 
                     Type  = src.Type ,
                     Reason = src.Reason,
                     IsRead = src.IsRead
                 });
-            CreateMap<ProductRCreateViewModel, ProductReport>()
+            CreateMap<ProductReportCreateViewModel, ProductReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Type, opts => opts.MapFrom(src => src.Type))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<ProductReport, ProductREditViewModel>()
-                .ProjectUsing(src => new ProductREditViewModel
+            CreateMap<ProductReport, ProductReportEditViewModel>()
+                .ProjectUsing(src => new ProductReportEditViewModel
                 {
                     Type = src.Type,
                     Reason = src.Reason,
                     IsRead = src.IsRead,
                     Id = src.Id
                 });
-            CreateMap<ProductREditViewModel, ProductReport>()
+            CreateMap<ProductReportEditViewModel, ProductReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Type, opts => opts.MapFrom(src => src.Type))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());
 
 
-            CreateMap<ProductReport, ProductRDetailViewModel>()
-               .ProjectUsing(src => new ProductRDetailViewModel
+            CreateMap<ProductReport, ProductReportDetailViewModel>()
+               .ProjectUsing(src => new ProductReportDetailViewModel
                {
                    Type = src.Type,
                    Reason = src.Reason,
                    IsRead = src.IsRead,
                    Id = src.Id
                });
-            CreateMap<ProductRDetailViewModel, ProductReport>()
+            CreateMap<ProductReportDetailViewModel, ProductReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Type, opts => opts.MapFrom(src => src.Type))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<ProductReport, ProductRDeleteViewModel>()
-              .ProjectUsing(src => new ProductRDeleteViewModel
+            CreateMap<ProductReport, ProductReportDeleteViewModel>()
+              .ProjectUsing(src => new ProductReportDeleteViewModel
               {
                   Type = src.Type,
                   Reason = src.Reason,
                   IsRead = src.IsRead,
                   Id = src.Id
               });
-            CreateMap<ProductRDeleteViewModel, ProductReport>()
+            CreateMap<ProductReportDeleteViewModel, ProductReport>()
                .ForMember(dest => dest.IsRead, opts => opts.MapFrom(src => src.IsRead))
                .ForMember(dest => dest.Reason, opts => opts.MapFrom(src => src.Reason))
                .ForMember(dest => dest.Type , opts => opts.MapFrom(src => src.Type))

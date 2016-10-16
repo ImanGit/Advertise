@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Advertise.DomainClasses.Entities.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyQuestion ;
+using Advertise.ViewModel.Models.Companies ;
 namespace Advertise.Mapping.Profiles.Companies
 {
     class CompanyQuestionProfile : Profile

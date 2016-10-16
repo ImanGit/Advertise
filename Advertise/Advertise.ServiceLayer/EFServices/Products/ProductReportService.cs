@@ -8,58 +8,58 @@ using System.Linq;
 using EntityFramework.Extensions;
 using System.Data.Entity;
 using Advertise.ServiceLayer.Contracts.Products;
-using Advertise.ViewModel.Models.Products.ProductReport;
+using Advertise.ViewModel.Models.Products;
 using Advertise.DomainClasses.Entities.Products;
 
 namespace Advertise.ServiceLayer.EFServices.Products
 {
-    class ProductReportService :IProductReportService 
+    class ProductReporteportService :IProductReportService 
 
     {
         #region Fields
 
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IDbSet<ProductReport> _ProductR;
+        private readonly IDbSet<ProductReport> _productReport;
 
         #endregion
 
         #region Ctor
-        public ProductReportService(IMapper mapper, IUnitOfWork unitOfWork)
+        public ProductReporteportService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
-            _ProductR = unitOfWork.Set<ProductReport>();
+            _productReport = unitOfWork.Set<ProductReport>();
         }
         #endregion
 
         #region Create
-        public async Task CreateAsync(ProductRCreateViewModel viewModel)
+        public async Task CreateAsync(ProductReportCreateViewModel viewModel)
         {
-            var productR = _mapper.Map<ProductReport>(viewModel);
-            _ProductR.Add(productR);
+            var productReport = _mapper.Map<ProductReport>(viewModel);
+            _productReport.Add(productReport);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<ProductRCreateViewModel> GetForCreateAsync()
+        public async Task<ProductReportCreateViewModel> GetForCreateAsync()
         {
-            return await Task.Run(() => new ProductRCreateViewModel());
+            return await Task.Run(() => new ProductReportCreateViewModel());
         }
         #endregion
 
         #region Edit
-        public async Task EditAsync(ProductREditViewModel viewModel)
+        public async Task EditAsync(ProductReportEditViewModel viewModel)
         {
-            var productR = await _ProductR.FirstAsync(model => model.Id == viewModel.Id);
-            _mapper.Map(viewModel, productR);
+            var ProductReport = await _productReport.FirstAsync(model => model.Id == viewModel.Id);
+            _mapper.Map(viewModel, ProductReport);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<ProductREditViewModel> GetForEditAsync(Guid id)
+        public async Task<ProductReportEditViewModel> GetForEditAsync(Guid id)
         {
-            return await _ProductR
+            return await _productReport
                 .AsNoTracking()
-                .ProjectTo<ProductREditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductReportEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
@@ -73,29 +73,29 @@ namespace Advertise.ServiceLayer.EFServices.Products
         /// <param name="id"></param>
         /// <returns></returns>
 
-        public async Task<IEnumerable<ProductRListViewModel>> GetListAsync()
+        public async Task<IEnumerable<ProductReportListViewModel>> GetListAsync()
         {
-            return await _ProductR
+            return await _productReport
                .AsNoTracking()
-               .ProjectTo<ProductRListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+               .ProjectTo<ProductReportListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                .ToListAsync();
         }
 
 
-        public async Task<ProductRDetailViewModel> GetDetailsAsync(Guid id)
+        public async Task<ProductReportDetailViewModel> GetDetailsAsync(Guid id)
         {
-            return await _ProductR
+            return await _productReport
                 .AsNoTracking()
-                .ProjectTo<ProductRDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductReportDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public Task<ProductRListViewModel> FindById(Guid id)
+        public Task<ProductReportListViewModel> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task FillCreateViewModel(ProductRCreateViewModel viewModel)
+        public Task FillCreateViewModel(ProductReportCreateViewModel viewModel)
         {
             throw new NotImplementedException();
         }
@@ -104,16 +104,16 @@ namespace Advertise.ServiceLayer.EFServices.Products
 
         #region Delete
 
-        public Task DeleteAsync(ProductRDeleteViewModel viewModel)
+        public Task DeleteAsync(ProductReportDeleteViewModel viewModel)
         {
-            return _ProductR.Where(model => model.Id == viewModel.Id).DeleteAsync();
+            return _productReport.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
-        public async Task<ProductRDeleteViewModel> GetForDeleteAsync(Guid id)
+        public async Task<ProductReportDeleteViewModel> GetForDeleteAsync(Guid id)
         {
-            return await _ProductR
+            return await _productReport
                 .AsNoTracking()
-                .ProjectTo<ProductRDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<ProductReportDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 

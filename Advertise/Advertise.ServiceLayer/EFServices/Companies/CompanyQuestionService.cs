@@ -5,7 +5,7 @@ using Advertise.DomainClasses.Entities.Companies;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Advertise.ServiceLayer.Contracts.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyQuestion;
+using Advertise.ViewModel.Models.Companies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +22,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyQuestion> _companyQ;
 
         #endregion
+
         #region Ctor
         public CompanyQuestionService(IMapper mapper, IUnitOfWork unitOfWork)
         {
@@ -30,6 +31,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyQ = unitOfWork.Set<CompanyQuestion>();
         }
         #endregion
+
         #region Create
         public async Task CreateAsync(CompanyQuestionCreateViewModel viewModel)
         {
@@ -38,6 +40,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
         #endregion
+
         #region Edit
         public async Task EditAsync(CompanyQuestionEditViewModel viewModel)
         {
@@ -141,6 +144,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
 
         #endregion
+
         #region Retrive
         public void GetCountNotApprove()
         {

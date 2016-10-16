@@ -1,4 +1,4 @@
-﻿using Advertise.ViewModel.Models.Products.ProductReport ;
+﻿using Advertise.ViewModel.Models.Products ;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +13,14 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        Task CreateAsync(ProductRCreateViewModel viewModel);
+        Task CreateAsync(ProductReportCreateViewModel viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        Task EditAsync(ProductREditViewModel viewModel);
+        Task EditAsync(ProductReportEditViewModel viewModel);
 
         #endregion
 
@@ -28,24 +28,24 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        Task DeleteAsync(ProductRDeleteViewModel viewModel);
+        Task DeleteAsync(ProductReportDeleteViewModel viewModel);
         #endregion
 
         #region Read
 
-        Task<ProductRCreateViewModel> GetForCreateAsync();
+        Task<ProductReportCreateViewModel> GetForCreateAsync();
 
-        Task<ProductREditViewModel> GetForEditAsync(Guid id);
+        Task<ProductReportEditViewModel> GetForEditAsync(Guid id);
 
-        Task<ProductRDeleteViewModel> GetForDeleteAsync(Guid id);
+        Task<ProductReportDeleteViewModel> GetForDeleteAsync(Guid id);
 
-        Task<IEnumerable<ProductRListViewModel>> GetListAsync();
+        Task<IEnumerable<ProductReportListViewModel>> GetListAsync();
 
-        Task<ProductRDetailViewModel> GetDetailsAsync(Guid id);
+        Task<ProductReportDetailViewModel> GetDetailsAsync(Guid id);
 
-        Task<ProductRListViewModel> FindById(Guid id);
+        Task<ProductReportListViewModel> FindById(Guid id);
 
-        Task FillCreateViewModel(ProductRCreateViewModel viewModel);
+        Task FillCreateViewModel(ProductReportCreateViewModel viewModel);
 
         #endregion
 

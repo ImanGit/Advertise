@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Advertise.DomainClasses.Entities.Companies;
 using Advertise.DomainClasses.Entities.Products;
-using Advertise.ViewModel.Models.Products.ProductImage ;
+using Advertise.ViewModel.Models.Products ;
 using AutoMapper;
 
 
