@@ -37,6 +37,11 @@ namespace Advertise.DomainClasses.Entities.Users
         public virtual bool IsActive { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public virtual string DisplayName { get; set; }
+
+        /// <summary>
         ///     آیا کاربر مهمان است؟
         /// </summary>
         public virtual bool IsAnonymous { get; set; }
@@ -78,6 +83,11 @@ namespace Advertise.DomainClasses.Entities.Users
         /// </summary>
         public virtual Guid  IdAddress { get; set; }
 
+        /// <summary>
+        /// نشان دهنده این است که آیا دسترسی های کاربر تغییر کرده است ؟
+        /// </summary>
+        public bool IsChangePermission { get; set; }
+
 
         #endregion
 
@@ -89,7 +99,7 @@ namespace Advertise.DomainClasses.Entities.Users
 
         /// <summary>
         /// </summary>
-        public virtual ICollection< UserProfile> Profiles { get; set; }
+        public virtual ICollection< UserMeta> Profiles { get; set; }
 
         /// <summary>
         /// </summary>
@@ -102,7 +112,6 @@ namespace Advertise.DomainClasses.Entities.Users
         /// <summary>
         /// </summary>
         public virtual ICollection< UserSocial> Socials { get; set; }
-
 
         /// <summary>
         ///     لیست محصولات کاربر

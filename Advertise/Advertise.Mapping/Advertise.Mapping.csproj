@@ -71,6 +71,7 @@
     <Compile Include="Profiles\Categories\CategoryReViewProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryFollowProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryImageProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanryQlProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyAttachmentProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyModeratorProfile.cs" />

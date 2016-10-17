@@ -116,7 +116,7 @@
     <Compile Include="Configurations\Users\UserSettingConfig.cs" />
     <Compile Include="Configurations\Companies\CompanySocialConfig.cs" />
     <Compile Include="Configurations\Public\StatisticConfig.cs" />
-    <Compile Include="Configurations\Users\UserProfileConfig.cs" />
+    <Compile Include="Configurations\Users\UserMetaConfig.cs" />
     <Compile Include="Configurations\Users\UserLoginConfig.cs" />
     <Compile Include="Configurations\Users\UserRoleConfig.cs" />
     <Compile Include="Configurations\Users\UserSocialConfig.cs" />
@@ -191,7 +191,7 @@
     <Compile Include="Entities\Users\UserSetting.cs" />
     <Compile Include="Entities\Companies\CompanySocial.cs" />
     <Compile Include="Entities\Public\Statistic.cs" />
-    <Compile Include="Entities\Users\UserProfile.cs" />
+    <Compile Include="Entities\Users\UserMeta.cs" />
     <Compile Include="Entities\Users\UserClaim.cs" />
     <Compile Include="Entities\Users\UserLogin.cs" />
     <Compile Include="Entities\Users\UserRole.cs" />

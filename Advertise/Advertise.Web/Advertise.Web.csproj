@@ -383,16 +383,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>NotyBuilder.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="CodeTemplates\MvcView__\Create.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\Delete.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\Details.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\Edit.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\Empty.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\Imports.include.t4" />
-    <Content Include="CodeTemplates\MvcView__\List.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\ModelMetadataFunctions.cs.include.t4" />
-    <Content Include="CodeTemplates\MvcView__\_ListAjax.cs.t4" />
-    <Content Include="CodeTemplates\MvcView__\_Modal.cs.t4" />
     <Content Include="Scripts\CKEditor\adapters\jquery.js" />
     <Content Include="Scripts\CKEditor\CHANGES.md" />
     <Content Include="Scripts\CKEditor\lang\af.js" />
@@ -540,7 +530,6 @@
     <Content Include="Content\KendoUI\kendo.silver.mobile.min.css.map" />
     <Content Include="Content\KendoUI\kendo.uniform.min.css.map" />
     <Content Include="Content\KendoUI\kendo.uniform.mobile.min.css.map" />
-    <Content Include="App_Data\ErrorsLog.Log" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -883,7 +872,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KendoEditorFilesController.cs" />
     <Compile Include="Controllers\KendoFileUploadController.cs" />
-    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="DefaultController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -1002,11 +990,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Post\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1093,10 +1076,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List1.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Post\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1114,9 +1093,6 @@
     <Folder Include="Scripts\CKEditor\skins\" />
     <Folder Include="Uploads\New folder %282%29dddddd\" />
     <Folder Include="Uploads\New folder\" />
-    <Folder Include="Views\Default\" />
-    <Folder Include="Views\KendoFileUpload\" />
-    <Folder Include="Views\Kendo\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
