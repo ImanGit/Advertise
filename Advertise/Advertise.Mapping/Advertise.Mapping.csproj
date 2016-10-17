@@ -69,26 +69,19 @@
     <Compile Include="Profiles\Categories\CategoryFollowProfile.cs" />
     <Compile Include="Profiles\Categories\CategoryProfile.cs" />
     <Compile Include="Profiles\Categories\CategoryReViewProfile.cs" />
-    <Compile Include="Profiles\Companies\CompanryFollowProfile.cs" />
     <Compile Include="Profiles\Companies\CompanryImageProfile.cs" />
+<<<<<<< HEAD
     <Compile Include="Profiles\Companies\CompanryQlProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyAttachmentProfile.cs" />
+=======
+>>>>>>> origin/master
     <Compile Include="Profiles\Companies\CompanryProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyModeratorProfile.cs" />
-    <Compile Include="Profiles\Companies\CompanyQrProfile.cs" />
-    <Compile Include="Profiles\Companies\CompanyReviewProfile.cs" />
-    <Compile Include="Profiles\Companies\CompanyRProfile.cs" />
+    <Compile Include="Profiles\Companies\CompanyReportProfile.cs" />
     <Compile Include="Profiles\Companies\CompanyQuestionProfile.cs" />
-    <Compile Include="Profiles\Companies\CompanySocialProfile.cs" />
-    <Compile Include="Profiles\Companies\CompanyVisitProfile.cs" />
-    <Compile Include="Profiles\Products\ProductClProfile.cs" />
-    <Compile Include="Profiles\Products\ProductCProfile.cs" />
-    <Compile Include="Profiles\Products\ProductCrProfile.cs" />
+    <Compile Include="Profiles\Products\ProductCommentProfile.cs" />
     <Compile Include="Profiles\Products\ProductImageProfile.cs" />
-    <Compile Include="Profiles\Products\ProductLikeProfile.cs" />
     <Compile Include="Profiles\Products\ProductReportProfile.cs" />
-    <Compile Include="Profiles\Products\ProductReviewProfile.cs" />
-    <Compile Include="Profiles\Products\ProductVisitProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

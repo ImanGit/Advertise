@@ -39,6 +39,7 @@ public static partial class MVC
     public static T4MVC.DefaultController Default = new T4MVC.DefaultController();
     public static T4MVC.KendoController Kendo = new T4MVC.KendoController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
+    public static T4MVC.UserController User = new T4MVC.UserController();
 }
 
 namespace T4MVC
@@ -547,6 +548,7 @@ namespace Links
                     public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
                     public static readonly string kendo_messages_en_US_min_js = Url("kendo.messages.en-US.min.js");
                     public static readonly string kendo_messages_en_US_min_js_map = Url("kendo.messages.en-US.min.js.map");
+                    public static readonly string kendo_messages_fa_IR_min_js = Url("kendo.messages.fa-IR.min.js");
                 }
             
                 public static readonly string pako_deflate_min_js = Url("pako_deflate.min.js");
@@ -1029,6 +1031,7 @@ namespace Links
                         public static class Assets
                         {
                             public const string kendo_messages_en_US_min_js = "~/Scripts/KendoUI/js/messages/kendo.messages.en-US.min.js"; 
+                            public const string kendo_messages_fa_IR_min_js = "~/Scripts/KendoUI/js/messages/kendo.messages.fa-IR.min.js"; 
                         }
                     }
                     public static class Assets

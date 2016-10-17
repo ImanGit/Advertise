@@ -1,5 +1,5 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
-using Advertise.ViewModel.Models.Products.ProductImage;
+using Advertise.ViewModel.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

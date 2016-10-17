@@ -30,21 +30,32 @@ namespace Advertise.Mapping.Profiles.Companies
                     WebSite = src.WebSite
                 }
                 );
-
-            CreateMap<CompanyCreateViewModel, Company>().ProjectUsing(src => new Company
+            CreateMap<CompanyReview, CompanyCreateViewModel>()
+                .ProjectUsing(src => new CompanyCreateViewModel
             {
-                Code = src.Code,
-                BrandName = src.BrandName,
-                BackgroundFileName = src.BackgroundFileName,
-                Description = src.Description,
-                Email = src.Email,
-                MobileNumber = src.MobileNumber,
-                EmployeeCount = src.EmployeeCount,
-                EstablishedOn = src.EstablishedOn,
-                LogoFileName = src.LogoFileName,
-                PhoneNumber = src.PhoneNumber,
-                WebSite = src.WebSite
+                    Body =src.Body 
             });
+
+
+            CreateMap<CompanyCreateViewModel, Company>()
+               .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
+               .ForMember(dest => dest.Description, opts => opts.MapFrom(src => src.Description))
+               .ForMember(dest => dest.Email, opts => opts.MapFrom(src => src.Email))
+               .ForMember(dest => dest.EmployeeCount, opts => opts.MapFrom(src => src.EmployeeCount))
+               .ForMember(dest => dest.EstablishedOn, opts => opts.MapFrom(src => src.EstablishedOn))
+               .ForMember(dest => dest.LogoFileName, opts => opts.MapFrom(src => src.LogoFileName))
+               .ForMember(dest => dest.MobileNumber, opts => opts.MapFrom(src => src.MobileNumber))
+               .ForMember(dest => dest.PhoneNumber, opts => opts.MapFrom(src => src.PhoneNumber))
+               .ForMember(dest => dest.WebSite, opts => opts.MapFrom(src => src.WebSite))
+               .ForMember(dest => dest.BackgroundFileName, opts => opts.MapFrom(src => src.BackgroundFileName))
+               .ForMember(dest => dest.BrandName, opts => opts.MapFrom(src => src.BrandName))
+               .ForAllOtherMembers(opt => opt.Ignore());
+
+
+            CreateMap<CompanyCreateViewModel, CompanyReview >()
+              .ForMember(dest => dest.Body , opts => opts.MapFrom(src => src.Body ))
+              .ForAllOtherMembers(opt => opt.Ignore());
+
 
 
             CreateMap<Company, CompanyListViewModel>().ProjectUsing(src => new CompanyListViewModel
@@ -64,23 +75,22 @@ namespace Advertise.Mapping.Profiles.Companies
 
             });
 
-            CreateMap<CompanyListViewModel ,Company >( ).ProjectUsing( src=> new Company
-            {
-                Code = src.Code,
-                BrandName = src.BrandName,
-                BackgroundFileName = src.BackgroundFileName,
-                Description = src.Description,
-                Email = src.Email,
-                MobileNumber = src.MobileNumber,
-                EmployeeCount = src.EmployeeCount,
-                EstablishedOn = src.EstablishedOn,
-                LogoFileName = src.LogoFileName,
-                PhoneNumber = src.PhoneNumber,
-                WebSite = src.WebSite,
-                Id = src.Id 
+
+            CreateMap<CompanyListViewModel, Company>()
+                .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
+                .ForMember(dest => dest.Description , opts => opts.MapFrom(src => src.Description))
+                .ForMember(dest => dest.Email , opts => opts.MapFrom(src => src.Email ))
+                .ForMember(dest => dest.EmployeeCount , opts => opts.MapFrom(src => src.EmployeeCount ))
+                .ForMember(dest => dest.EstablishedOn , opts => opts.MapFrom(src => src.EstablishedOn ))
+                .ForMember(dest => dest.LogoFileName , opts => opts.MapFrom(src => src.LogoFileName ))
+                .ForMember(dest => dest.MobileNumber , opts => opts.MapFrom(src => src.MobileNumber ))
+                .ForMember(dest => dest.PhoneNumber , opts => opts.MapFrom(src => src.PhoneNumber ))
+                .ForMember(dest => dest.WebSite , opts => opts.MapFrom(src => src.WebSite ))
+                .ForMember(dest => dest.BackgroundFileName , opts => opts.MapFrom(src => src.BackgroundFileName ))
+                .ForMember(dest => dest.BrandName , opts => opts.MapFrom(src => src.BrandName ))
+                .ForAllOtherMembers(opt => opt.Ignore());
 
 
-            });
 
 
             CreateMap<Company, CompanyEditViewModel>().ProjectUsing(src => new CompanyEditViewModel
@@ -100,7 +110,12 @@ namespace Advertise.Mapping.Profiles.Companies
 
             });
 
-            CreateMap<CompanyEditViewModel, Company>()
+            CreateMap<CompanyReview , CompanyEditViewModel>().ProjectUsing(src => new CompanyEditViewModel
+            {
+                Body  = src.Body 
+            });
+
+                CreateMap<CompanyEditViewModel, Company>()
                 .ForMember(dest => dest.Code, opts => opts.MapFrom(src => src.Code))
                 .ForMember(dest => dest.Description , opts => opts.MapFrom(src => src.Description))
                 .ForMember(dest => dest.Email , opts => opts.MapFrom(src => src.Email ))
@@ -113,6 +128,14 @@ namespace Advertise.Mapping.Profiles.Companies
                 .ForMember(dest => dest.BackgroundFileName , opts => opts.MapFrom(src => src.BackgroundFileName ))
                 .ForMember(dest => dest.BrandName , opts => opts.MapFrom(src => src.BrandName ))
                 .ForAllOtherMembers(opt => opt.Ignore());
+
+            CreateMap<CompanyEditViewModel, CompanyReview >()
+               .ForMember(dest => dest.Body , opts => opts.MapFrom(src => src.Body ))
+               .ForMember(dest => dest.Id , opts => opts.MapFrom(src => src.ReviewId ))
+               .ForMember(dest => dest.CompanyId , opts => opts.MapFrom(src => src.CompanyId ))
+               .ForAllOtherMembers(opt => opt.Ignore());
+
+
 
 
             CreateMap<Company, CompanyDeleteViewModel>().ProjectUsing(src => new CompanyDeleteViewModel

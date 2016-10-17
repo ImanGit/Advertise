@@ -37,535 +37,596 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n\r\n\r\n\r\n");
-
             
-            #line 7 "..\..\Views\Company\Create.cshtml"
- using (Html.BeginForm()) 
+            #line 2 "..\..\Views\Company\Create.cshtml"
+ using (Html.BeginForm(MVC.Company.Create(), FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Company\Create.cshtml"
+            #line 4 "..\..\Views\Company\Create.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Company\Create.cshtml"
+            #line 4 "..\..\Views\Company\Create.cshtml"
                             
-    
+
 
             
             #line default
             #line hidden
 WriteLiteral("    <div");
 
+WriteLiteral(" class=\"panel panel-default\"");
+
+WriteLiteral(">\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-heading\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"panel-title\"");
+
+WriteLiteral(">ثبت شرکت</h3>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(">\r\n\r\n            <div");
+
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteLiteral(">\r\n        \r\n        <hr />\r\n");
+WriteLiteral(">\r\n");
 
-WriteLiteral("        ");
+WriteLiteral("                ");
 
             
-            #line 14 "..\..\Views\Company\Create.cshtml"
-   Write(Html.ValidationSummary(true, "", new { @class = "text-danger" }));
+            #line 15 "..\..\Views\Company\Create.cshtml"
+           Write(Html.ValidationSummary(true, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <div");
+WriteLiteral("\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 16 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 18 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.Code, new {@class = "control-label col-md-2"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 20 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.Code, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 19 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" }));
+            #line 21 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Code, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 24 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.BrandName, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 26 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.BrandName, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.BrandName, new {@class = "control-label col-md-2"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 28 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.BrandName, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 27 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.BrandName, "", new { @class = "text-danger" }));
+            #line 29 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.BrandName, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 32 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 34 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.Email, new {@class = "control-label col-md-2"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 36 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.Email, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 35 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
+            #line 37 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Email, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 40 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.LogoFileName, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 42 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.LogoFileName, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.WebSite, new {@class = "control-label col-md-2"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 44 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.WebSite, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 43 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.LogoFileName, "", new { @class = "text-danger" }));
+            #line 45 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.WebSite, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 48 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.BackgroundFileName, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 50 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.BackgroundFileName, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.PhoneNumber, new {@class = "control-label col-md-2"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 52 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.PhoneNumber, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 51 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.BackgroundFileName, "", new { @class = "text-danger" }));
+            #line 53 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.PhoneNumber, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 56 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 58 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.MobileNumber, new {@class = "control-label col-md-2"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 59 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 64 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.MobileNumber, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 66 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control" } }));
+            #line 60 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.MobileNumber, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
+
+            
+            #line 61 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.MobileNumber, "", new {@class = "text-danger"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
 
             
             #line 67 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" }));
+               Write(Html.LabelFor(model => model.EmployeeCount, new {@class = "control-label col-md-2"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 72 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 74 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } }));
+            #line 69 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.EmployeeCount, new {htmlAttributes = new {@class = "form-control"}}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
+
+            
+            #line 70 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.EmployeeCount, "", new {@class = "text-danger"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
 
             
             #line 75 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" }));
+               Write(Html.LabelFor(model => model.LogoFileName, new {@class = "control-label col-md-2"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10 k-rtl\"");
+
+WriteLiteral(">\r\n                        <input");
+
+WriteLiteral(" type=\"file\"");
+
+WriteLiteral(" id=\"ImageFileName\"");
+
+WriteLiteral(" name=\"ImageFileName\"");
+
+WriteLiteral(" accept=\".jpg,.png\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 78 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.LogoFileName, "", new {@class = "text-danger"}));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                    <label");
+
+WriteLiteral(" class=\"control-label col-md-2\"");
+
+WriteLiteral(">پیش نمایش</label>\r\n                    ");
+
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4636), Tuple.Create("\"", 4671)
+, Tuple.Create(Tuple.Create("", 4642), Tuple.Create<System.Object, System.Int32>(Href("~/Files/Avatar/no-preview.png")
+, 4642), false)
+);
+
+WriteLiteral(" id=\"ImagePreview\"");
+
+WriteLiteral(" class=\"img-thumbnail\"");
+
+WriteLiteral(" width=\"300\"");
+
+WriteLiteral(" height=\"300\"");
+
+WriteLiteral(">\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 80 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.WebSite, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 82 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.WebSite, new { htmlAttributes = new { @class = "form-control" } }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 83 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.WebSite, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 88 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.EmployeeCount, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 90 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.EmployeeCount, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+WriteLiteral("\r\n                    <div");
 
-WriteLiteral("                ");
+WriteLiteral(" class=\"col-md-10 k-rtl\"");
+
+WriteLiteral(">\r\n                        <textarea");
+
+WriteLiteral(" id=\"Body\"");
+
+WriteLiteral(" name=\"Body\"");
+
+WriteLiteral(" rows=\"10\"");
+
+WriteLiteral(" cols=\"30\"");
+
+WriteLiteral(" style=\"height: 440px\"");
+
+WriteLiteral("></textarea>\r\n");
+
+WriteLiteral("                        ");
 
             
-            #line 91 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.EmployeeCount, "", new { @class = "text-danger" }));
+            #line 93 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 96 "..\..\Views\Company\Create.cshtml"
-       Write(Html.LabelFor(model => model.EstablishedOn, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 98 "..\..\Views\Company\Create.cshtml"
-           Write(Html.EditorFor(model => model.EstablishedOn, new { htmlAttributes = new { @class = "form-control" } }));
+               Write(Html.LabelFor(model => model.EstablishedOn , new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10 k-rtl\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 100 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.EstablishedOn, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 99 "..\..\Views\Company\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.EstablishedOn, "", new { @class = "text-danger" }));
+            #line 101 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.EstablishedOn, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("\r\n </div>\r\n                </div>\r\n\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" class=\"col-md-offset-2 col-md-10\"");
+WriteLiteral("                    ");
+
+            
+            #line 106 "..\..\Views\Company\Create.cshtml"
+               Write(Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    <div");
+
+WriteLiteral(" class=\"col-md-10 k-rtl\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 108 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 109 "..\..\Views\Company\Create.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n " +
+"       </div>\r\n\r\n    </div>\r\n");
+
+            
+            #line 119 "..\..\Views\Company\Create.cshtml"
+
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <div");
+
+WriteLiteral(" class=\"panel-footer\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n\r\n            <div");
+
+WriteLiteral(" class=\"col-md-2\"");
 
 WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" value=\"Create\"");
+WriteLiteral(" value=\"ثبت\"");
 
-WriteLiteral(" class=\"btn btn-default\"");
+WriteLiteral(" class=\"btn btn-primary\"");
 
-WriteLiteral(" />\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
+WriteLiteral(" />\r\n            </div>\r\n\r\n            <div");
+
+WriteLiteral(" class=\"col-md-2\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
 
             
-            #line 109 "..\..\Views\Company\Create.cshtml"
+            #line 128 "..\..\Views\Company\Create.cshtml"
+           Write(Html.ActionLink("برگشت به لیست", "List", new { Controller = "Company" }, new { @class = "btn btn-default" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
+
+            
+            #line 132 "..\..\Views\Company\Create.cshtml"
+   
+
+
 }
-
             
             #line default
             #line hidden
-WriteLiteral("\r\n<div>\r\n");
-
-WriteLiteral("    ");
-
-            
-            #line 112 "..\..\Views\Company\Create.cshtml"
-Write(Html.ActionLink("برگشت به لیست", "List"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n</div>\r\n");
-
         }
     }
 }

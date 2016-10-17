@@ -1,5 +1,5 @@
 ﻿using Advertise.ServiceLayer.Contracts.Common;
-using Advertise.ViewModel.Models.Products.ProductComment;
+using Advertise.ViewModel.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,14 +12,14 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        Task CreateAsync(ProductCCreateViewModel viewModel);
+        Task CreateAsync(ProductCommentCreateViewModel viewModel);
         #endregion
 
         #region Update
         /// <summary>
         /// 
         /// </summary>
-        Task EditAsync(ProductCEditViewModel viewModel);
+        Task EditAsync(ProductCommentEditViewModel viewModel);
 
         #endregion
 
@@ -27,24 +27,24 @@ namespace Advertise.ServiceLayer.Contracts.Products
         /// <summary>
         /// 
         /// </summary>
-        Task DeleteAsync(ProductCDeleteViewModel viewModel);
+        Task DeleteAsync(ProductCommentDeleteViewModel viewModel);
         #endregion
 
         #region Read
 
-        Task<ProductCCreateViewModel> GetForCreateAsync();
+        Task<ProductCommentCreateViewModel> GetForCreateAsync();
 
-        Task<ProductCEditViewModel> GetForEditAsync(Guid id);
+        Task<ProductCommentEditViewModel> GetForEditAsync(Guid id);
 
-        Task<ProductCDeleteViewModel> GetForDeleteAsync(Guid id);
+        Task<ProductCommentDeleteViewModel> GetForDeleteAsync(Guid id);
 
-        Task<IEnumerable<ProductCListViewModel >> GetListAsync();
+        Task<IEnumerable<ProductCommentListViewModel >> GetListAsync();
 
-        Task<ProductCDetailViewModel> GetDetailsAsync(Guid id);
+        Task<ProductCommentDetailViewModel> GetDetailsAsync(Guid id);
 
-        Task<ProductCListViewModel> FindById(Guid id);
+        Task<ProductCommentListViewModel> FindById(Guid id);
 
-        Task FillCreateViewModel(ProductCCreateViewModel viewModel);
+        Task FillCreateViewModel(ProductCommentCreateViewModel viewModel);
 
         #endregion
 

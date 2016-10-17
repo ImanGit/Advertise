@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Advertise.DomainClasses.Entities.Categories;
+using Advertise.DomainClasses.Entities.Companies;
 using Advertise.DomainClasses.Entities.Common;
 using Advertise.DomainClasses.Entities.Public;
 using Advertise.DomainClasses.Entities.Users;
+using Advertise.DomainClasses.Entities.Categories;
 
 namespace Advertise.DomainClasses.Entities.Companies
 {
@@ -12,6 +13,11 @@ namespace Advertise.DomainClasses.Entities.Companies
     /// </summary>
     public class Company : BaseEntity
     {
+        public Company()
+        {
+            Reviews = new HashSet<CompanyReview >();
+        }
+
         #region Properties
 
         /// <summary>

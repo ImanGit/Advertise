@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Advertise.DomainClasses.Entities.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyQuestion ;
+using Advertise.ViewModel.Models.Companies ;
 namespace Advertise.Mapping.Profiles.Companies
 {
     class CompanyQuestionProfile : Profile
@@ -8,56 +8,56 @@ namespace Advertise.Mapping.Profiles.Companies
         public CompanyQuestionProfile()
         {
 
-            CreateMap<CompanyQuestion, CompanyQCreateViewModel>()
-                .ProjectUsing(src => new CompanyQCreateViewModel
+            CreateMap<CompanyQuestion, CompanyQuestionCreateViewModel>()
+                .ProjectUsing(src => new CompanyQuestionCreateViewModel
                 {
                     Body  = src.Body,
                     IsApproved  = src.IsApproved,
                     Title =src.Title 
                 });
-            CreateMap<CompanyQCreateViewModel, CompanyQuestion>()
+            CreateMap<CompanyQuestionCreateViewModel, CompanyQuestion>()
                .ForMember(dest => dest.IsApproved , opts => opts.MapFrom(src => src.IsApproved ))
                .ForMember(dest => dest.Title , opts => opts.MapFrom(src => src.Title ))
                .ForMember(dest => dest.Body , opts => opts.MapFrom(src => src.Body ))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<CompanyQuestion, CompanyQEditViewModel>()
-                .ProjectUsing(src => new CompanyQEditViewModel
+            CreateMap<CompanyQuestion, CompanyQuestionEditViewModel>()
+                .ProjectUsing(src => new CompanyQuestionEditViewModel
                 {
                     Body = src.Body,
                     IsApproved = src.IsApproved,
                     Title = src.Title,
                     Id = src.Id
                 });
-            CreateMap<CompanyQEditViewModel, CompanyQuestion>()
+            CreateMap<CompanyQuestionEditViewModel, CompanyQuestion>()
                .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<CompanyQuestion, CompanyQDetailViewModel>()
-               .ProjectUsing(src => new CompanyQDetailViewModel
+            CreateMap<CompanyQuestion, CompanyQuestionDetailViewModel>()
+               .ProjectUsing(src => new CompanyQuestionDetailViewModel
                {
                    Body = src.Body,
                    IsApproved = src.IsApproved,
                    Title = src.Title,
                    Id = src.Id
                });
-            CreateMap<CompanyQDetailViewModel, CompanyQuestion>()
+            CreateMap<CompanyQuestionDetailViewModel, CompanyQuestion>()
               .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))
                .ForAllOtherMembers(opt => opt.Ignore());
 
-            CreateMap<CompanyQuestion, CompanyQDeleteViewModel>()
-              .ProjectUsing(src => new CompanyQDeleteViewModel
+            CreateMap<CompanyQuestion, CompanyQuestionDeleteViewModel>()
+              .ProjectUsing(src => new CompanyQuestionDeleteViewModel
               {
                   Body = src.Body,
                   IsApproved = src.IsApproved,
                   Title = src.Title,
                   Id = src.Id
               });
-            CreateMap<CompanyQDeleteViewModel, CompanyQuestion>()
+            CreateMap<CompanyQuestionDeleteViewModel, CompanyQuestion>()
                .ForMember(dest => dest.IsApproved, opts => opts.MapFrom(src => src.IsApproved))
                .ForMember(dest => dest.Title, opts => opts.MapFrom(src => src.Title))
                .ForMember(dest => dest.Body, opts => opts.MapFrom(src => src.Body))

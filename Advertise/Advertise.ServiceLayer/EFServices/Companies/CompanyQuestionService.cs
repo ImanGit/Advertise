@@ -5,7 +5,7 @@ using Advertise.DomainClasses.Entities.Companies;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Advertise.ServiceLayer.Contracts.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyQuestion;
+using Advertise.ViewModel.Models.Companies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +22,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyQuestion> _companyQ;
 
         #endregion
+
         #region Ctor
         public CompanyQuestionService(IMapper mapper, IUnitOfWork unitOfWork)
         {
@@ -30,16 +31,18 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             _companyQ = unitOfWork.Set<CompanyQuestion>();
         }
         #endregion
+
         #region Create
-        public async Task CreateAsync(CompanyQCreateViewModel viewModel)
+        public async Task CreateAsync(CompanyQuestionCreateViewModel viewModel)
         {
             var companyQ = _mapper.Map<CompanyQuestion>(viewModel);
             _companyQ.Add(companyQ);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
         #endregion
+
         #region Edit
-        public async Task EditAsync(CompanyQEditViewModel viewModel)
+        public async Task EditAsync(CompanyQuestionEditViewModel viewModel)
         {
             var companyQ = await _companyQ.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, companyQ);
@@ -52,32 +55,32 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         #endregion
 
         #region Read
-        public async Task<CompanyQCreateViewModel> GetForCreateAsync()
+        public async Task<CompanyQuestionCreateViewModel> GetForCreateAsync()
         {
-            return await Task.Run(() => new CompanyQCreateViewModel());
+            return await Task.Run(() => new CompanyQuestionCreateViewModel());
         }
 
         /// <summary>
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<CompanyQEditViewModel> GetForEditAsync(Guid id)
+        public async Task<CompanyQuestionEditViewModel> GetForEditAsync(Guid id)
         {
             return await _companyQ
                 .AsNoTracking()
-                .ProjectTo<CompanyQEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyQuestionEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public async Task<IEnumerable<CompanyQListViewModel>> GetListAsync()
+        public async Task<IEnumerable<CompanyQuestionListViewModel>> GetListAsync()
         {
             return await _companyQ
                .AsNoTracking()
-               .ProjectTo<CompanyQListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+               .ProjectTo<CompanyQuestionListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                .ToListAsync();
         }
 
-        public Task DeleteAsync(CompanyQDeleteViewModel viewModel)
+        public Task DeleteAsync(CompanyQuestionDeleteViewModel viewModel)
         {
             return _companyQ.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
@@ -113,34 +116,35 @@ namespace Advertise.ServiceLayer.EFServices.Companies
             throw new NotImplementedException();
         }
 
-        public async Task<CompanyQDeleteViewModel> GetForDeleteAsync(Guid id)
+        public async Task<CompanyQuestionDeleteViewModel> GetForDeleteAsync(Guid id)
         {
             return await _companyQ
                 .AsNoTracking()
-                .ProjectTo<CompanyQDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyQuestionDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public async Task<CompanyQDetailViewModel> GetDetailsAsync(Guid id)
+        public async Task<CompanyQuestionDetailViewModel> GetDetailsAsync(Guid id)
         {
             return await _companyQ
                 .AsNoTracking()
-                .ProjectTo<CompanyQDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyQuestionDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public Task<CompanyQListViewModel> FindById(Guid id)
+        public Task<CompanyQuestionListViewModel> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task FillCreateViewModel(CompanyQCreateViewModel viewModel)
+        public Task FillCreateViewModel(CompanyQuestionCreateViewModel viewModel)
         {
             throw new NotImplementedException();
         }
 
 
         #endregion
+
         #region Retrive
         public void GetCountNotApprove()
         {

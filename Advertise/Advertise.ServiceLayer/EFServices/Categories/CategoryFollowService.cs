@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -28,6 +29,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         private readonly IDbSet<Address> _address;
 
         #endregion
+
         #region Ctor
         public CategoryFollowService(IMapper mapper, IUnitOfWork unitOfWork)
         {
@@ -39,6 +41,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             _address  = unitOfWork.Set<Address>();
         }
         #endregion
+
         #region Create
         public async Task CreateAsync(CategoryFollowCreateViewModel  viewModel)
         {
@@ -47,6 +50,7 @@ namespace Advertise.ServiceLayer.EFServices.Categories
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
         #endregion
+
         #region Edit
         public async Task EditAsync(CategoryFollowEditViewModel viewModel)
         {
@@ -90,14 +94,14 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         #endregion
 
         #region Retrive
-        public int GetCount(Guid id)
+        public int GetCount(Guid idCategory)
         {
-            return _categoryFollow.Count(a => a.CategoryId == id && a.IsFollow == true);
+            return _categoryFollow.Count(a => a.CategoryId == idCategory && a.IsFollow == true);
         }
 
-        public int GetUnCount(Guid id)
+        public int GetUnCount(Guid idCategory)
         {
-            return _categoryFollow.Count(a => a.CategoryId == id && a.IsFollow == false);
+            return _categoryFollow.Count(a => a.CategoryId == idCategory && a.IsFollow == false);
         }
 
         //public bool GetUserFollowCategory(Guid id)
@@ -109,9 +113,9 @@ namespace Advertise.ServiceLayer.EFServices.Categories
         {
             var dd = (from catf in _categoryFollow
                       join cat
-in _categories on catf.CategoryId equals cat.Id
+            in _categories on catf.CategoryId equals cat.Id
                       join us
-in _user on catf.FollowedById equals us.Id
+            in _user on catf.FollowedById equals us.Id
                       where us.Id == idUser && cat.Id == idCategory
                       select new { catf.IsFollow }).ToList();
             if (dd.Count == 0)
@@ -153,29 +157,45 @@ in _user on catf.FollowedById equals us.Id
 
         public long GetMaxCategory()
         {
-            throw new NotImplementedException();
-        }
+            var maxCategor = 
+                (from cat in _categories join catf in _categoryFollow on cat.Id equals catf.CategoryId 
+                              group cat by new {cat.Code } into g
+                              orderby g.Count( p=>p.Code !=null )descending
+                              select new {g.Key.Code,Column1 =g.Count( p=>p.Code !=null
+                              ) }
+
+                ).Take( 1);
+            return maxCategor.Count( );
+           }
 
         public long GetMinCategory()
         {
-            throw new NotImplementedException();
+            var maxCategor =
+                (from cat in _categories
+                 join catf in _categoryFollow on cat.Id equals catf.CategoryId
+                 group cat by new { cat.Code } into g
+                 orderby g.Count(p => p.Code != null) ascending 
+                 select new
+                 {
+                     g.Key.Code,
+                     Column1 = g.Count(p => p.Code != null
+                 )
+                 }
+
+                ).Take(1);
+            return maxCategor.Count( );
         }
 
-        public int GetCount()
+        public int GetUserFollowCount(Guid idUser)
         {
-            throw new NotImplementedException();
-        }
-
-        public int GetUnCount()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        public int GetUserFollowCount()
-        {
-            throw new NotImplementedException();
+            var userFollowCount = (from cat in _categories
+                join catf in _categoryFollow on cat.Id equals catf.CategoryId
+                join us in _user on catf.FollowedById equals us.Id
+                where us.Id == idUser && catf.IsFollow == true
+                select new {cat.Code}
+                ).Distinct()
+                ;
+            return userFollowCount.Count();
         }
 
         #endregion

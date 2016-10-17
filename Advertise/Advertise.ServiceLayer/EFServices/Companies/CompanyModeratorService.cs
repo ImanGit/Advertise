@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Advertise.ServiceLayer.Contracts.Companies;
-using Advertise.ViewModel.Models.Companies.CompanyModerator ;
+using Advertise.ViewModel.Models.Companies ;
 using AutoMapper;
 using Advertise.DataLayer.Context;
 using Advertise.DomainClasses.Entities.Companies;
@@ -22,6 +22,7 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         private readonly IDbSet<CompanyModerator> _companyModerator;
 
         #endregion
+
         #region Ctor
         public CompanyModeratorService(IMapper mapper, IUnitOfWork unitOfWork)
         {

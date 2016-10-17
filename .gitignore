@@ -251,3 +251,9 @@ paket-files/
 .idea/
 *.sln.iml
 Advertise/Advertise.DomainClasses/Entities/Product.cs
+Advertise/Advertise.Web/Advertise.Web.csproj
+*.csproj
+Advertise/Advertise.ViewModel/Advertise.ViewModel.csproj
+Advertise/Advertise.ViewModel/Advertise.ViewModel.csproj
+Advertise/Advertise.ViewModel/Advertise.ViewModel.csproj
+Advertise/Advertise.ViewModel/Advertise.ViewModel.csproj

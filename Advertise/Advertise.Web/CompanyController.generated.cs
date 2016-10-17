@@ -99,7 +99,6 @@ namespace Advertise.Web.Controllers
             public readonly string List = "List";
             public readonly string Delete = "Delete";
             public readonly string Details = "Details";
-            public readonly string Find = "Find";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -111,7 +110,6 @@ namespace Advertise.Web.Controllers
             public const string List = "List";
             public const string Delete = "Delete";
             public const string Details = "Details";
-            public const string Find = "Find";
         }
 
 
@@ -122,6 +120,7 @@ namespace Advertise.Web.Controllers
         public class ActionParamsClass_Create
         {
             public readonly string viewModel = "viewModel";
+            public readonly string LogoFileName = "LogoFileName";
         }
         static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -164,6 +163,7 @@ namespace Advertise.Web.Controllers
                 public readonly string Details = "Details";
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
+                public readonly string Item = "Item";
                 public readonly string List = "List";
             }
             public readonly string Create = "~/Views/Company/Create.cshtml";
@@ -171,6 +171,7 @@ namespace Advertise.Web.Controllers
             public readonly string Details = "~/Views/Company/Details.cshtml";
             public readonly string Edit = "~/Views/Company/Edit.cshtml";
             public readonly string Index = "~/Views/Company/Index.cshtml";
+            public readonly string Item = "~/Views/Company/Item.cshtml";
             public readonly string List = "~/Views/Company/List.cshtml";
         }
     }
@@ -203,14 +204,15 @@ namespace Advertise.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Companies.CompanyCreateViewModel viewModel);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Advertise.ViewModel.Models.Companies.CompanyCreateViewModel viewModel, System.Collections.Generic.IEnumerable<System.Web.HttpPostedFileBase> LogoFileName);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Advertise.ViewModel.Models.Companies.CompanyCreateViewModel viewModel)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Advertise.ViewModel.Models.Companies.CompanyCreateViewModel viewModel, System.Collections.Generic.IEnumerable<System.Web.HttpPostedFileBase> LogoFileName)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
-            CreateOverride(callInfo, viewModel);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "LogoFileName", LogoFileName);
+            CreateOverride(callInfo, viewModel, LogoFileName);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -283,17 +285,6 @@ namespace Advertise.Web.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DetailsOverride(callInfo, id);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-
-        [NonAction]
-        partial void FindOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Find()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Find);
-            FindOverride(callInfo);
-            return callInfo;
         }
 
     }

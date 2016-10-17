@@ -6,6 +6,8 @@ using Advertise.Common.Extensions;
 using Advertise.DataLayer.Context;
 using Advertise.ServiceLayer.Contracts.Companies;
 using Advertise.ViewModel.Models.Companies;
+using System.Collections.Generic;
+using System.Web;
 
 namespace Advertise.Web.Controllers
 {
@@ -31,20 +33,42 @@ namespace Advertise.Web.Controllers
         public virtual async Task<ActionResult> Create()
         {
             var viewModel = await _comanyService.GetForCreateAsync();
-            return PartialView( viewModel);
+            return View(  viewModel);
         }
 
         [HttpPost]
-        public virtual async Task<ActionResult> Create(CompanyCreateViewModel viewModel)
+        [ValidateInput(false)]
+        public virtual async Task<ActionResult> Create(CompanyCreateViewModel viewModel, IEnumerable<HttpPostedFileBase> ImageFileName)
         {
-            if (!ModelState .IsValid )
+            if (!ModelState.IsValid)
             {
-                return PartialView( );
+                return View();
             }
-            await _comanyService  .CreateAsync(viewModel);
-            this.ShowInformationMessage("شرکت جدید با موفقیت ثبت شد");
-            return RedirectToAction(MVC.Company .List());
+
+
+
+            // The Name of the Upload component is "files"
+            if (ImageFileName != null)
+            {
+                foreach (var file in ImageFileName)
+                {
+                    // Some browsers send file names with full path.
+                    // We are only interested in the file name.
+                    viewModel.LogoFileName  = Guid.NewGuid().ToString() + ".jpg";
+                    var fileName = System.IO.Path.GetFileName(file.FileName);
+                    var physicalPath = System.IO.Path.Combine(Server.MapPath("~/Uploads"), viewModel.LogoFileName);
+
+                    // The files are not actually saved in this demo
+                    file.SaveAs(physicalPath);
+
+                }
+            }
+
+            await _comanyService .CreateAsync(viewModel);
+            this.ShowInformationMessage("عملیات با موفقیت ثبت شد.");
+            return RedirectToAction(MVC.Company.List());
         }
+
 
         /// <summary>
         /// </summary>
@@ -54,7 +78,7 @@ namespace Advertise.Web.Controllers
         public virtual async Task<ActionResult> Edit(Guid id)
         {
             var viewModel = await _comanyService.GetForEditAsync(id);
-            return PartialView(viewModel);
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -62,7 +86,7 @@ namespace Advertise.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return PartialView( );
+                return View( );
             }
             await _comanyService.EditAsync(viewModel);
             this.ShowInformationMessage("شرکت  با موفقیت ویرایش شد.");
@@ -74,6 +98,13 @@ namespace Advertise.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         public virtual async Task<ActionResult> List()
+        {
+            var viewModel = await _comanyService.GetListAsync();
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public virtual async Task<ActionResult> Item()
         {
             var viewModel = await _comanyService.GetListAsync();
             return View(viewModel);
@@ -113,10 +144,10 @@ namespace Advertise.Web.Controllers
             return View(viewModel);
         }
 
-        public virtual ActionResult Find()
-        {
-            return View();
-        }
+        //public virtual ActionResult Find()
+        //{
+        //    return View();
+        //}
 
 
         #region Fields

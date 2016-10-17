@@ -33,32 +33,32 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         #endregion
 
         #region Create
-        public async Task CreateAsync(CompanyRCreateViewModel viewModel)
+        public async Task CreateAsync(CompanyReportCreateViewModel viewModel)
         {
             var companyr = _mapper.Map<CompanyReport>(viewModel);
             _companyr.Add(companyr);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<CompanyRCreateViewModel> GetForCreateAsync()
+        public async Task<CompanyReportCreateViewModel> GetForCreateAsync()
         {
-            return await Task.Run(() => new CompanyRCreateViewModel());
+            return await Task.Run(() => new CompanyReportCreateViewModel());
         }
         #endregion
 
         #region Edit
-        public async Task EditAsync(CompanyREditViewModel viewModel)
+        public async Task EditAsync(CompanyReportEditViewModel viewModel)
         {
             var category = await _companyr.FirstAsync(model => model.Id == viewModel.Id);
             _mapper.Map(viewModel, category);
             await _unitOfWork.SaveAllChangesAsync(auditUserId: new Guid("9D2B0228-4D0D-4C23-8B49-01A698857709"));
         }
 
-        public async Task<CompanyREditViewModel> GetForEditAsync(Guid id)
+        public async Task<CompanyReportEditViewModel> GetForEditAsync(Guid id)
         {
             return await _companyr
                 .AsNoTracking()
-                .ProjectTo<CompanyREditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyReportEditViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
@@ -72,29 +72,29 @@ namespace Advertise.ServiceLayer.EFServices.Companies
         /// <param name="id"></param>
         /// <returns></returns>
 
-        public async Task<IEnumerable<CompanyRListViewModel>> GetListAsync()
+        public async Task<IEnumerable<CompanyReportListViewModel>> GetListAsync()
         {
             return await _companyr
                .AsNoTracking()
-               .ProjectTo<CompanyRListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+               .ProjectTo<CompanyReportListViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                .ToListAsync();
         }
 
 
-        public async Task<CompanyRDetailViewModel> GetDetailsAsync(Guid id)
+        public async Task<CompanyReportDetailViewModel> GetDetailsAsync(Guid id)
         {
             return await _companyr
                 .AsNoTracking()
-                .ProjectTo<CompanyRDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyReportDetailViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public Task<CompanyRListViewModel> FindById(Guid id)
+        public Task<CompanyReportListViewModel> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task FillCreateViewModel(CompanyRCreateViewModel viewModel)
+        public Task FillCreateViewModel(CompanyReportCreateViewModel viewModel)
         {
             throw new NotImplementedException();
         }
@@ -103,16 +103,16 @@ namespace Advertise.ServiceLayer.EFServices.Companies
 
         #region Delete
 
-        public Task DeleteAsync(CompanyRDeleteViewModel viewModel)
+        public Task DeleteAsync(CompanyReportDeleteViewModel viewModel)
         {
             return _companyr.Where(model => model.Id == viewModel.Id).DeleteAsync();
         }
 
-        public async Task<CompanyRDeleteViewModel> GetForDeleteAsync(Guid id)
+        public async Task<CompanyReportDeleteViewModel> GetForDeleteAsync(Guid id)
         {
             return await _companyr
                 .AsNoTracking()
-                .ProjectTo<CompanyRDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<CompanyReportDeleteViewModel>(parameters: null, configuration: _mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(model => model.Id == id);
         }
 
